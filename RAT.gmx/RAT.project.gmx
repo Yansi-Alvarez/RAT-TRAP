@@ -215,13 +215,12 @@
     <objects name="Enemies">
       <object>objects\obj_Bullbug</object>
     </objects>
-    <object>objects\obj_Gun</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42015.8829439931</constant>
+    <constant name="GM_build_date">42018.9174524421</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

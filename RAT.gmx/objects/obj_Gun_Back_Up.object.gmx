@@ -25,9 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*potato_gun_bullet_timer = true;
+            <string>//potato_gun_bullet_timer = true;
 
-global.gun_pick_up = false;
+//global.gun_pick_up = false;
 </string>
           </argument>
         </arguments>
