@@ -138,11 +138,22 @@
             </sprites>
           </sprites>
         </sprites>
+        <sprites name="Animations">
+          <sprites name="Walking">
+            <sprite>sprites\spr_Bullbug_Walking_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Walking_Right</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor</sprite>
       <sprite>sprites\spr_Screen_Overlay</sprite>
+      <sprites name="Health">
+        <sprite>sprites\spr_Full_Health</sprite>
+        <sprite>sprites\spr_Medium_Health</sprite>
+        <sprite>sprites\spr_Low_Health</sprite>
+      </sprites>
     </sprites>
     <sprites name="Stages">
       <sprites name="Tile">
@@ -166,6 +177,11 @@
       <sprite>sprites\spr_Particle_Walkdust</sprite>
       <sprites name="Bullets">
         <sprite>sprites\spr_Bullet_Potato</sprite>
+      </sprites>
+      <sprite>sprites\sprite104</sprite>
+      <sprites name="Turn ">
+        <sprite>sprites\spr_Particle_Turn_Left</sprite>
+        <sprite>sprites\spr_Particle_Turn_Right</sprite>
       </sprites>
     </sprites>
     <sprites name="Weapons">
