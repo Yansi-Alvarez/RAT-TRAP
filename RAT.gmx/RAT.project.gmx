@@ -84,6 +84,11 @@
             </sprites>
           </sprites>
         </sprites>
+        <sprites name="Hit Stun">
+          <sprites name="Down">
+            <sprite>sprites\spr_REFERENCE_Hit</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprite>sprites\Example_Front</sprite>
       <sprite>sprites\Example_Up</sprite>
@@ -194,11 +199,11 @@
         </sprites>
       </sprites>
       <sprites name="Ranged">
-        <sprites name="Left">
-          <sprite>sprites\spr_Handgun_Potato_Left</sprite>
-        </sprites>
-        <sprites name="Right">
-          <sprite>sprites\spr_Handgun_Potato_Right</sprite>
+        <sprites name="Handgun">
+          <sprites name="Potatogun">
+            <sprite>sprites\spr_Handgun_Potato_Right</sprite>
+            <sprite>sprites\spr_Handgun_Potato_Left</sprite>
+          </sprites>
         </sprites>
       </sprites>
     </sprites>
