@@ -104,6 +104,24 @@
               <sprite>sprites\spr_Back_Arm_Standard_Stun_Down_Right</sprite>
             </sprites>
           </sprites>
+          <sprites name="Up">
+            <sprites name="Left">
+              <sprite>sprites\spr_Body_Standard_Stun_Up_Left</sprite>
+              <sprite>sprites\spr_Back_Arm_Standard_Stun_Up_Left</sprite>
+              <sprite>sprites\spr_Head_Standard_Stun_Up_Left</sprite>
+              <sprite>sprites\spr_Legs_Standard_Stun_Up_Left</sprite>
+              <sprite>sprites\spr_Tail_Standard_Stun_Up_Left</sprite>
+              <sprite>sprites\spr_Front_Arm_Standard_Stun_Up_Left</sprite>
+            </sprites>
+            <sprites name="Right">
+              <sprite>sprites\spr_Tail_Standard_Stun_Up_Right</sprite>
+              <sprite>sprites\spr_Body_Standard_Stun_Up_Right</sprite>
+              <sprite>sprites\spr_Back_Arm_Standard_Stun_Up_Right</sprite>
+              <sprite>sprites\spr_Head_Standard_Stun_Up_Right</sprite>
+              <sprite>sprites\spr_Legs_Standard_Stun_Up_Right</sprite>
+              <sprite>sprites\spr_Front_Arm_Standard_Stun_Up_Right</sprite>
+            </sprites>
+          </sprites>
         </sprites>
       </sprites>
       <sprite>sprites\Example_Front</sprite>
