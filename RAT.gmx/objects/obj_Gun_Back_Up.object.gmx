@@ -50,7 +50,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*potato_gun_bullet_timer = true;
+            <string>//potato_gun_bullet_timer = true;
 </string>
           </argument>
         </arguments>

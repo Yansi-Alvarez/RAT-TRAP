@@ -131,10 +131,10 @@
         <sprites name="Pieces">
           <sprites name="Down">
             <sprites name="Left">
-              <sprite>sprites\spr_Bullbug_Left</sprite>
+              <sprite>sprites\spr_Idle_Bullbug_Left</sprite>
             </sprites>
             <sprites name="Right">
-              <sprite>sprites\spr_Bullbug_Right</sprite>
+              <sprite>sprites\spr_Idle_Bullbug_Right</sprite>
             </sprites>
           </sprites>
         </sprites>
@@ -236,7 +236,7 @@
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42018.9174524421</constant>
+    <constant name="GM_build_date">42033.840694919</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

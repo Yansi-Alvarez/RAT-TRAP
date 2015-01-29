@@ -20,6 +20,6 @@
   <width>58</width>
   <height>28</height>
   <frames>
-    <frame index="0">images\spr_Bullbug_Right_0.png</frame>
+    <frame index="0">images\spr_Idle_Bullbug_Right_0.png</frame>
   </frames>
 </sprite>
