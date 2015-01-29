@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemy_speed = 4;
+            <string>global.enemy_health = 3;
+
+global.enemy_speed = 4;
 </string>
           </argument>
         </arguments>
@@ -51,34 +53,46 @@
             <string>direction_enemy = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Body.x, obj_Rat_Body.y)
 
 if (distance_to_object(obj_Rat_Body) &lt;= 150) {
-        
-    move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
+         
+    move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, global.enemy_speed)
     
     //Angle between enemy and player, if between 0 and 89 degrees, looks to the up-right
 
     if  ((direction_enemy &gt;= 0) and (direction_enemy &lt;= 89)) {
     
+        global.enemy_right = true;
+        global.enemy_left = false;
+        
         sprite_index = spr_Bullbug_Walking_Right
     }
     
     //Angle between enemy and player, if between 90 and 179 degrees, looks to the up-left
     
     if ((direction_enemy &gt;= 90) and (direction_enemy &lt;= 179)) {
-    
+        
+        global.enemy_right = false;
+        global.enemy_left = true;
+        
         sprite_index = spr_Bullbug_Walking_Left  
     }
     
     //Angle between enemy and player, if between 180 and 269 degrees, looks to the down-left
     
     if ((direction_enemy &gt;= 180) and (direction_enemy &lt;= 269)) {
-    
+        
+        global.enemy_right = false;
+        global.enemy_left = true;
+        
         sprite_index = spr_Bullbug_Walking_Left
     }
     
     //Angle between enemy and player, if between 270 and 359 degrees, looks to the down-right
     
     if ((direction_enemy &gt;= 270) and (direction_enemy &lt;= 359)) {
-    
+        
+        global.enemy_right = true;
+        global.enemy_left = false;
+        
         sprite_index = spr_Bullbug_Walking_Right
     }
 }
@@ -111,7 +125,8 @@ if (distance_to_object(obj_Rat_Body) &lt;= 150) {
     (sprite_index = spr_Idle_Bullbug_Left) or 
     (sprite_index = spr_Idle_Bullbug_Right) {
     
-    }
+    global.enemy_health = global.enemy_health - 1;    
+}
 </string>
           </argument>
         </arguments>

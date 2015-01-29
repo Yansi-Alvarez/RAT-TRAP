@@ -532,7 +532,14 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up_again =
         obj_Gun.y = obj_Rat_Back_Arm.y;
     }
 }
-}
+}*/
+    
+    
+    
+    
+    
+    
+    
 </string>
           </argument>
         </arguments>
@@ -567,7 +574,7 @@ if ((instance_exists(obj_Rat_Head)) and (head == false)) {
     instance_create(obj_Rat_Head.x + 12, obj_Rat_Head.y + 16, obj_Rat_Tail)
     
     //Spawning for pistol
-    instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+    //instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
     //instance_create(obj_Rat_Head.x - 50,obj_Rat_Head.y,obj_Gun_2)
     
     //Spawning Enemy
@@ -608,14 +615,14 @@ if ((global.Player_Health == 3) or (global.Player_Health == 2)) {
     img_index += 2.0
 }
 
-if (global.Player_Health == 1) {
+if (global.Player_Health &lt;= 1) {
     img_index += 4.0
 }
-
+/*
 if (img_index &gt; sprite_get_number(spr_Full_Health)) or (img_index &gt; sprite_get_number(spr_Medium_Health)) or (img_index &gt; sprite_get_number(spr_Low_Health)) {
     img_index = 0
 }
-
+*/
 
 obj_Cursor.x = mouse_x;
 obj_Cursor.y = mouse_y;
@@ -963,22 +970,22 @@ if ((direction_player &gt;= 270) and (direction_player &lt;= 359)) and (walk_dow
 
 //Right Direction
 
-if keyboard_check(ord('D')) {
-
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
-
-    hspeed = 5; 
-    obj_Rat_Front_Arm.hspeed = 5; 
-    obj_Rat_Back_Arm.hspeed = 5; 
-    obj_Rat_Body.hspeed = 5; 
-    obj_Rat_Legs.hspeed = 5; 
-    obj_Rat_Tail.hspeed = 5; 
-}
+    if keyboard_check(ord('D')) {
+    
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+    
+        hspeed = 5; 
+        obj_Rat_Front_Arm.hspeed = 5; 
+        obj_Rat_Back_Arm.hspeed = 5; 
+        obj_Rat_Body.hspeed = 5; 
+        obj_Rat_Legs.hspeed = 5; 
+        obj_Rat_Tail.hspeed = 5; 
+    }
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -986,22 +993,22 @@ if keyboard_check(ord('D')) {
 
 //Left Direction
 
-if keyboard_check(ord('A')) {
-    
-    image_speed = 0.3
-    obj_Rat_Front_Arm.image_speed = 0.3
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
-    
-    hspeed = -5; 
-    obj_Rat_Front_Arm.hspeed = -5; 
-    obj_Rat_Back_Arm.hspeed = -5; 
-    obj_Rat_Body.hspeed = -5; 
-    obj_Rat_Legs.hspeed = -5; 
-    obj_Rat_Tail.hspeed = -5; 
-}
+    if keyboard_check(ord('A')) {
+        
+        image_speed = 0.3
+        obj_Rat_Front_Arm.image_speed = 0.3
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+        
+        hspeed = -5; 
+        obj_Rat_Front_Arm.hspeed = -5; 
+        obj_Rat_Back_Arm.hspeed = -5; 
+        obj_Rat_Body.hspeed = -5; 
+        obj_Rat_Legs.hspeed = -5; 
+        obj_Rat_Tail.hspeed = -5; 
+    }
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -1009,22 +1016,22 @@ if keyboard_check(ord('A')) {
 
 //Up Direction
 
-if keyboard_check(ord('W')) {
-
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3;
-    obj_Rat_Back_Arm.image_speed = 0.3
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
+    if keyboard_check(ord('W')) {
     
-    vspeed = -5; 
-    obj_Rat_Front_Arm.vspeed = -5; 
-    obj_Rat_Back_Arm.vspeed = -5; 
-    obj_Rat_Body.vspeed = -5; 
-    obj_Rat_Legs.vspeed = -5; 
-    obj_Rat_Tail.vspeed = -5; 
-}
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+        
+        vspeed = -5; 
+        obj_Rat_Front_Arm.vspeed = -5; 
+        obj_Rat_Back_Arm.vspeed = -5; 
+        obj_Rat_Body.vspeed = -5; 
+        obj_Rat_Legs.vspeed = -5; 
+        obj_Rat_Tail.vspeed = -5; 
+    }
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -1032,22 +1039,22 @@ if keyboard_check(ord('W')) {
 
 //Down Direction
 
-if keyboard_check(ord('S')) {
-
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3;
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
+    if keyboard_check(ord('S')) {
     
-    vspeed = 5; 
-    obj_Rat_Front_Arm.vspeed = 5; 
-    obj_Rat_Back_Arm.vspeed = 5; 
-    obj_Rat_Body.vspeed = 5; 
-    obj_Rat_Legs.vspeed = 5; 
-    obj_Rat_Tail.vspeed = 5; 
-}
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+        
+        vspeed = 5; 
+        obj_Rat_Front_Arm.vspeed = 5; 
+        obj_Rat_Back_Arm.vspeed = 5; 
+        obj_Rat_Body.vspeed = 5; 
+        obj_Rat_Legs.vspeed = 5; 
+        obj_Rat_Tail.vspeed = 5; 
+    }
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -1055,130 +1062,192 @@ if keyboard_check(ord('S')) {
 
 //If keys are released while walking, R.A.T. returns to its idle stance
 
-if keyboard_check_released(ord('D')) {
+    if keyboard_check_released(ord('D')) {
+        
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+              
+        hspeed = 0; 
+        obj_Rat_Front_Arm.hspeed = 0; 
+        obj_Rat_Back_Arm.hspeed = 0; 
+        obj_Rat_Body.hspeed = 0; 
+        obj_Rat_Legs.hspeed = 0; 
+        obj_Rat_Tail.hspeed = 0; 
+            
+        vspeed = 0; 
+        obj_Rat_Front_Arm.vspeed = 0; 
+        obj_Rat_Back_Arm.vspeed = 0; 
+        obj_Rat_Body.vspeed = 0; 
+        obj_Rat_Legs.vspeed = 0; 
+        obj_Rat_Tail.vspeed = 0; 
+            
+        walk_up_left = false;
+        walk_up_right = false;
+        walk_down_left = false;
+        walk_down_right = false;
+    }
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
     
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3;
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
+    if keyboard_check_released(ord('A')) {
+    
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
           
-    hspeed = 0; 
-    obj_Rat_Front_Arm.hspeed = 0; 
-    obj_Rat_Back_Arm.hspeed = 0; 
-    obj_Rat_Body.hspeed = 0; 
-    obj_Rat_Legs.hspeed = 0; 
-    obj_Rat_Tail.hspeed = 0; 
+        vspeed = 0; 
+        obj_Rat_Front_Arm.vspeed = 0; 
+        obj_Rat_Back_Arm.vspeed = 0; 
+        obj_Rat_Body.vspeed = 0; 
+        obj_Rat_Legs.vspeed = 0; 
+        obj_Rat_Tail.vspeed = 0; 
         
-    vspeed = 0; 
-    obj_Rat_Front_Arm.vspeed = 0; 
-    obj_Rat_Back_Arm.vspeed = 0; 
-    obj_Rat_Body.vspeed = 0; 
-    obj_Rat_Legs.vspeed = 0; 
-    obj_Rat_Tail.vspeed = 0; 
+        hspeed = 0; 
+        obj_Rat_Front_Arm.hspeed = 0; 
+        obj_Rat_Back_Arm.hspeed = 0; 
+        obj_Rat_Body.hspeed = 0; 
+        obj_Rat_Legs.hspeed = 0; 
+        obj_Rat_Tail.hspeed = 0; 
+            
+        walk_up_left = false;
+        walk_up_right = false;
+        walk_down_left = false;
+        walk_down_right = false;
+    }
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+    
+    if keyboard_check_released(ord('W')) {
+    
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+          
+        hspeed = 0; 
+        obj_Rat_Front_Arm.hspeed = 0; 
+        obj_Rat_Back_Arm.hspeed = 0; 
+        obj_Rat_Body.hspeed = 0; 
+        obj_Rat_Legs.hspeed = 0; 
+        obj_Rat_Tail.hspeed = 0; 
         
-    walk_up_left = false;
-    walk_up_right = false;
-    walk_down_left = false;
-    walk_down_right = false;
+        vspeed = 0; 
+        obj_Rat_Front_Arm.vspeed = 0; 
+        obj_Rat_Back_Arm.vspeed = 0; 
+        obj_Rat_Body.vspeed = 0; 
+        obj_Rat_Legs.vspeed = 0; 
+        obj_Rat_Tail.vspeed = 0; 
+        
+        walk_up_left = false;
+        walk_up_right = false;
+        walk_down_left = false;
+        walk_down_right = false;
+    }
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+    
+    if keyboard_check_released(ord('S')) {
+    
+        image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+        
+        vspeed = 0; 
+        obj_Rat_Front_Arm.vspeed = 0; 
+        obj_Rat_Back_Arm.vspeed = 0; 
+        obj_Rat_Body.vspeed = 0; 
+        obj_Rat_Legs.vspeed = 0; 
+        obj_Rat_Tail.vspeed = 0; 
+          
+        hspeed = 0; 
+        obj_Rat_Front_Arm.hspeed = 0; 
+        obj_Rat_Back_Arm.hspeed = 0; 
+        obj_Rat_Body.hspeed = 0; 
+        obj_Rat_Legs.hspeed = 0; 
+        obj_Rat_Tail.hspeed = 0; 
+            
+        walk_up_left = false;
+        walk_up_right = false;
+        walk_down_left = false;
+        walk_down_right = false;
+            
+    }
+
+//End animation for stun
+
+if  (sprite_index = spr_Head_Standard_Stun_Down_Left) and 
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Left) and 
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Left) and 
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Left) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Left) {
+    
+    sprite_index = spr_Head_Standard_Idle_Down_Left;
+    obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Left;
+    obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Down_Left;
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left;
+    obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Down_Left;
+    obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Down_Left;
 }
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
+if  (sprite_index = spr_Head_Standard_Stun_Down_Right) and 
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Right) and 
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Right) and 
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Right) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Right) {
     
-if keyboard_check_released(ord('A')) {
-
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3;
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
-      
-    vspeed = 0; 
-    obj_Rat_Front_Arm.vspeed = 0; 
-    obj_Rat_Back_Arm.vspeed = 0; 
-    obj_Rat_Body.vspeed = 0; 
-    obj_Rat_Legs.vspeed = 0; 
-    obj_Rat_Tail.vspeed = 0; 
-    
-    hspeed = 0; 
-    obj_Rat_Front_Arm.hspeed = 0; 
-    obj_Rat_Back_Arm.hspeed = 0; 
-    obj_Rat_Body.hspeed = 0; 
-    obj_Rat_Legs.hspeed = 0; 
-    obj_Rat_Tail.hspeed = 0; 
-        
-    walk_up_left = false;
-    walk_up_right = false;
-    walk_down_left = false;
-    walk_down_right = false;
+    sprite_index = spr_Head_Standard_Idle_Down_Right;
+    obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Right;
+    obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Down_Right;
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right;
+    obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Down_Right;
+    obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Down_Right;
 }
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
+if  (sprite_index = spr_Head_Standard_Stun_Up_Left) and 
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Left) and 
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Left) and 
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Left) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Left) {
     
-if keyboard_check_released(ord('W')) {
-
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3;
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
-      
-    hspeed = 0; 
-    obj_Rat_Front_Arm.hspeed = 0; 
-    obj_Rat_Back_Arm.hspeed = 0; 
-    obj_Rat_Body.hspeed = 0; 
-    obj_Rat_Legs.hspeed = 0; 
-    obj_Rat_Tail.hspeed = 0; 
-    
-    vspeed = 0; 
-    obj_Rat_Front_Arm.vspeed = 0; 
-    obj_Rat_Back_Arm.vspeed = 0; 
-    obj_Rat_Body.vspeed = 0; 
-    obj_Rat_Legs.vspeed = 0; 
-    obj_Rat_Tail.vspeed = 0; 
-    
-    walk_up_left = false;
-    walk_up_right = false;
-    walk_down_left = false;
-    walk_down_right = false;
+    sprite_index = spr_Head_Standard_Idle_Up_Left;
+    obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Left;
+    obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Up_Left;
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left;
+    obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Left;
+    obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Up_Left;
 }
 
-//////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////
+if  (sprite_index = spr_Head_Standard_Stun_Up_Right) and 
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Right) and 
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Right) and 
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Right) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Right) {
     
-if keyboard_check_released(ord('S')) {
-
-    image_speed = 0.3;
-    obj_Rat_Front_Arm.image_speed = 0.3;
-    obj_Rat_Back_Arm.image_speed = 0.3;
-    obj_Rat_Body.image_speed = 0.3;
-    obj_Rat_Legs.image_speed = 0.3;
-    obj_Rat_Tail.image_speed = 0.3;
-    
-    vspeed = 0; 
-    obj_Rat_Front_Arm.vspeed = 0; 
-    obj_Rat_Back_Arm.vspeed = 0; 
-    obj_Rat_Body.vspeed = 0; 
-    obj_Rat_Legs.vspeed = 0; 
-    obj_Rat_Tail.vspeed = 0; 
-      
-    hspeed = 0; 
-    obj_Rat_Front_Arm.hspeed = 0; 
-    obj_Rat_Back_Arm.hspeed = 0; 
-    obj_Rat_Body.hspeed = 0; 
-    obj_Rat_Legs.hspeed = 0; 
-    obj_Rat_Tail.hspeed = 0; 
-        
-    walk_up_left = false;
-    walk_up_right = false;
-    walk_down_left = false;
-    walk_down_right = false;
-        
+    sprite_index = spr_Head_Standard_Idle_Up_Right;
+    obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Right;
+    obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Up_Right;
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right;
+    obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Right;
+    obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Up_Right;
 }
 </string>
           </argument>
@@ -1216,7 +1285,7 @@ if global.Player_Health == 3 or global.Player_Health == 2 {
     
 }
 
-if global.Player_Health == 1 {
+if global.Player_Health &lt;= 1 {
 
     draw_self();
     draw_sprite(spr_Low_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
