@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_Potatogun</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Rat">
       <sprites name="Animations">
@@ -182,6 +184,14 @@
             <sprite>sprites\spr_Bullbug_Walking_Left</sprite>
             <sprite>sprites\spr_Bullbug_Walking_Right</sprite>
           </sprites>
+          <sprites name="Charge">
+            <sprite>sprites\spr_Bullbug_Charge_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Charge_Right</sprite>
+          </sprites>
+          <sprites name="Rush">
+            <sprite>sprites\spr_Bullbug_Rush_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Rush_Right</sprite>
+          </sprites>
         </sprites>
       </sprites>
     </sprites>
@@ -214,10 +224,10 @@
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\spr_Particle_Walkdust</sprite>
+      <sprite>sprites\spr_Particle_Rage</sprite>
       <sprites name="Bullets">
         <sprite>sprites\spr_Bullet_Potato</sprite>
       </sprites>
-      <sprite>sprites\sprite104</sprite>
       <sprites name="Turn ">
         <sprite>sprites\spr_Particle_Turn_Left</sprite>
         <sprite>sprites\spr_Particle_Turn_Right</sprite>
@@ -243,6 +253,9 @@
     </sprites>
     <sprites name="Interactables">
       <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
+    </sprites>
+    <sprites name="Pickups">
+      <sprite>sprites\spr_Pickup_Cheese</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
