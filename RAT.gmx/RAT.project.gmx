@@ -6,6 +6,12 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_Potatogun</sound>
+    <sound>sound\snd_Heartbeat</sound>
+    <sounds name="Rat">
+      <sound>sound\snd_Hurt</sound>
+      <sound>sound\snd_Hurt2</sound>
+      <sound>sound\snd_Hurt3</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Rat">
