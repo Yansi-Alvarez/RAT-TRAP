@@ -5,12 +5,29 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_Potatogun</sound>
+    <sound>sound\snd_Radio</sound>
     <sound>sound\snd_Heartbeat</sound>
     <sounds name="Rat">
       <sound>sound\snd_Hurt</sound>
       <sound>sound\snd_Hurt2</sound>
       <sound>sound\snd_Hurt3</sound>
+      <sound>sound\snd_Footstep1</sound>
+      <sound>sound\snd_Footstep2</sound>
+      <sound>sound\snd_Death</sound>
+    </sounds>
+    <sounds name="Enemies">
+      <sound>sound\snd_Chitter</sound>
+      <sound>sound\snd_Bug</sound>
+      <sound>sound\snd_Bug2</sound>
+      <sound>sound\snd_Moth</sound>
+      <sound>sound\snd_Boss_Moth</sound>
+      <sound>sound\snd_Chitter2</sound>
+      <sound>sound\snd_Spider</sound>
+      <sound>sound\snd_Beesquito_Buzz</sound>
+    </sounds>
+    <sounds name="Weapons">
+      <sound>sound\snd_Handgun</sound>
+      <sound>sound\snd_Potatogun</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -197,6 +214,28 @@
           <sprites name="Rush">
             <sprite>sprites\spr_Bullbug_Rush_Left</sprite>
             <sprite>sprites\spr_Bullbug_Rush_Right</sprite>
+            <sprite>sprites\spr_Bullbug_Rush_Down</sprite>
+            <sprite>sprites\spr_Bullbug_Rush_Up</sprite>
+          </sprites>
+          <sprites name="Hitstun">
+            <sprite>sprites\spr_Bullbug_Hitstun_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Hitstun_Right</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Beesquito">
+        <sprites name="Pieces">
+          <sprite>sprites\spr_Beesquito</sprite>
+          <sprite>sprites\spr_Beesquito_Fired</sprite>
+        </sprites>
+        <sprites name="Animations">
+          <sprites name="Flying">
+            <sprite>sprites\spr_Beesquito_Flying</sprite>
+            <sprite>sprites\spr_Beesquito_Flying_Fired</sprite>
+          </sprites>
+          <sprites name="Hitstun">
+            <sprite>sprites\spr_Beesquito_Hitstun</sprite>
+            <sprite>sprites\spr_Beesquito_Hitstun_Fired</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -238,6 +277,11 @@
         <sprite>sprites\spr_Particle_Turn_Left</sprite>
         <sprite>sprites\spr_Particle_Turn_Right</sprite>
       </sprites>
+      <sprites name="Enemies">
+        <sprites name="Beesquito">
+          <sprite>sprites\spr_Beesquito_Horn</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
@@ -259,9 +303,9 @@
     </sprites>
     <sprites name="Interactables">
       <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
-    </sprites>
-    <sprites name="Pickups">
-      <sprite>sprites\spr_Pickup_Cheese</sprite>
+      <sprites name="Pickups">
+        <sprite>sprites\spr_Pickup_Cheese</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
