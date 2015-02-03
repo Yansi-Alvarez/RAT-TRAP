@@ -46,6 +46,31 @@ hspeed = 0;
 vspeed = 0;
 
 alarm_zero = 0;
+
+knock_back_speed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>knock_back_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -92,6 +117,7 @@ alarm_zero = 0;
           <argument>
             <kind>1</kind>
             <string>alarm_zero = 15;
+knock_back_speed = 15;
 
 //Stun animation for down left
 if  (sprite_index = spr_Body_Standard_Idle_Down_Left) or
@@ -224,6 +250,32 @@ if  (sprite_index = spr_Body_Standard_Idle_Up_Right) or
         alarm[0] = alarm_zero;
     }
 }
+
+///////////////////////////////////////////////////////////
+
+//Knockback for collision
+
+obj_Rat_Head.direction = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Head.x, obj_Rat_Head.y)     
+obj_Rat_Body.direction = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Body.x, obj_Rat_Body.y)
+obj_Rat_Front_Arm.direction = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Front_Arm.x, obj_Rat_Front_Arm.y)     
+obj_Rat_Back_Arm.direction = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Back_Arm.x, obj_Rat_Back_Arm.y)
+obj_Rat_Legs.direction = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Legs.x, obj_Rat_Legs.y)     
+obj_Rat_Tail.direction = point_direction(obj_Bullbug.x, obj_Bullbug.y, obj_Rat_Tail.x, obj_Rat_Tail.y)
+
+obj_Rat_Head.speed = knock_back_speed;    
+obj_Rat_Body.speed = knock_back_speed;
+obj_Rat_Front_Arm.speed = knock_back_speed;     
+obj_Rat_Back_Arm.speed = knock_back_speed;
+obj_Rat_Legs.speed = knock_back_speed;     
+obj_Rat_Tail.speed = knock_back_speed;
+
+alarm[1] = 30;
+
+
+
+
+
+        
 </string>
           </argument>
         </arguments>
