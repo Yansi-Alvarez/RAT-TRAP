@@ -578,7 +578,7 @@ if ((instance_exists(obj_Rat_Head)) and (head == false)) {
     //instance_create(obj_Rat_Head.x - 50,obj_Rat_Head.y,obj_Gun_2)
     
     //Spawning Enemy
-    //instance_create(obj_Rat_Head.x + 200, obj_Rat_Head.y + 50, obj_Bullbug)
+    instance_create(obj_Rat_Head.x + 200, obj_Rat_Head.y + 150, obj_Bullbug)
     
     //Cursor Code
     instance_create(mouse_x, mouse_y, obj_Cursor)

@@ -324,21 +324,24 @@
     </objects>
     <objects name="Weapons">
       <object>objects\obj_Potato_Handgun</object>
+      <object>objects\obj_Parent_Gun</object>
       <object>objects\obj_Gun_Back_Up</object>
       <object>objects\obj_Gun_2</object>
     </objects>
     <objects name="Projectiles">
       <object>objects\obj_Potato_Bullet</object>
+      <object>objects\obj_Parent_Bullet</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_Bullbug</object>
+      <object>objects\obj_Parent_Enemy</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42033.9208745139</constant>
+    <constant name="GM_build_date">42038.9790230093</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
