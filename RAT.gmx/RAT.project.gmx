@@ -221,6 +221,10 @@
             <sprite>sprites\spr_Bullbug_Hitstun_Left</sprite>
             <sprite>sprites\spr_Bullbug_Hitstun_Right</sprite>
           </sprites>
+          <sprites name="Death">
+            <sprite>sprites\spr_Bullbug_Death_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Death_Right</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Beesquito">
@@ -237,12 +241,17 @@
             <sprite>sprites\spr_Beesquito_Hitstun</sprite>
             <sprite>sprites\spr_Beesquito_Hitstun_Fired</sprite>
           </sprites>
+          <sprites name="Death">
+            <sprite>sprites\spr_Beesquito_Death_Fired</sprite>
+            <sprite>sprites\spr_Beesquito_Death</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Dung Beetle">
         <sprites name="Pieces">
           <sprite>sprites\spr_Dung_Up</sprite>
           <sprite>sprites\spr_Dung_Down</sprite>
+          <sprite>sprites\spr_Dung_Death_Down</sprite>
         </sprites>
         <sprites name="Animations">
           <sprites name="Shield">
@@ -260,6 +269,9 @@
           <sprites name="Charge">
             <sprite>sprites\spr_Dung_Charge_Down</sprite>
             <sprite>sprites\spr_Dung_Charge_Up</sprite>
+          </sprites>
+          <sprites name="Death">
+            <sprite>sprites\spr_Dung_Death_Up</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -312,6 +324,11 @@
           <sprite>sprites\spr_Dungball_Mega</sprite>
         </sprites>
       </sprites>
+      <sprites name="Death">
+        <sprite>sprites\spr_Death1</sprite>
+        <sprite>sprites\spr_Death_Particle_0</sprite>
+        <sprite>sprites\spr_Death_Particle_1</sprite>
+      </sprites>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
@@ -340,7 +357,6 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <shaders name="shaders"/>
   <fonts name="fonts">
     <font>fonts\Title_Font</font>
   </fonts>
