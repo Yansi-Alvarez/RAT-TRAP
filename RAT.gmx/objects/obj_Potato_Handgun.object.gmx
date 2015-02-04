@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_Gun</parentName>
+  <parentName>obj_Parent_Gun</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,11 +27,59 @@
             <kind>1</kind>
             <string>event_inherited();
 
-//obj_Gun_Used = obj_Potato_Handgun;
+global.obj_Gun_In_Use = obj_Potato_Handgun;
 
-spr_Gun_Left = spr_Handgun_Potato_Left;
+global.sprite_index_Right_Gun_In_Use = spr_Handgun_Potato_Left;
 
-spr_Gun_Right = spr_Handgun_Potato_Right;
+global.sprite_index_Left_Gun_In_Use = spr_Handgun_Potato_Right;
+
+potato_gun_bullet_timer = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>
