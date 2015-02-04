@@ -20,10 +20,13 @@
   <width>78</width>
   <height>40</height>
   <frames>
-    <frame index="0">images\spr_Dung_Shield_Up2_0.png</frame>
-    <frame index="1">images\spr_Dung_Shield_Up2_1.png</frame>
-    <frame index="2">images\spr_Dung_Shield_Up2_2.png</frame>
-    <frame index="3">images\spr_Dung_Shield_Up2_3.png</frame>
-    <frame index="4">images\spr_Dung_Shield_Up2_4.png</frame>
+    <frame index="0">images\spr_Dung_Bettle_Shielding_Up_0.png</frame>
+    <frame index="1">images\spr_Dung_Bettle_Shielding_Up_1.png</frame>
+    <frame index="2">images\spr_Dung_Bettle_Shielding_Up_2.png</frame>
+    <frame index="3">images\spr_Dung_Bettle_Shielding_Up_3.png</frame>
+    <frame index="4">images\spr_Dung_Bettle_Shielding_Up_4.png</frame>
+    <frame index="5">images\spr_Dung_Bettle_Shielding_Up_5.png</frame>
+    <frame index="6">images\spr_Dung_Bettle_Shielding_Up_6.png</frame>
+    <frame index="7">images\spr_Dung_Bettle_Shielding_Up_7.png</frame>
   </frames>
 </sprite>
