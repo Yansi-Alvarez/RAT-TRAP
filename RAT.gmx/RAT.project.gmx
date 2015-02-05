@@ -221,6 +221,10 @@
             <sprite>sprites\spr_Bullbug_Hitstun_Left</sprite>
             <sprite>sprites\spr_Bullbug_Hitstun_Right</sprite>
           </sprites>
+          <sprites name="Death">
+            <sprite>sprites\spr_Bullbug_Death_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Death_Right</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Beesquito">
@@ -237,29 +241,37 @@
             <sprite>sprites\spr_Beesquito_Hitstun</sprite>
             <sprite>sprites\spr_Beesquito_Hitstun_Fired</sprite>
           </sprites>
+          <sprites name="Death">
+            <sprite>sprites\spr_Beesquito_Death_Fired</sprite>
+            <sprite>sprites\spr_Beesquito_Death</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Dung Beetle">
         <sprites name="Pieces">
-          <sprite>sprites\spr_Dung_Bettle_Up</sprite>
-          <sprite>sprites\spr_Dung_Bettle_Down</sprite>
+          <sprite>sprites\spr_Dung_Up</sprite>
+          <sprite>sprites\spr_Dung_Down</sprite>
         </sprites>
         <sprites name="Animations">
           <sprites name="Shield">
-            <sprite>sprites\spr_Dung_Bettle_Shielding_Down</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Unshielding_Down</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Shielding_Up</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Unshielding_Up</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Shield_Up_Active</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Shield_Down_Active</sprite>
+            <sprite>sprites\spr_Dung_Shield_Down1</sprite>
+            <sprite>sprites\spr_Dung_Shield_Down2</sprite>
+            <sprite>sprites\spr_Dung_Shield_Up1</sprite>
+            <sprite>sprites\spr_Dung_Shield_Up2</sprite>
+            <sprite>sprites\spr_Dung_Shield_Up_Active</sprite>
+            <sprite>sprites\spr_Dung_Shield_Down_Active</sprite>
           </sprites>
           <sprites name="Hitstun">
-            <sprite>sprites\spr_Dung_Bettle_Hitstun_Up</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Hitstun_Down</sprite>
+            <sprite>sprites\spr_Dung_Hitstun_Up</sprite>
+            <sprite>sprites\spr_Dung_Hitstun_Down</sprite>
           </sprites>
           <sprites name="Charge">
-            <sprite>sprites\spr_Dung_Bettle_Charge_Down</sprite>
-            <sprite>sprites\spr_Dung_Bettle_Charge_Up</sprite>
+            <sprite>sprites\spr_Dung_Charge_Down</sprite>
+            <sprite>sprites\spr_Dung_Charge_Up</sprite>
+          </sprites>
+          <sprites name="Death">
+            <sprite>sprites\spr_Dung_Death_Up</sprite>
+            <sprite>sprites\spr_Dung_Death_Down</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -311,6 +323,11 @@
           <sprite>sprites\spr_Dungball_Large</sprite>
           <sprite>sprites\spr_Dungball_Mega</sprite>
         </sprites>
+      </sprites>
+      <sprites name="Death">
+        <sprite>sprites\spr_Death</sprite>
+        <sprite>sprites\spr_Death_Particle_0</sprite>
+        <sprite>sprites\spr_Death_Particle_1</sprite>
       </sprites>
     </sprites>
     <sprites name="Weapons">
@@ -374,7 +391,7 @@
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42039.0940203819</constant>
+    <constant name="GM_build_date">42038.9790230093</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
