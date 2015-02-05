@@ -222,8 +222,8 @@
             <sprite>sprites\spr_Bullbug_Hitstun_Right</sprite>
           </sprites>
           <sprites name="Death">
-            <sprite>sprites\spr_Bullbug_Death_Left</sprite>
-            <sprite>sprites\spr_Bullbug_Death_Right</sprite>
+            <sprite>sprites\spr_Bullbug_Death_Left2</sprite>
+            <sprite>sprites\spr_Bullbug_Death_Right2</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -242,8 +242,8 @@
             <sprite>sprites\spr_Beesquito_Hitstun_Fired</sprite>
           </sprites>
           <sprites name="Death">
-            <sprite>sprites\spr_Beesquito_Death_Fired</sprite>
-            <sprite>sprites\spr_Beesquito_Death</sprite>
+            <sprite>sprites\spr_Beesquito_Death_Fired2</sprite>
+            <sprite>sprites\spr_Beesquito_Death2</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -270,8 +270,8 @@
             <sprite>sprites\spr_Dung_Charge_Up</sprite>
           </sprites>
           <sprites name="Death">
-            <sprite>sprites\spr_Dung_Death_Up</sprite>
-            <sprite>sprites\spr_Dung_Death_Down</sprite>
+            <sprite>sprites\spr_Dung_Death_Up2</sprite>
+            <sprite>sprites\spr_Dung_Death_Down2</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -325,9 +325,9 @@
         </sprites>
       </sprites>
       <sprites name="Death">
-        <sprite>sprites\spr_Death</sprite>
-        <sprite>sprites\spr_Death_Particle_0</sprite>
-        <sprite>sprites\spr_Death_Particle_1</sprite>
+        <sprite>sprites\spr_Death2</sprite>
+        <sprite>sprites\spr_Death_Particle_02</sprite>
+        <sprite>sprites\spr_Death_Particle_12</sprite>
       </sprites>
     </sprites>
     <sprites name="Weapons">
