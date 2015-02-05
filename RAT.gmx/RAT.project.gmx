@@ -251,7 +251,6 @@
         <sprites name="Pieces">
           <sprite>sprites\spr_Dung_Up</sprite>
           <sprite>sprites\spr_Dung_Down</sprite>
-          <sprite>sprites\spr_Dung_Death_Down</sprite>
         </sprites>
         <sprites name="Animations">
           <sprites name="Shield">
@@ -272,6 +271,7 @@
           </sprites>
           <sprites name="Death">
             <sprite>sprites\spr_Dung_Death_Up</sprite>
+            <sprite>sprites\spr_Dung_Death_Down</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -325,7 +325,7 @@
         </sprites>
       </sprites>
       <sprites name="Death">
-        <sprite>sprites\spr_Death1</sprite>
+        <sprite>sprites\spr_Death</sprite>
         <sprite>sprites\spr_Death_Particle_0</sprite>
         <sprite>sprites\spr_Death_Particle_1</sprite>
       </sprites>
