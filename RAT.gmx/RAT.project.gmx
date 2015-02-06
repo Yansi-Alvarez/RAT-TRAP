@@ -148,6 +148,44 @@
             </sprites>
           </sprites>
         </sprites>
+        <sprites name="Death">
+          <sprites name="Down">
+            <sprites name="Left">
+              <sprite>sprites\spr_Legs_Standard_Death_Down_Left</sprite>
+              <sprite>sprites\spr_Body_Standard_Death_Down_Left</sprite>
+              <sprite>sprites\spr_Back_Arm_Standard_Death_Down_Left</sprite>
+              <sprite>sprites\spr_Front_Arm_Standard_Death_Down_Left</sprite>
+              <sprite>sprites\spr_Head_Standard_Death_Down_Left</sprite>
+              <sprite>sprites\spr_Tail_Standard_Death_Down_Left</sprite>
+            </sprites>
+            <sprites name="Right">
+              <sprite>sprites\spr_Legs_Standard_Death_Down_Right</sprite>
+              <sprite>sprites\spr_Body_Standard_Death_Down_Right</sprite>
+              <sprite>sprites\spr_Back_Arm_Standard_Death_Down_Right</sprite>
+              <sprite>sprites\spr_Front_Arm_Standard_Death_Down_Right</sprite>
+              <sprite>sprites\spr_Head_Standard_Death_Down_Right</sprite>
+              <sprite>sprites\spr_Tail_Standard_Death_Down_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Up">
+            <sprites name="Left">
+              <sprite>sprites\spr_Body_Standard_Death_Up_Left</sprite>
+              <sprite>sprites\spr_Back_Arm_Standard_Death_Up_Left</sprite>
+              <sprite>sprites\spr_Head_Standard_Death_Up_Left</sprite>
+              <sprite>sprites\spr_Legs_Standard_Death_Up_Left</sprite>
+              <sprite>sprites\spr_Tail_Standard_Death_Up_Left</sprite>
+              <sprite>sprites\spr_Front_Arm_Standard_Death_Up_Left</sprite>
+            </sprites>
+            <sprites name="Right">
+              <sprite>sprites\spr_Body_Standard_Death_Up_Right</sprite>
+              <sprite>sprites\spr_Back_Arm_Standard_Death_Up_Right</sprite>
+              <sprite>sprites\spr_Head_Standard_Death_Up_Right</sprite>
+              <sprite>sprites\spr_Legs_Standard_Death_Up_Right</sprite>
+              <sprite>sprites\spr_Tail_Standard_Death_Up_Right</sprite>
+              <sprite>sprites\spr_Front_Arm_Standard_Death_Up_Right</sprite>
+            </sprites>
+          </sprites>
+        </sprites>
       </sprites>
       <sprite>sprites\Example_Front</sprite>
       <sprite>sprites\Example_Up</sprite>
@@ -329,6 +367,11 @@
         <sprite>sprites\spr_Death_Particle_02</sprite>
         <sprite>sprites\spr_Death_Particle_12</sprite>
       </sprites>
+      <sprites name="Rat">
+        <sprites name="Spawn">
+          <sprite>sprites\spr_Particle_Spawn_Pulse</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
@@ -352,6 +395,11 @@
       <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
       <sprites name="Pickups">
         <sprite>sprites\spr_Pickup_Cheese</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Home Base">
+      <sprites name="Upgrade Page">
+        <sprite>sprites\spr_Upgrade_Background</sprite>
       </sprites>
     </sprites>
   </sprites>
