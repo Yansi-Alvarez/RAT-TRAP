@@ -575,6 +575,8 @@ if ((instance_exists(obj_Rat_Head)) and (head == false)) {
     
     //Spawning for pistol
     instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+    //instance_create(obj_Rat_Head.x + 90,obj_Rat_Head.y,obj_Beretta)
+    //instance_create(obj_Rat_Head.x + 150,obj_Rat_Head.y,obj_Pump_Shotgun)
     //instance_create(obj_Rat_Head.x - 50,obj_Rat_Head.y,obj_Gun_2)
     
     //Spawning Enemy

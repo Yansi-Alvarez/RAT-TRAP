@@ -324,29 +324,36 @@
       </sprites>
     </sprites>
     <sprites name="Stages">
-      <sprites name="Tile">
-        <sprite>sprites\spr_Tile</sprite>
-        <sprite>sprites\spr_Tile_Upper_Right</sprite>
-        <sprite>sprites\spr_Tile_Upper_Left</sprite>
-        <sprite>sprites\spr_Tile_Bottom_Left</sprite>
-        <sprite>sprites\spr_Tile_Bottom_Right</sprite>
-        <sprite>sprites\spr_Tile_Bottom</sprite>
-        <sprite>sprites\spr_Tile_Right</sprite>
-        <sprite>sprites\spr_Tile_Left</sprite>
-        <sprite>sprites\spr_Tile_Top</sprite>
-        <sprite>sprites\spr_Tile_Corner_Upper_Right</sprite>
-        <sprite>sprites\spr_Tile_Corner_Upper_Left</sprite>
-        <sprite>sprites\spr_Tile_Corner_Bottom_Right</sprite>
-        <sprite>sprites\spr_Tile_Corner_Bottom_Left</sprite>
-      </sprites>
       <sprite>sprites\Stage_Test_Tile</sprite>
+      <sprites name="Walls">
+        <sprite>sprites\spr_Wall_Lab_Test</sprite>
+        <sprite>sprites\spr_Wall_Lab</sprite>
+        <sprite>sprites\spr_Wall_Lab_Full</sprite>
+      </sprites>
+      <sprites name="Floors">
+        <sprites name="Tile">
+          <sprite>sprites\spr_Tile</sprite>
+          <sprite>sprites\spr_Tile_Upper_Right</sprite>
+          <sprite>sprites\spr_Tile_Upper_Left</sprite>
+          <sprite>sprites\spr_Tile_Bottom_Left</sprite>
+          <sprite>sprites\spr_Tile_Bottom_Right</sprite>
+          <sprite>sprites\spr_Tile_Bottom</sprite>
+          <sprite>sprites\spr_Tile_Right</sprite>
+          <sprite>sprites\spr_Tile_Left</sprite>
+          <sprite>sprites\spr_Tile_Top</sprite>
+          <sprite>sprites\spr_Tile_Corner_Upper_Right</sprite>
+          <sprite>sprites\spr_Tile_Corner_Upper_Left</sprite>
+          <sprite>sprites\spr_Tile_Corner_Bottom_Right</sprite>
+          <sprite>sprites\spr_Tile_Corner_Bottom_Left</sprite>
+        </sprites>
+        <sprites name="Concrete">
+          <sprite>sprites\spr_Concrete</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\spr_Particle_Walkdust</sprite>
       <sprite>sprites\spr_Particle_Rage</sprite>
-      <sprites name="Bullets">
-        <sprite>sprites\spr_Bullet_Potato</sprite>
-      </sprites>
       <sprites name="Turn ">
         <sprite>sprites\spr_Particle_Turn_Left</sprite>
         <sprite>sprites\spr_Particle_Turn_Right</sprite>
@@ -372,6 +379,22 @@
           <sprite>sprites\spr_Particle_Spawn_Pulse</sprite>
         </sprites>
       </sprites>
+      <sprites name="Weapons">
+        <sprites name="Bullets">
+          <sprites name="Handguns">
+            <sprite>sprites\spr_Bullet_Potato</sprite>
+            <sprite>sprites\spr_Bullet_Beretta</sprite>
+          </sprites>
+          <sprites name="Shotguns">
+            <sprite>sprites\spr_Bullet_Shotgun</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Casings">
+          <sprite>sprites\spr_Casing_Handgun</sprite>
+          <sprite>sprites\spr_Casing_Shotgun</sprite>
+        </sprites>
+        <sprite>sprites\spr_Particle_Muzzle_Flash</sprite>
+      </sprites>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
@@ -383,11 +406,31 @@
         </sprites>
       </sprites>
       <sprites name="Ranged">
-        <sprites name="Handgun">
+        <sprites name="Handguns">
           <sprites name="Potatogun">
             <sprite>sprites\spr_Handgun_Potato_Right</sprite>
             <sprite>sprites\spr_Handgun_Potato_Left</sprite>
           </sprites>
+          <sprites name="Beretta">
+            <sprite>sprites\spr_Handgun_Beretta_Left</sprite>
+            <sprite>sprites\spr_Handgun_Beretta_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Handgun_Beretta_Fire_Left</sprite>
+              <sprite>sprites\spr_Handgun_Beretta_Fire_Right</sprite>
+            </sprites>
+          </sprites>
+        </sprites>
+        <sprites name="Shotguns">
+          <sprites name="Pump Action">
+            <sprite>sprites\spr_Shotgun_Pump_Left</sprite>
+            <sprite>sprites\spr_Shotgun_Pump_Right</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Attachables">
+        <sprites name="Flashlight">
+          <sprite>sprites\spr_Flashlight_Left</sprite>
+          <sprite>sprites\spr_Flashlight_Right</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -403,7 +446,10 @@
       </sprites>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bkgd</background>
+    <background>background\bkgd_Concrete</background>
+  </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\Title_Font</font>
@@ -421,18 +467,29 @@
       <object>objects\obj_Cursor</object>
     </objects>
     <objects name="Weapons">
-      <object>objects\obj_Potato_Handgun</object>
       <object>objects\obj_Parent_Gun</object>
-      <object>objects\obj_Gun_Back_Up</object>
-      <object>objects\obj_Gun_2</object>
+      <objects name="Handguns">
+        <object>objects\obj_Potato_Handgun</object>
+        <object>objects\obj_Gun_2</object>
+        <object>objects\obj_Gun_Back_Up</object>
+        <object>objects\obj_Beretta</object>
+      </objects>
+      <objects name="Shotguns">
+        <object>objects\obj_Pump_Shotgun</object>
+      </objects>
     </objects>
     <objects name="Projectiles">
       <object>objects\obj_Potato_Bullet</object>
       <object>objects\obj_Parent_Bullet</object>
+      <object>objects\obj_Handgun_Bullet</object>
+      <object>objects\obj_Pump_Shotgun_Bullet</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_Bullbug</object>
       <object>objects\obj_Parent_Enemy</object>
+    </objects>
+    <objects name="Particles">
+      <object>objects\obj_Muzzle_Flash</object>
     </objects>
   </objects>
   <rooms name="rooms">
