@@ -317,10 +317,16 @@
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor</sprite>
       <sprite>sprites\spr_Screen_Overlay</sprite>
+      <sprite>sprites\spr_Pointer</sprite>
       <sprites name="Health">
         <sprite>sprites\spr_Full_Health</sprite>
         <sprite>sprites\spr_Medium_Health</sprite>
         <sprite>sprites\spr_Low_Health</sprite>
+      </sprites>
+      <sprites name="Menus">
+        <sprites name="Title">
+          <sprite>sprites\spr_Input_Error</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Stages">
@@ -352,6 +358,7 @@
       </sprites>
     </sprites>
     <sprites name="Particles">
+      <sprite>sprites\spr_Particle_Charge_Bar</sprite>
       <sprite>sprites\spr_Particle_Walkdust</sprite>
       <sprite>sprites\spr_Particle_Rage</sprite>
       <sprites name="Turn ">
@@ -439,6 +446,11 @@
       <sprites name="Pickups">
         <sprite>sprites\spr_Pickup_Cheese</sprite>
       </sprites>
+      <sprites name="Machines">
+        <sprite>sprites\spr_Intr_Machine</sprite>
+        <sprite>sprites\spr_Intr_Machine_On</sprite>
+        <sprite>sprites\spr_Intr_Passkey</sprite>
+      </sprites>
     </sprites>
     <sprites name="Home Base">
       <sprites name="Upgrade Page">
@@ -449,6 +461,7 @@
   <backgrounds name="background">
     <background>background\bkgd</background>
     <background>background\bkgd_Concrete</background>
+    <background>background\bkgd_Title</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
