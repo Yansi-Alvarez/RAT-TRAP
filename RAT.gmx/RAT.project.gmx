@@ -356,6 +356,20 @@
           <sprite>sprites\spr_Concrete</sprite>
         </sprites>
       </sprites>
+      <sprites name="Home">
+        <sprites name="Cage">
+          <sprite>sprites\spr_Glass</sprite>
+          <sprite>sprites\spr_Cage_Screen_Overlay</sprite>
+          <sprites name="Brood Rat">
+            <sprite>sprites\spr_Brood_Rat_Idle</sprite>
+            <sprite>sprites\spr_Brood_Rat_Wink</sprite>
+          </sprites>
+          <sprites name="Stinky Pinky">
+            <sprite>sprites\spr_Stinky_Pinky_Idle</sprite>
+            <sprite>sprites\spr_Stinky_Pinky_Talk</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\spr_Particle_Charge_Bar</sprite>
@@ -477,6 +491,8 @@
     <background>background\bkgd_Concrete</background>
     <background>background\bkgd_Title</background>
     <background>background\bkgd_Upgrade</background>
+    <background>background\bkgd_Cage</background>
+    <background>background\bkgd_Home_Example</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
