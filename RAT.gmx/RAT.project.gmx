@@ -387,29 +387,48 @@
         </sprites>
       </sprites>
       <sprites name="Weapons">
-        <sprites name="Bullets">
-          <sprites name="Handguns">
-            <sprite>sprites\spr_Bullet_Potato</sprite>
-            <sprite>sprites\spr_Bullet_Beretta</sprite>
+        <sprites name="Ranged">
+          <sprites name="Bullets">
+            <sprites name="Handguns">
+              <sprite>sprites\spr_Bullet_Potato</sprite>
+              <sprite>sprites\spr_Bullet_Beretta</sprite>
+            </sprites>
+            <sprites name="Shotguns">
+              <sprite>sprites\spr_Bullet_Shotgun</sprite>
+            </sprites>
           </sprites>
-          <sprites name="Shotguns">
-            <sprite>sprites\spr_Bullet_Shotgun</sprite>
+          <sprites name="Casings">
+            <sprite>sprites\spr_Casing_Handgun</sprite>
+            <sprite>sprites\spr_Casing_Shotgun</sprite>
           </sprites>
+          <sprite>sprites\spr_Particle_Muzzle_Flash</sprite>
         </sprites>
-        <sprites name="Casings">
-          <sprite>sprites\spr_Casing_Handgun</sprite>
-          <sprite>sprites\spr_Casing_Shotgun</sprite>
+        <sprites name="Melee">
+          <sprite>sprites\spr_Particle_Slash_Left_Test</sprite>
+          <sprite>sprites\spr_Particle_Slash_Right</sprite>
+          <sprite>sprites\spr_Particle_Slash_Left</sprite>
         </sprites>
-        <sprite>sprites\spr_Particle_Muzzle_Flash</sprite>
       </sprites>
+      <sprite>sprites\spr_Particle_Shock</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
-        <sprites name="Left">
-          <sprite>sprites\spr_Sword_Basic_Left</sprite>
+        <sprites name="One-Handed">
+          <sprites name="Basic Sword">
+            <sprites name="Left">
+              <sprite>sprites\spr_Sword_Basic_Left</sprite>
+            </sprites>
+            <sprites name="Right">
+              <sprite>sprites\spr_Sword_Basic_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Stick">
+            <sprite>sprites\spr_Stick</sprite>
+          </sprites>
         </sprites>
-        <sprites name="Right">
-          <sprite>sprites\spr_Sword_Basic_Right</sprite>
+        <sprites name="Two-Handed">
+          <sprite>sprites\spr_Morningstar_Left</sprite>
+          <sprite>sprites\spr_Morningstar_Right</sprite>
         </sprites>
       </sprites>
       <sprites name="Ranged">
@@ -452,16 +471,12 @@
         <sprite>sprites\spr_Intr_Passkey</sprite>
       </sprites>
     </sprites>
-    <sprites name="Home Base">
-      <sprites name="Upgrade Page">
-        <sprite>sprites\spr_Upgrade_Background</sprite>
-      </sprites>
-    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd</background>
     <background>background\bkgd_Concrete</background>
     <background>background\bkgd_Title</background>
+    <background>background\bkgd_Upgrade</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
