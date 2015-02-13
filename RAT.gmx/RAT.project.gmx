@@ -24,6 +24,7 @@
       <sound>sound\snd_Chitter2</sound>
       <sound>sound\snd_Spider</sound>
       <sound>sound\snd_Beesquito_Buzz</sound>
+      <sound>sound\snd_Enemy_Death</sound>
     </sounds>
     <sounds name="Weapons">
       <sound>sound\snd_Handgun</sound>
@@ -487,15 +488,18 @@
     <sprites name="Interactables">
       <sprites name="Pickups">
         <sprite>sprites\spr_Pickup_Cheese</sprite>
+        <sprite>sprites\spr_Pickup_Ammo_Small</sprite>
+        <sprite>sprites\spr_Pickup_Ammo_Large</sprite>
       </sprites>
       <sprites name="Machines">
         <sprite>sprites\spr_Intr_Machine</sprite>
         <sprite>sprites\spr_Intr_Machine_On</sprite>
         <sprite>sprites\spr_Intr_Passkey</sprite>
       </sprites>
-      <sprites name="Loot">
+      <sprites name="Chests">
         <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
         <sprite>sprites\spr_Intr_Treasure_Locked</sprite>
+        <sprite>sprites\spr_Intr_Treasure_Open</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -505,7 +509,6 @@
     <background>background\bkgd_Title</background>
     <background>background\bkgd_Upgrade</background>
     <background>background\bkgd_Cage</background>
-    <background>background\bkgd_example_cage</background>
     <background>background\bkgd_Home_Example</background>
   </backgrounds>
   <paths name="paths"/>
