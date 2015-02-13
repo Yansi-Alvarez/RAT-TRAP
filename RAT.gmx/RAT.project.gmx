@@ -536,10 +536,11 @@
     </objects>
     <objects name="GUI">
       <object>objects\obj_Cursor</object>
+      <object>objects\obj_Pointer</object>
     </objects>
     <objects name="Weapons">
-      <object>objects\obj_Parent_Gun</object>
       <objects name="Handguns">
+        <object>objects\obj_Parent_Gun</object>
         <object>objects\obj_Potato_Handgun</object>
         <object>objects\obj_Gun_2</object>
         <object>objects\obj_Gun_Back_Up</object>
@@ -562,13 +563,25 @@
     <objects name="Particles">
       <object>objects\obj_Muzzle_Flash</object>
       <object>objects\obj_Death</object>
+      <object>objects\obj_Slash</object>
+    </objects>
+    <objects name="Melee">
+      <objects name="One Handed Melee">
+        <object>objects\obj_Parent_One_Handed_Melee</object>
+        <object>objects\obj_Sword</object>
+        <object>objects\obj_Stick</object>
+      </objects>
+      <objects name="Two Handed Melee">
+        <object>objects\obj_Parent_Two_Handed_Melee</object>
+        <object>objects\obj_Morning_Star</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42048.1370373264</constant>
+    <constant name="GM_build_date">42048.844985463</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

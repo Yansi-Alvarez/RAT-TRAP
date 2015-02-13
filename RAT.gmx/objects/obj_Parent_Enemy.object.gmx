@@ -121,17 +121,19 @@ if (distance_to_object(obj_Rat_Body) &lt;= 150) {
 
 //Death for Enemy
 
-if (global.enemy_health == 0) and (sprite_index = global.sprite_index_Stun_Right_Enemy) {
+if (global.enemy_health &lt;= 0) and ((sprite_index = global.sprite_index_Idle_Right_Enemy) or (sprite_index = global.sprite_index_Stun_Right_Enemy) or (sprite_index = global.sprite_index_Walking_Right_Enemy)) {
    
      sprite_index = global.sprite_index_Death_Right_Enemy;
+     global.enemy_speed = 0;
      image_speed = 0.3;
      death_animation = true;
      
 }
 
-if (global.enemy_health == 0) and (sprite_index = global.sprite_index_Stun_Left_Enemy) {
+if (global.enemy_health &lt;= 0) and ((sprite_index = global.sprite_index_Idle_Left_Enemy) or (sprite_index = global.sprite_index_Stun_Left_Enemy) or (sprite_index = global.sprite_index_Walking_Left_Enemy)) {
    
      sprite_index = global.sprite_index_Death_Left_Enemy;
+     global.enemy_speed = 0;
      image_speed = 0.3;
      death_animation = true;
      
@@ -172,8 +174,7 @@ if (global.enemy_death == true) {
           <argument>
             <kind>1</kind>
             <string>if (sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (sprite_index = global.sprite_index_Idle_Right_Enemy) or
-    (sprite_index = global.sprite_index_Stun_Right_Enemy) {
+    (sprite_index = global.sprite_index_Idle_Right_Enemy) {
     
     global.enemy_health = global.enemy_health - 1;    
     sprite_index = global.sprite_index_Stun_Right_Enemy;
@@ -184,8 +185,7 @@ if (global.enemy_death == true) {
 }
 
 if  (sprite_index = global.sprite_index_Walking_Left_Enemy) or 
-    (sprite_index = global.sprite_index_Idle_Left_Enemy) or
-    (sprite_index = global.sprite_index_Stun_Left_Enemy) {
+    (sprite_index = global.sprite_index_Idle_Left_Enemy) {
     
     global.enemy_health = global.enemy_health - 1;
     sprite_index = global.sprite_index_Stun_Left_Enemy;
