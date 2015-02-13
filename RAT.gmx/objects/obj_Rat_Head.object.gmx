@@ -63,7 +63,9 @@ instance_create(obj_Rat_Head.x + 12, obj_Rat_Head.y + 16, obj_Rat_Tail)
 //Cursor Code
 instance_create(mouse_x, mouse_y, obj_Cursor)
 
-instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+//instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+
+instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Beretta)
 
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 
@@ -580,7 +582,11 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up_again =
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((global.Player_Health == 5) or (global.Player_Health == 4)) {
+            <string>/*if global.Player_Health.image_index == 31{
+    audio_play_sound(snd_Heartbeat, 2, 0);
+}
+*/    
+if ((global.Player_Health == 5) or (global.Player_Health == 4)) {
     img_index += 1.0
 }
 
@@ -815,21 +821,24 @@ if keyboard_check_released(ord('S')) {
             <string>if global.Player_Health == 5 or global.Player_Health == 4 {
 
     draw_self();
-    draw_sprite(spr_Full_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    draw_sprite_ext(spr_Full_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410), 0.5, 0.5, 0,c_white,1);
+    //draw_sprite(spr_Full_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
     
 }
 
 if global.Player_Health == 3 or global.Player_Health == 2 {
 
     draw_self();
-    draw_sprite(spr_Medium_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    draw_sprite_ext(spr_Medium_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410), 0.5, 0.5, 0,c_white,1);
+    //draw_sprite(spr_Medium_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
     
 }
 
 if global.Player_Health &lt;= 1 {
 
     draw_self();
-    draw_sprite(spr_Low_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    draw_sprite_ext(spr_Low_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410), 0.5, 0.5, 0,c_white,1);
+    //draw_sprite(spr_Low_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
     
 }
 </string>
