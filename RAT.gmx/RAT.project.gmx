@@ -306,6 +306,14 @@
             <sprite>sprites\spr_Dung_Death_Up</sprite>
             <sprite>sprites\spr_Dung_Death_Down</sprite>
           </sprites>
+          <sprites name="Shield">
+            <sprite>sprites\spr_Dung_Shielding_Down</sprite>
+            <sprite>sprites\spr_Dung_Shielding_Up</sprite>
+            <sprite>sprites\spr_Dung_Unshielding_Down</sprite>
+            <sprite>sprites\spr_Dung_Unshielding_Up</sprite>
+            <sprite>sprites\spr_Dung_Active_Shield_Down</sprite>
+            <sprite>sprites\spr_Dung_Active_Shield_Up</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Bosses">
