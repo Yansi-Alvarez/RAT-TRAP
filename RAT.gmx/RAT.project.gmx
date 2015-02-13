@@ -187,8 +187,11 @@
           </sprites>
         </sprites>
       </sprites>
-      <sprite>sprites\Example_Front</sprite>
+      <sprite>sprites\sp_Example_Melanic_Front</sprite>
+      <sprite>sprites\spr_Example_Albino_Front</sprite>
+      <sprite>sprites\spr_Example_Normal_Front</sprite>
       <sprite>sprites\Example_Up</sprite>
+      <sprite>sprites\rat_background_pic</sprite>
       <sprites name="Pieces">
         <sprites name="Down">
           <sprites name="Left">
@@ -310,6 +313,13 @@
           <sprites name="Death">
             <sprite>sprites\spr_Dung_Death_Up2</sprite>
             <sprite>sprites\spr_Dung_Death_Down2</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Bosses">
+        <sprites name="The Nine Guards">
+          <sprites name="Swine Guard">
+            <sprite>sprites\spr_Swine_Guard_Left</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -475,7 +485,6 @@
       </sprites>
     </sprites>
     <sprites name="Interactables">
-      <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
       <sprites name="Pickups">
         <sprite>sprites\spr_Pickup_Cheese</sprite>
       </sprites>
@@ -483,6 +492,10 @@
         <sprite>sprites\spr_Intr_Machine</sprite>
         <sprite>sprites\spr_Intr_Machine_On</sprite>
         <sprite>sprites\spr_Intr_Passkey</sprite>
+      </sprites>
+      <sprites name="Loot">
+        <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
+        <sprite>sprites\spr_Intr_Treasure_Locked</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -492,6 +505,7 @@
     <background>background\bkgd_Title</background>
     <background>background\bkgd_Upgrade</background>
     <background>background\bkgd_Cage</background>
+    <background>background\bkgd_example_cage</background>
     <background>background\bkgd_Home_Example</background>
   </backgrounds>
   <paths name="paths"/>
