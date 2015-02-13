@@ -5,8 +5,6 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_Radio</sound>
-    <sound>sound\snd_Heartbeat</sound>
     <sounds name="Rat">
       <sound>sound\snd_Hurt</sound>
       <sound>sound\snd_Hurt2</sound>
@@ -14,6 +12,7 @@
       <sound>sound\snd_Footstep1</sound>
       <sound>sound\snd_Footstep2</sound>
       <sound>sound\snd_Death</sound>
+      <sound>sound\snd_Heartbeat</sound>
     </sounds>
     <sounds name="Enemies">
       <sound>sound\snd_Chitter</sound>
@@ -25,10 +24,21 @@
       <sound>sound\snd_Spider</sound>
       <sound>sound\snd_Beesquito_Buzz</sound>
       <sound>sound\snd_Enemy_Death</sound>
+      <sound>sound\snd_Squeek</sound>
+      <sound>sound\snd_Echolocation</sound>
+      <sound>sound\snd_Laugh</sound>
+      <sound>sound\snd_Fairy</sound>
     </sounds>
     <sounds name="Weapons">
       <sound>sound\snd_Handgun</sound>
       <sound>sound\snd_Potatogun</sound>
+      <sound>sound\snd_Melee_Hit</sound>
+      <sound>sound\snd_Shotgun</sound>
+      <sound>sound\snd_Laser_Cannon</sound>
+    </sounds>
+    <sounds name="Misc.">
+      <sound>sound\snd_Radio</sound>
+      <sound>sound\snd_Bounce</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
