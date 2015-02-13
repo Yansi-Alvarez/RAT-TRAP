@@ -44,6 +44,33 @@ global.sprite_index_Walking_Left_Enemy = spr_Bullbug_Walking_Left;
 global.sprite_index_Stun_Right_Enemy = spr_Bullbug_Hitstun_Right;
 
 global.sprite_index_Stun_Left_Enemy = spr_Bullbug_Hitstun_Left;
+
+global.sprite_index_Death_Right_Enemy = spr_Bullbug_Death_Right;
+
+global.sprite_index_Death_Left_Enemy = spr_Bullbug_Death_Left;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>
@@ -73,6 +100,29 @@ global.sprite_index_Stun_Left_Enemy = spr_Bullbug_Hitstun_Left;
       </action>
     </event>
     <event eventtype="4" ename="obj_Parent_Bullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>

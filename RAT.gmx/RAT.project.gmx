@@ -263,8 +263,8 @@
             <sprite>sprites\spr_Bullbug_Hitstun_Right</sprite>
           </sprites>
           <sprites name="Death">
-            <sprite>sprites\spr_Bullbug_Death_Left2</sprite>
-            <sprite>sprites\spr_Bullbug_Death_Right2</sprite>
+            <sprite>sprites\spr_Bullbug_Death_Left</sprite>
+            <sprite>sprites\spr_Bullbug_Death_Right</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -283,8 +283,8 @@
             <sprite>sprites\spr_Beesquito_Hitstun_Fired</sprite>
           </sprites>
           <sprites name="Death">
-            <sprite>sprites\spr_Beesquito_Death_Fired2</sprite>
-            <sprite>sprites\spr_Beesquito_Death2</sprite>
+            <sprite>sprites\spr_Beesquito_Death_Fired</sprite>
+            <sprite>sprites\spr_Beesquito_Death</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -294,14 +294,6 @@
           <sprite>sprites\spr_Dung_Down</sprite>
         </sprites>
         <sprites name="Animations">
-          <sprites name="Shield">
-            <sprite>sprites\spr_Dung_Shield_Down1</sprite>
-            <sprite>sprites\spr_Dung_Shield_Down2</sprite>
-            <sprite>sprites\spr_Dung_Shield_Up1</sprite>
-            <sprite>sprites\spr_Dung_Shield_Up2</sprite>
-            <sprite>sprites\spr_Dung_Shield_Up_Active</sprite>
-            <sprite>sprites\spr_Dung_Shield_Down_Active</sprite>
-          </sprites>
           <sprites name="Hitstun">
             <sprite>sprites\spr_Dung_Hitstun_Up</sprite>
             <sprite>sprites\spr_Dung_Hitstun_Down</sprite>
@@ -311,8 +303,8 @@
             <sprite>sprites\spr_Dung_Charge_Up</sprite>
           </sprites>
           <sprites name="Death">
-            <sprite>sprites\spr_Dung_Death_Up2</sprite>
-            <sprite>sprites\spr_Dung_Death_Down2</sprite>
+            <sprite>sprites\spr_Dung_Death_Up</sprite>
+            <sprite>sprites\spr_Dung_Death_Down</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -401,9 +393,9 @@
         </sprites>
       </sprites>
       <sprites name="Death">
-        <sprite>sprites\spr_Death2</sprite>
-        <sprite>sprites\spr_Death_Particle_02</sprite>
-        <sprite>sprites\spr_Death_Particle_12</sprite>
+        <sprite>sprites\spr_Death</sprite>
+        <sprite>sprites\spr_Death_Particle_0</sprite>
+        <sprite>sprites\spr_Death_Particle_1</sprite>
       </sprites>
       <sprites name="Rat">
         <sprites name="Spawn">
@@ -548,13 +540,14 @@
     </objects>
     <objects name="Particles">
       <object>objects\obj_Muzzle_Flash</object>
+      <object>objects\obj_Death</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42038.9790230093</constant>
+    <constant name="GM_build_date">42048.1370373264</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

@@ -31,6 +31,8 @@ global.enemy_health = noone;
 
 global.enemy_speed = noone;
 
+global.enemy_death = false;
+
 global.sprite_index_Idle_Right_Enemy = noone;
 
 global.sprite_index_Idle_Left_Enemy = noone;
@@ -42,6 +44,12 @@ global.sprite_index_Walking_Left_Enemy = noone;
 global.sprite_index_Stun_Right_Enemy = noone;
 
 global.sprite_index_Stun_Left_Enemy = noone;
+
+global.sprite_index_Death_Right_Enemy = noone;
+
+global.sprite_index_Death_Left_Enemy = noone;
+
+death_animation = false;
 </string>
           </argument>
         </arguments>
@@ -111,7 +119,36 @@ if (distance_to_object(obj_Rat_Body) &lt;= 150) {
     }
 }
 
+//Death for Enemy
 
+if (global.enemy_health == 0) and (sprite_index = global.sprite_index_Stun_Right_Enemy) {
+   
+     sprite_index = global.sprite_index_Death_Right_Enemy;
+     image_speed = 0.3;
+     death_animation = true;
+     
+}
+
+if (global.enemy_health == 0) and (sprite_index = global.sprite_index_Stun_Left_Enemy) {
+   
+     sprite_index = global.sprite_index_Death_Left_Enemy;
+     image_speed = 0.3;
+     death_animation = true;
+     
+}
+
+if (death_animation == true) {
+
+    instance_create(global.obj_enemy.x,global.obj_enemy.y,obj_Death);
+    death_animation = false;
+}
+
+if (global.enemy_death == true) {
+        
+    with (global.obj_enemy) {
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -135,17 +172,63 @@ if (distance_to_object(obj_Rat_Body) &lt;= 150) {
           <argument>
             <kind>1</kind>
             <string>if (sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (sprite_index = global.sprite_index_Idle_Right_Enemy) {
+    (sprite_index = global.sprite_index_Idle_Right_Enemy) or
+    (sprite_index = global.sprite_index_Stun_Right_Enemy) {
     
     global.enemy_health = global.enemy_health - 1;    
     sprite_index = global.sprite_index_Stun_Right_Enemy;
+    
+    with (obj_Parent_Bullet) {
+        instance_destroy()
+    }
 }
 
 if  (sprite_index = global.sprite_index_Walking_Left_Enemy) or 
-    (sprite_index = global.sprite_index_Idle_Left_Enemy) {
+    (sprite_index = global.sprite_index_Idle_Left_Enemy) or
+    (sprite_index = global.sprite_index_Stun_Left_Enemy) {
     
     global.enemy_health = global.enemy_health - 1;
     sprite_index = global.sprite_index_Stun_Left_Enemy;
+    
+    with (obj_Parent_Bullet) {
+        instance_destroy()
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index = global.sprite_index_Stun_Right_Enemy) {
+    
+    sprite_index = global.sprite_index_Idle_Right_Enemy;
+}
+
+if (sprite_index = global.sprite_index_Stun_Left_Enemy) {
+
+    sprite_index = global.sprite_index_Idle_Left_Enemy;
+}
+
+if (sprite_index = global.sprite_index_Death_Right_Enemy) or (sprite_index = global.sprite_index_Death_Left_Enemy) {
+    
+    global.enemy_death = true;
 }
 </string>
           </argument>

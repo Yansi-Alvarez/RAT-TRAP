@@ -68,9 +68,7 @@ if (global.gun_collision == true) {
         object_bullet = instance_create(x,y,obj_Handgun_Bullet);
         object_bullet.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
         object_bullet.speed = 50;
-        sound_play(snd_Handgun);
-        
-        
+        audio_play_sound(snd_Handgun,1,0);
     }
     
 }
@@ -91,5 +89,8 @@ if (global.gun_collision == true) {
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>11,8</point>
+    <point>8,8</point>
+  </PhysicsShapePoints>
 </object>
