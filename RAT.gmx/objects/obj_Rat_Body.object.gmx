@@ -37,6 +37,10 @@ global.gun_collision = false;
 
 global.gun_2_collision = false;
 
+global.one_handed_melee_collision = false;
+
+global.one_handed_melee_2_collision = false;
+
 image_speed = 0.3;
 
 sprite_index = spr_Body_Standard_Idle_Down_Left;
@@ -53,12 +57,6 @@ walk_up_left = false;
 walk_up_right = false;
 walk_down_left = false;
 walk_down_right = false;
-
-//MainFixture = physics_fixture_create();
-//physics_fixture_set_circle_shape(MainFixture,sprite_get_width(sprite_index)/2);
-//physics_fixture_bind(MainFixture, obj_Rat_Body);
-//physics_fixture_bind(MainFixture, obj_Rat_Front_Arm);
-//physics_fixture_delete(MainFixture);
 </string>
           </argument>
         </arguments>
@@ -257,6 +255,97 @@ if keyboard_check_released(ord('S')) {
     walk_up_right = false;
     walk_down_left = false;
     walk_down_right = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Parent_One_Handed_Melee">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.one_handed_melee_collision = true;
+
+////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
+if (global.one_handed_melee_collision == true) and (global.one_handed_melee_2_collision == false) {
+
+    if (global.weapon_attach_left_arm == false) and (global.weapon_picked_up == false) {
+        if (//Walking Animation
+            (sprite_index = spr_Body_Standard_Walking_Down_Left) and
+            ((global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Left_One_Handed_Melee_In_Use) or
+            (global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use))) {
+            
+            global.obj_One_Handed_Melee_In_Use.x = obj_Rat_Front_Arm.x;
+            global.obj_One_Handed_Melee_In_Use.y = obj_Rat_Front_Arm.y;
+            
+            global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Left_One_Handed_Melee_In_Use;
+            global.weapon_attach_left_arm = true;
+            global.weapon_picked_up = true;
+            global.one_handed_melee_pick_up = true;
+        }
+    }
+    
+    if (global.weapon_attach_right_arm == false) and (global.weapon_picked_up == false) {
+        if (//Walking Animation
+            (sprite_index = spr_Body_Standard_Walking_Down_Right) and
+            ((global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Left_One_Handed_Melee_In_Use) or
+            (global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use))) {
+        
+            global.obj_One_Handed_Melee_In_Use.x = obj_Rat_Front_Arm.x;
+            global.obj_One_Handed_Melee_In_Use.y = obj_Rat_Front_Arm.y;
+        
+            global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use;
+            global.weapon_attach_right_arm = true;
+            global.weapon_picked_up = true;
+            global.one_handed_melee_pick_up = true;
+        }
+    }
+    
+    if (global.weapon_attach_left_arm == false) and (global.weapon_picked_up == false) {
+        if (//Walking Animation
+            ((sprite_index = spr_Body_Standard_Walking_Up_Left)) and
+            ((global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Left_One_Handed_Melee_In_Use) or
+            (global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use))) {
+        
+            global.obj_One_Handed_Melee_In_Use.x = obj_Rat_Front_Arm.x;
+            global.obj_One_Handed_Melee_In_Use.y = obj_Rat_Front_Arm.y;
+        
+            global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Left_One_Handed_Melee_In_Use;
+            global.weapon_attach_left_arm = true;
+            global.weapon_picked_up = true;
+            global.one_handed_melee_pick_up = true;
+        }
+    }
+    
+    if (global.weapon_attach_right_arm == false) and (global.weapon_picked_up == false) {
+        if (//Walking Animation
+            ((sprite_index = spr_Body_Standard_Walking_Up_Right)) and
+            ((global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Left_One_Handed_Melee_In_Use) or
+            (global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use))) {
+        
+            global.obj_One_Handed_Melee_In_Use.x = obj_Rat_Front_Arm.x;
+            global.obj_One_Handed_Melee_In_Use.y = obj_Rat_Front_Arm.y;
+        
+            global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use;
+            global.weapon_attach_right_arm = true;
+            global.weapon_picked_up = true;
+            global.one_handed_melee_pick_up = true;
+        }
+    }
 }
 </string>
           </argument>
@@ -746,7 +835,7 @@ if (global.gun_collision == true) and (global.gun_2_collision == false) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.weapon_attach_left_arm = true;
             global.weapon_picked_up = true;
-            global.gun_pick_up = true;
+            //global.gun_pick_up = true;
         }
     }
     
@@ -762,7 +851,7 @@ if (global.gun_collision == true) and (global.gun_2_collision == false) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.weapon_attach_right_arm = true;
             global.weapon_picked_up = true;
-            global.gun_pick_up = true;
+            //global.gun_pick_up = true;
         }
     }
     
@@ -778,7 +867,7 @@ if (global.gun_collision == true) and (global.gun_2_collision == false) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.weapon_attach_left_arm = true;
             global.weapon_picked_up = true;
-            global.gun_pick_up = true;
+            //global.gun_pick_up = true;
         }
     }
     
@@ -794,7 +883,7 @@ if (global.gun_collision == true) and (global.gun_2_collision == false) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.weapon_attach_right_arm = true;
             global.weapon_picked_up = true;
-            global.gun_pick_up = true;
+            //global.gun_pick_up = true;
         }
     }
 }
@@ -820,7 +909,7 @@ if (global.gun_collision == true) and (global.gun_2_collision == false) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Left) and
+            <string>if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Left) and
     (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Left) and
     (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Left) and
     (sprite_index = spr_Body_Standard_Stun_Down_Left) and
