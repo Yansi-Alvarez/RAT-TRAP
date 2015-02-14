@@ -34,8 +34,6 @@ global.sprite_index_Right_Gun_In_Use = spr_Shotgun_Pump_Left;
 global.sprite_index_Left_Gun_In_Use = spr_Shotgun_Pump_Right;
 
 potato_gun_bullet_timer = true;
-
-
 </string>
           </argument>
         </arguments>
@@ -87,7 +85,7 @@ ldy = lengthdir_y(25, -point_direction(x,y,mouse_x,mouse_y));
 
 if (global.gun_collision == true) {
     if mouse_check_button_pressed(mb_left) and (potato_gun_bullet_timer == true) and ((global.weapon_attach_right_arm == true) or (global.weapon_attach_left_arm == true)) {
-            
+      audio_play_sound(snd_Shotgun,1,0);      
 //bullet spray
      repeat (15){
         object_bullet = instance_create(x + ldx, y + ldy, obj_Pump_Shotgun_Bullet);

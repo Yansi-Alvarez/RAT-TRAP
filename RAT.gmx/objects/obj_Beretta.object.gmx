@@ -34,8 +34,6 @@ global.sprite_index_Right_Gun_In_Use = spr_Handgun_Beretta_Left;
 global.sprite_index_Left_Gun_In_Use = spr_Handgun_Beretta_Right;
 
 potato_gun_bullet_timer = true;
-
-
 </string>
           </argument>
         </arguments>

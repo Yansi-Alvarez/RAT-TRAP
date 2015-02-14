@@ -61,15 +61,17 @@ instance_create(obj_Rat_Head.x - 7, obj_Rat_Head.y + 15, obj_Rat_Back_Arm)
 instance_create(obj_Rat_Head.x + 12, obj_Rat_Head.y + 16, obj_Rat_Tail)
 
 //Cursor Code
-instance_create(mouse_x, mouse_y, obj_Pointer)
+instance_create(mouse_x, mouse_y, obj_Cursor)
 
-instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Sword)
+instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Sword)
 
 //instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
 
 //instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 
-//instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Beretta)
+//instance_create(obj_Rat_Head.x + 50, obj_Rat_Head.y, obj_Beretta)
+
+//instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 </string>
           </argument>
         </arguments>
@@ -93,32 +95,57 @@ instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Sword)
           <argument>
             <kind>1</kind>
             <string>//Gun Attachment Code for the left arm
-if (global.gun_collision == true) {
+//if (global.gun_collision == true) {
 
-    if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up = true) {
+    if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up == true) and (global.weapon_attach_right_arm == false) and (global.gun_collision == true) {
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Left) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+    
+                global.obj_Gun_In_Use.depth = 1;
+                //obj_Gun_2.depth = 1;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Idle_Up_Left) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+            
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Idle_Up_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            //Adjusting depth of weapon    
+            if (global.weapon_attach_left_arm == true) and (global.gun_collision == true) and (global.weapon_attach_right_arm == false) {
+            
+                global.obj_Gun_In_Use.depth = 2;
+                //obj_Gun_2.depth = 2;
+            }*/
         }
     
     //////////////////////////////////////////////////////////////////
@@ -127,24 +154,49 @@ if (global.gun_collision == true) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Walking_Down_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+    
+                global.obj_Gun_In_Use.depth = 1;
+                //obj_Gun_2.depth = 1;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Walking_Up_Left) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+            
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Walking_Up_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            //Adjusting depth of weapon    
+            if (global.weapon_attach_left_arm == true) and (global.gun_collision == true) and (global.weapon_attach_right_arm == false) {
+            
+                global.obj_Gun_In_Use.depth = 2;
+                //obj_Gun_2.depth = 2;
+            }*/
         }
     }
     //////////////////////////////////////////////////////////////////
@@ -152,30 +204,55 @@ if (global.gun_collision == true) {
     
     //Gun Attachment Code for the right arm
     
-    if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up = true) {
+    if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up == true) and (global.weapon_attach_left_arm == false) and (global.gun_collision == true) {
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Left) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Idle_Up_Left) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 2;
+                //obj_Gun_2.depth = 2;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Idle_Up_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            //Adjusting depth of weapon 
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
     
     //////////////////////////////////////////////////////////////////
@@ -184,27 +261,52 @@ if (global.gun_collision == true) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Walking_Down_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Walking_Up_Left) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Back_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Back_Arm.y;
+            /*
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 2;
+                //obj_Gun_2.depth = 2;
+            }*/
         }
         
         if (sprite_index = spr_Head_Standard_Walking_Up_Right) {
             global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
             global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
             global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+            /*
+            //Adjusting depth of weapon 
+            if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+                
+                global.obj_Gun_In_Use.depth = 0;
+                //obj_Gun_2.depth = 0;
+            }*/
         }
     }
-}
+//}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -556,9 +658,9 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up_again =
 }*/
     
 //Gun Attachment Code for the left arm
-if (global.one_handed_melee_collision == true) {
+//if (global.one_handed_melee_collision == true) {
 
-    if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up = true) {
+    if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up = true) and (global.weapon_attach_right_arm == false) and (global.one_handed_melee_collision == true) {
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Left) {
             global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use;
@@ -615,7 +717,7 @@ if (global.one_handed_melee_collision == true) {
     
     //Gun Attachment Code for the right arm
     
-    if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up = true) {
+    if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up = true) and (global.weapon_attach_left_arm == false) and (global.one_handed_melee_collision == true) {
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Left) {
             global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use;
@@ -667,12 +769,7 @@ if (global.one_handed_melee_collision == true) {
             global.obj_One_Handed_Melee_In_Use.y = obj_Rat_Front_Arm.y;
         }
     }
-}
-    
-    
-    
-    
-    
+//}
 </string>
           </argument>
         </arguments>
@@ -712,10 +809,93 @@ if (img_index &gt; sprite_get_number(spr_Full_Health)) or (img_index &gt; sprite
 }
 */
 
-obj_Pointer.x = mouse_x;
-obj_Pointer.y = mouse_y;
+if (global.Player_Health &lt;= 0) {
 
-global.direction_player = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, obj_Pointer.x, obj_Pointer.y)
+    //draw_self();
+    //draw_sprite(spr_Low_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    
+    if (sprite_index = spr_Head_Standard_Idle_Down_Left) or 
+    (sprite_index = spr_Head_Standard_Walking_Down_Left) or 
+    (sprite_index = spr_Head_Standard_Stun_Down_Left) {
+        
+        sprite_index = spr_Head_Standard_Death_Down_Left;
+        obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Down_Left;
+        obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Down_Left;
+        obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Down_Left;
+        obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Down_Left;
+        obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Down_Left;
+        
+        image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+    }
+    
+        if (sprite_index = spr_Head_Standard_Idle_Down_Right) or 
+    (sprite_index = spr_Head_Standard_Walking_Down_Right) or 
+    (sprite_index = spr_Head_Standard_Stun_Down_Right) {
+    
+        sprite_index = spr_Head_Standard_Death_Down_Right;
+        obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Down_Right;
+        obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Down_Right;
+        obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Down_Right;
+        obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Down_Right;
+        obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Down_Right;
+        
+        image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+    }
+    
+        if (sprite_index = spr_Head_Standard_Idle_Up_Left) or 
+    (sprite_index = spr_Head_Standard_Walking_Up_Left) or 
+    (sprite_index = spr_Head_Standard_Stun_Up_Left) {
+    
+        sprite_index = spr_Head_Standard_Death_Up_Left;
+        obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Up_Left;
+        obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Up_Left;
+        obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Up_Left;
+        obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Up_Left;
+        obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Up_Left;
+        
+        image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+    }
+    
+        if (sprite_index = spr_Head_Standard_Idle_Up_Right) or 
+    (sprite_index = spr_Head_Standard_Walking_Up_Right) or 
+    (sprite_index = spr_Head_Standard_Stun_Up_Right) {
+    
+        sprite_index = spr_Head_Standard_Death_Up_Right;
+        obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Up_Right;
+        obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Up_Right;
+        obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Up_Right;
+        obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Up_Right;
+        obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Up_Right;
+        
+        image_speed = 0.3;
+        obj_Rat_Body.image_speed = 0.3;
+        obj_Rat_Front_Arm.image_speed = 0.3;
+        obj_Rat_Back_Arm.image_speed = 0.3;
+        obj_Rat_Legs.image_speed = 0.3;
+        obj_Rat_Tail.image_speed = 0.3;
+    }
+}
+
+obj_Cursor.x = mouse_x;
+obj_Cursor.y = mouse_y;
+
+global.direction_player = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, obj_Cursor.x, obj_Cursor.y)
+//obj_Rat_Head.image_angle = global.direction_player;
 
 //Angle of player, if between 0 and 89 degrees, looks to the up-right
 
@@ -724,33 +904,26 @@ if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) a
     sprite_index = spr_Head_Standard_Idle_Up_Right;
     obj_Rat_Head.depth = 2;
     
-    if (global.weapon_attach_left_arm == true) {
-    
-        if (global.gun_collision == true) {
+    if (global.weapon_attach_left_arm == true) and (global.gun_collision == true) and (global.weapon_attach_right_arm == false) {
         
-            global.obj_Gun_In_Use.depth = 2;
-            //obj_Gun_2.depth = 2;
-        }
+        global.obj_Gun_In_Use.depth = 2;
+        //obj_Gun_2.depth = 2;
+    }
         
-        if (global.one_handed_melee_collision == true) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
         
-            global.obj_One_Handed_Melee_In_Use.depth = 2;
-        }
+        global.obj_One_Handed_Melee_In_Use.depth = 2;
     }
     
-    if (global.weapon_attach_right_arm == true) {
-    
-        if (global.gun_collision == true) {
+    if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
-            global.obj_Gun_In_Use.depth = 0;
-            //obj_Gun_2.depth = 0;
-        }
+        global.obj_Gun_In_Use.depth = 0;
+        //obj_Gun_2.depth = 0;
+    }
         
-        if (global.one_handed_melee_collision == true) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
-            global.obj_One_Handed_Melee_In_Use.depth = 0;
-        }
-
+        global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
     
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
@@ -771,34 +944,28 @@ if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) 
     sprite_index = spr_Head_Standard_Idle_Up_Left;
     obj_Rat_Head.depth = 2;
     
-    if (global.weapon_attach_left_arm == true) {
+    if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+        global.obj_Gun_In_Use.depth = 0;
+        //obj_Gun_2.depth = 0;
+    }
+        
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
     
-        if (global.gun_collision == true) {
-        
-            global.obj_Gun_In_Use.depth = 0;
-            //obj_Gun_2.depth = 0;
-        }
-        
-        if (global.one_handed_melee_collision == true) {
-        
-            global.obj_One_Handed_Melee_In_Use.depth = 0;
-        }
+        global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
     
-    if (global.weapon_attach_right_arm == true) {
+    if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+        
+        global.obj_Gun_In_Use.depth = 2;
+        //obj_Gun_2.depth = 2;
+    }
     
-        if (global.gun_collision == true) {
-        
-            global.obj_Gun_In_Use.depth = 2;
-            //obj_Gun_2.depth = 2;
-        }
-        
-        if (global.one_handed_melee_collision == true) {
-        
-            global.obj_One_Handed_Melee_In_Use.depth = 2;
-        }
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+    
+        global.obj_One_Handed_Melee_In_Use.depth = 2;
+    }
 
-    }
     
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
         
@@ -818,33 +985,26 @@ if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269))
     sprite_index = spr_Head_Standard_Idle_Down_Left;
     obj_Rat_Head.depth = 0;
     
-    if (global.weapon_attach_left_arm == true) {
-    
-        if (global.gun_collision == true) {
+    if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
         
-            global.obj_Gun_In_Use.depth = 0;
-            //obj_Gun_2.depth = 0;
-        }
-        
-        if (global.one_handed_melee_collision == true) {
-        
-            global.obj_One_Handed_Melee_In_Use.depth = 0;
-        }
+        global.obj_Gun_In_Use.depth = 0;
+        //obj_Gun_2.depth = 0;
     }
     
-    if (global.weapon_attach_right_arm == true) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
     
-        if (global.gun_collision == true) {
+        global.obj_One_Handed_Melee_In_Use.depth = 0;
+    }
+    
+    if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
-            global.obj_Gun_In_Use.depth = 0;
-            //obj_Gun_2.depth = 0;
-        }
-        
-        if (global.one_handed_melee_collision == true) {
-        
-            global.obj_One_Handed_Melee_In_Use.depth = 0;
-        }
+        global.obj_Gun_In_Use.depth = 1;
+        //obj_Gun_2.depth = 0;
+    }
 
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+    
+        global.obj_One_Handed_Melee_In_Use.depth = 1;
     }
     
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
@@ -865,33 +1025,26 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
     sprite_index = spr_Head_Standard_Idle_Down_Right;
     obj_Rat_Head.depth = 0;
     
-    if (global.weapon_attach_left_arm == true) {
+    if (global.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+        global.obj_Gun_In_Use.depth = 1;
+        //obj_Gun_2.depth = 1;
+    }
+        
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
     
-        if (global.gun_collision == true) {
-        
-            global.obj_Gun_In_Use.depth = 1;
-            //obj_Gun_2.depth = 1;
-        }
-        
-        if (global.one_handed_melee_collision == true) {
-        
-            global.obj_One_Handed_Melee_In_Use.depth = 1;
-        }
+        global.obj_One_Handed_Melee_In_Use.depth = 1;
     }
     
-    if (global.weapon_attach_right_arm == true) {
+    if (global.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+        
+        global.obj_Gun_In_Use.depth = 0;
+        //obj_Gun_2.depth = 0;
+    }
     
-        if (global.gun_collision == true) {
-        
-            global.obj_Gun_In_Use.depth = 0;
-            //obj_Gun_2.depth = 0;
-        }
-        
-        if (global.one_handed_melee_collision == true) {
-        
-            global.obj_One_Handed_Melee_In_Use.depth = 0;
-        }
-
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+    
+        global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
     
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
@@ -972,6 +1125,86 @@ if keyboard_check_released(ord('S')) {
     walk_up_right = false;
     walk_down_left = false;
     walk_down_right = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if ((sprite_index = spr_Head_Standard_Death_Down_Left) and
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Down_Left) and
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Down_Left) and
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Down_Left) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Down_Left) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Down_Left)) or
+    
+    ((sprite_index = spr_Head_Standard_Death_Down_Right) and
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Down_Right) and
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Down_Right) and
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Down_Right) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Down_Right) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Down_Right)) or
+    
+    ((sprite_index = spr_Head_Standard_Death_Up_Left) and
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Up_Left) and
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Up_Left) and
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Up_Left) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Up_Left) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Up_Left)) or
+    
+    ((sprite_index = spr_Head_Standard_Death_Up_Right) and
+    (obj_Rat_Body.sprite_index = spr_Body_Standard_Death_Up_Right) and
+    (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Death_Up_Right) and
+    (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Death_Up_Right) and
+    (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Up_Right) and
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Up_Right)) {
+    
+    with (obj_Rat_Head) {
+    
+        instance_destroy();
+    }  
+    
+    with (obj_Rat_Body) {
+    
+        instance_destroy();
+    }  
+    
+    with (obj_Rat_Front_Arm) {
+    
+        instance_destroy();
+    }  
+    
+    with (obj_Rat_Back_Arm) {
+    
+        instance_destroy();
+    }  
+    
+    with (obj_Rat_Legs) {
+    
+        instance_destroy();
+    }  
+    
+    with (obj_Rat_Tail) {
+    
+        instance_destroy();
+    }  
 }
 </string>
           </argument>
