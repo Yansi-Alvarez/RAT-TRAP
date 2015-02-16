@@ -132,12 +132,12 @@
               <sprite>sprites\spr_Tail_Standard_Stun_Down_Left</sprite>
             </sprites>
             <sprites name="Right">
-              <sprite>sprites\spr_Tail_Standard_Stun_Down_Right</sprite>
               <sprite>sprites\spr_Head_Standard_Stun_Down_Right</sprite>
+              <sprite>sprites\spr_Body_Standard_Stun_Down_Right</sprite>
               <sprite>sprites\spr_Front_Arm_Standard_Stun_Down_Right</sprite>
               <sprite>sprites\spr_Legs_Standard_Stun_Down_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Stun_Down_Right</sprite>
               <sprite>sprites\spr_Back_Arm_Standard_Stun_Down_Right</sprite>
+              <sprite>sprites\spr_Tail_Standard_Stun_Down_Right</sprite>
             </sprites>
           </sprites>
           <sprites name="Up">
@@ -529,6 +529,9 @@
       <background>background\bkgd_Tile</background>
       <background>background\bkgd_Diagonal_Concrete</background>
     </backgrounds>
+    <backgrounds name="Background Tiles">
+      <background>background\bkgd_Black</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -545,7 +548,8 @@
     </objects>
     <objects name="GUI">
       <object>objects\obj_Cursor</object>
-      <object>objects\obj_Pointer</object>
+      <object>objects\obj_Screen_Shaker</object>
+      <object>objects\obj_Title_Screen</object>
     </objects>
     <objects name="Weapons">
       <objects name="Handguns">
@@ -573,6 +577,8 @@
       <object>objects\obj_Muzzle_Flash</object>
       <object>objects\obj_Death</object>
       <object>objects\obj_Slash</object>
+      <object>objects\obj_Death_Particle_0</object>
+      <object>objects\obj_Death_Particle_1</object>
     </objects>
     <objects name="Melee">
       <objects name="One Handed Melee">
@@ -587,10 +593,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Title_Screen</room>
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42049.1985751968</constant>
+    <constant name="GM_build_date">42051.8034310417</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

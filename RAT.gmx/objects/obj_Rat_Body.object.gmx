@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.weapon_attach_right_arm = false;
+            <string>weapon_attach_right_arm = false;
 
-global.weapon_attach_left_arm = false;
+weapon_attach_left_arm = false;
 
-global.weapon_picked_up = false;
+weapon_picked_up = false;
 
 global.weapon_picked_up_again = false;
 
-global.gun_collision = false;
+gun_collision = false;
 
 //global.gun_2_collision = false;
 
@@ -116,7 +116,7 @@ obj_Rat_Tail.vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.enemy_speed = 4;
+            <string>obj_Parent_Enemy.enemy_speed = 4;
 </string>
           </argument>
         </arguments>
@@ -139,9 +139,7 @@ obj_Rat_Tail.vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) {
+            <string>if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
     
     sprite_index = spr_Body_Standard_Idle_Up_Right;
     depth = 1;
@@ -153,7 +151,7 @@ if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) an
     }
 }
 
-if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) and (walk_up_left == false) {
+if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) and (walk_up_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
 
     sprite_index = spr_Body_Standard_Idle_Up_Left;
     depth = 1;
@@ -165,7 +163,7 @@ if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) 
     }
 }
 
-if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) and (walk_down_left == false) {
+if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) and (walk_down_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
 
     obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left;
     obj_Rat_Body.depth = 1;
@@ -177,7 +175,7 @@ if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269))
     }
 }
 
-if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) and (walk_down_right == false) {
+if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) and (walk_down_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
     
     obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right;
     obj_Rat_Body.depth = 1;
@@ -356,6 +354,56 @@ if keyboard_check_released(ord('S')) {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Death_Particle_1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with (other) {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Death_Particle_0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with (other) {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_Parent_Enemy">
       <action>
         <libid>1</libid>
@@ -373,24 +421,50 @@ if keyboard_check_released(ord('S')) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm_zero = 10;
-knock_back_speed = 10;
+            <string>alarm_zero = 20;
+knock_back_speed = 15;
 
 //Stun animation for down left
 if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
     (sprite_index = spr_Body_Standard_Walking_Down_Left)) and
 
-    ((global.obj_enemy.sprite_index = global.sprite_index_Walking_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy)) {
+    ((obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy)) {
+    
+    //Dylan, try doing it for each of the directions, you have to adjust it as shown below
+    //I think you'll get it pretty quickly, all you have to do is change the number since
+    //it'll adjust the positioning of the animation for the body part and it'll sync
+    //back to idle since the idle coordinates are already adjusted. I did the first two as
+    //an example, possibly not all of the body parts for each direction needs adjusting,
+    //you're going to need to test each one repeatedly until you get the desired result.
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Left;
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Left) {
+    
+        obj_Rat_Head.x = obj_Rat_Head.x + 5;
+        obj_Rat_Head.y = obj_Rat_Head.y + 20;
+    }
+    
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Left;
+    
+    if (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Left) {
+    
+        obj_Rat_Front_Arm.x = obj_Rat_Head.x + 5;
+        obj_Rat_Front_Arm.y = obj_Rat_Head.y + 20;
+    }
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Left;
     sprite_index = spr_Body_Standard_Stun_Down_Left;
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Left;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Left;
+    
+    //This is where it ends for your coding for this specific animation, all the other stuff is working completely fine
+    //the rest of the directions is just rinse and repeat, look for the stun animations and
+    //start using the if statements below the designated body part so its easier to find and
+    //adjust if needed to in the future.
     
     obj_Rat_Head.image_speed = 0.4;
     obj_Rat_Front_Arm.image_speed = 0.4;
@@ -399,33 +473,37 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
     obj_Rat_Legs.image_speed = 0.4;
     obj_Rat_Tail.image_speed = 0.4;
     
-    //Loss of heath from collision
-    global.Player_Health = global.Player_Health - 1;
+    obj_Rat_Head.collision_with_enemy = true;
+    obj_Rat_Head.collision_damage = true;
+    
+    instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
-    if (global.enemy_right == true) {
-    
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy
-        global.enemy_speed = 0;
+    if (obj_Parent_Enemy.enemy_right == true) {
+        
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
-    if (global.enemy_left == true) {
-    
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy
-        global.enemy_speed = 0;
+    if (obj_Parent_Enemy.enemy_left == true) {
+        
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
 }
 
 //Stun animation for down right
-if  (sprite_index = spr_Body_Standard_Idle_Down_Right) or
-    (sprite_index = spr_Body_Standard_Walking_Down_Right) and
+if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
+    (sprite_index = spr_Body_Standard_Walking_Down_Right)) and
     
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy) {
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy) {
+    
+    //Start
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Right;
@@ -434,6 +512,8 @@ if  (sprite_index = spr_Body_Standard_Idle_Down_Right) or
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Right;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Right;
     
+    //End
+    
     obj_Rat_Head.image_speed = 0.4;
     obj_Rat_Front_Arm.image_speed = 0.4;
     obj_Rat_Back_Arm.image_speed = 0.4;
@@ -441,33 +521,37 @@ if  (sprite_index = spr_Body_Standard_Idle_Down_Right) or
     obj_Rat_Legs.image_speed = 0.4;
     obj_Rat_Tail.image_speed = 0.4;
     
-    //Loss of heath from collision
-    global.Player_Health = global.Player_Health - 1;
+    obj_Rat_Head.collision_with_enemy = true;
+    obj_Rat_Head.collision_damage = true;
+    
+    instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
-    if (global.enemy_right == true) {
-    
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy
-        global.enemy_speed = 0;
+    if (obj_Parent_Enemy.enemy_right == true) {
+        
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
-    if (global.enemy_left == true) {
+    if (obj_Parent_Enemy.enemy_left == true) {
     
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy
-        global.enemy_speed = 0;
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
 }
 
 //Stun animation for up left
-if  (sprite_index = spr_Body_Standard_Idle_Up_Left) or
-    (sprite_index = spr_Body_Standard_Walking_Up_Left) and
+if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
+    (sprite_index = spr_Body_Standard_Walking_Up_Left)) and
        
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy) {
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy) {
+    
+    //Start
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Left;
@@ -476,41 +560,47 @@ if  (sprite_index = spr_Body_Standard_Idle_Up_Left) or
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Left;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Left;
     
+    //End
+    
     obj_Rat_Head.image_speed = 0.4;
     obj_Rat_Front_Arm.image_speed = 0.4;
     obj_Rat_Back_Arm.image_speed = 0.4;
     image_speed = 0.4;
     obj_Rat_Legs.image_speed = 0.4;
     obj_Rat_Tail.image_speed = 0.4;
-        
-    //Loss of heath from collision
-    global.Player_Health = global.Player_Health - 1;
+    
+    obj_Rat_Head.collision_with_enemy = true;
+    obj_Rat_Head.collision_damage = true;
+    
+    instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
-    if (global.enemy_right == true) {
+    if (obj_Parent_Enemy.enemy_right == true) {
     
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy
-        global.enemy_speed = 0;
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
-    if (global.enemy_left == true) {
+    if (obj_Parent_Enemy.enemy_left == true) {
     
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy
-        global.enemy_speed = 0;
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
 }
 
 //Stun animation for up right 
-if  (sprite_index = spr_Body_Standard_Idle_Up_Right) or
-    (sprite_index = spr_Body_Standard_Walking_Up_Right) and
+if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
+    (sprite_index = spr_Body_Standard_Walking_Up_Right)) and
     
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy) or
-    (global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy) {
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy) {
 
+    //Start
+    
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Right;
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Right;
@@ -518,6 +608,8 @@ if  (sprite_index = spr_Body_Standard_Idle_Up_Right) or
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Right;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Right;
     
+    //End
+    
     obj_Rat_Head.image_speed = 0.4;
     obj_Rat_Front_Arm.image_speed = 0.4;
     obj_Rat_Back_Arm.image_speed = 0.4;
@@ -525,26 +617,31 @@ if  (sprite_index = spr_Body_Standard_Idle_Up_Right) or
     obj_Rat_Legs.image_speed = 0.4;
     obj_Rat_Tail.image_speed = 0.4;
     
-    //Loss of heath from collision
-    global.Player_Health = global.Player_Health - 1;
+    obj_Rat_Head.collision_with_enemy = true;
+    obj_Rat_Head.collision_damage = true;
+    
+    instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
-    if (global.enemy_right == true) {
+    if (obj_Parent_Enemy.enemy_right == true) {
     
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Right_Enemy
-        global.enemy_speed = 0;
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
-    if (global.enemy_left == true) {
+    if (obj_Parent_Enemy.enemy_left == true) {
     
-        global.obj_enemy.sprite_index = global.sprite_index_Idle_Left_Enemy
-        global.enemy_speed = 0;
+        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
 }
 
 ///////////////////////////////////////////////////////////
+//Don't worry about this, there is a little bug where the rat is able to be hit when he's in
+//hitstun but I already know how to fix it, I'm just leaving it for a later time, possibly
+//after you are done coding
 
 //Knockback for collision
 
@@ -568,243 +665,6 @@ alarm[1] = 5;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Gun_2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*global.gun_2_collision = true;
-
-////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
-if (global.gun_2_collision == true) and (global.gun_collision == false) {
-if (global.weapon_attach_left_arm == false) and (global.weapon_picked_up == false) {
-    if (//Walking Animation
-        (sprite_index = spr_Body_Standard_Walking_Down_Left) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-        
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-        
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Left;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up = true;
-        global.gun_2_pick_up = true;
-    }
-}
-
-if (global.weapon_attach_right_arm == false) and (global.weapon_picked_up == false) {
-    if (//Walking Animation
-        (sprite_index = spr_Body_Standard_Walking_Down_Right) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Right;
-        global.weapon_attach_right_arm = true;
-        global.weapon_picked_up = true;
-        global.gun_2_pick_up = true;
-    }
-}
-
-if (global.weapon_attach_left_arm == false) and (global.weapon_picked_up == false) {
-    if (//Walking Animation
-        ((sprite_index = spr_Body_Standard_Walking_Up_Left)) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Left;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up = true;
-        global.gun_2_pick_up = true;
-    }
-}
-
-if (global.weapon_attach_right_arm == false) and (global.weapon_picked_up == false) {
-    if (//Walking Animation
-        ((sprite_index = spr_Body_Standard_Walking_Up_Right)) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Right;
-        global.weapon_attach_right_arm = true;
-        global.weapon_picked_up = true;
-        global.gun_2_pick_up = true;
-    }
-}
-}
-////////////////////////////////////////////////////////////////////Dual Weilding guns////////////////////////////////////////////////////////////////////
-
-if (global.gun_collision == true) and (global.gun_2_collision == true) {
-//Front arm to the left has a gun and you are walking down left towards it while front arm to the right does not
-if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up == true) 
-    and (global.weapon_attach_right_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        (sprite_index = spr_Body_Standard_Walking_Down_Left) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-        
-        obj_Gun_2.x = obj_Rat_Back_Arm.x;
-        obj_Gun_2.y = obj_Rat_Back_Arm.y;
-        
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Left;
-        global.weapon_attach_right_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Back arm to the left has a gun and you are walking down left towards it while back arm to the right does not
-if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up == true) 
-    and (global.weapon_attach_left_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        (sprite_index = spr_Body_Standard_Walking_Down_Left) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-        
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-        
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Left;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Front arm to the right has a gun and you are walking down right towards it while front arm to the left does not
-if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up == true)
-    and (global.weapon_attach_left_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        (sprite_index = spr_Body_Standard_Walking_Down_Right) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Back_Arm.x;
-        obj_Gun_2.y = obj_Rat_Back_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Right;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Back arm to the right has a gun and you are walking down right towards it while back arm to the left does not
-if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up == true)
-    and (global.weapon_attach_right_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        (sprite_index = spr_Body_Standard_Walking_Down_Right) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Right;
-        global.weapon_attach_right_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Front arm to the left has a gun and you are walking up left towards it while front arm to the right does not
-if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up == true) 
-    and (global.weapon_attach_right_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        ((sprite_index = spr_Body_Standard_Walking_Up_Left)) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Back_Arm.x;
-        obj_Gun_2.y = obj_Rat_Back_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Left;
-        global.weapon_attach_right_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Back arm to the left has a gun and you are walking up left towards it while back arm to the right does not
-if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up == true) 
-    and (global.weapon_attach_left_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        ((sprite_index = spr_Body_Standard_Walking_Up_Left)) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Left;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Front arm to the right has a gun and you are walking up left towards it while front arm to the left does not
-if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up == true) 
-    and (global.weapon_attach_left_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        ((sprite_index = spr_Body_Standard_Walking_Up_Right)) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Back_Arm.x;
-        obj_Gun_2.y = obj_Rat_Back_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Right;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-
-//Back arm to the right has a gun and you are walking up left towards it while back arm to the left does not
-if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up == true) 
-    and (global.weapon_attach_right_arm == false) and (global.weapon_picked_up_again == false) {
-    if (//Walking Animation
-        ((sprite_index = spr_Body_Standard_Walking_Up_Right)) and
-        ((obj_Gun_2.sprite_index = spr_Handgun_Potato_Left) or
-        (obj_Gun_2.sprite_index = spr_Handgun_Potato_Right))) {
-    
-        obj_Gun_2.x = obj_Rat_Front_Arm.x;
-        obj_Gun_2.y = obj_Rat_Front_Arm.y;
-    
-        obj_Gun_2.sprite_index = spr_Handgun_Potato_Right;
-        global.weapon_attach_left_arm = true;
-        global.weapon_picked_up_again = true;
-        global.gun_pick_up = true;
-    }
-}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="obj_Parent_Gun">
       <action>
         <libid>1</libid>
@@ -822,79 +682,75 @@ if (global.weapon_attach_left_arm == true) and (global.weapon_picked_up == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//global.gun_collision = true;
+            <string>////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
-//if (global.gun_collision == true) and (global.gun_2_collision == false) {
-
-    //if (global.weapon_attach_left_arm == false) and (global.weapon_picked_up == false) {
 if (//Walking Animation
-    ((sprite_index = spr_Body_Standard_Walking_Down_Left) and (global.gun_collision == false)) and 
-    ((global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use) or
-    (global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use))) {
+    ((sprite_index = spr_Body_Standard_Walking_Down_Left) and (gun_collision == false)) and 
+    ((obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Left_Gun_In_Use) or
+    (obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Right_Gun_In_Use))) {
     
-    global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
-    global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
+    //with (other) {
     
-    global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
-    global.weapon_attach_left_arm = true;
-    global.weapon_picked_up = true;
-    global.gun_collision = true;
-    //global.gun_pick_up = true;
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+        
+        other.sprite_index = obj_Parent_Gun.sprite_index_Left_Gun_In_Use;
+        weapon_attach_left_arm = true;
+        weapon_picked_up = true;
+        gun_collision = true;
+    //}
 }
-    //}
-    
-    //if (global.weapon_attach_right_arm == false) and (global.weapon_picked_up == false) {
+
 if (//Walking Animation
-    ((sprite_index = spr_Body_Standard_Walking_Down_Right) and (global.gun_collision == false)) and 
-    ((global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use) or
-    (global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use))) {
-
-    global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
-    global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
-
-    global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
-    global.weapon_attach_right_arm = true;
-    global.weapon_picked_up = true;
-    global.gun_collision = true;
-    //global.gun_pick_up = true;
-        }
-    //}
+    ((sprite_index = spr_Body_Standard_Walking_Down_Right) and (gun_collision == false)) and 
+    ((obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Left_Gun_In_Use) or
+    (obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Right_Gun_In_Use))) {
     
-    //if (global.weapon_attach_left_arm == false) and (global.weapon_picked_up == false) {
-if (//Walking Animation
-    ((sprite_index = spr_Body_Standard_Walking_Up_Left) and (global.gun_collision == false)) and 
-    ((global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use) or
-    (global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use))) {
-
-    global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
-    global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
-
-    global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use;
-    global.weapon_attach_left_arm = true;
-    global.weapon_picked_up = true;
-    global.gun_collision = true;
-    //global.gun_pick_up = true;
+    //with (other) {
+    
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    
+        other.sprite_index = obj_Parent_Gun.sprite_index_Right_Gun_In_Use;
+        weapon_attach_right_arm = true;
+        weapon_picked_up = true;
+        gun_collision = true;
+    //}
 }
-    //}
-    
-    //if (global.weapon_attach_right_arm == false) and (global.weapon_picked_up == false) {
+
 if (//Walking Animation
-    ((sprite_index = spr_Body_Standard_Walking_Up_Right) and (global.gun_collision == false)) and 
-    ((global.obj_Gun_In_Use.sprite_index = global.sprite_index_Left_Gun_In_Use) or
-    (global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use))) {
-
-    global.obj_Gun_In_Use.x = obj_Rat_Front_Arm.x;
-    global.obj_Gun_In_Use.y = obj_Rat_Front_Arm.y;
-
-    global.obj_Gun_In_Use.sprite_index = global.sprite_index_Right_Gun_In_Use;
-    global.weapon_attach_right_arm = true;
-    global.weapon_picked_up = true;
-    global.gun_collision = true;
-    //global.gun_pick_up = true;
-}
+    ((sprite_index = spr_Body_Standard_Walking_Up_Left) and (gun_collision == false)) and 
+    ((obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Left_Gun_In_Use) or
+    (obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Right_Gun_In_Use))) {
+    
+    //with (other) {
+    
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    
+        other.sprite_index = obj_Parent_Gun.sprite_index_Left_Gun_In_Use;
+        weapon_attach_left_arm = true;
+        weapon_picked_up = true;
+        gun_collision = true;
     //}
-//}
+}
+
+if (//Walking Animation
+    ((sprite_index = spr_Body_Standard_Walking_Up_Right) and (gun_collision == false)) and 
+    ((obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Left_Gun_In_Use) or
+    (obj_Parent_Gun.sprite_index = obj_Parent_Gun.sprite_index_Right_Gun_In_Use))) {
+    
+    //with (other) {
+    
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    
+        other.sprite_index = obj_Parent_Gun.sprite_index_Right_Gun_In_Use;
+        weapon_attach_right_arm = true;
+        weapon_picked_up = true;
+        gun_collision = true;
+    //}
+}
 </string>
           </argument>
         </arguments>
@@ -922,7 +778,8 @@ if (//Walking Animation
     (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Left) and
     (sprite_index = spr_Body_Standard_Stun_Down_Left) and
     (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Left) and
-    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Left) {
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Left) and 
+    (obj_Rat_Head.Player_Health &gt; 0) {
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Left;
@@ -930,6 +787,8 @@ if (//Walking Animation
     sprite_index = spr_Body_Standard_Idle_Down_Left;
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Down_Left;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Down_Left;
+    
+    obj_Rat_Head.collision_with_enemy = false;
 }
 
 if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) and
@@ -937,7 +796,8 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) and
     (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Left) and
     (sprite_index = spr_Body_Standard_Stun_Up_Left) and
     (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Left) and
-    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Left) {
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Left) and 
+    (obj_Rat_Head.Player_Health &gt; 0) {
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Up_Left;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Left;
@@ -945,6 +805,8 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) and
     sprite_index = spr_Body_Standard_Idle_Up_Left;
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Left;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Up_Left;
+    
+    obj_Rat_Head.collision_with_enemy = false;
 }
 
 if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) and
@@ -952,7 +814,8 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) and
     (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Right) and
     (sprite_index = spr_Body_Standard_Stun_Down_Right) and
     (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Right) and
-    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Right) {
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Right) and 
+    (obj_Rat_Head.Player_Health &gt; 0) {
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Right;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Right;
@@ -960,6 +823,8 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) and
     sprite_index = spr_Body_Standard_Idle_Down_Right;
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Down_Right;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Down_Right;
+    
+    obj_Rat_Head.collision_with_enemy = false;
 }
 
 if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) and
@@ -967,7 +832,8 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) and
     (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Right) and
     (sprite_index = spr_Body_Standard_Stun_Up_Right) and
     (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Right) and
-    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Right) {
+    (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Right) and 
+    (obj_Rat_Head.Player_Health &gt; 0) {
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Up_Right;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Right;
@@ -975,6 +841,8 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) and
     sprite_index = spr_Body_Standard_Idle_Up_Right;
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Right;
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Idle_Up_Right;
+    
+    obj_Rat_Head.collision_with_enemy = false;
 }
 </string>
           </argument>

@@ -27,27 +27,27 @@
             <kind>1</kind>
             <string>event_inherited()
 
-global.obj_enemy = obj_Bullbug;
+//global.obj_enemy = obj_Bullbug;
 
-global.enemy_health = 3;
+enemy_health = 3;
 
-global.enemy_speed = 4;
+enemy_speed = 4;
 
-global.sprite_index_Idle_Right_Enemy = spr_Idle_Bullbug_Right;
+sprite_index_Idle_Right_Enemy = spr_Idle_Bullbug_Right;
 
-global.sprite_index_Idle_Left_Enemy = spr_Idle_Bullbug_Left;
+sprite_index_Idle_Left_Enemy = spr_Idle_Bullbug_Left;
 
-global.sprite_index_Walking_Right_Enemy = spr_Bullbug_Walking_Right;
+sprite_index_Walking_Right_Enemy = spr_Bullbug_Walking_Right;
 
-global.sprite_index_Walking_Left_Enemy = spr_Bullbug_Walking_Left;
+sprite_index_Walking_Left_Enemy = spr_Bullbug_Walking_Left;
 
-global.sprite_index_Stun_Right_Enemy = spr_Bullbug_Hitstun_Right;
+sprite_index_Stun_Right_Enemy = spr_Bullbug_Hitstun_Right;
 
-global.sprite_index_Stun_Left_Enemy = spr_Bullbug_Hitstun_Left;
+sprite_index_Stun_Left_Enemy = spr_Bullbug_Hitstun_Left;
 
-global.sprite_index_Death_Right_Enemy = spr_Bullbug_Death_Right;
+sprite_index_Death_Right_Enemy = spr_Bullbug_Death_Right;
 
-global.sprite_index_Death_Left_Enemy = spr_Bullbug_Death_Left;
+sprite_index_Death_Left_Enemy = spr_Bullbug_Death_Left;
 </string>
           </argument>
         </arguments>
