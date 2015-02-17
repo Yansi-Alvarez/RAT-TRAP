@@ -25,31 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.obj_enemy = noone;
+            <string>//global.obj_enemy = noone;
 
-global.enemy_health = noone;
+enemy_health = noone;
 
-global.enemy_speed = noone;
+enemy_speed = noone;
 
-global.enemy_death = false;
+enemy_death = false;
 
-global.sprite_index_Idle_Right_Enemy = noone;
+sprite_index_Idle_Right_Enemy = noone;
 
-global.sprite_index_Idle_Left_Enemy = noone;
+sprite_index_Idle_Left_Enemy = noone;
 
-global.sprite_index_Walking_Right_Enemy = noone;
+sprite_index_Walking_Right_Enemy = noone;
 
-global.sprite_index_Walking_Left_Enemy = noone;
+sprite_index_Walking_Left_Enemy = noone;
 
-global.sprite_index_Stun_Right_Enemy = noone;
+sprite_index_Stun_Right_Enemy = noone;
 
-global.sprite_index_Stun_Left_Enemy = noone;
+sprite_index_Stun_Left_Enemy = noone;
 
-global.sprite_index_Death_Right_Enemy = noone;
+sprite_index_Death_Right_Enemy = noone;
 
-global.sprite_index_Death_Left_Enemy = noone;
+sprite_index_Death_Left_Enemy = noone;
 
 death_animation = false;
+
+collision_with_player = false;
 </string>
           </argument>
         </arguments>
@@ -72,68 +74,73 @@ death_animation = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction_enemy = point_direction(global.obj_enemy.x, global.obj_enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+            <string>direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
 
 if (distance_to_object(obj_Rat_Body) &lt;= 150) {
          
-    move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, global.enemy_speed)
+    move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
+    
+    if (obj_Parent_Enemy.collision_with_player = true) {
+        
+        enemy_speed = 0;
+    }
     
     //Angle between enemy and player, if between 0 and 89 degrees, looks to the up-right
 
     if  ((direction_enemy &gt;= 0) and (direction_enemy &lt;= 89)) {
     
-        global.enemy_right = true;
-        global.enemy_left = false;
+        enemy_right = true;
+        enemy_left = false;
         
-        sprite_index = global.sprite_index_Walking_Right_Enemy;
+        sprite_index = sprite_index_Walking_Right_Enemy;
     }
     
     //Angle between enemy and player, if between 90 and 179 degrees, looks to the up-left
     
     if ((direction_enemy &gt;= 90) and (direction_enemy &lt;= 179)) {
         
-        global.enemy_right = false;
-        global.enemy_left = true;
+        enemy_right = false;
+        enemy_left = true;
         
-        sprite_index = global.sprite_index_Walking_Left_Enemy;
+        sprite_index = sprite_index_Walking_Left_Enemy;
     }
     
     //Angle between enemy and player, if between 180 and 269 degrees, looks to the down-left
     
     if ((direction_enemy &gt;= 180) and (direction_enemy &lt;= 269)) {
         
-        global.enemy_right = false;
-        global.enemy_left = true;
+        enemy_right = false;
+        enemy_left = true;
         
-        sprite_index = global.sprite_index_Walking_Left_Enemy;
+        sprite_index = sprite_index_Walking_Left_Enemy;
     }
     
     //Angle between enemy and player, if between 270 and 359 degrees, looks to the down-right
     
     if ((direction_enemy &gt;= 270) and (direction_enemy &lt;= 359)) {
         
-        global.enemy_right = true;
-        global.enemy_left = false;
+        enemy_right = true;
+        enemy_left = false;
         
-        sprite_index = global.sprite_index_Walking_Right_Enemy;
+        sprite_index = sprite_index_Walking_Right_Enemy;
     }
 }
 
 //Death for Enemy
 
-if (global.enemy_health &lt;= 0) and ((sprite_index = global.sprite_index_Idle_Right_Enemy) or (sprite_index = global.sprite_index_Stun_Right_Enemy) or (sprite_index = global.sprite_index_Walking_Right_Enemy)) {
+if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Right_Enemy) or (sprite_index = sprite_index_Stun_Right_Enemy) or (sprite_index = sprite_index_Walking_Right_Enemy)) {
    
-     sprite_index = global.sprite_index_Death_Right_Enemy;
-     global.enemy_speed = 0;
+     sprite_index = sprite_index_Death_Right_Enemy;
+     enemy_speed = 0;
      image_speed = 0.3;
      death_animation = true;
      
 }
 
-if (global.enemy_health &lt;= 0) and ((sprite_index = global.sprite_index_Idle_Left_Enemy) or (sprite_index = global.sprite_index_Stun_Left_Enemy) or (sprite_index = global.sprite_index_Walking_Left_Enemy)) {
+if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
    
-     sprite_index = global.sprite_index_Death_Left_Enemy;
-     global.enemy_speed = 0;
+     sprite_index = sprite_index_Death_Left_Enemy;
+     enemy_speed = 0;
      image_speed = 0.3;
      death_animation = true;
      
@@ -141,13 +148,23 @@ if (global.enemy_health &lt;= 0) and ((sprite_index = global.sprite_index_Idle_L
 
 if (death_animation == true) {
 
-    instance_create(global.obj_enemy.x,global.obj_enemy.y,obj_Death);
+    instance_create(obj_Parent_Enemy.x,obj_Parent_Enemy.y,obj_Death);
     death_animation = false;
 }
 
-if (global.enemy_death == true) {
+if (enemy_death == true) {
+    
+    //Creation of experience
+    repeat(25) {
+    
+        //randomize();
+        instance_create(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Death_Particle_0);
+        instance_create(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Death_Particle_1);
         
-    with (global.obj_enemy) {
+    }
+    
+    //with (global.obj_enemy) {
+    with (other) {
         instance_destroy();
     }
 }
@@ -173,24 +190,24 @@ if (global.enemy_death == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (sprite_index = global.sprite_index_Walking_Right_Enemy) or
-    (sprite_index = global.sprite_index_Idle_Right_Enemy) {
+            <string>if (sprite_index = sprite_index_Walking_Right_Enemy) or
+    (sprite_index = sprite_index_Idle_Right_Enemy) {
     
-    global.enemy_health = global.enemy_health - 1;    
-    sprite_index = global.sprite_index_Stun_Right_Enemy;
+    enemy_health = enemy_health - 1;    
+    sprite_index = sprite_index_Stun_Right_Enemy;
     
-    with (obj_Parent_Bullet) {
+    with (other) {
         instance_destroy()
     }
 }
 
-if  (sprite_index = global.sprite_index_Walking_Left_Enemy) or 
-    (sprite_index = global.sprite_index_Idle_Left_Enemy) {
+if  (sprite_index = sprite_index_Walking_Left_Enemy) or 
+    (sprite_index = sprite_index_Idle_Left_Enemy) {
     
-    global.enemy_health = global.enemy_health - 1;
-    sprite_index = global.sprite_index_Stun_Left_Enemy;
+    enemy_health = enemy_health - 1;
+    sprite_index = sprite_index_Stun_Left_Enemy;
     
-    with (obj_Parent_Bullet) {
+    with (other) {
         instance_destroy()
     }
 }
@@ -216,19 +233,19 @@ if  (sprite_index = global.sprite_index_Walking_Left_Enemy) or
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (sprite_index = global.sprite_index_Stun_Right_Enemy) {
+            <string>if (sprite_index = sprite_index_Stun_Right_Enemy) {
     
-    sprite_index = global.sprite_index_Idle_Right_Enemy;
+    sprite_index = sprite_index_Idle_Right_Enemy;
 }
 
-if (sprite_index = global.sprite_index_Stun_Left_Enemy) {
+if (sprite_index = sprite_index_Stun_Left_Enemy) {
 
-    sprite_index = global.sprite_index_Idle_Left_Enemy;
+    sprite_index = sprite_index_Idle_Left_Enemy;
 }
 
-if (sprite_index = global.sprite_index_Death_Right_Enemy) or (sprite_index = global.sprite_index_Death_Left_Enemy) {
+if (sprite_index = sprite_index_Death_Right_Enemy) or (sprite_index = sprite_index_Death_Left_Enemy) {
     
-    global.enemy_death = true;
+    enemy_death = true;
 }
 </string>
           </argument>

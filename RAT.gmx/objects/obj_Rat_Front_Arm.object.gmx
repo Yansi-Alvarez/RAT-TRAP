@@ -59,7 +59,7 @@ walk_down_right = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) {
+            <string>if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
 
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Right;
     
@@ -81,7 +81,7 @@ walk_down_right = false;
     }
 }
 
-if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) and (walk_up_left == false) {
+if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) and (walk_up_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
 
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Left;
     
@@ -105,7 +105,7 @@ if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) 
     }
 }
 
-if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) and (walk_down_left == false) {
+if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) and (walk_down_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
 
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Left;
     
@@ -127,7 +127,7 @@ if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269))
     }
 }
 
-if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) and (walk_down_right == false) {
+if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) and (walk_down_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
     
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Right;
     

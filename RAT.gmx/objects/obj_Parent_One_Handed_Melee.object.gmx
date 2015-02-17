@@ -58,7 +58,8 @@ global.sprite_index_Left_One_Handed_Melee_In_Use = noone;
     if mouse_check_button_pressed(mb_left) and ((global.weapon_attach_right_arm == true) or (global.weapon_attach_left_arm == true)) {
             
         object_slash = instance_create(x,y,obj_Slash);
-        object_slash.image_angle = point_direction(x,y,mouse_x,mouse_y);
+        object_slash.image_angle = point_direction(x,y,mouse_x,mouse_y);      
+        audio_play_sound(snd_Melee_Hit, 1, 0);
         //slash_animation = true;
         //object_bullet.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
     }

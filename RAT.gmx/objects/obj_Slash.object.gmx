@@ -25,10 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left) or 
+            <string>if ((obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left) or 
     (obj_Rat_Head.sprite_index = spr_Head_Standard_Walking_Down_Left) or 
     (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Up_Left) or 
-    (obj_Rat_Head.sprite_index = spr_Head_Standard_Walking_Up_Left) {
+    (obj_Rat_Head.sprite_index = spr_Head_Standard_Walking_Up_Left)) and 
+    
+    ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) or
+    ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) {
         
     image_speed = 1;
     sprite_index = spr_Particle_Slash_Left;
@@ -37,7 +40,10 @@
 if (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Right) or 
     (obj_Rat_Head.sprite_index = spr_Head_Standard_Walking_Down_Right) or 
     (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Up_Right) or 
-    (obj_Rat_Head.sprite_index = spr_Head_Standard_Walking_Up_Right) {
+    (obj_Rat_Head.sprite_index = spr_Head_Standard_Walking_Up_Right) and 
+    
+    ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) or
+    ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) {
     
     image_speed = 1;
     sprite_index = spr_Particle_Slash_Right;
