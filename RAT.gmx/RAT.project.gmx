@@ -352,6 +352,8 @@
         </sprites>
         <sprites name="Ammo Count">
           <sprite>sprites\spr_Ammo_Hud</sprite>
+          <sprite>sprites\spr_Ammo_Icon_Handgun</sprite>
+          <sprite>sprites\spr_Ammo_Icon_Shotgun</sprite>
         </sprites>
       </sprites>
     </sprites>
