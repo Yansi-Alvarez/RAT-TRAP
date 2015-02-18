@@ -397,6 +397,24 @@
             <sprite>sprites\spr_Stinky_Pinky_Talk</sprite>
           </sprites>
         </sprites>
+        <sprites name="Buttons">
+          <sprites name="Green">
+            <sprite>sprites\spr_Button_Cage</sprite>
+            <sprite>sprites\spr_Button_Rat</sprite>
+            <sprite>sprites\spr_Button_Lab</sprite>
+            <sprite>sprites\spr_Button_Options</sprite>
+            <sprite>sprites\spr_Button_Exit</sprite>
+            <sprite>sprites\spr_Button_Home</sprite>
+          </sprites>
+          <sprites name="White">
+            <sprite>sprites\spr_Button_Cage_White</sprite>
+            <sprite>sprites\spr_Button_Rat_White</sprite>
+            <sprite>sprites\spr_Button_Lab_White</sprite>
+            <sprite>sprites\spr_Button_Options_White</sprite>
+            <sprite>sprites\spr_Button_Exit_White</sprite>
+            <sprite>sprites\spr_Button_Home_White</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Particles">
@@ -536,8 +554,10 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
+    <font>fonts\fnt_Text_Font</font>
   </fonts>
   <objects name="objects">
     <objects name="Rat_Body_Parts">
@@ -552,6 +572,25 @@
       <object>objects\obj_Cursor</object>
       <object>objects\obj_Screen_Shaker</object>
       <object>objects\obj_Title_Screen</object>
+      <objects name="Buttons">
+        <object>objects\obj_Button_Parent</object>
+        <objects name="Green">
+          <object>objects\obj_Button_Cage</object>
+          <object>objects\obj_Button_Rat</object>
+          <object>objects\obj_Button_Lab</object>
+          <object>objects\obj_Button_Options</object>
+          <object>objects\obj_Button_Exit</object>
+          <object>objects\obj_Button_Home</object>
+        </objects>
+        <objects name="White">
+          <object>objects\obj_Button_Cage_White</object>
+          <object>objects\pbj_Button_Rat_White</object>
+          <object>objects\obj_Button_Lab_White</object>
+          <object>objects\obj_Button_Options_White</object>
+          <object>objects\obj_Button_Exit_White</object>
+          <object>objects\obj_Button_Home_White</object>
+        </objects>
+      </objects>
     </objects>
     <objects name="Weapons">
       <objects name="Handguns">

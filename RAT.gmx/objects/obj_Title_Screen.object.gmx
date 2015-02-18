@@ -28,6 +28,8 @@
             <string>title_screen_string = noone;
 
 version_number = noone;
+
+code_number = noone;
 </string>
           </argument>
         </arguments>
@@ -54,15 +56,72 @@ version_number = noone;
 
 version_number = "1.0";
 
+code_number = "3";
+
 title_screen_string = "Ratatosk Facilities Property [Version " + version_number + "]"
 
 draw_background_stretched(bkgd_Black, 0, 0, 640, 480);
 
-draw_rectangle_colour(4, 65, 536, 384, c_lime, c_lime, c_lime, c_lime, true);
+draw_rectangle_colour(3, 50, 500, 384, c_lime, c_lime, c_lime, c_lime, true);
 
-//draw_set_font(fnt_);
+draw_set_font(fnt_Text_Font);
 
 draw_text_ext_transformed_colour(3, 5, title_screen_string, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(3, 18, "Copyright (c) 2015 Ratatosk Labs. All rights reserved.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(3, 30, "C:\Users\Tester&gt;", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(3, 397, "Manual code entry prompt.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(3, 410, "Enter a " + code_number + " letter code for generation. No digits or symbols.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_rectangle_colour(3, 430, 500, 470, c_lime, c_lime, c_lime, c_lime, true);
+
+draw_text_ext_transformed_colour(9, 440, "&gt;", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+//interactive button menu starts here
+//outline
+draw_rectangle_colour(530, 7, 630, 470, c_lime, c_lime, c_lime, c_lime, true);
+
+//time box
+
+draw_rectangle_colour(530, 7, 630, 55, c_lime, c_lime, c_lime, c_lime, true);
+
+draw_text_ext_transformed_colour(560, 10, "Time", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+myhour = date_get_hour(date_current_datetime());
+
+myminute = date_get_minute(date_current_datetime());
+
+draw_text_ext_transformed_colour(555, 30, myhour, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(575, 30, ":", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(585, 30, myminute, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+
+// date box
+
+draw_rectangle_colour(530, 55, 630, 103, c_lime, c_lime, c_lime, c_lime, true);
+
+myday = date_get_day(date_current_datetime());
+mymonth = date_get_month(date_current_datetime());
+myyear = date_get_year(date_current_datetime());
+
+draw_text_ext_transformed_colour(560, 60, "Date", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(540, 85, mymonth, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(550, 85, "/", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(560, 85, myday, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(577, 85, "/", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+draw_text_ext_transformed_colour(585, 85, myyear, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+
 </string>
           </argument>
         </arguments>
