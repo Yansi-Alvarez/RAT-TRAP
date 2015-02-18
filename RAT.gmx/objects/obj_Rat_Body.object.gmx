@@ -452,14 +452,41 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
     
     if (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Left) {
     
-        obj_Rat_Front_Arm.x = obj_Rat_Head.x + 5;
-        obj_Rat_Front_Arm.y = obj_Rat_Head.y + 20;
+        obj_Rat_Front_Arm.x = obj_Rat_Front_Arm.x + 5;
+        obj_Rat_Front_Arm.y = obj_Rat_Front_Arm.y + 20;
     }
     
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Left;
-    sprite_index = spr_Body_Standard_Stun_Down_Left;
+    
+    if (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Left) {
+    
+        obj_Rat_Back_Arm.x = obj_Rat_Back_Arm.x + 5;
+        obj_Rat_Back_Arm.y = obj_Rat_Back_Arm.y + 20;
+    }
+    
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left;
+    
+    if (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left) {
+    
+        obj_Rat_Body.x = obj_Rat_Body.x + 5;
+        obj_Rat_Body.y = obj_Rat_Body.y + 20;
+    }
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Left;
+    
+    if (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Left) {
+    
+        obj_Rat_Legs.x = obj_Rat_Legs.x + 5;
+        obj_Rat_Legs.y = obj_Rat_Legs.y + 20;
+    }
+    
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Left;
+    
+    if (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Left) {
+    
+        obj_Rat_Tail.x = obj_Rat_Tail.x + 5;
+        obj_Rat_Tail.y = obj_Rat_Tail.y + 20;
+    }
     
     //This is where it ends for your coding for this specific animation, all the other stuff is working completely fine
     //the rest of the directions is just rinse and repeat, look for the stun animations and
@@ -506,12 +533,53 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
     //Start
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right;
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) {
+    
+        obj_Rat_Head.x = obj_Rat_Head.x - 5;
+        obj_Rat_Head.y = obj_Rat_Head.y - 20;
+    }
+    
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Right;
+    
+    if (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Down_Right) {
+    
+        obj_Rat_Front_Arm.x = obj_Rat_Front_Arm.x - 5;
+        obj_Rat_Front_Arm.y = obj_Rat_Front_Arm.y - 20;
+    }
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Right;
-    sprite_index = spr_Body_Standard_Stun_Down_Right;
+    
+    if (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Down_Right) {
+    
+        obj_Rat_Back_Arm.x = obj_Rat_Back_Arm.x - 5;
+        obj_Rat_Back_Arm.y = obj_Rat_Back_Arm.y - 20;
+    }
+    
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right;
+    
+    if (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right) {
+    
+        obj_Rat_Body.x = obj_Rat_Body.x - 5;
+        obj_Rat_Body.y = obj_Rat_Body.y - 20;
+    }
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Right;
+    
+    if (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Down_Right) {
+    
+        obj_Rat_Legs.x = obj_Rat_Legs.x - 5;
+        obj_Rat_Legs.y = obj_Rat_Legs.y - 20;
+    }
+    
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Right;
     
+    if (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Down_Right) {
+    
+        obj_Rat_Tail.x = obj_Rat_Tail.x - 5;
+        obj_Rat_Tail.y = obj_Rat_Tail.y - 20;
+    }
+
     //End
     
     obj_Rat_Head.image_speed = 0.4;
@@ -554,11 +622,52 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
     //Start
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left;
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) {
+    
+        obj_Rat_Head.x = obj_Rat_Head.x + 5;
+        obj_Rat_Head.y = obj_Rat_Head.y + 20;
+    }
+    
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Left;
+    
+    if (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Left) {
+    
+        obj_Rat_Front_Arm.x = obj_Rat_Front_Arm.x + 5;
+        obj_Rat_Front_Arm.y = obj_Rat_Front_Arm.y + 20;
+    }
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Left;
-    sprite_index = spr_Body_Standard_Stun_Up_Left;
+    
+    if (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Left) {
+    
+        obj_Rat_Back_Arm.x = obj_Rat_Back_Arm.x + 5;
+        obj_Rat_Back_Arm.y = obj_Rat_Back_Arm.y + 20;
+    }
+    
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left;
+    
+    if (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left) {
+    
+        obj_Rat_Body.x = obj_Rat_Body.x + 5;
+        obj_Rat_Body.y = obj_Rat_Body.y + 20;
+    }
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Left;
+    
+    if (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Left) {
+    
+        obj_Rat_Legs.x = obj_Rat_Legs.x + 5;
+        obj_Rat_Legs.y = obj_Rat_Legs.y + 20;
+    }
+    
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Left;
+    
+    if (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Left) {
+    
+        obj_Rat_Tail.x = obj_Rat_Tail.x + 5;
+        obj_Rat_Tail.y = obj_Rat_Tail.y + 20;
+    }
     
     //End
     
@@ -602,11 +711,52 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
     //Start
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right;
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) {
+    
+        obj_Rat_Head.x = obj_Rat_Head.x - 5;
+        obj_Rat_Head.y = obj_Rat_Head.y - 20;
+    }
+    
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Right;
+    
+    if (obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Stun_Up_Right) {
+    
+        obj_Rat_Front_Arm.x = obj_Rat_Front_Arm.x - 5;
+        obj_Rat_Front_Arm.y = obj_Rat_Front_Arm.y - 20;
+    }
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Right;
-    sprite_index = spr_Body_Standard_Stun_Up_Right;
+    
+    if (obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Stun_Up_Right) {
+    
+        obj_Rat_Back_Arm.x = obj_Rat_Back_Arm.x - 5;
+        obj_Rat_Back_Arm.y = obj_Rat_Back_Arm.y - 20;
+    }
+    
+    obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right;
+    
+    if (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right) {
+    
+        obj_Rat_Body.x = obj_Rat_Body.x - 5;
+        obj_Rat_Body.y = obj_Rat_Body.y - 20;
+    }
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Right;
+    
+    if (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Stun_Up_Right) {
+    
+        obj_Rat_Legs.x = obj_Rat_Legs.x - 5;
+        obj_Rat_Legs.y = obj_Rat_Legs.y - 20;
+    }
+    
     obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Right;
+    
+    if (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Stun_Up_Right) {
+    
+        obj_Rat_Tail.x = obj_Rat_Tail.x - 5;
+        obj_Rat_Tail.y = obj_Rat_Tail.y - 20;
+    }
     
     //End
     
