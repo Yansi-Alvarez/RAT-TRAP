@@ -554,7 +554,6 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
     <font>fonts\fnt_Text_Font</font>
@@ -638,7 +637,7 @@
     <room>rooms\Test_Page</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42051.8034310417</constant>
+    <constant name="GM_build_date">42053.1465567708</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
