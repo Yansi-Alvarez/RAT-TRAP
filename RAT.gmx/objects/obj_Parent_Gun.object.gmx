@@ -30,6 +30,10 @@
 sprite_index_Left_Gun_In_Use = noone;
 
 potato_gun_bullet_timer = true;
+
+correction = noone;
+
+correction = noone;
 </string>
           </argument>
         </arguments>
@@ -214,6 +218,60 @@ if (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_picke
         other.object_bullet.speed = 10;
         other.potato_gun_bullet_timer = false;
         alarm[0] = 5;
+    }
+}
+
+correction = 160;
+correction_2 = 200;
+
+if (obj_Rat_Body.weapon_picked_up == true) {
+
+    //Angle of head when looking up right
+    
+    if (global.direction_player &gt;= 0) and (global.direction_player &lt;= 30) {
+    
+        image_angle = global.direction_player;
+    }
+    
+    if (global.direction_player &gt;= 31) and (global.direction_player &lt;= 89) {
+        
+        image_angle = 31;
+    }
+    
+    //Angle of head when looking up left
+    
+    if (global.direction_player &gt;= 90) and (global.direction_player &lt;= 130) {
+    
+        image_angle = 131 - correction;
+    }
+    
+    if (global.direction_player &gt;= 131) and (global.direction_player &lt;= 179) {
+    
+        image_angle = global.direction_player - correction;
+    }
+    
+    //Angle of head when looking down left
+    
+    if (global.direction_player &gt;= 180) and (global.direction_player &lt;= 220) {
+    
+        image_angle = global.direction_player + correction_2;
+    }
+    
+    if (global.direction_player &gt;= 221) and (global.direction_player &lt;= 269) {
+    
+        image_angle = 221 + correction_2;
+    }
+    
+    //Angle of head when looking down right
+    
+    if (global.direction_player &gt;= 270) and (global.direction_player &lt;= 310) {
+    
+        image_angle = 310;
+    }
+    
+    if (global.direction_player &gt;= 311) and (global.direction_player &lt;= 359) {
+    
+        image_angle = global.direction_player;
     }
 }
 </string>

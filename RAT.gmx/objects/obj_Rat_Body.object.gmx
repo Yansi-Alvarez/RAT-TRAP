@@ -519,16 +519,34 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
         other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
+    
+    //Knockback for collision
+
+    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    
+    obj_Rat_Head.speed = knock_back_speed;    
+    obj_Rat_Body.speed = knock_back_speed;
+    obj_Rat_Front_Arm.speed = knock_back_speed;     
+    obj_Rat_Back_Arm.speed = knock_back_speed;
+    obj_Rat_Legs.speed = knock_back_speed;     
+    obj_Rat_Tail.speed = knock_back_speed;
+    
+    alarm[1] = 5;
 }
 
 //Stun animation for down right
 if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
     (sprite_index = spr_Body_Standard_Walking_Down_Right)) and
     
-    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    ((obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
     (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
     (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
-    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy) {
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy)) {
     
     //Start
     
@@ -608,16 +626,34 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
         other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
+    
+    //Knockback for collision
+
+    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    
+    obj_Rat_Head.speed = knock_back_speed;    
+    obj_Rat_Body.speed = knock_back_speed;
+    obj_Rat_Front_Arm.speed = knock_back_speed;     
+    obj_Rat_Back_Arm.speed = knock_back_speed;
+    obj_Rat_Legs.speed = knock_back_speed;     
+    obj_Rat_Tail.speed = knock_back_speed;
+    
+    alarm[1] = 5;
 }
 
 //Stun animation for up left
 if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
     (sprite_index = spr_Body_Standard_Walking_Up_Left)) and
        
-    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    ((obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
     (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
     (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
-    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy) {
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy)) {
     
     //Start
     
@@ -697,16 +733,34 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
         other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
+    
+    //Knockback for collision
+
+    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    
+    obj_Rat_Head.speed = knock_back_speed;    
+    obj_Rat_Body.speed = knock_back_speed;
+    obj_Rat_Front_Arm.speed = knock_back_speed;     
+    obj_Rat_Back_Arm.speed = knock_back_speed;
+    obj_Rat_Legs.speed = knock_back_speed;     
+    obj_Rat_Tail.speed = knock_back_speed;
+    
+    alarm[1] = 5;
 }
 
 //Stun animation for up right 
 if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
     (sprite_index = spr_Body_Standard_Walking_Up_Right)) and
     
-    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
+    ((obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Left_Enemy) or
     (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Walking_Right_Enemy) or
     (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy) or
-    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy) {
+    (obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy)) {
 
     //Start
     
@@ -786,30 +840,27 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
         other.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
+    
+    //Knockback for collision
+
+    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    
+    obj_Rat_Head.speed = knock_back_speed;    
+    obj_Rat_Body.speed = knock_back_speed;
+    obj_Rat_Front_Arm.speed = knock_back_speed;     
+    obj_Rat_Back_Arm.speed = knock_back_speed;
+    obj_Rat_Legs.speed = knock_back_speed;     
+    obj_Rat_Tail.speed = knock_back_speed;
+    
+    alarm[1] = 5;
 }
 
 ///////////////////////////////////////////////////////////
-//Don't worry about this, there is a little bug where the rat is able to be hit when he's in
-//hitstun but I already know how to fix it, I'm just leaving it for a later time, possibly
-//after you are done coding
-
-//Knockback for collision
-
-obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
-obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-
-obj_Rat_Head.speed = knock_back_speed;    
-obj_Rat_Body.speed = knock_back_speed;
-obj_Rat_Front_Arm.speed = knock_back_speed;     
-obj_Rat_Back_Arm.speed = knock_back_speed;
-obj_Rat_Legs.speed = knock_back_speed;     
-obj_Rat_Tail.speed = knock_back_speed;
-
-alarm[1] = 5;
 </string>
           </argument>
         </arguments>

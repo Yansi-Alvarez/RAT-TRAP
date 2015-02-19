@@ -71,7 +71,7 @@ instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
 
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 
-instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
+//instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
 
 //instance_create(obj_Rat_Head.x + 50, obj_Rat_Head.y, obj_Beretta)
 
@@ -80,6 +80,10 @@ instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
 collision_with_enemy = false;
 
 collision_damage = false;
+
+correction = noone;
+
+correction_2 = noone;
 </string>
           </argument>
         </arguments>
@@ -698,7 +702,7 @@ obj_Cursor.x = mouse_x;
 obj_Cursor.y = mouse_y;
 
 global.direction_player = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, obj_Cursor.x, obj_Cursor.y)
-//obj_Rat_Head.image_angle = global.direction_player;
+//obj_Rat_Head.image_angle = global.direction_player - correction;
 
 //Angle of player, if between 0 and 89 degrees, looks to the up-right
 
@@ -857,6 +861,61 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
         walk_down_right = true;
     }
 } 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+correction = 160;
+correction_2 = 200;
+
+//Angle of head when looking up right
+
+if (global.direction_player &gt;= 0) and (global.direction_player &lt;= 30) {
+
+    image_angle = global.direction_player;
+}
+
+if (global.direction_player &gt;= 31) and (global.direction_player &lt;= 89) {
+    
+    image_angle = 31;
+}
+
+//Angle of head when looking up left
+
+if (global.direction_player &gt;= 90) and (global.direction_player &lt;= 130) {
+
+    image_angle = 131 - correction;
+}
+
+if (global.direction_player &gt;= 131) and (global.direction_player &lt;= 179) {
+
+    image_angle = global.direction_player - correction;
+}
+
+//Angle of head when looking down left
+
+if (global.direction_player &gt;= 180) and (global.direction_player &lt;= 220) {
+
+    image_angle = global.direction_player + correction_2;
+}
+
+if (global.direction_player &gt;= 221) and (global.direction_player &lt;= 269) {
+
+    image_angle = 221 + correction_2;
+}
+
+//Angle of head when looking down right
+
+if (global.direction_player &gt;= 270) and (global.direction_player &lt;= 310) {
+
+    image_angle = 310;
+}
+
+if (global.direction_player &gt;= 311) and (global.direction_player &lt;= 359) {
+
+    image_angle = global.direction_player;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
