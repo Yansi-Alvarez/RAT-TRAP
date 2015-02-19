@@ -416,6 +416,9 @@
           </sprites>
         </sprites>
       </sprites>
+      <sprites name="Props">
+        <sprite>sprites\props</sprite>
+      </sprites>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\spr_Particle_Charge_Bar</sprite>
