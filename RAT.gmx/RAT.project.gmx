@@ -337,6 +337,7 @@
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor_Alt</sprite>
+      <sprite>sprites\spr_Text_Bubble</sprite>
       <sprite>sprites\spr_Screen_Overlay</sprite>
       <sprite>sprites\spr_Cursor</sprite>
       <sprites name="Menus">
@@ -356,7 +357,6 @@
           <sprite>sprites\spr_Ammo_Icon_Shotgun</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_Text_Bubble</sprite>
     </sprites>
     <sprites name="Stages">
       <sprite>sprites\Stage_Test_Tile</sprite>
@@ -641,7 +641,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42054.016002419</constant>
+    <constant name="GM_build_date">42054.9560545833</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
