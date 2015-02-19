@@ -7,9 +7,9 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>55</bbox_left>
+  <bbox_left>53</bbox_left>
   <bbox_right>129</bbox_right>
-  <bbox_top>91</bbox_top>
+  <bbox_top>49</bbox_top>
   <bbox_bottom>116</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -20,6 +20,6 @@
   <width>232</width>
   <height>208</height>
   <frames>
-    <frame index="0">images\props_0.png</frame>
+    <frame index="0">images\spr_Props_0.png</frame>
   </frames>
 </sprite>

@@ -337,8 +337,27 @@
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor_Alt</sprite>
+      <sprite>sprites\spr_Text_Bubble</sprite>
       <sprite>sprites\spr_Screen_Overlay</sprite>
       <sprite>sprites\spr_Cursor</sprite>
+      <sprites name="Buttons">
+        <sprites name="Green">
+          <sprite>sprites\spr_Button_Cage</sprite>
+          <sprite>sprites\spr_Button_Rat</sprite>
+          <sprite>sprites\spr_Button_Lab</sprite>
+          <sprite>sprites\spr_Button_Options</sprite>
+          <sprite>sprites\spr_Button_Exit</sprite>
+          <sprite>sprites\spr_Button_Home</sprite>
+        </sprites>
+        <sprites name="White">
+          <sprite>sprites\spr_Button_Cage_White</sprite>
+          <sprite>sprites\spr_Button_Rat_White</sprite>
+          <sprite>sprites\spr_Button_Lab_White</sprite>
+          <sprite>sprites\spr_Button_Options_White</sprite>
+          <sprite>sprites\spr_Button_Exit_White</sprite>
+          <sprite>sprites\spr_Button_Home_White</sprite>
+        </sprites>
+      </sprites>
       <sprites name="Menus">
         <sprites name="Title">
           <sprite>sprites\spr_Input_Error</sprite>
@@ -356,7 +375,6 @@
           <sprite>sprites\spr_Ammo_Icon_Shotgun</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_Text_Bubble</sprite>
     </sprites>
     <sprites name="Stages">
       <sprite>sprites\Stage_Test_Tile</sprite>
@@ -398,27 +416,9 @@
             <sprite>sprites\spr_Stinky_Pinky_Talk</sprite>
           </sprites>
         </sprites>
-        <sprites name="Buttons">
-          <sprites name="Green">
-            <sprite>sprites\spr_Button_Cage</sprite>
-            <sprite>sprites\spr_Button_Rat</sprite>
-            <sprite>sprites\spr_Button_Lab</sprite>
-            <sprite>sprites\spr_Button_Options</sprite>
-            <sprite>sprites\spr_Button_Exit</sprite>
-            <sprite>sprites\spr_Button_Home</sprite>
-          </sprites>
-          <sprites name="White">
-            <sprite>sprites\spr_Button_Cage_White</sprite>
-            <sprite>sprites\spr_Button_Rat_White</sprite>
-            <sprite>sprites\spr_Button_Lab_White</sprite>
-            <sprite>sprites\spr_Button_Options_White</sprite>
-            <sprite>sprites\spr_Button_Exit_White</sprite>
-            <sprite>sprites\spr_Button_Home_White</sprite>
-          </sprites>
-        </sprites>
       </sprites>
       <sprites name="Props">
-        <sprite>sprites\props</sprite>
+        <sprite>sprites\spr_Props</sprite>
       </sprites>
     </sprites>
     <sprites name="Particles">
