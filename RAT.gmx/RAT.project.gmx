@@ -356,6 +356,7 @@
           <sprite>sprites\spr_Ammo_Icon_Shotgun</sprite>
         </sprites>
       </sprites>
+      <sprite>sprites\spr_Text_Bubble</sprite>
     </sprites>
     <sprites name="Stages">
       <sprite>sprites\Stage_Test_Tile</sprite>
