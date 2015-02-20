@@ -474,6 +474,7 @@
         </sprites>
       </sprites>
       <sprite>sprites\spr_Particle_Shock</sprite>
+      <sprite>sprites\spr_Particle_Hit</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
