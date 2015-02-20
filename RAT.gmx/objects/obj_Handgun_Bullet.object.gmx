@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_angle = point_direction(x,y,mouse_x,mouse_y);
-alarm[0] = 10;
 
+alarm[0] = 10;
 </string>
           </argument>
         </arguments>
@@ -68,5 +68,8 @@ alarm[0] = 10;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>9,4</point>
+    <point>9,9</point>
+  </PhysicsShapePoints>
 </object>

@@ -28,7 +28,9 @@
             <string>image_angle = point_direction(x,y,mouse_x,mouse_y);
 
 //sets bullet spread
-motion_set(image_angle+random(40)*choose(1,-1),32)
+//motion_set(image_angle + random(40)*choose(1,-1),32)
+
+motion_set(image_angle + random(20)*choose(0.5,0.5),32)
 
 image_angle = direction
 
@@ -75,5 +77,8 @@ alarm[0] = 8;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>12,12</point>
+    <point>12,12</point>
+  </PhysicsShapePoints>
 </object>

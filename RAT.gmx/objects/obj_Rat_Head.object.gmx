@@ -65,15 +65,33 @@ instance_create(mouse_x, mouse_y, obj_Cursor)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Sword)
 
-instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+//instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 220, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 240, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 260, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 280, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 170, obj_Rat_Head.y + 200, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 190, obj_Rat_Head.y + 220, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 210, obj_Rat_Head.y + 240, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 230, obj_Rat_Head.y + 260, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 250, obj_Rat_Head.y + 280, obj_Bullbug)
+
 //instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
 
-//instance_create(obj_Rat_Head.x + 50, obj_Rat_Head.y, obj_Beretta)
+instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Beretta)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 

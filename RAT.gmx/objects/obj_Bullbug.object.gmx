@@ -31,7 +31,7 @@
 
 enemy_health = 3;
 
-enemy_speed = 4;
+enemy_speed = 5;
 
 sprite_index_Idle_Right_Enemy = spr_Idle_Bullbug_Right;
 

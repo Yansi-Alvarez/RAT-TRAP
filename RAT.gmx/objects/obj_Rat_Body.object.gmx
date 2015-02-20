@@ -122,7 +122,7 @@ obj_Rat_Tail.vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_Parent_Enemy.enemy_speed = 4;
+            <string>obj_Parent_Enemy.enemy_speed = 5;
 </string>
           </argument>
         </arguments>
@@ -987,8 +987,20 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Left;
+    
+    obj_Rat_Front_Arm.x = obj_Rat_Head.x + 5 
+    obj_Rat_Front_Arm.y = obj_Rat_Head.y + 20
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Down_Left;
+    
+    obj_Rat_Back_Arm.x = obj_Rat_Head.x - 7 
+    obj_Rat_Back_Arm.y = obj_Rat_Head.y + 15
+    
     sprite_index = spr_Body_Standard_Idle_Down_Left;
+    
+    x = obj_Rat_Head.x + 7
+    y = obj_Rat_Head.y + 11
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Down_Left;
     
     obj_Rat_Legs.x = obj_Rat_Head.x + 5;
@@ -1012,8 +1024,20 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) and
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Up_Left;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Left;
+    
+    obj_Rat_Front_Arm.x = obj_Rat_Head.x + 5 
+    obj_Rat_Front_Arm.y = obj_Rat_Head.y + 20
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Up_Left;
+    
+    obj_Rat_Back_Arm.x = obj_Rat_Head.x - 7 
+    obj_Rat_Back_Arm.y = obj_Rat_Head.y + 15
+    
     sprite_index = spr_Body_Standard_Idle_Up_Left;
+    
+    x = obj_Rat_Head.x + 7
+    y = obj_Rat_Head.y + 11
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Left;
     
     obj_Rat_Legs.x = obj_Rat_Head.x + 5;
@@ -1037,8 +1061,20 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) and
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Right;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Down_Right;
+    
+    obj_Rat_Front_Arm.x = obj_Rat_Head.x + 5 
+    obj_Rat_Front_Arm.y = obj_Rat_Head.y + 20
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Down_Right;
+    
+    obj_Rat_Back_Arm.x = obj_Rat_Head.x - 7 
+    obj_Rat_Back_Arm.y = obj_Rat_Head.y + 15
+    
     sprite_index = spr_Body_Standard_Idle_Down_Right;
+    
+    x = obj_Rat_Head.x + 7
+    y = obj_Rat_Head.y + 11
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Down_Right;
     
     obj_Rat_Legs.x = obj_Rat_Head.x + 5;
@@ -1062,8 +1098,20 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) and
     
     obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Up_Right;
     obj_Rat_Front_Arm.sprite_index = spr_Front_Arm_Standard_Idle_Up_Right;
+    
+    obj_Rat_Front_Arm.x = obj_Rat_Head.x + 5 
+    obj_Rat_Front_Arm.y = obj_Rat_Head.y + 20
+    
     obj_Rat_Back_Arm.sprite_index = spr_Back_Arm_Standard_Idle_Up_Right;
+    
+    obj_Rat_Back_Arm.x = obj_Rat_Head.x - 7 
+    obj_Rat_Back_Arm.y = obj_Rat_Head.y + 15
+    
     sprite_index = spr_Body_Standard_Idle_Up_Right;
+    
+    x = obj_Rat_Head.x + 7
+    y = obj_Rat_Head.y + 11
+    
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Right;
     
     obj_Rat_Legs.x = obj_Rat_Head.x + 5;
