@@ -39,6 +39,8 @@ walk_down_right = false;
 
 particle_destroy = false;
 
+death = false;
+
 image_speed = 0.3;
 
 sprite_index = spr_Head_Standard_Idle_Down_Left;
@@ -65,15 +67,33 @@ instance_create(mouse_x, mouse_y, obj_Cursor)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Sword)
 
-instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+//instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
+/*
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 220, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 240, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 260, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 280, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 170, obj_Rat_Head.y + 200, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 190, obj_Rat_Head.y + 220, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 210, obj_Rat_Head.y + 240, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 230, obj_Rat_Head.y + 260, obj_Bullbug)
+
+instance_create(obj_Rat_Head.x + 250, obj_Rat_Head.y + 280, obj_Bullbug)
 
 //instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
-
-//instance_create(obj_Rat_Head.x + 50, obj_Rat_Head.y, obj_Beretta)
+*/
+instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Beretta)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 
@@ -632,12 +652,12 @@ if (Player_Health &lt;= 0) {
         obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Down_Left;
         obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Down_Left;
         
-        image_speed = 0.3;
-        obj_Rat_Body.image_speed = 0.3;
-        obj_Rat_Front_Arm.image_speed = 0.3;
-        obj_Rat_Back_Arm.image_speed = 0.3;
-        obj_Rat_Legs.image_speed = 0.3;
-        obj_Rat_Tail.image_speed = 0.3;
+        image_speed = 0.2;
+        obj_Rat_Body.image_speed = 0.2;
+        obj_Rat_Front_Arm.image_speed = 0.2;
+        obj_Rat_Back_Arm.image_speed = 0.2;
+        obj_Rat_Legs.image_speed = 0.2;
+        obj_Rat_Tail.image_speed = 0.2;
     }
     
         if (sprite_index = spr_Head_Standard_Idle_Down_Right) or 
@@ -1088,34 +1108,48 @@ if keyboard_check_released(ord('S')) {
     (obj_Rat_Legs.sprite_index = spr_Legs_Standard_Death_Up_Right) and
     (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Death_Up_Right)) {
     
-    with (obj_Rat_Head) {
+    if (death == false) {
     
-        instance_destroy();
+        audio_play_sound(snd_Death, 1, 0);
+    
+        instance_create(x, y, obj_Death);
+        instance_create(x + 7, y + 11, obj_Death);
+        instance_create(x + 5, y + 20, obj_Death);
+        instance_create(x - 7, y + 15, obj_Death);
+        instance_create(x + 5, y + 25, obj_Death);
+        instance_create(x + 12, y + 16, obj_Death);
+
+        death = true;
+    }
+    
+    with (obj_Rat_Head) {
+        
+        image_alpha = 0;
     }  
     
     with (obj_Rat_Body) {
-    
-        instance_destroy();
+        
+        image_alpha = 0;
     }  
     
     with (obj_Rat_Front_Arm) {
-    
-        instance_destroy();
+        
+        image_alpha = 0;
     }  
     
     with (obj_Rat_Back_Arm) {
-    
-        instance_destroy();
+        
+        image_alpha = 0;
     }  
     
     with (obj_Rat_Legs) {
-    
-        instance_destroy();
+
+        image_alpha = 0;
     }  
     
     with (obj_Rat_Tail) {
     
-        instance_destroy();
+        image_alpha = 0;
     }  
 }
 </string>

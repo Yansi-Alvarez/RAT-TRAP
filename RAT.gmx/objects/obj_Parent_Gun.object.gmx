@@ -130,7 +130,34 @@ correction = noone;
         other.x = obj_Rat_Back_Arm.x;
         other.y = obj_Rat_Back_Arm.y;
     }
+    
+//////////////////////////////////////////////////////////////////
+
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Left) {
+        other.sprite_index = sprite_index_Left_Gun_In_Use;
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    }
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) {
+        other.sprite_index = sprite_index_Right_Gun_In_Use;
+        other.x = obj_Rat_Back_Arm.x;
+        other.y = obj_Rat_Back_Arm.y;
+    }
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) {
+        other.sprite_index = sprite_index_Left_Gun_In_Use;
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    }
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) {
+        other.sprite_index = sprite_index_Right_Gun_In_Use;
+        other.x = obj_Rat_Back_Arm.x;
+        other.y = obj_Rat_Back_Arm.y;
+    }
 }
+
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
@@ -186,7 +213,33 @@ if (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_picke
         other.sprite_index = sprite_index_Right_Gun_In_Use;
         other.x = obj_Rat_Front_Arm.x;
         other.y = obj_Rat_Front_Arm.y;
+    } 
+    
+//////////////////////////////////////////////////////////////////
+
+        if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Left) {
+        other.sprite_index = sprite_index_Left_Gun_In_Use;
+        other.x = obj_Rat_Back_Arm.x;
+        other.y = obj_Rat_Back_Arm.y;
     }
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Down_Right) {
+        other.sprite_index = sprite_index_Right_Gun_In_Use;
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    }
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Left) {
+        other.sprite_index = sprite_index_Left_Gun_In_Use;
+        other.x = obj_Rat_Back_Arm.x;
+        other.y = obj_Rat_Back_Arm.y;
+    }
+    
+    if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) {
+        other.sprite_index = sprite_index_Right_Gun_In_Use;
+        other.x = obj_Rat_Front_Arm.x;
+        other.y = obj_Rat_Front_Arm.y;
+    } 
 }
 </string>
           </argument>

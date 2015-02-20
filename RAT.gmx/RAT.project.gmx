@@ -605,8 +605,6 @@
       <objects name="Handguns">
         <object>objects\obj_Parent_Gun</object>
         <object>objects\obj_Potato_Handgun</object>
-        <object>objects\obj_Gun_2</object>
-        <object>objects\obj_Gun_Back_Up</object>
         <object>objects\obj_Beretta</object>
       </objects>
       <objects name="Shotguns">
@@ -648,7 +646,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42055.1700772222</constant>
+    <constant name="GM_build_date">42055.9217142245</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
