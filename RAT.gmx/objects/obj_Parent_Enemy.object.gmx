@@ -195,8 +195,10 @@ if (enemy_death == true) {
     
     enemy_health = enemy_health - 1;    
     sprite_index = sprite_index_Stun_Right_Enemy;
+    instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
     
     with (other) {
+    
         instance_destroy()
     }
 }
@@ -206,8 +208,10 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
     
     enemy_health = enemy_health - 1;
     sprite_index = sprite_index_Stun_Left_Enemy;
+    instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
     
     with (other) {
+    
         instance_destroy()
     }
 }

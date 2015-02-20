@@ -629,6 +629,7 @@
       <object>objects\obj_Slash</object>
       <object>objects\obj_Death_Particle_0</object>
       <object>objects\obj_Death_Particle_1</object>
+      <object>objects\obj_Particle_Hit</object>
     </objects>
     <objects name="Melee">
       <objects name="One Handed Melee">
@@ -647,7 +648,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42054.9560545833</constant>
+    <constant name="GM_build_date">42055.1700772222</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
