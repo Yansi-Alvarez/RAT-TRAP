@@ -89,7 +89,7 @@ if (obj_Rat_Body.gun_collision == true) {
         object_bullet = instance_create(x + 5, y - 5, obj_Handgun_Bullet);
         object_bullet.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
         object_bullet.speed = 50;
-        audio_play_sound(snd_Handgun,1,0);
+        audio_play_sound(snd_Handgun, 1, 0);
     }
     
 }

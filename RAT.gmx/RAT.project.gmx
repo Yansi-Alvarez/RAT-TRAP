@@ -641,7 +641,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42055.7813472107</constant>
+    <constant name="GM_build_date">42055.9217142245</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

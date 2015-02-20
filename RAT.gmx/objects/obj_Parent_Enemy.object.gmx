@@ -49,6 +49,8 @@ sprite_index_Death_Right_Enemy = noone;
 
 sprite_index_Death_Left_Enemy = noone;
 
+death_sound = noone;
+
 death_animation = false;
 
 collision_with_player = false;
@@ -148,7 +150,7 @@ if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or 
 
 if (death_animation == true) {
 
-    instance_create(obj_Parent_Enemy.x,obj_Parent_Enemy.y,obj_Death);
+    instance_create(other.x,other.y,obj_Death);
     death_animation = false;
 }
 
@@ -158,13 +160,14 @@ if (enemy_death == true) {
     repeat(25) {
     
         //randomize();
-        instance_create(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Death_Particle_0);
-        instance_create(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Death_Particle_1);
+        instance_create(other.x, other.y, obj_Death_Particle_0);
+        instance_create(other.x, other.y, obj_Death_Particle_1);
         
     }
     
     //with (global.obj_enemy) {
     with (other) {
+        audio_play_sound(snd_Bug, 1 ,0);
         instance_destroy();
     }
 }
@@ -237,12 +240,12 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (sprite_index = sprite_index_Stun_Right_Enemy) {
+            <string>if (sprite_index = sprite_index_Stun_Right_Enemy) and enemy_health &gt; 0{
     
     sprite_index = sprite_index_Idle_Right_Enemy;
 }
 
-if (sprite_index = sprite_index_Stun_Left_Enemy) {
+if (sprite_index = sprite_index_Stun_Left_Enemy) and enemy_health &gt; 0{
 
     sprite_index = sprite_index_Idle_Left_Enemy;
 }
