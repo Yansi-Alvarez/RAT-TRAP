@@ -17,9 +17,24 @@ with (argument0) {
     
         for(j =- argument1; j <= argument1; j += argument1) {
             //Checks if there is no floor object next to itself
-            if (place_empty(x + i, y + j)) {
+            if (place_empty(x + i, y)) {
                 
-                instance_create(x + i, y + j, argument2);
+                instance_create(x + i, y, argument2);
+            }
+            
+            if (place_empty(x - i, y)) {
+                
+                instance_create(x - i, y, argument2);
+            }
+            
+            if (place_empty(x, y + j)) {
+                
+                instance_create(x, y + j, argument2);
+            }
+            
+            if (place_empty(x, y - j)) {
+                
+                instance_create(x, y - j, argument2);
             }
         }    
     }

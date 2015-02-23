@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Time allowed to generate the level
+            <string>randomize();
+
+//Time allowed to generate the level
 generation_time = 1800;
 
 //Time until it changes directions
@@ -63,9 +65,9 @@ half_width = view_wview[1]/2;
 half_height = view_hview[1]/2;
 
 //Open room where the player can spawn safely, its where the level maker first spawns
-for (i =- 3; i &lt;= 3; i += 3) {
+for (i =- 1; i &lt;= 1; i += 1) {
 
-    for (j =- 3; j &lt;= 3; j += 3) {//Prevents player from being spawn in a wall
+    for (j =- 1; j &lt;= 1; j += 1) {//Prevents player from being spawn in a wall
     
         instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
     }
@@ -195,8 +197,10 @@ alarm[1] = direction_change;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Create a floor at every step it takes
-instance_create(x * level_maker_speed, y * level_maker_speed, level_floor);
+            <string>randomize();
+
+//Create a floor at every step it takes
+instance_create(x + level_maker_speed, y + level_maker_speed, level_floor);
 
 //Takes into account the number of level makers, it will be implemented so that the more
 //there is, the less likely more are to be spawned
@@ -242,7 +246,7 @@ x = min(x, room_width - half_width);
 x = max(half_width, x);
 
 //Keeps the level generator from moving too close to the botoom of the room
-y = min(x, room_height - half_height);
+y = min(y, room_height - half_height);
 
 //Keeps the level generator from moving too close to the top of the room
 y = max(half_height, y);
