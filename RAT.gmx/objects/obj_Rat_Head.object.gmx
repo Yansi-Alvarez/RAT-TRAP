@@ -25,7 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>head = false;
+            <string>view_visible[0] = 0;
+
+view_visible[1] = 1;
+
+room_speed = 30;
+
+head = false;
 
 cursor = false;
 
@@ -71,7 +77,7 @@ instance_create(mouse_x, mouse_y, obj_Cursor)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
-instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
+//instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 /*
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 220, obj_Bullbug)
 
@@ -93,7 +99,7 @@ instance_create(obj_Rat_Head.x + 250, obj_Rat_Head.y + 280, obj_Bullbug)
 
 //instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
 */
-instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Beretta)
+//instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Beretta)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 
@@ -104,6 +110,8 @@ collision_damage = false;
 correction = noone;
 
 correction_2 = noone;
+
+global.weapon_type = noone;
 </string>
           </argument>
         </arguments>
@@ -478,8 +486,8 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up_again =
     
 //Gun Attachment Code for the left arm
 //if (global.one_handed_melee_collision == true) {
-
-    if (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_picked_up = true) and (obj_Rat_Body.weapon_attach_right_arm == false) and (global.one_handed_melee_collision == true) {
+/*
+    if (global.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_picked_up = true) and (global.weapon_attach_right_arm == false) and (global.one_handed_melee_collision == true) {
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Left) {
             global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use;
@@ -536,7 +544,7 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_picked_up_again =
     
     //Gun Attachment Code for the right arm
     
-    if (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_picked_up = true) and (obj_Rat_Body.weapon_attach_left_arm == false) and (global.one_handed_melee_collision == true) {
+    if (global.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_picked_up = true) and (global.weapon_attach_left_arm == false) and (global.one_handed_melee_collision == true) {
         
         if (sprite_index = spr_Head_Standard_Idle_Down_Left) {
             global.obj_One_Handed_Melee_In_Use.sprite_index = global.sprite_index_Right_One_Handed_Melee_In_Use;
@@ -731,24 +739,24 @@ if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) a
     sprite_index = spr_Head_Standard_Idle_Up_Right;
     obj_Rat_Head.depth = 2;
     
-    if (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (global.weapon_attach_left_arm == true) and (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_right_arm == false) {
         
         obj_Parent_Gun.depth = 2;
         //obj_Gun_2.depth = 2;
     }
         
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
         
         global.obj_One_Handed_Melee_In_Use.depth = 2;
     }
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
         obj_Parent_Gun.depth = 0;
         //obj_Gun_2.depth = 0;
     }
         
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
         global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
@@ -771,24 +779,24 @@ if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) 
     sprite_index = spr_Head_Standard_Idle_Up_Left;
     obj_Rat_Head.depth = 2;
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
         
         obj_Parent_Gun.depth = 0;
         //obj_Gun_2.depth = 0;
     }
         
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
     
         global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
         obj_Parent_Gun.depth = 2;
         //obj_Gun_2.depth = 2;
     }
     
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
     
         global.obj_One_Handed_Melee_In_Use.depth = 2;
     }
@@ -812,24 +820,24 @@ if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269))
     sprite_index = spr_Head_Standard_Idle_Down_Left;
     obj_Rat_Head.depth = 0;
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
         
         obj_Parent_Gun.depth = 0;
         //obj_Gun_2.depth = 0;
     }
     
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
     
         global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
         obj_Parent_Gun.depth = 1;
         //obj_Gun_2.depth = 0;
     }
 
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
     
         global.obj_One_Handed_Melee_In_Use.depth = 1;
     }
@@ -852,24 +860,24 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
     sprite_index = spr_Head_Standard_Idle_Down_Right;
     obj_Rat_Head.depth = 0;
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
         
         obj_Parent_Gun.depth = 1;
         //obj_Gun_2.depth = 1;
     }
         
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_left_arm == true) and (obj_Rat_Body.weapon_attach_right_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
     
         global.obj_One_Handed_Melee_In_Use.depth = 1;
     }
     
-    if (obj_Rat_Body.gun_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (obj_Rat_Body.gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
         obj_Parent_Gun.depth = 0;
         //obj_Gun_2.depth = 0;
     }
     
-    if (global.one_handed_melee_collision == true) and (obj_Rat_Body.weapon_attach_right_arm == true) and (obj_Rat_Body.weapon_attach_left_arm == false) {
+    if (global.one_handed_melee_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
     
         global.obj_One_Handed_Melee_In_Use.depth = 0;
     }
@@ -1177,21 +1185,21 @@ if keyboard_check_released(ord('S')) {
             <string>if (Player_Health == 5) or (Player_Health == 4) {
 
     draw_self();
-    draw_sprite(spr_Full_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    draw_sprite(spr_Full_Health, floor(img_index), (view_xview[1] + 560),(view_yview[1] + 410));
     
 }
 
 if (Player_Health == 3) or (Player_Health == 2) {
 
     draw_self();
-    draw_sprite(spr_Medium_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    draw_sprite(spr_Medium_Health, floor(img_index), (view_xview[1] + 560),(view_yview[1] + 410));
     
 }
 
 if (Player_Health &lt;= 1) {
 
     draw_self();
-    draw_sprite(spr_Low_Health, floor(img_index), (view_xview[0] + 560),(view_yview[0] + 410));
+    draw_sprite(spr_Low_Health, floor(img_index), (view_xview[1] + 560),(view_yview[1] + 410));
     
 }
 </string>

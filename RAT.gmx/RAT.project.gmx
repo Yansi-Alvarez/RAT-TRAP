@@ -564,6 +564,9 @@
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_level_walls.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
     <font>fonts\fnt_Text_Font</font>
@@ -640,13 +643,27 @@
         <object>objects\obj_Morning_Star</object>
       </objects>
     </objects>
+    <objects name="Level Setup">
+      <objects name="Props">
+        <object>objects\obj_Shelves</object>
+        <object>objects\obj_Bread</object>
+        <object>objects\obj_Server</object>
+        <object>objects\obj_Pipe</object>
+        <object>objects\prop_Crate</object>
+      </objects>
+      <object>objects\obj_Parent_Floor</object>
+      <object>objects\obj_Concrete_Floor</object>
+      <object>objects\obj_Wall_Lab</object>
+      <object>objects\obj_Director</object>
+      <object>objects\obj_Level_Maker</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Test_Page</room>
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42055.9217142245</constant>
+    <constant name="GM_build_date">42058.0264703588</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
