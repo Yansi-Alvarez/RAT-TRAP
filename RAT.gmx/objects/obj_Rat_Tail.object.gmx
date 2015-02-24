@@ -68,6 +68,11 @@ walk_down_right = false;
     
         obj_Rat_Tail.sprite_index = spr_Tail_Standard_Walking_Up_Right; 
         
+        if (obj_Rat_Tail.sprite_index = spr_Tail_Standard_Walking_Up_Right) {
+            
+            obj_Rat_Tail.y = obj_Rat_Head.y + 20;
+        }
+        
         walk_up_right = true;
     }
 }
