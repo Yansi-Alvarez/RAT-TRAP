@@ -386,11 +386,22 @@
           <sprite>sprites\spr_Wall_Lab_Corner_Right_Up</sprite>
           <sprite>sprites\spr_Wall_Lab_Corner_Left_Up</sprite>
           <sprite>sprites\spr_Wall_Lab_Full</sprite>
-          <sprite>sprites\spr_Wall_Lab_Corner_Right</sprite>
-          <sprite>sprites\spr_Wall_Lab_Corner_Left</sprite>
           <sprite>sprites\spr_Wall_Lab</sprite>
         </sprites>
         <sprite>sprites\spr_Wall_Lab_Test</sprite>
+        <sprites name="Server">
+          <sprite>sprites\spr_Wall_Server_Test</sprite>
+          <sprite>sprites\spr_Wall_Server</sprite>
+          <sprite>sprites\spr_Wall_Server_Right_Alt</sprite>
+          <sprite>sprites\spr_Wall_Server_Right</sprite>
+          <sprite>sprites\spr_Wall_Server_Left__Alt</sprite>
+          <sprite>sprites\spr_Wall_Server_Left</sprite>
+          <sprite>sprites\spr_Wall_Server_Full</sprite>
+          <sprite>sprites\spr_Wall_Server_Up</sprite>
+          <sprite>sprites\spr_Wall_Server_Corner_Right_Up</sprite>
+          <sprite>sprites\spr_Wall_Server_Corner_Left_Up</sprite>
+          <sprite>sprites\spr_Wall_Full_Alt</sprite>
+        </sprites>
       </sprites>
       <sprites name="Floors">
         <sprites name="Tile">
@@ -410,6 +421,8 @@
         </sprites>
         <sprites name="Concrete">
           <sprite>sprites\spr_Concrete</sprite>
+          <sprite>sprites\spr_Concrete_Alt_2</sprite>
+          <sprite>sprites\spr_Concrete_Alt</sprite>
         </sprites>
       </sprites>
       <sprites name="Home">
@@ -436,6 +449,9 @@
       </sprites>
     </sprites>
     <sprites name="Particles">
+      <sprite>sprites\spr_Particle_Hit</sprite>
+      <sprite>sprites\spr_Particle_Shock</sprite>
+      <sprite>sprites\spr_Particle_Explosion</sprite>
       <sprite>sprites\spr_Particle_Charge_Bar</sprite>
       <sprite>sprites\spr_Particle_Walkdust</sprite>
       <sprite>sprites\spr_Particle_Rage</sprite>
@@ -474,6 +490,13 @@
             <sprites name="Shotguns">
               <sprite>sprites\spr_Bullet_Shotgun</sprite>
             </sprites>
+            <sprites name="Rifles">
+              <sprite>sprites\spr_Bullet_Sniper</sprite>
+            </sprites>
+            <sprites name="Heavy">
+              <sprite>sprites\spr_Bullet_Harpoon</sprite>
+              <sprite>sprites\spr_Bullet_Grenade</sprite>
+            </sprites>
           </sprites>
           <sprites name="Casings">
             <sprite>sprites\spr_Casing_Handgun</sprite>
@@ -487,8 +510,7 @@
           <sprite>sprites\spr_Particle_Slash_Left</sprite>
         </sprites>
       </sprites>
-      <sprite>sprites\spr_Particle_Shock</sprite>
-      <sprite>sprites\spr_Particle_Hit</sprite>
+      <sprite>sprites\spr_Particle_Explosion_Test</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
@@ -674,13 +696,16 @@
       </objects>
     </objects>
     <objects name="Weapons">
+      <object>objects\obj_Parent_Gun</object>
       <objects name="Handguns">
-        <object>objects\obj_Parent_Gun</object>
         <object>objects\obj_Potato_Handgun</object>
         <object>objects\obj_Beretta</object>
       </objects>
       <objects name="Shotguns">
         <object>objects\obj_Pump_Shotgun</object>
+      </objects>
+      <objects name="Rifles">
+        <object>objects\obj_AR15</object>
       </objects>
     </objects>
     <objects name="Projectiles">

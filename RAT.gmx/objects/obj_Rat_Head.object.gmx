@@ -103,6 +103,8 @@ instance_create(obj_Rat_Head.x + 250, obj_Rat_Head.y + 280, obj_Bullbug)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 
+instance_create(obj_Rat_Head.x + 25,obj_Rat_Head.y,obj_AR15)
+
 collision_with_enemy = false;
 
 collision_damage = false;
