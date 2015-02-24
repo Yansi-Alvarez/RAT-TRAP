@@ -138,7 +138,8 @@ alarm[1] = direction_change;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Commencing level generation (same as creation event)
+            <string>randomize();
+//Commencing level generation (same as creation event)
 
 //Level maker chooses a direction
 level_maker_direction = choose(0, 90, 180, 270);
@@ -207,11 +208,11 @@ instance_create(x + level_maker_speed, y + level_maker_speed, level_floor);
 spawn_level_maker = instance_number(obj_Level_Maker);
 
 //Chances to spawn a new level maker, the higher it is, the lower the chance
-spawn_level_maker_chance = irandom(500 * (spawn_level_maker + 1));
+spawn_level_maker_chance = irandom(1000 * (spawn_level_maker + 1));
 
 if (spawn_level_maker_chance == 0) {
     
-    instance_create(x * level_maker_speed, y * level_maker_speed, obj_Level_Maker);
+    instance_create(x, y, obj_Level_Maker);
 }
 
 //Chance to spawn a new room
@@ -220,10 +221,10 @@ room_chance = irandom(25);
 if (room_chance == 0) {
     
     //Rooms new width
-    generated_room_width = 1//choose(1, 2, 3);
+    generated_room_width = 1//choose(1, 2);
     
     //Rooms new height
-    generated_room_height = 1//choose(1, 2, 3);
+    generated_room_height = 1//choose(1, 2);
     
     //For loop to generate different sized rooms
     for (i =- generated_room_width; i &lt;= generated_room_width; i += generated_room_width) {
@@ -236,20 +237,19 @@ if (room_chance == 0) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
 //Limiting level maker's movement
 
 //Keeps the level generator from moving too close to the right side of the room
-x = min(x, room_width - half_width);
+x = min(x, room_width - half_width); //x, 2560 - 320
 
 //Keeps the level generator from moving too close to the left side of the room
-x = max(half_width, x);
+x = max(half_width, x); //320, x
 
 //Keeps the level generator from moving too close to the botoom of the room
-y = min(y, room_height - half_height);
+y = min(y, room_height - (half_height + 16)); //y, 1920 - 240
 
 //Keeps the level generator from moving too close to the top of the room
-y = max(half_height, y);
+y = max((half_height + 16), y); //240, y
 </string>
           </argument>
         </arguments>

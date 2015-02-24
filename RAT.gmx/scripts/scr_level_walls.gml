@@ -9,7 +9,7 @@ argument1 = size of the grid (level maker's speed)
 argument2 = level's walls
 
 */
-
+/*
 //with all the floor objects
 with (argument0) { 
     //selecting all the grids next to them
@@ -17,28 +17,13 @@ with (argument0) {
     
         for(j =- argument1; j <= argument1; j += argument1) {
             //Checks if there is no floor object next to itself
-            if (place_empty(x + i, y)) {
+            if (place_empty(x + i, y + j)) {
                 
-                instance_create(x + i, y, argument2);
-            }
-            
-            if (place_empty(x - i, y)) {
-                
-                instance_create(x - i, y, argument2);
-            }
-            
-            if (place_empty(x, y + j)) {
-                
-                instance_create(x, y + j, argument2);
-            }
-            
-            if (place_empty(x, y - j)) {
-                
-                instance_create(x, y - j, argument2);
+                instance_create(x + i, y + j, argument2);
             }
         }    
     }
 }
-
+*/
 //Creating the player
 instance_create(room_width/2, room_height/2, obj_Rat_Head);
