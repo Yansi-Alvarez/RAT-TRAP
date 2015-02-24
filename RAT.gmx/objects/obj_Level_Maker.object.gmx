@@ -212,7 +212,7 @@ spawn_level_maker_chance = irandom(1000 * (spawn_level_maker + 1));
 
 if (spawn_level_maker_chance == 0) {
     
-    instance_create(x, y, obj_Level_Maker);
+    //instance_create(x, y, obj_Level_Maker);
 }
 
 //Chance to spawn a new room
@@ -221,10 +221,10 @@ room_chance = irandom(25);
 if (room_chance == 0) {
     
     //Rooms new width
-    generated_room_width = 1//choose(1, 2);
+    generated_room_width = 1 //choose(1, 2, 3);
     
     //Rooms new height
-    generated_room_height = 1//choose(1, 2);
+    generated_room_height = 1 //choose(1, 2, 3);
     
     //For loop to generate different sized rooms
     for (i =- generated_room_width; i &lt;= generated_room_width; i += generated_room_width) {
