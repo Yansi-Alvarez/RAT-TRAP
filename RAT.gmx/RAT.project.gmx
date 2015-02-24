@@ -379,9 +379,18 @@
     <sprites name="Stages">
       <sprite>sprites\Stage_Test_Tile</sprite>
       <sprites name="Walls">
+        <sprites name="Lab">
+          <sprite>sprites\spr_Wall_Lab</sprite>
+          <sprite>sprites\spr_Wall_Lab_Right</sprite>
+          <sprite>sprites\spr_Wall_Lab_Left</sprite>
+          <sprite>sprites\spr_Wall_Lab_Up</sprite>
+          <sprite>sprites\spr_Wall_Lab_Corner_Right_Up</sprite>
+          <sprite>sprites\spr_Wall_Lab_Corner_Left_Up</sprite>
+          <sprite>sprites\spr_Wall_Lab_Full</sprite>
+          <sprite>sprites\spr_Wall_Lab_Corner_Right</sprite>
+          <sprite>sprites\spr_Wall_Lab_Corner_Left</sprite>
+        </sprites>
         <sprite>sprites\spr_Wall_Lab_Test</sprite>
-        <sprite>sprites\spr_Wall_Lab</sprite>
-        <sprite>sprites\spr_Wall_Lab_Full</sprite>
       </sprites>
       <sprites name="Floors">
         <sprites name="Tile">
@@ -515,11 +524,71 @@
               <sprite>sprites\spr_Handgun_Beretta_Fire_Right</sprite>
             </sprites>
           </sprites>
+          <sprites name="Magnum">
+            <sprite>sprites\spr_Handgun_Magnum_Left</sprite>
+            <sprite>sprites\spr_Handgun_Magnum_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Handgun_Magnum_Fire_Left</sprite>
+              <sprite>sprites\spr_Handgun_Magnum_Fire_Right</sprite>
+            </sprites>
+          </sprites>
         </sprites>
         <sprites name="Shotguns">
           <sprites name="Pump Action">
             <sprite>sprites\spr_Shotgun_Pump_Left</sprite>
             <sprite>sprites\spr_Shotgun_Pump_Right</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Rifles">
+          <sprites name="AR15">
+            <sprite>sprites\spr_Rifle_AR15_Left</sprite>
+            <sprite>sprites\spr_Rifle_AR15_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Rifle_AR15_Fire_Left</sprite>
+              <sprite>sprites\spr_Rifle_AR15_Fire_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Laser Rifle">
+            <sprite>sprites\spr_Rifle_Laser_Left</sprite>
+            <sprite>sprites\spr_Rifle_Laser_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Rifle_Laser_Fire_Left</sprite>
+              <sprite>sprites\spr_Rifle_Laser_Fire_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Lapua Sniper">
+            <sprite>sprites\spr_Rifle_Lapua_Left</sprite>
+            <sprite>sprites\spr_Rifle_Lapua_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Rifle_Lapua_Fire_Left</sprite>
+              <sprite>sprites\spr_Rifle_Lapua_Fire_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="P90">
+            <sprite>sprites\spr_Rifle_P90_Left</sprite>
+            <sprite>sprites\spr_Rifle_P90_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Rifle_P90_Fire_Left</sprite>
+              <sprite>sprites\spr_Rifle_P90_Fire_Right</sprite>
+            </sprites>
+          </sprites>
+        </sprites>
+        <sprites name="Heavy">
+          <sprites name="Harpoon Gun">
+            <sprite>sprites\spr_Heavy_Harpoon_Left</sprite>
+            <sprite>sprites\spr_Heavy_Harpoon_Right</sprite>
+            <sprites name="animations">
+              <sprite>sprites\spr_Heavy_Harpoon_Fire_Left</sprite>
+              <sprite>sprites\spr_Heavy_Harpoon_Fire_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Grenade Launcher">
+            <sprite>sprites\spr_Heavy_Grenade_Launcher_Left</sprite>
+            <sprite>sprites\spr_Heavy_Grenade_Launcher_Right</sprite>
+            <sprites name="Animations">
+              <sprite>sprites\spr_Heavy_Grenade_Launcher_Fire_Left</sprite>
+              <sprite>sprites\spr_Heavy_Grenade_Launcher_Fire_Right</sprite>
+            </sprites>
           </sprites>
         </sprites>
       </sprites>
