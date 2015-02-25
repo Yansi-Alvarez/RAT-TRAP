@@ -35,6 +35,9 @@
       <sound>sound\snd_Melee_Hit</sound>
       <sound>sound\snd_Shotgun</sound>
       <sound>sound\snd_Laser_Cannon</sound>
+      <sound>sound\snd_Pickup</sound>
+      <sound>sound\snd_No_Ammo</sound>
+      <sound>sound\snd_Metal_Clang</sound>
     </sounds>
     <sounds name="Misc.">
       <sound>sound\snd_Radio</sound>
@@ -757,7 +760,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42059.0738727431</constant>
+    <constant name="GM_build_date">42059.1111738657</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
