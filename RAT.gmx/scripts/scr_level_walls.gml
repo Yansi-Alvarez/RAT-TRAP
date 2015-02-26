@@ -10,19 +10,26 @@ argument2 = level's walls
 
 */
 /*
+//Create a wall instance to use to check for collision.
+//var wall_placer = instance_create(argument0.x, argument0.y, argument2);
+
 //with all the floor objects
 with (argument0) { 
+//with (wall_placer) { 
     //selecting all the grids next to them
     for (i =- argument1; i <= argument1; i += argument1) { 
     
         for(j =- argument1; j <= argument1; j += argument1) {
             //Checks if there is no floor object next to itself
             if (place_empty(x + i, y + j)) {
+            //if (place_free(x + i, y + j)) {
                 
                 instance_create(x + i, y + j, argument2);
             }
         }    
     }
+    //Destroy the wall instance when we are done using it to check for collision
+    //instance_destroy();
 }
 */
 //Creating the player

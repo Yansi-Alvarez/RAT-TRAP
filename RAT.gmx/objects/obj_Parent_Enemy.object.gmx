@@ -76,99 +76,102 @@ collision_with_player = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+            <string>if (global.enemy_activation == true) {
 
-if (distance_to_object(obj_Rat_Body) &lt;= 150) {
+    direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    
+    if (distance_to_object(obj_Rat_Body) &lt;= 150) {
+             
+        move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
+        
+        if (obj_Parent_Enemy.collision_with_player = true) {
+            
+            enemy_speed = 0;
+        }
+        
+        //Angle between enemy and player, if between 0 and 89 degrees, looks to the up-right
+    
+        if  ((direction_enemy &gt;= 0) and (direction_enemy &lt;= 89)) {
+        
+            enemy_right = true;
+            enemy_left = false;
+            
+            sprite_index = sprite_index_Walking_Right_Enemy;
+        }
+        
+        //Angle between enemy and player, if between 90 and 179 degrees, looks to the up-left
+        
+        if ((direction_enemy &gt;= 90) and (direction_enemy &lt;= 179)) {
+            
+            enemy_right = false;
+            enemy_left = true;
+            
+            sprite_index = sprite_index_Walking_Left_Enemy;
+        }
+        
+        //Angle between enemy and player, if between 180 and 269 degrees, looks to the down-left
+        
+        if ((direction_enemy &gt;= 180) and (direction_enemy &lt;= 269)) {
+            
+            enemy_right = false;
+            enemy_left = true;
+            
+            sprite_index = sprite_index_Walking_Left_Enemy;
+        }
+        
+        //Angle between enemy and player, if between 270 and 359 degrees, looks to the down-right
+        
+        if ((direction_enemy &gt;= 270) and (direction_enemy &lt;= 359)) {
+            
+            enemy_right = true;
+            enemy_left = false;
+            
+            sprite_index = sprite_index_Walking_Right_Enemy;
+        }
+    }
+    
+    //Death for Enemy
+    
+    if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Right_Enemy) or (sprite_index = sprite_index_Stun_Right_Enemy) or (sprite_index = sprite_index_Walking_Right_Enemy)) {
+       
+         sprite_index = sprite_index_Death_Right_Enemy;
+         enemy_speed = 0;
+         image_speed = 0.3;
+         death_animation = true;
          
-    move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
-    
-    if (obj_Parent_Enemy.collision_with_player = true) {
-        
-        enemy_speed = 0;
     }
     
-    //Angle between enemy and player, if between 0 and 89 degrees, looks to the up-right
-
-    if  ((direction_enemy &gt;= 0) and (direction_enemy &lt;= 89)) {
-    
-        enemy_right = true;
-        enemy_left = false;
-        
-        sprite_index = sprite_index_Walking_Right_Enemy;
+    if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
+       
+         sprite_index = sprite_index_Death_Left_Enemy;
+         enemy_speed = 0;
+         image_speed = 0.3;
+         death_animation = true;
+         
     }
     
-    //Angle between enemy and player, if between 90 and 179 degrees, looks to the up-left
+    if (death_animation == true) {
     
-    if ((direction_enemy &gt;= 90) and (direction_enemy &lt;= 179)) {
-        
-        enemy_right = false;
-        enemy_left = true;
-        
-        sprite_index = sprite_index_Walking_Left_Enemy;
+        instance_create(other.x,other.y,obj_Death);
+        death_animation = false;
     }
     
-    //Angle between enemy and player, if between 180 and 269 degrees, looks to the down-left
-    
-    if ((direction_enemy &gt;= 180) and (direction_enemy &lt;= 269)) {
+    if (enemy_death == true) {
         
-        enemy_right = false;
-        enemy_left = true;
+        //Creation of experience
+        repeat(25) {
         
-        sprite_index = sprite_index_Walking_Left_Enemy;
-    }
-    
-    //Angle between enemy and player, if between 270 and 359 degrees, looks to the down-right
-    
-    if ((direction_enemy &gt;= 270) and (direction_enemy &lt;= 359)) {
+            //randomize();
+            instance_create(other.x, other.y, obj_Death_Particle_0);
+            instance_create(other.x, other.y, obj_Death_Particle_1);
+            
+        }
         
-        enemy_right = true;
-        enemy_left = false;
-        
-        sprite_index = sprite_index_Walking_Right_Enemy;
-    }
-}
-
-//Death for Enemy
-
-if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Right_Enemy) or (sprite_index = sprite_index_Stun_Right_Enemy) or (sprite_index = sprite_index_Walking_Right_Enemy)) {
-   
-     sprite_index = sprite_index_Death_Right_Enemy;
-     enemy_speed = 0;
-     image_speed = 0.3;
-     death_animation = true;
-     
-}
-
-if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
-   
-     sprite_index = sprite_index_Death_Left_Enemy;
-     enemy_speed = 0;
-     image_speed = 0.3;
-     death_animation = true;
-     
-}
-
-if (death_animation == true) {
-
-    instance_create(other.x,other.y,obj_Death);
-    death_animation = false;
-}
-
-if (enemy_death == true) {
-    
-    //Creation of experience
-    repeat(25) {
-    
-        //randomize();
-        instance_create(other.x, other.y, obj_Death_Particle_0);
-        instance_create(other.x, other.y, obj_Death_Particle_1);
-        
-    }
-    
-    //with (global.obj_enemy) {
-    with (other) {
-        audio_play_sound(snd_Bug, 1 ,0);
-        instance_destroy();
+        //with (global.obj_enemy) {
+        with (other) {
+            audio_play_sound(snd_Bug, 1 ,0);
+            instance_destroy();
+        }
     }
 }
 </string>

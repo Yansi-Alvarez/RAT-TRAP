@@ -47,10 +47,11 @@ generated_room_width = noone;//choose(2, 3, 4, 5);
 generated_room_height = noone;//choose(2, 3, 4, 5);
 
 //Floor for the level
-level_floor = obj_Concrete_Floor;
+level_floor = choose(obj_Concrete_Floor);
+//level_floor = choose(obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2);
 
 //Wall for the level
-level_wall = obj_Wall_Lab;
+level_wall = obj_Wall_Lab_Down;
 
 //Preventing the spawn of another level maker, will be used later
 spawn_level_maker = 1;
@@ -70,6 +71,7 @@ for (i =- 1; i &lt;= 1; i += 1) {
     for (j =- 1; j &lt;= 1; j += 1) {//Prevents player from being spawn in a wall
     
         instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
+        //instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));
     }
 }
 
@@ -202,6 +204,7 @@ alarm[1] = direction_change;
 
 //Create a floor at every step it takes
 instance_create(x + level_maker_speed, y + level_maker_speed, level_floor);
+//instance_create(x + level_maker_speed, y + level_maker_speed, choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));
 
 //Takes into account the number of level makers, it will be implemented so that the more
 //there is, the less likely more are to be spawned
@@ -232,6 +235,7 @@ if (room_chance == 0) {
         for (j =- generated_room_height; j &lt;= generated_room_height; j += generated_room_height) {
         
             instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
+            //instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));
         }
     }
 }

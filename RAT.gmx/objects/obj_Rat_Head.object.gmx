@@ -71,6 +71,8 @@ instance_create(obj_Rat_Head.x + 12, obj_Rat_Head.y + 16, obj_Rat_Tail)
 //Cursor Code
 instance_create(mouse_x, mouse_y, obj_Cursor)
 
+global.enemy_activation = true;
+
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Sword)
 
 //instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
