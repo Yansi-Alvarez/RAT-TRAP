@@ -515,15 +515,15 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
     //Enemy AI
     if (obj_Parent_Enemy.enemy_right == true) {
         
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
     if (obj_Parent_Enemy.enemy_left == true) {
         
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
@@ -635,15 +635,15 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
     //Enemy AI
     if (obj_Parent_Enemy.enemy_right == true) {
         
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
     if (obj_Parent_Enemy.enemy_left == true) {
     
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
@@ -755,15 +755,15 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
     //Enemy AI
     if (obj_Parent_Enemy.enemy_right == true) {
     
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
     if (obj_Parent_Enemy.enemy_left == true) {
     
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
@@ -875,15 +875,15 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
     //Enemy AI
     if (obj_Parent_Enemy.enemy_right == true) {
     
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     
     if (obj_Parent_Enemy.enemy_left == true) {
     
-        other.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
-        other.enemy_speed = 0;
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
         alarm[0] = alarm_zero;
     }
     

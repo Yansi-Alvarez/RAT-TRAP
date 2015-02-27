@@ -79,7 +79,7 @@ global.enemy_activation = true;
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
-//instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 /*
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 220, obj_Bullbug)
 
@@ -638,7 +638,7 @@ if (Player_Health == 1) {
     //Loss of heath from collision
 if (collision_damage == true) {
 
-    obj_Rat_Head.Player_Health -= 1;
+    obj_Rat_Head.Player_Health -= obj_Parent_Enemy.contact_damage;
     collision_damage = false;
 }
 

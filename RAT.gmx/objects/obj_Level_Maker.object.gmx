@@ -115,7 +115,7 @@ alarm[1] = direction_change;
             <kind>1</kind>
             <string>if (instance_number(obj_Level_Maker) == 1) { //If this is the last level maker
     
-    //instance_create(x, y, obj_Server);
+    instance_create(x, y, obj_Server);
     scr_level_walls(level_floor, level_maker_speed, level_wall);
 }
 </string>
@@ -203,7 +203,8 @@ alarm[1] = direction_change;
             <string>randomize();
 
 //Create a floor at every step it takes
-instance_create(x + level_maker_speed, y + level_maker_speed, level_floor);
+instance_create(x, y, level_floor);
+//instance_create(x + level_maker_speed, y + level_maker_speed, level_floor);
 //instance_create(x + level_maker_speed, y + level_maker_speed, choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));
 
 //Takes into account the number of level makers, it will be implemented so that the more

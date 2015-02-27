@@ -29,9 +29,13 @@
 
 //global.obj_enemy = obj_Bullbug;
 
-enemy_health = 3;
+enemy_health = 12;
+
+damage_generation_corrector = 0;
 
 enemy_speed = 5;
+
+contact_damage = 1;
 
 sprite_index_Idle_Right_Enemy = spr_Idle_Bullbug_Right;
 

@@ -27,11 +27,19 @@
             <kind>1</kind>
             <string>//global.obj_enemy = noone;
 
+i = '';
+
+damage_generation_corrector = noone;
+
 enemy_health = noone;
 
 enemy_speed = noone;
 
 enemy_death = false;
+
+contact_damage = noone;
+
+attack_damage = noone;
 
 sprite_index_Idle_Right_Enemy = noone;
 
@@ -197,11 +205,15 @@ collision_with_player = false;
           <argument>
             <kind>1</kind>
             <string>if (sprite_index = sprite_index_Walking_Right_Enemy) or
-    (sprite_index = sprite_index_Idle_Right_Enemy) {
+    (sprite_index = sprite_index_Idle_Right_Enemy) or 
+    ((sprite_index = sprite_index_Stun_Right_Enemy) and (enemy_health &gt; 0)) {
     
-    enemy_health = enemy_health - 1;    
+    enemy_health = enemy_health - obj_Parent_Bullet.bullet_damage;    
     sprite_index = sprite_index_Stun_Right_Enemy;
     instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
+    
+    i = instance_create(x, y - damage_generation_corrector, obj_Damage);
+    i.str = string(contact_damage);
     
     with (other) {
     
@@ -210,11 +222,15 @@ collision_with_player = false;
 }
 
 if  (sprite_index = sprite_index_Walking_Left_Enemy) or 
-    (sprite_index = sprite_index_Idle_Left_Enemy) {
+    (sprite_index = sprite_index_Idle_Left_Enemy) or 
+    ((sprite_index = sprite_index_Stun_Left_Enemy) and (enemy_health &gt; 0)) {
     
-    enemy_health = enemy_health - 1;
+    enemy_health = enemy_health - obj_Parent_Bullet.bullet_damage;
     sprite_index = sprite_index_Stun_Left_Enemy;
     instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
+    
+    i = instance_create(x, y - damage_generation_corrector, obj_Damage);
+    i.str = string(contact_damage);
     
     with (other) {
     

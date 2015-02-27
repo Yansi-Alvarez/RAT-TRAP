@@ -680,6 +680,7 @@
     <objects name="GUI">
       <object>objects\obj_Cursor</object>
       <object>objects\obj_Screen_Shaker</object>
+      <object>objects\obj_Damage</object>
       <object>objects\obj_Title_Screen</object>
       <objects name="Buttons">
         <object>objects\obj_Button_Parent</object>
@@ -706,6 +707,9 @@
       <objects name="Handguns">
         <object>objects\obj_Potato_Handgun</object>
         <object>objects\obj_Beretta</object>
+        <objects name="Casings">
+          <object>objects\obj_Casing_Handgun</object>
+        </objects>
       </objects>
       <objects name="Shotguns">
         <object>objects\obj_Pump_Shotgun</object>
@@ -781,7 +785,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42061.1111744097</constant>
+    <constant name="GM_build_date">42062.7942746412</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//The floor has a chance of spawning an enemy or loot
 //More enemies and loot can be added in by making new variables and chances for them to appear
-
+/*
 loot = obj_Bread;
 
 enemy = obj_Bullbug;
