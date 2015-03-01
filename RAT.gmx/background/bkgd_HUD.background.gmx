@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>403</width>
+  <width>480</width>
   <height>126</height>
   <data>images\bkgd_HUD.png</data>
 </background>

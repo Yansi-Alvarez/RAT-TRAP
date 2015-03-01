@@ -498,6 +498,7 @@
             </sprites>
             <sprites name="Rifles">
               <sprite>sprites\spr_Bullet_Sniper</sprite>
+              <sprite>sprites\spr_Bullet_Laser</sprite>
             </sprites>
             <sprites name="Heavy">
               <sprite>sprites\spr_Bullet_Harpoon</sprite>
@@ -517,36 +518,43 @@
         </sprites>
       </sprites>
       <sprite>sprites\spr_Particle_Explosion_Test</sprite>
+      <sprite>sprites\spr_Particle_Smoke</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
         <sprites name="One-Handed">
           <sprites name="Basic Sword">
-            <sprites name="Left">
-              <sprite>sprites\spr_Sword_Basic_Left</sprite>
-            </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Sword_Basic_Right</sprite>
-            </sprites>
+            <sprite>sprites\spr_Sword_Basic_Right</sprite>
+            <sprite>sprites\spr_Sword_Basic_Pickup</sprite>
+            <sprite>sprites\spr_Sword_Basic_HUD</sprite>
+            <sprite>sprites\spr_Sword_Basic_Left</sprite>
           </sprites>
           <sprites name="Stick">
-            <sprite>sprites\spr_Stick</sprite>
+            <sprite>sprites\spr_Sword_Stick</sprite>
+            <sprite>sprites\spr_Sword_Stick_HUD</sprite>
+            <sprite>sprites\spr_Sword_Stick_Pickup</sprite>
           </sprites>
         </sprites>
         <sprites name="Two-Handed">
           <sprite>sprites\spr_Morningstar_Left</sprite>
           <sprite>sprites\spr_Morningstar_Right</sprite>
+          <sprite>sprites\sprite336</sprite>
+          <sprite>sprites\spr_Morningstar_Pickup</sprite>
         </sprites>
       </sprites>
       <sprites name="Ranged">
         <sprites name="Handguns">
           <sprites name="Potatogun">
             <sprite>sprites\spr_Handgun_Potato_Right</sprite>
+            <sprite>sprites\spr_Handgun_Potato_HUD</sprite>
+            <sprite>sprites\spr_Handgun_Potato_Pickup</sprite>
             <sprite>sprites\spr_Handgun_Potato_Left</sprite>
           </sprites>
           <sprites name="Beretta">
             <sprite>sprites\spr_Handgun_Beretta_Left</sprite>
             <sprite>sprites\spr_Handgun_Beretta_Right</sprite>
+            <sprite>sprites\spr_Handgun_Beretta_HUD</sprite>
+            <sprite>sprites\spr_Handgun_Beretta_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Handgun_Beretta_Fire_Left</sprite>
               <sprite>sprites\spr_Handgun_Beretta_Fire_Right</sprite>
@@ -555,6 +563,8 @@
           <sprites name="Magnum">
             <sprite>sprites\spr_Handgun_Magnum_Left</sprite>
             <sprite>sprites\spr_Handgun_Magnum_Right</sprite>
+            <sprite>sprites\spr_Handgun_Magnum_HUD</sprite>
+            <sprite>sprites\spr_Handgun_Magnum_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Handgun_Magnum_Fire_Left</sprite>
               <sprite>sprites\spr_Handgun_Magnum_Fire_Right</sprite>
@@ -565,12 +575,16 @@
           <sprites name="Pump Action">
             <sprite>sprites\spr_Shotgun_Pump_Left</sprite>
             <sprite>sprites\spr_Shotgun_Pump_Right</sprite>
+            <sprite>sprites\spr_Shotgun_Pump_HUD</sprite>
+            <sprite>sprites\spr_Shotgun_Pump_Pickup</sprite>
           </sprites>
         </sprites>
         <sprites name="Rifles">
           <sprites name="AR15">
             <sprite>sprites\spr_Rifle_AR15_Left</sprite>
             <sprite>sprites\spr_Rifle_AR15_Right</sprite>
+            <sprite>sprites\spr_Rifle_AR15_HUD</sprite>
+            <sprite>sprites\spr_Rifle_AR15_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_AR15_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_AR15_Fire_Right</sprite>
@@ -579,6 +593,8 @@
           <sprites name="Laser Rifle">
             <sprite>sprites\spr_Rifle_Laser_Left</sprite>
             <sprite>sprites\spr_Rifle_Laser_Right</sprite>
+            <sprite>sprites\spr_Rifle_Laser_HUD</sprite>
+            <sprite>sprites\spr_Rifle_Laser_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_Laser_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_Laser_Fire_Right</sprite>
@@ -587,6 +603,8 @@
           <sprites name="Lapua Sniper">
             <sprite>sprites\spr_Rifle_Lapua_Left</sprite>
             <sprite>sprites\spr_Rifle_Lapua_Right</sprite>
+            <sprite>sprites\spr_Rifle_Lapua_HUD</sprite>
+            <sprite>sprites\spr_Rifle_Lapua_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_Lapua_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_Lapua_Fire_Right</sprite>
@@ -595,6 +613,8 @@
           <sprites name="P90">
             <sprite>sprites\spr_Rifle_P90_Left</sprite>
             <sprite>sprites\spr_Rifle_P90_Right</sprite>
+            <sprite>sprites\spr_Rifle_P90_HUD</sprite>
+            <sprite>sprites\spr_Rifle_P90_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_P90_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_P90_Fire_Right</sprite>
@@ -605,6 +625,8 @@
           <sprites name="Harpoon Gun">
             <sprite>sprites\spr_Heavy_Harpoon_Left</sprite>
             <sprite>sprites\spr_Heavy_Harpoon_Right</sprite>
+            <sprite>sprites\spr_Heavy_Harpoon_HUD</sprite>
+            <sprite>sprites\spr_Heavy_Harpoon_Pickup</sprite>
             <sprites name="animations">
               <sprite>sprites\spr_Heavy_Harpoon_Fire_Left</sprite>
               <sprite>sprites\spr_Heavy_Harpoon_Fire_Right</sprite>
@@ -613,6 +635,8 @@
           <sprites name="Grenade Launcher">
             <sprite>sprites\spr_Heavy_Grenade_Launcher_Left</sprite>
             <sprite>sprites\spr_Heavy_Grenade_Launcher_Right</sprite>
+            <sprite>sprites\spr_Heavy_Grenade_Launcher_HUD</sprite>
+            <sprite>sprites\spr_Heavy_Grenade_Launcher_Pickup</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Heavy_Grenade_Launcher_Fire_Left</sprite>
               <sprite>sprites\spr_Heavy_Grenade_Launcher_Fire_Right</sprite>
