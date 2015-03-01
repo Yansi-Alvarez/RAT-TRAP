@@ -34,6 +34,8 @@ potato_gun_bullet_timer = true;
 correction = noone;
 
 correction_2 = noone;
+
+ammo = noone;
 </string>
           </argument>
         </arguments>

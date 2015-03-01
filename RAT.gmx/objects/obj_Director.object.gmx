@@ -40,10 +40,10 @@ randomize();
 grid_size = 64;
 
 //The center of the room through its width, has to be divisible by 64
-center_room_width = room_width/2 //(((round(room_width/2)/grid_size)/grid_size)*grid_size)*grid_size
+center_room_width = (((round(room_width/2)/grid_size)/grid_size)*grid_size)*grid_size //room_width/2
 
 //The center of the room through its height, has to be divisible by 64
-center_room_height = room_height/2 //(((round(room_height/2)/grid_size)/grid_size)*grid_size)*grid_size
+center_room_height = (((round(room_height/2)/grid_size)/grid_size)*grid_size)*grid_size //room_height/2
 
 //The width and height have to be divisble by 64 so the level maker can be aligned
 //with the room and place everything aligned to each other

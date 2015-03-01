@@ -25,10 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize();
-
-//Time allowed to generate the level
-generation_time = 1800;
+            <string>//Time allowed to generate the level
+generation_time = 1800/(instance_number(obj_Level_Maker) + 1);
 
 //Time until it changes directions
 direction_change = irandom(30) + 10;
@@ -47,7 +45,7 @@ generated_room_width = noone;//choose(2, 3, 4, 5);
 generated_room_height = noone;//choose(2, 3, 4, 5);
 
 //Floor for the level
-level_floor = choose(obj_Concrete_Floor);
+level_floor = obj_Concrete_Floor;
 //level_floor = choose(obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2);
 
 //Wall for the level
@@ -66,9 +64,9 @@ half_width = view_wview[1]/2;
 half_height = view_hview[1]/2;
 
 //Open room where the player can spawn safely, its where the level maker first spawns
-for (i =- 1; i &lt;= 1; i += 1) {
+for (i =- 3; i &lt;= 3; i += 1) {
 
-    for (j =- 1; j &lt;= 1; j += 1) {//Prevents player from being spawn in a wall
+    for (j =- 3; j &lt;= 3; j += 1) {//Prevents player from being spawn in a wall
     
         instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
         //instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));
@@ -115,8 +113,10 @@ alarm[1] = direction_change;
             <kind>1</kind>
             <string>if (instance_number(obj_Level_Maker) == 1) { //If this is the last level maker
     
-    instance_create(x, y, obj_Server);
-    scr_level_walls(level_floor, level_maker_speed, level_wall);
+    //instance_create(x, y, obj_Server);
+    //scr_level_walls(level_floor, level_maker_speed, level_wall);
+    //scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
+    scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
 }
 </string>
           </argument>
@@ -140,8 +140,7 @@ alarm[1] = direction_change;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize();
-//Commencing level generation (same as creation event)
+            <string>//Commencing level generation (same as creation event)
 
 //Level maker chooses a direction
 level_maker_direction = choose(0, 90, 180, 270);
@@ -200,9 +199,7 @@ alarm[1] = direction_change;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>randomize();
-
-//Create a floor at every step it takes
+            <string>//Create a floor at every step it takes
 instance_create(x, y, level_floor);
 //instance_create(x + level_maker_speed, y + level_maker_speed, level_floor);
 //instance_create(x + level_maker_speed, y + level_maker_speed, choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));
@@ -212,7 +209,7 @@ instance_create(x, y, level_floor);
 spawn_level_maker = instance_number(obj_Level_Maker);
 
 //Chances to spawn a new level maker, the higher it is, the lower the chance
-spawn_level_maker_chance = irandom(1000 * (spawn_level_maker + 1));
+spawn_level_maker_chance = irandom(500 * (spawn_level_maker + 1));
 
 if (spawn_level_maker_chance == 0) {
     
@@ -225,15 +222,15 @@ room_chance = irandom(25);
 if (room_chance == 0) {
     
     //Rooms new width
-    generated_room_width = 1 //choose(1, 2, 3);
+    generated_room_width = 1//choose(1, 2);
     
     //Rooms new height
-    generated_room_height = 1 //choose(1, 2, 3);
+    generated_room_height = 1//choose(1, 2);
     
     //For loop to generate different sized rooms
-    for (i =- generated_room_width; i &lt;= generated_room_width; i += generated_room_width) {
+    for (i =- generated_room_width; i &lt;= generated_room_width; i += 1) {
     
-        for (j =- generated_room_height; j &lt;= generated_room_height; j += generated_room_height) {
+        for (j =- generated_room_height; j &lt;= generated_room_height; j += 1) {
         
             instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
             //instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), choose(obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2));

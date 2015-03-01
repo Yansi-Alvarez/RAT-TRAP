@@ -768,6 +768,7 @@
           <object>objects\obj_Wall_Lab_Corner_Left_Up</object>
           <object>objects\obj_Wall_Lab_Corner_Left_Down</object>
         </objects>
+        <object>objects\obj_Parent_Wall</object>
       </objects>
       <objects name="Floors">
         <object>objects\obj_Parent_Floor</object>
@@ -780,12 +781,12 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Test_Room</room>
     <room>rooms\Level_Generation_Page</room>
+    <room>rooms\Test_Room</room>
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42062.7942746412</constant>
+    <constant name="GM_build_date">42062.9017922569</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

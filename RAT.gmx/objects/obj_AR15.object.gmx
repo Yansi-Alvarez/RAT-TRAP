@@ -59,6 +59,7 @@ audio_play_sound(snd_Handgun,1,0);
 other.object_bullet_3.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
 other.object_bullet_3.speed = 40;
 instance_create(x + ldx, y + ldy, obj_Muzzle_Flash);
+instance_create(x, y, obj_Casing_Handgun);
 other.potato_gun_bullet_timer = false;
 alarm[0] = 15;
 </string>
@@ -87,6 +88,7 @@ alarm[0] = 15;
 audio_play_sound(snd_Handgun,1,0);
 other.object_bullet_2.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
 instance_create(x + ldx, y + ldy, obj_Muzzle_Flash);
+instance_create(x, y, obj_Casing_Handgun);
 other.object_bullet_2.speed = 40;
 alarm[2] = 3;
 </string>
@@ -334,6 +336,7 @@ if (obj_Rat_Body.gun_collision == true) {
         audio_play_sound(snd_Handgun,1,0);
         other.object_bullet.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
         instance_create(x + ldx, y + ldy, obj_Muzzle_Flash);
+        instance_create(x, y, obj_Casing_Handgun);
         other.object_bullet.speed = 40;
         alarm[1] = 3;
         alarm[2] = 3;
