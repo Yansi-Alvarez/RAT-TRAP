@@ -596,8 +596,8 @@
             <sprite>sprites\spr_Rifle_Laser_HUD</sprite>
             <sprite>sprites\spr_Rifle_Laser_Pickup</sprite>
             <sprites name="Animations">
-              <sprite>sprites\spr_Rifle_Laser_Fire_Left</sprite>
-              <sprite>sprites\spr_Rifle_Laser_Fire_Right</sprite>
+              <sprite>sprites\spr_Rifle_Laser_Charging_Left</sprite>
+              <sprite>sprites\spr_Rifle_Laser_Charging_Right</sprite>
             </sprites>
           </sprites>
           <sprites name="Lapua Sniper">
@@ -735,11 +735,9 @@
           <object>objects\obj_Casing_Handgun</object>
         </objects>
       </objects>
-      <objects name="Shotguns">
-        <object>objects\obj_Pump_Shotgun</object>
-      </objects>
       <objects name="Rifles">
         <object>objects\obj_AR15</object>
+        <object>objects\obj_Laser_Rifle</object>
       </objects>
     </objects>
     <objects name="Projectiles">
@@ -747,6 +745,10 @@
       <object>objects\obj_Parent_Bullet</object>
       <object>objects\obj_Handgun_Bullet</object>
       <object>objects\obj_Pump_Shotgun_Bullet</object>
+      <object>objects\obj_Laser_Bullet</object>
+      <objects name="Shotguns">
+        <object>objects\obj_Pump_Shotgun</object>
+      </objects>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_Bullbug</object>
@@ -791,6 +793,7 @@
           <object>objects\obj_Wall_Lab_Corner_Right_Down</object>
           <object>objects\obj_Wall_Lab_Corner_Left_Up</object>
           <object>objects\obj_Wall_Lab_Corner_Left_Down</object>
+          <object>objects\obj_Wall_Lab_Full</object>
         </objects>
         <object>objects\obj_Parent_Wall</object>
       </objects>
@@ -810,7 +813,7 @@
     <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42062.9017922569</constant>
+    <constant name="GM_build_date">42073.7358767477</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

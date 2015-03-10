@@ -32,6 +32,24 @@ sprite_index_Right_Gun_In_Use = spr_Handgun_Potato_Right;
 sprite_index_Left_Gun_In_Use = spr_Handgun_Potato_Left;
 
 potato_gun_bullet_timer = true;
+
+bullet_speed = 10;
+
+bullet = obj_Potato_Bullet;
+
+shooting_sound = snd_Potatogun;
+
+cool_down = 5;
+
+correction = 160;
+
+correction_2 = 200;
+
+ldx = 0;
+
+ldy = 0;
+
+gun_flash = noone;
 </string>
           </argument>
         </arguments>

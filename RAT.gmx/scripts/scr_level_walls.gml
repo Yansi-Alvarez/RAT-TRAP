@@ -32,7 +32,7 @@ with (argument0) {
     //instance_destroy();
 }
 */
-
+/*
 with (argument0) { 
     //selecting all the grids next to them
     for (i =- (argument1 + 1); i <= (argument1 + 1); i += (argument1 + 1)) { 
@@ -58,9 +58,9 @@ with (argument0) {
             if (place_empty(((x + i) - 1), ((y + j)- 1))) {
                 
                 instance_create(x + i, y + j, argument2);
-            }*/
+            }
         }
-    }
+    }*/
     /*
     for (i =- (argument1); i <= (argument1); i += (argument1)) { 
     
@@ -72,8 +72,8 @@ with (argument0) {
                 instance_create((x + i), ((y + j) - 1), argument2);
             }
         }    
-    }*/
-}
+    }
+}*/
 
 //Creating the player
 instance_create(room_width/2, room_height/2, obj_Rat_Head);

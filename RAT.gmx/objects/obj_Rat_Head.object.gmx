@@ -79,7 +79,7 @@ global.enemy_activation = true;
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
-instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
+//instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 /*
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 220, obj_Bullbug)
 
@@ -101,11 +101,11 @@ instance_create(obj_Rat_Head.x + 250, obj_Rat_Head.y + 280, obj_Bullbug)
 
 //instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
 */
-//instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Beretta)
+//instance_create(obj_Rat_Head.x - 75, obj_Rat_Head.y, obj_Beretta)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 
-instance_create(obj_Rat_Head.x + 25,obj_Rat_Head.y,obj_AR15)
+//instance_create(obj_Rat_Head.x + 75,obj_Rat_Head.y,obj_AR15)
 
 collision_with_enemy = false;
 
@@ -1186,23 +1186,22 @@ if keyboard_check_released(ord('S')) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (Player_Health == 5) or (Player_Health == 4) {
+            <string>draw_self();
+/*
+if (Player_Health == 5) or (Player_Health == 4) {
 
-    draw_self();
     draw_sprite(spr_Full_Health, floor(img_index), (view_xview[1] + 560),(view_yview[1] + 410));
     
 }
 
 if (Player_Health == 3) or (Player_Health == 2) {
 
-    draw_self();
     draw_sprite(spr_Medium_Health, floor(img_index), (view_xview[1] + 560),(view_yview[1] + 410));
     
 }
 
 if (Player_Health &lt;= 1) {
 
-    draw_self();
     draw_sprite(spr_Low_Health, floor(img_index), (view_xview[1] + 560),(view_yview[1] + 410));
     
 }

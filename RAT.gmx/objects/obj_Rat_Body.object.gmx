@@ -946,7 +946,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(ord('E')) {
+            <string>if (keyboard_check(ord('E'))) {
     
     pick_up_weapon_action = true;
     equip_text_box = false;
