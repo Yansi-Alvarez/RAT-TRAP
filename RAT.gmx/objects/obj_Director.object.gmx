@@ -28,6 +28,8 @@
             <string>//Variable to know when level is done being made
 globalvar finished_level_generation;
 
+global.generation = true;
+
 //Initializing the variable to equal zero, showing it is yet to be finished
 finished_level_generation = 0;
 
@@ -48,11 +50,44 @@ global.center_room_height = room_height/2 //(((round(room_height/2)/grid_size)/g
 //The width and height have to be divisble by 64 so the level maker can be aligned
 //with the room and place everything aligned to each other
 
-//instance_create(center_room_width, center_room_height, obj_Level_Maker);
-instance_create(global.center_room_width, global.center_room_height, obj_Level_Maker);
-
 //Activation for the enemy AI
 global.enemy_activation = false;
+
+//Speed of the level maker, has to be same as grid width (64 for now) 
+//so it can the objects can be aligned
+global.level_maker_speed = 64;
+
+global.create_central_room = false;
+
+global.create_boundary = false;
+
+global.first_level_maker_creation = false;
+
+////////////////////////////////////////////////////////////////////////////////
+
+grid_width = (room_width/global.level_maker_speed); 
+grid_height = (room_height/global.level_maker_speed);
+
+grid_width_index = ((room_width/global.level_maker_speed) - 1); 
+grid_height_index = ((room_height/global.level_maker_speed) - 1);
+
+grid_map = ds_grid_create(grid_width, grid_height);
+id_list = ds_list_create();
+id_value = noone;
+
+////////////////////////////////////////////////////////////////////////////////
+
+for (i = 0; i &lt; grid_width; i += 1) {
+
+    for (j = 0; j &lt; grid_height; j += 1) {
+    
+        ds_grid_set(grid_map, i, j, 0);
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+instance_create(global.center_room_width, global.center_room_height, obj_Level_Maker);
 </string>
           </argument>
         </arguments>

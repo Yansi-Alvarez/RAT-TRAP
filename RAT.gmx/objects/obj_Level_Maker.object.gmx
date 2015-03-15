@@ -25,17 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Time allowed to generate the level
-generation_time = 1800/(instance_number(obj_Level_Maker) + 1);
+            <string>speed = global.level_maker_speed;
+direction = choose(0, 90, 180, 270); 
 
-generation = true;
+//Time allowed to generate the level
+generation_time = 1800/(instance_number(obj_Level_Maker) + 1);
 
 //Time until it changes directions
 direction_change = irandom(30) + 10;
-
-//Speed of the level maker, has to be same as grid width (64 for now) 
-//so it can the objects can be aligned
-level_maker_speed = 64;
 
 //Probability of carving a room
 room_chance = 0;
@@ -59,6 +56,9 @@ spawn_level_maker = 1;
 //Preventing the spawn of another level maker, will be used later
 spawn_level_maker_chance = 1;
 
+//Size of spawn room
+spawn_room_size = 1;
+
 //Half of the width to prevent the level maker from going to the edges of the level
 half_width = view_wview[1]/2;
 
@@ -66,106 +66,150 @@ half_width = view_wview[1]/2;
 half_height = view_hview[1]/2;
 
 ////////////////////////////////////////////////////////////////////////////////
+
+//Limiting level maker's movement
+
+//Keeps the level generator from moving too close to the right side of the room
+x = min(x, room_width - half_width); //x, 2560 - 320
+
+//Keeps the level generator from moving too close to the left side of the room
+x = max(half_width, x); //320, x
+
+//Keeps the level generator from moving too close to the botoom of the room
+y = min(y, room_height - (half_height + 16)); //y, 1920 - 240
+
+//Keeps the level generator from moving too close to the top of the room
+y = max((half_height + 16), y); //240, y
+
 ////////////////////////////////////////////////////////////////////////////////
 
-grid_width = (room_width/level_maker_speed); 
-grid_height = (room_height/level_maker_speed);
+if (global.create_boundary == false) {
 
-grid_width_index = ((room_width/level_maker_speed) - 1); 
-grid_height_index = ((room_height/level_maker_speed) - 1);
-
-grid_map = ds_grid_create(grid_width, grid_height);
-id_list = ds_list_create();
-id_value = noone;
-
-////////////////////////////////////////////////////////////////////////////////
-
-for (i = 0; i &lt; grid_height; i += 1) {
-
-    for (j = 0; j &lt; grid_width; j += 1) {
-    
-        ds_grid_set(grid_map, i, j, 0);
+    for (i = 0; i &lt; obj_Director.grid_width; i += 1) {//for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+        //Top Section
+        obj_Director.id_value = instance_create((i * global.level_maker_speed), 0, obj_Wall_Lab_Full);
+        ds_list_add(obj_Director.id_list, obj_Director.id_value);
+        ds_grid_add(obj_Director.grid_map, i, 0, obj_Director.id_value);//ds_grid_add(obj_Director.grid_map, i, 0, obj_Director.id_value);
     }
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-for (i = 0; i &lt; grid_width; i += 1) {
-    //Top Section
-    id_value = instance_create((i * level_maker_speed), 0, obj_Wall_Lab_Full);
-    ds_list_add(id_list, id_value);
-    ds_grid_add(grid_map, i, 0, id_value);
-}
-
-for (j = 0; j &lt; grid_height; j += 1) {
-    //Right Section
-    id_value = instance_create((grid_width_index * level_maker_speed), (j * level_maker_speed), obj_Wall_Lab_Full);
-    ds_list_add(id_list, id_value);
-    ds_grid_add(grid_map, grid_width, j, id_value);
-}
-
-for (j = 0; j &lt; grid_height; j += 1) {
-    //Left Section
-    id_value = instance_create(0, (j * level_maker_speed), obj_Wall_Lab_Full);
-    ds_list_add(id_list, id_value);
-    ds_grid_add(grid_map, 0, j, id_value);
-}
-
-for (i = 0; i &lt; grid_width; i += 1) {
-    //Bottom Section
-    id_value = instance_create((i * level_maker_speed), (grid_height_index * level_maker_speed), obj_Wall_Lab_Full);
-    ds_list_add(id_list, id_value);
-    ds_grid_add(grid_map, i, grid_height, id_value);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-//Size of spawn room
-spawn_room_size = 1;
-
-//Open room where the player can spawn safely, its where the level maker first spawns
-
-room_start_spawn_x = (global.center_room_width - (level_maker_speed * spawn_room_size));
-room_start_spawn_y = (global.center_room_height - (level_maker_speed * spawn_room_size));
-
-room_end_spawn_x = (global.center_room_width + (level_maker_speed * spawn_room_size));
-room_end_spawn_y = (global.center_room_height + (level_maker_speed * spawn_room_size));
-
-for (i = room_start_spawn_x; i &lt;= room_end_spawn_x; i += level_maker_speed) {
-
-    for (j = room_start_spawn_y; j &lt;= room_end_spawn_y; j += level_maker_speed) {//Prevents player from being spawn in a wall
     
-        id_value = instance_create(i, j, level_floor);
-        ds_list_add(id_list, id_value);
-        ds_grid_add(grid_map, ((i/level_maker_speed) - 1), ((j/level_maker_speed) - 1), id_value);
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {//for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+        //Right Section
+        obj_Director.id_value = instance_create((obj_Director.grid_width_index * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full);
+        ds_list_add(obj_Director.id_list, obj_Director.id_value);
+        ds_grid_add(obj_Director.grid_map, obj_Director.grid_width_index, j, obj_Director.id_value);
     }
+    
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {//for (k = 0; k &lt; obj_Director.grid_height; k += 1) {
+        //Left Section
+        obj_Director.id_value = instance_create(0, (j * global.level_maker_speed), obj_Wall_Lab_Full);
+        ds_list_add(obj_Director.id_list, obj_Director.id_value);
+        ds_grid_add(obj_Director.grid_map, 1, j, obj_Director.id_value);//ds_grid_add(obj_Director.grid_map, 0, k, obj_Director.id_value);
+    }
+    
+    for (i = 0; i &lt; obj_Director.grid_width; i += 1) {//for (z = 0; z &lt; obj_Director.grid_width; z += 1) {
+        //Bottom Section
+        obj_Director.id_value = instance_create((i * global.level_maker_speed), (obj_Director.grid_height_index * global.level_maker_speed), obj_Wall_Lab_Full);
+        ds_list_add(obj_Director.id_list, obj_Director.id_value);
+        ds_grid_add(obj_Director.grid_map, i, obj_Director.grid_height_index, obj_Director.id_value);
+    }
+    
+    global.create_boundary = true;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+if (global.create_central_room == false) {
+    
+    //Open room where the player can spawn safely, its where the level maker first spawns
+    
+    room_start_spawn_x = (global.center_room_width - (global.level_maker_speed * spawn_room_size));
+    room_start_spawn_y = (global.center_room_height - (global.level_maker_speed * spawn_room_size));
+    
+    room_end_spawn_x = (global.center_room_width + (global.level_maker_speed * spawn_room_size));
+    room_end_spawn_y = (global.center_room_height + (global.level_maker_speed * spawn_room_size));
+    
+    for (i = room_start_spawn_x; i &lt;= room_end_spawn_x; i += global.level_maker_speed) {
+    
+        for (j = room_start_spawn_y; j &lt;= room_end_spawn_y; j += global.level_maker_speed) {//Prevents player from being spawn in a wall
+        
+            obj_Director.id_value = instance_create(i, j, level_floor);
+            ds_list_add(obj_Director.id_list, obj_Director.id_value);
+            ds_grid_add(obj_Director.grid_map, ((i / global.level_maker_speed) - 1), ((j / global.level_maker_speed) - 1), obj_Director.id_value);
+        }
+    }     
+       
+    global.create_central_room = true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 //Create a floor at every step it takes
-start_point_x = (global.center_room_width + (level_maker_speed * (spawn_room_size + 1)));
-start_point_y = (global.center_room_height + (level_maker_speed * spawn_room_size));
+if (global.first_level_maker_creation == false) {
 
-id_value = instance_create(start_point_x, start_point_y, level_floor);
-ds_list_add(id_list, id_value);
-ds_grid_add(grid_map, ((start_point_x / level_maker_speed) - 1), ((start_point_y / level_maker_speed) - 1), id_value);
+    start_point_x = (global.center_room_width + (global.level_maker_speed * (spawn_room_size + 1)));
+    start_point_y = (global.center_room_height + (global.level_maker_speed * spawn_room_size));
+    
+    id_value = instance_create(start_point_x, start_point_y, level_floor);
+    ds_list_add(obj_Director.id_list, obj_Director.id_value);
+    ds_grid_add(obj_Director.grid_map, ((start_point_x / global.level_maker_speed) - 1), ((start_point_y / global.level_maker_speed) - 1), obj_Director.id_value);
+    
+    x = (start_point_x + global.level_maker_speed)
+    y = start_point_y
+    
+    global.first_level_maker_creation = true;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-//Try doing a for loop within a while loop
-//while (generation == true) {
+//Commencing level generation
 
-    //Floor Generation    
-/*
-    for (generation_time = 1800/(instance_number(obj_Level_Maker) + 1); generation &gt; 0; generation_time =- 1) {
-            
-        id_value = instance_create(x, y, level_floor);
-        ds_list_add(id_list, id_value);
-        ds_grid_add(grid_map, ((x/level_maker_speed) - 1), ((y/level_maker_speed) - 1), id_value);
+//Level maker chooses a direction
+//0: right (+1 to x)
+//90: right (-1 to y)
+//180: right (-1 to x)
+//270: right (+1 to y)
+//level_maker_direction = choose(0, 90, 180, 270); 
+
+//Level maker goes in choosen direction and at a pre-determined speed
+//motion_set(level_maker_direction, global.level_maker_speed);
+
+//When the alarm is finished, the level maker will be destroyed, ceasing level generation
+//alarm[0] = generation_time;
+
+//When the alarm is finished, it will choose again from the four directions and move that way
+//Also can reset itself so its self-perpetuating
+//alarm[1] = direction_change;    
+
+////////////////////////////////////////////////////////////////////////////////
+//Fix ***BELOW***
+//Try doing a for loop within a while loop
+while (generation_time &gt; 0) {
+    
+    //if ((ds_grid_get(obj_Director.grid_map, ((x / global.level_maker_speed) - 1), (y / global.level_maker_speed) - 1)).object_index != obj_Wall_Lab_Full) {
+    if !(instance_place(x,y, obj_Wall_Lab_Full)) {
+        obj_Director.id_value = instance_create(x, y, level_floor);
+        ds_list_add(obj_Director.id_list, obj_Director.id_value);
+        ds_grid_add(obj_Director.grid_map, ((x / global.level_maker_speed) - 1), ((y / global.level_maker_speed) - 1), obj_Director.id_value);
+        generation_time -= 1;
+        
+        x += hspeed
+        y += vspeed
+        direction = choose(0,90,180,270)
     }
-*/  
+    //}
+/*    
+    //Takes into account the number of level makers, it will be implemented so that the more
+    //there is, the less likely more are to be spawned
+    spawn_level_maker = instance_number(obj_Level_Maker);
+    
+    //Chances to spawn a new level maker, the higher it is, the lower the chance
+    spawn_level_maker_chance = irandom(500 * (spawn_level_maker + 1));
+    
+    if (spawn_level_maker_chance == 0) {
+        
+        instance_create(x, y, obj_Level_Maker);
+    }
+
     //Room Generation
     
     room_chance = irandom(25);
@@ -183,47 +227,13 @@ ds_grid_add(grid_map, ((start_point_x / level_maker_speed) - 1), ((start_point_y
         
             for (j =- generated_room_height; j &lt;= generated_room_height; j += 1) {
             
-                id_value = instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
-                ds_list_add(id_list, id_value);
-                ds_grid_add(grid_map, ((x / level_maker_speed) - 1), ((y / level_maker_speed) - 1), id_value);
+                obj_Director.id_value = instance_create(x + (i * global.level_maker_speed), y + (j * global.level_maker_speed), level_floor);
+                ds_list_add(obj_Director.id_list, obj_Director.id_value);
+                ds_grid_add(obj_Director.grid_map, ((x / global.level_maker_speed) - 1), ((y / global.level_maker_speed) - 1), obj_Director.id_value);
             }
         }
-    }
-//}
-//*/
-//Commencing level generation
-
-//Level maker chooses a direction
-//0: right (+1 to x)
-//90: right (-1 to y)
-//180: right (-1 to x)
-//270: right (+1 to y)
-level_maker_direction = choose(0, 90, 180, 270); 
-
-//Level maker goes in choosen direction and at a pre-determined speed
-motion_set(level_maker_direction, level_maker_speed);
-
-//When the alarm is finished, the level maker will be destroyed, ceasing level generation
-alarm[0] = generation_time;
-
-//When the alarm is finished, it will choose again from the four directions and move that way
-//Also can reset itself so its self-perpetuating
-alarm[1] = direction_change;
-////////////////////////////////////////////////////////////////////////////////
-
-//Limiting level maker's movement
-
-//Keeps the level generator from moving too close to the right side of the room
-x = min(x, room_width - half_width); //x, 2560 - 320
-
-//Keeps the level generator from moving too close to the left side of the room
-x = max(half_width, x); //320, x
-
-//Keeps the level generator from moving too close to the botoom of the room
-y = min(y, room_height - (half_height + 16)); //y, 1920 - 240
-
-//Keeps the level generator from moving too close to the top of the room
-y = max((half_height + 16), y); //240, y
+    }*/
+}
 </string>
           </argument>
         </arguments>
@@ -251,8 +261,13 @@ y = max((half_height + 16), y); //240, y
     //instance_create(x, y, obj_Server);
     //scr_level_walls(level_floor, level_maker_speed, level_wall);
     //scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
-    generation = false;
+    //generation = false;
     scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
+}
+/*
+if (instance_number(obj_Level_Maker) == 0) {
+
+    global.generation = false;
 }
 </string>
           </argument>
@@ -282,7 +297,7 @@ y = max((half_height + 16), y); //240, y
 level_maker_direction = choose(0, 90, 180, 270);
 
 //Level maker goes in choosen direction and at a pre-determined speed
-motion_set(level_maker_direction, level_maker_speed);
+motion_set(level_maker_direction, global.level_maker_speed);
 
 //Time until it changes directions
 direction_change = irandom(30) + 10;
@@ -313,85 +328,6 @@ alarm[1] = direction_change;
           <argument>
             <kind>1</kind>
             <string>instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Create a floor at every step it takes
-/*if !(ds_exists(id_list, ds_type_list)) {
-
-    id_value = instance_create(x, y, level_floor);
-    ds_list_add(id_list, id_value);
-    ds_grid_add(grid_map, ((x/level_maker_speed) - 1), ((y/level_maker_speed) - 1), id_number);
-}*/
-
-//Takes into account the number of level makers, it will be implemented so that the more
-//there is, the less likely more are to be spawned
-//spawn_level_maker = instance_number(obj_Level_Maker);
-
-//Chances to spawn a new level maker, the higher it is, the lower the chance
-//spawn_level_maker_chance = irandom(500 * (spawn_level_maker + 1));
-
-//if (spawn_level_maker_chance == 0) {
-    
-    //instance_create(x, y, obj_Level_Maker);
-//}
-/*
-//Chance to spawn a new room
-room_chance = irandom(25);
-
-if (room_chance == 0) {
-    
-    //Rooms new width
-    generated_room_width = choose(1, 2);
-    
-    //Rooms new height
-    generated_room_height = choose(1, 2);
-    
-    //For loop to generate different sized rooms
-    for (i =- generated_room_width; i &lt;= generated_room_width; i += 1) {
-    
-        for (j =- generated_room_height; j &lt;= generated_room_height; j += 1) {
-        
-            id_value = instance_create(x + (i * level_maker_speed), y + (j * level_maker_speed), level_floor);
-            ds_list_add(id_list, id_value);
-            ds_grid_add(grid_map, ((x / level_maker_speed) - 1), ((y / level_maker_speed) - 1), id_value);
-        }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////
-//Limiting level maker's movement
-
-//Keeps the level generator from moving too close to the right side of the room
-x = min(x, room_width - half_width); //x, 2560 - 320
-
-//Keeps the level generator from moving too close to the left side of the room
-x = max(half_width, x); //320, x
-
-//Keeps the level generator from moving too close to the botoom of the room
-y = min(y, room_height - (half_height + 16)); //y, 1920 - 240
-
-//Keeps the level generator from moving too close to the top of the room
-y = max((half_height + 16), y); //240, y
 </string>
           </argument>
         </arguments>
