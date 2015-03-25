@@ -76,7 +76,7 @@ id_list = ds_list_create();
 id_value = noone;
 
 ////////////////////////////////////////////////////////////////////////////////
-
+/*
 for (i = 0; i &lt; grid_width; i += 1) {
 
     for (j = 0; j &lt; grid_height; j += 1) {
@@ -84,10 +84,13 @@ for (i = 0; i &lt; grid_width; i += 1) {
         ds_grid_set(grid_map, i, j, 0);
     }
 }
-
+*/
 ////////////////////////////////////////////////////////////////////////////////
 
+instance_create(global.center_room_width, global.center_room_height, obj_Reference_Angle);
 instance_create(global.center_room_width, global.center_room_height, obj_Level_Maker);
+
+////////////////////////////////////////////////////////////////////////////////
 </string>
           </argument>
         </arguments>

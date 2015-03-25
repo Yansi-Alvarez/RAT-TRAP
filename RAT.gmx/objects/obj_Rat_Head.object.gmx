@@ -101,11 +101,11 @@ instance_create(obj_Rat_Head.x + 250, obj_Rat_Head.y + 280, obj_Bullbug)
 
 //instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 250, obj_Bullbug)
 */
-//instance_create(obj_Rat_Head.x - 75, obj_Rat_Head.y, obj_Beretta)
+instance_create(obj_Rat_Head.x - 75, obj_Rat_Head.y, obj_Beretta)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 
-//instance_create(obj_Rat_Head.x + 75,obj_Rat_Head.y,obj_AR15)
+instance_create(obj_Rat_Head.x + 75, obj_Rat_Head.y, obj_AR15)
 
 collision_with_enemy = false;
 

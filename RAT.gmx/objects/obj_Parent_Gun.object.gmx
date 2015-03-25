@@ -410,21 +410,14 @@ if (gun_type == 4) {
             other.sprite_index = gun_charging_animation;
             //audio_play_sound(charging_sound, 1, 0);
             other.image_speed = charging_speed;
-            /*
-            if (other.image_index = index_size) {
-            
-                other.sprite_index = gun_fully_charged_animation;
-            }
-            */
+
             if (mouse_check_button_released(mb_left)) and (other.image_index = index_size) {
                 
                 other.object_bullet = instance_create(x, y, bullet);
                 audio_play_sound(shooting_sound, 1, 0);
                 other.object_bullet.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
                 other.object_bullet.speed = bullet_speed;
-                //draw_line_colour(obj_Parent_Gun.x, obj_Parent_Gun.y, obj_Cursor.x, obj_Cursor.y, c_red, c_red);
-                //image_xscale = distance_to_object(obj_Cursor);
-                //image_yscale = distance_to_object(obj_Cursor);
+                //scr_find_distance_to_object(x, y, point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y), object, point_distance(obj_Parent_Gun.x, obj_Parent_Gun.y, mouse_x, mouse_y));
                 other.potato_gun_bullet_timer = false;
                 alarm[0] = cool_down;
             }
@@ -570,7 +563,7 @@ if ((obj_Rat_Body.pick_up_weapon_action == true) and (other.sprite_index = sprit
             <string>/*if (global.weapon_attach_left_arm == false) and (global.weapon_attach_right_arm == false) and (sprite_index = sprite_index_Gun_In_Use_Pick_Up) {
     
 }
-*//*
+*/
 if ((global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false)) or
     ((global.weapon_attach_left_arm == false) and (global.weapon_attach_right_arm == true)) and
     (obj_Rat_Body.pick_up_weapon_action == true) and (other.sprite_index = sprite_index_Gun_In_Use_Pick_Up) {
