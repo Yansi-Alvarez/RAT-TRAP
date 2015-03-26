@@ -29,23 +29,13 @@
 
 global.weapon_attach_left_arm = false;
 
-weapon_picked_up = false;
-
 global.weapon_picked_up_again = false;
-
-gun_collision = false;
 
 //global.gun_2_collision = false;
 
 global.one_handed_melee_collision = false;
 
 //global.one_handed_melee_2_collision = false;
-
-pick_up_weapon_action = false;
-
-equip_text_box = false;
-
-turn_off = false;
 
 image_speed = 0.3;
 
@@ -147,17 +137,7 @@ obj_Rat_Tail.vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!place_meeting(x, y, obj_Parent_Gun)) and (turn_off == false) {
-
-    equip_text_box = false; 
-}
-
-if (place_meeting(x, y, obj_Parent_Gun)) and (turn_off == false) {
-
-    equip_text_box = true;
-}
-
-if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
+            <string>if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
     
     sprite_index = spr_Body_Standard_Idle_Up_Right;
     depth = 1;
@@ -946,7 +926,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (other) {
+            <string>/*with (other) {
 
     if (keyboard_check(ord('E'))) {
         
@@ -955,7 +935,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
         turn_off = true;
     }
 }
-/*
+
 if ((global.weapon_attach_left_arm == true) or (global.weapon_attach_right_arm == false)) {
     
     equip_text_box = true;
@@ -1151,7 +1131,7 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) and
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>draw_self();/*
 draw_set_font(Game_Font);
 
 if (equip_text_box == true) {

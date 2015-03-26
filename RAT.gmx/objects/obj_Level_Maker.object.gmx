@@ -76,32 +76,24 @@ if (global.create_boundary == false) {
     for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         //Top Section
         obj_Director.id_value = instance_create((i * global.level_maker_speed), 0, obj_Wall_Lab_Full);
-        //ds_list_add(obj_Director.id_list, obj_Director.id_value);
-        //ds_grid_add(obj_Director.grid_map, i, 0, obj_Director.id_value);
         ds_grid_set(obj_Director.grid_map, i, 0, obj_Director.id_value);
     }
     
     for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
         //Right Section
         obj_Director.id_value = instance_create((obj_Director.grid_width_index * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full);
-        //ds_list_add(obj_Director.id_list, obj_Director.id_value);
-        //ds_grid_add(obj_Director.grid_map, obj_Director.grid_width_index, j, obj_Director.id_value);
         ds_grid_set(obj_Director.grid_map, obj_Director.grid_width_index, j, obj_Director.id_value);
     }
     
     for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
         //Left Section
         obj_Director.id_value = instance_create(0, (j * global.level_maker_speed), obj_Wall_Lab_Full);
-        //ds_list_add(obj_Director.id_list, obj_Director.id_value);
-        //ds_grid_add(obj_Director.grid_map, 1, j, obj_Director.id_value);
         ds_grid_set(obj_Director.grid_map, 0, j, obj_Director.id_value);
     }
     
     for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         //Bottom Section
         obj_Director.id_value = instance_create((i * global.level_maker_speed), (obj_Director.grid_height_index * global.level_maker_speed), obj_Wall_Lab_Full);
-        //ds_list_add(obj_Director.id_list, obj_Director.id_value);
-        //ds_grid_add(obj_Director.grid_map, i, obj_Director.grid_height_index, obj_Director.id_value);
         ds_grid_set(obj_Director.grid_map, i, obj_Director.grid_height_index, obj_Director.id_value);
     }
     
@@ -329,7 +321,7 @@ while (floor_generation_time &gt; 0) {
     //scr_level_walls(level_floor, level_maker_speed, level_wall);
     //scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
     //generation = false;
-    scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
+    //scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
 }
 /*
 if (instance_number(obj_Level_Maker) == 0) {
