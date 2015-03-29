@@ -1089,12 +1089,12 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Title_Screen</room>
     <room>rooms\rm_Start</room>
     <room>rooms\rm_Level_Generation</room>
-    <room>rooms\Title_Screen</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42089.9409260764</constant>
+    <constant name="GM_build_date">42091.9846649537</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
