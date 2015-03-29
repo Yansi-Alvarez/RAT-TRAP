@@ -2,11 +2,14 @@
 <extension>
   <name>Speech Bubble</name>
   <version>1.0.0</version>
-  <author></author>
+  <packageID></packageID>
+  <ProductID></ProductID>
   <date>01/10/14</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
   <helpfile></helpfile>
+  <androidProps>-1</androidProps>
+  <iosProps>-1</iosProps>
   <installdir></installdir>
   <classname></classname>
   <androidclassname></androidclassname>

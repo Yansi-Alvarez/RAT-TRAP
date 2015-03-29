@@ -941,6 +941,9 @@
         <sprite>sprites\spr_Intr_Machine</sprite>
         <sprite>sprites\spr_Intr_Machine_On</sprite>
         <sprite>sprites\spr_Intr_Passkey</sprite>
+        <sprites name="Teleporter">
+          <sprite>sprites\spr_Intr_Teleporter</sprite>
+        </sprites>
       </sprites>
       <sprites name="Chests">
         <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
@@ -971,6 +974,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
+    <font>fonts\fnt_Text_Font</font>
   </fonts>
   <objects name="objects">
     <objects name="Rat_Body_Parts">
