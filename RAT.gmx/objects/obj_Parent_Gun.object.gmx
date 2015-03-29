@@ -415,7 +415,7 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm =
 //Potato Handgun, Beretta
     if (gun_collision == true) {
     
-        if mouse_check_button_pressed(mb_left) and (other.potato_gun_bullet_timer == true) and ((global.weapon_attach_right_arm == true) or 
+        if (mouse_check_button_pressed(mb_left) and (other.potato_gun_bullet_timer == true)) and ((global.weapon_attach_right_arm == true) or 
         (global.weapon_attach_left_arm == true)) {
                 
             other.object_bullet = instance_create(x, y, bullet);

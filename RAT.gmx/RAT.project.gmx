@@ -283,6 +283,7 @@
     <extension index="2">extensions\Color Coding Files</extension>
     <extension index="3">extensions\Loading Screen</extension>
     <extension index="4">extensions\DeveloperConsole</extension>
+    <extension index="5">extensions\CRT Pixel Shader</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Rat">
@@ -972,6 +973,7 @@
     <script>scripts\scr_find_distance_to_object.gml</script>
     <script>scripts\scr_draw_messagebox.gml</script>
   </scripts>
+  <shaders name="shaders"/>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
     <font>fonts\fnt_Text_Font</font>
@@ -1091,14 +1093,15 @@
         </objects>
       </objects>
     </objects>
+    <object>objects\obj_Teleporter</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Title_Screen</room>
+    <room>rooms\rm_Title_Screen</room>
     <room>rooms\rm_Start</room>
     <room>rooms\rm_Level_Generation</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">42091.9846649537</constant>
+    <constant name="GM_build_date">42092.8793790046</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

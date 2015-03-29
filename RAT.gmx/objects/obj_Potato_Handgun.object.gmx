@@ -39,6 +39,8 @@ bullet_speed = 10;
 
 bullet = obj_Potato_Bullet;
 
+gun_type = 1;
+
 shooting_sound = snd_Potatogun;
 
 cool_down = 5;
@@ -51,9 +53,11 @@ ldx = 0;
 
 ldy = 0;
 
-gun_flash = noone;
+gun_flash = obj_Muzzle_Flash;
 
-gun_type = 1;
+ldx = 0;
+
+ldy = 0;
 
 sprite_index = spr_Handgun_Potato_Pickup;
 </string>
