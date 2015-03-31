@@ -2,14 +2,11 @@
 <extension>
   <name>CRT Pixel Shader</name>
   <version>1.0.0</version>
-  <packageID></packageID>
-  <ProductID>9C339A6E963C1E649DA04DADE28EC071</ProductID>
+  <author></author>
   <date>16/09/14</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
   <helpfile></helpfile>
-  <androidProps>0</androidProps>
-  <iosProps>0</iosProps>
   <installdir></installdir>
   <classname></classname>
   <androidclassname></androidclassname>

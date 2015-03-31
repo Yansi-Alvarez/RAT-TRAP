@@ -2,14 +2,11 @@
 <extension>
   <name>Color Coding Files</name>
   <version>1.2.0</version>
-  <packageID></packageID>
-  <ProductID></ProductID>
+  <author></author>
   <date>25/11/14</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
   <helpfile></helpfile>
-  <androidProps>-1</androidProps>
-  <iosProps>-1</iosProps>
   <installdir></installdir>
   <classname></classname>
   <androidclassname></androidclassname>

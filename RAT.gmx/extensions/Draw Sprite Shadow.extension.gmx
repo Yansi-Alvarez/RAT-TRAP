@@ -2,14 +2,11 @@
 <extension>
   <name>Draw Sprite Shadow</name>
   <version>1.1.0</version>
-  <packageID></packageID>
-  <ProductID></ProductID>
+  <author></author>
   <date>23/08/14</date>
   <license>Free to use, also for commercial games.</license>
   <description></description>
   <helpfile></helpfile>
-  <androidProps>-1</androidProps>
-  <iosProps>-1</iosProps>
   <installdir></installdir>
   <classname></classname>
   <androidclassname></androidclassname>

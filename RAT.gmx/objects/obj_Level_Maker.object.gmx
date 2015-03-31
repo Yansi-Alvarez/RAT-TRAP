@@ -193,55 +193,66 @@ while (floor_generation_time &gt; 0) {
     y = max((half_height + 16), y); //240, y
 }
 
-//Wall Generation Code (Still tinkering)
-//while (wall_generation_time &gt; 0) {
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
-    for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
     
-        for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
-        
-        grid_block = (ds_grid_get(obj_Director.grid_map, i, j));
-        reference_angle = point_direction(obj_Reference_Angle.x, obj_Reference_Angle.y, (i * global.level_maker_speed), (j * global.level_maker_speed));
-        
-            if (grid_block == 0) {
+    //grid_block = (ds_grid_get(obj_Director.grid_map, i, j));
+    reference_angle = point_direction(obj_Reference_Angle.x, obj_Reference_Angle.y, (i * global.level_maker_speed), (j * global.level_maker_speed));
+    
+        if ((ds_grid_get(obj_Director.grid_map, i, j)) == 0) {
 
-                if (reference_angle &gt;= 0) and (reference_angle &lt;= 44) {
+            /*if //(((ds_grid_get(obj_Director.grid_map, i + 1, j)) == 0) and 
+                //((ds_grid_get(obj_Director.grid_map, i, j + 1)) == 0) and
+                //((ds_grid_get(obj_Director.grid_map, i - 1, j)) == 0) and 
+                //((ds_grid_get(obj_Director.grid_map, i, j - 1)) == 0)) or 
                 
-                    obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
-                    ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);    
+                (((ds_grid_get(obj_Director.grid_map, i + 1, j)).object_index == obj_Wall_Lab_Full) and 
+                ((ds_grid_get(obj_Director.grid_map, i, j + 1)).object_index == obj_Wall_Lab_Full) and
+                ((ds_grid_get(obj_Director.grid_map, i - 1, j)).object_index == obj_Wall_Lab_Full) and 
+                ((ds_grid_get(obj_Director.grid_map, i, j - 1)).object_index == obj_Wall_Lab_Full)) {   
                 
-                }
-                
-                if (reference_angle &gt;= 45) and (reference_angle &lt;= 134) {
-                
-                    obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Down); 
-                    ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);    
-                
-                }
-                
-                if (reference_angle &gt;= 135) and (reference_angle &lt;= 224) {
-                
-                    obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Right);
-                    ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);     
-                    
-                }
-                
-                if (reference_angle &gt;= 225) and (reference_angle &lt;= 314) {
+                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
+                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
+            } */
 
-                    obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Up);
-                    ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);      
-                    
-                }
+            if (reference_angle &gt;= 0) and (reference_angle &lt;= 44) {
+            
+                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
+                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
+            
+            }
+            
+            if (reference_angle &gt;= 45) and (reference_angle &lt;= 134) {
+            
+                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Down); 
+                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);    
+            
+            }
+            
+            if (reference_angle &gt;= 135) and (reference_angle &lt;= 224) {
+            
+                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Right);
+                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);     
                 
-                if (reference_angle &gt;= 315) and (reference_angle &lt;= 359) {
+            }
+            
+            if (reference_angle &gt;= 225) and (reference_angle &lt;= 314) {
+
+                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Up);
+                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);      
                 
-                    obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
-                    ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);    
-                
-                }
+            }
+            
+            if (reference_angle &gt;= 315) and (reference_angle &lt;= 359) {
+            
+                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
+                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);    
+            
             }
         }
     }
+}
 
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
