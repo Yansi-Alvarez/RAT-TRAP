@@ -944,11 +944,19 @@
         <sprites name="Teleporter">
           <sprite>sprites\spr_Intr_Teleporter</sprite>
         </sprites>
+        <sprites name="Build Chamber">
+          <sprite>sprites\spr_intr_Build_Chamber</sprite>
+        </sprites>
       </sprites>
       <sprites name="Chests">
         <sprite>sprites\spr_Intr_Treasure_Normal</sprite>
         <sprite>sprites\spr_Intr_Treasure_Locked</sprite>
         <sprite>sprites\spr_Intr_Treasure_Open</sprite>
+      </sprites>
+      <sprites name="Misc">
+        <sprites name="Punching Bag">
+          <sprite>sprites\spr_intr_Punchingbag</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
