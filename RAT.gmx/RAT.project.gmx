@@ -960,6 +960,9 @@
         </sprites>
       </sprites>
     </sprites>
+    <sprites name="Loading Screen">
+      <sprite>sprites\spr_Loading_Screen</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkgd_Title</background>
