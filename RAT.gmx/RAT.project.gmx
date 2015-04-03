@@ -624,29 +624,6 @@
       <sprite>sprites\spr_Text_Bubble</sprite>
       <sprite>sprites\spr_Screen_Overlay</sprite>
       <sprite>sprites\spr_Cursor</sprite>
-      <sprites name="Buttons">
-        <sprites name="Green">
-          <sprite>sprites\spr_Button_Cage</sprite>
-          <sprite>sprites\spr_Button_Rat</sprite>
-          <sprite>sprites\spr_Button_Lab</sprite>
-          <sprite>sprites\spr_Button_Options</sprite>
-          <sprite>sprites\spr_Button_Exit</sprite>
-          <sprite>sprites\spr_Button_Home</sprite>
-        </sprites>
-        <sprites name="White">
-          <sprite>sprites\spr_Button_Cage_White</sprite>
-          <sprite>sprites\spr_Button_Rat_White</sprite>
-          <sprite>sprites\spr_Button_Lab_White</sprite>
-          <sprite>sprites\spr_Button_Options_White</sprite>
-          <sprite>sprites\spr_Button_Exit_White</sprite>
-          <sprite>sprites\spr_Button_Home_White</sprite>
-        </sprites>
-      </sprites>
-      <sprites name="Menus">
-        <sprites name="Title">
-          <sprite>sprites\spr_Input_Error</sprite>
-        </sprites>
-      </sprites>
       <sprites name="HUD">
         <sprites name="Health">
           <sprite>sprites\spr_Full_Health</sprite>
@@ -1002,6 +979,7 @@
       <object>objects\obj_Screen_Shaker</object>
       <object>objects\obj_Damage</object>
       <object>objects\obj_Title_Screen</object>
+      <object>objects\obj_Research_Page</object>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_Parent_Gun</object>
@@ -1090,10 +1068,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Start</room>
     <room>rooms\rm_Title_Screen</room>
+    <room>rooms\rm_Start</room>
     <room>rooms\rm_Level_Generation</room>
-    <room>rooms\rm_Rat</room>
+    <room>rooms\rm_Research_Page</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42094.8957887616</constant>

@@ -74,6 +74,14 @@ index_size = noone;
 //3 equals automatic (P90)
 //4 laser weapon (laster)
 
+text = "Press E to equip";
+popup_width = string_width(text);
+popup_padding = 3;
+draw_below = false;
+font = Game_Font;
+font_color = c_lime; 
+bak_color = c_black;
+
 //////////////////////////////////////////////////////
 
 gun_collision = false;
@@ -83,6 +91,8 @@ weapon_picked_up = false;
 equipped = false;
 
 equip_text_box = false;
+
+weapon_equipped = noone;
 </string>
           </argument>
         </arguments>
@@ -187,7 +197,7 @@ alarm[2] = alarm_timer;;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) and (weapon_picked_up == true) {  
+            <string>if (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) and (weapon_picked_up == true) {  
     
     with(weapon_equipped) {    
 
@@ -716,14 +726,14 @@ if (weapon_picked_up == true) {
 }
 
 ////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
-/*
+
 weapon_to_pick_up = instance_place(x, y, obj_Rat_Body);
 
 if ((equip_text_box == true) and (equipped == false) and (sprite_index = sprite_index_Gun_In_Use_Pick_Up) and (keyboard_check_pressed(ord('E')))) {
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left)) and (gun_collision == false) and (weapon_to_pick_up != noone)) {
         
         weapon_equipped = obj_Gun_In_Use;
         
@@ -732,14 +742,14 @@ if ((equip_text_box == true) and (equipped == false) and (sprite_index = sprite_
         
         sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
         weapon_picked_up = true;
-        obj_Rat_Body.gun_collision = true;
+        gun_collision = true;
         equipped = true;
         global.weapon_attach_left_arm = true;
     }
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right)) and (gun_collision == false) and (weapon_to_pick_up != noone)) {
         
         weapon_equipped = obj_Gun_In_Use;
         
@@ -748,14 +758,14 @@ if ((equip_text_box == true) and (equipped == false) and (sprite_index = sprite_
     
         sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
         weapon_picked_up = true;
-        obj_Rat_Body.gun_collision = true;
+        gun_collision = true;
         equipped = true;
         global.weapon_attach_right_arm = true;
     }
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left)) and (gun_collision == false) and (weapon_to_pick_up != noone)) {
         
         weapon_equipped = obj_Gun_In_Use;
         
@@ -764,14 +774,14 @@ if ((equip_text_box == true) and (equipped == false) and (sprite_index = sprite_
     
         sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
         weapon_picked_up = true;
-        obj_Rat_Body.gun_collision = true;
+        gun_collision = true;
         equipped = true;
         global.weapon_attach_left_arm = true;
     }
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right)) and (gun_collision == false) and (weapon_to_pick_up != noone)) {
         
         weapon_equipped = obj_Gun_In_Use;
         
@@ -780,13 +790,13 @@ if ((equip_text_box == true) and (equipped == false) and (sprite_index = sprite_
     
         sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
         weapon_picked_up = true;
-        obj_Rat_Body.gun_collision = true;
+        gun_collision = true;
         equipped = true;
         global.weapon_attach_right_arm = true;
     }
 }
 
-
+/*
 ////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
 if ((equip_text_box == true) and (equipped == true) and (sprite_index = sprite_index_Gun_In_Use_Pick_Up) and (keyboard_check_pressed(ord('E')))) {
     
@@ -853,6 +863,45 @@ if ((equip_text_box == true) and (equipped == true) and (sprite_index = sprite_i
     weapon_picked_up = true;
     //obj_Rat_Body.gun_collision = true;
     equipped = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Draw Event for obj_Parent_Gun
+
+draw_self();
+
+if (!place_meeting(x, y, obj_Rat_Body)){
+
+    other.equip_text_box = false; 
+}
+
+if (place_meeting(x, y, obj_Rat_Body) and (weapon_picked_up == false) and (equipped = false)) {
+
+    draw_set_font(font);
+    draw_set_color(font_color);    
+
+    scr_draw_messagebox(text, popup_width, popup_padding, self, bak_color, draw_below);
+    equip_text_box = true;
 }
 </string>
           </argument>
