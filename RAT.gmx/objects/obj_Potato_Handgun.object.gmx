@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
+obj_Gun_In_Use = obj_Potato_Handgun;
+
 sprite_index_Right_Gun_In_Use_Equipped = spr_Handgun_Potato_Right;
 
 sprite_index_Left_Gun_In_Use_Equipped = spr_Handgun_Potato_Left;

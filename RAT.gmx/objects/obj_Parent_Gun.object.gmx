@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index_Right_Gun_In_Use_Equipped = noone;
+            <string>obj_Gun_In_Use = noone;
+
+sprite_index_Right_Gun_In_Use_Equipped = noone;
 
 sprite_index_Left_Gun_In_Use_Equipped = noone;
 
@@ -72,11 +74,7 @@ index_size = noone;
 //3 equals automatic (P90)
 //4 laser weapon (laster)
 
-pick_up_weapon_action = false;
-
-equip_text_box = false;
-
-turn_off = false;
+//////////////////////////////////////////////////////
 
 gun_collision = false;
 
@@ -84,19 +82,7 @@ weapon_picked_up = false;
 
 equipped = false;
 
-//////////////////////////////////////////////////////
-
-text = "Press E to equip";
-popup_width = string_width(text);
-popup_padding = 3;
-draw_below = false;
-font = Game_Font;
-font_color = c_lime; 
-bak_color = c_black;
-
-dropped = false;
-
-global.weapon_in_hand = false;
+equip_text_box = false;
 </string>
           </argument>
         </arguments>
@@ -201,9 +187,9 @@ alarm[2] = alarm_timer;;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) and (other.weapon_picked_up = true) {  
+            <string>/*if (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) and (weapon_picked_up == true) {  
     
-    with(other) {    
+    with(weapon_equipped) {    
 
         if (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left) {
         
@@ -300,9 +286,9 @@ alarm[2] = alarm_timer;;
 
 //Gun Attachment Code for the right arm
 
-if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) and (other.weapon_picked_up = true) {
+if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) and (weapon_picked_up = true) {
     
-    with(other) {
+    with(weapon_equipped) {
     
         if (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left) {
         
@@ -393,10 +379,11 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm =
         } 
     }
 }
+/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-if (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) and (weapon_picked_up == true) {    
+if (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) and (weapon_picked_up == true) and (equipped == true) {    
 
     if (obj_Rat_Head.sprite_index = spr_Head_Standard_Idle_Down_Left) {
     
@@ -580,7 +567,7 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm =
         sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
         x = obj_Rat_Front_Arm.x;
         y = obj_Rat_Front_Arm.y;
-    } 
+    }
 }
 </string>
           </argument>
@@ -625,7 +612,7 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm =
 //AR15
 if (gun_type == 2) {
 
-    if (obj_Rat_Body.gun_collision == true) {
+    if (gun_collision == true) {
     
         if mouse_check_button_pressed(mb_left) and (other.potato_gun_bullet_timer == true) and ((global.weapon_attach_right_arm == true) or 
         (global.weapon_attach_left_arm == true)) {
@@ -646,7 +633,7 @@ if (gun_type == 3) {
 
 }
 
-//laser rifle
+//Laser rifle
 if (gun_type == 4) {
 
     if (gun_collision == true) {
@@ -729,192 +716,143 @@ if (weapon_picked_up == true) {
 }
 
 ////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
-if ((other.equip_text_box == true) and (other.equipped == false) and (other.sprite_index = sprite_index_Gun_In_Use_Pick_Up) and (keyboard_check_pressed(ord('E')))) {
-    
-    if (//Walking Animation
-        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left)) and (other.gun_collision == false)) {
-        
-        with (other) {
-        
-            x = obj_Rat_Front_Arm.x;
-            y = obj_Rat_Front_Arm.y;
-            
-            sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
-            global.weapon_attach_left_arm = true;
-            weapon_picked_up = true;
-            gun_collision = true;
-        }
-        
-        gun_collision = false;
-    }
-    
-    if (//Walking Animation
-        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right)) and (other.gun_collision == false)) {
-        
-        with(other) {
-        
-            x = obj_Rat_Front_Arm.x;
-            y = obj_Rat_Front_Arm.y;
-        
-            sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
-            global.weapon_attach_right_arm = true;
-            weapon_picked_up = true;
-            gun_collision = true;
-        }
-        
-        gun_collision = false;
-    }
-    
-    if (//Walking Animation
-        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left)) and (other.gun_collision == false)) {
-        
-        with(other) {
-        
-            x = obj_Rat_Front_Arm.x;
-            y = obj_Rat_Front_Arm.y;
-        
-            sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
-            global.weapon_attach_left_arm = true;
-            weapon_picked_up = true;
-            gun_collision = true;
-        }
+/*
+weapon_to_pick_up = instance_place(x, y, obj_Rat_Body);
 
-        gun_collision = false;
-    }
-    
-    if (//Walking Animation
-        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right)) and (other.gun_collision == false)) {
-        
-        with(other) {
-        
-            x = obj_Rat_Front_Arm.x;
-            y = obj_Rat_Front_Arm.y;
-        
-            sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
-            global.weapon_attach_right_arm = true;
-            weapon_picked_up = true;
-            gun_collision = true;
-        }
-
-        gun_collision = false;
-    }
-    
-    other.equipped = true;
-    equipped = false;
-}
-
-////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
 if ((equip_text_box == true) and (equipped == false) and (sprite_index = sprite_index_Gun_In_Use_Pick_Up) and (keyboard_check_pressed(ord('E')))) {
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left)) and (gun_collision == true)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
         
-        x = obj_Rat_Front_Arm.x;
-        y = obj_Rat_Front_Arm.y;
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Front_Arm.x;
+        weapon_equipped.y = obj_Rat_Front_Arm.y;
         
         sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
-        global.weapon_attach_left_arm = true;
         weapon_picked_up = true;
-        gun_collision = true;
-        other.gun_collision = false;
+        obj_Rat_Body.gun_collision = true;
+        equipped = true;
+        global.weapon_attach_left_arm = true;
     }
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right)) and (gun_collision == false)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
         
-        x = obj_Rat_Front_Arm.x;
-        y = obj_Rat_Front_Arm.y;
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Back_Arm.x;
+        weapon_equipped.y = obj_Rat_Back_Arm.y;
     
         sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
-        global.weapon_attach_right_arm = true;
         weapon_picked_up = true;
-        gun_collision = true;
-        other.gun_collision = false;
+        obj_Rat_Body.gun_collision = true;
+        equipped = true;
+        global.weapon_attach_right_arm = true;
     }
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left)) and (gun_collision == false)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
         
-        x = obj_Rat_Front_Arm.x;
-        y = obj_Rat_Front_Arm.y;
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Front_Arm.x;
+        weapon_equipped.y = obj_Rat_Front_Arm.y;
     
         sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
-        global.weapon_attach_left_arm = true;
         weapon_picked_up = true;
-        gun_collision = true;
-        other.gun_collision = false;
+        obj_Rat_Body.gun_collision = true;
+        equipped = true;
+        global.weapon_attach_left_arm = true;
     }
     
     if (//Walking Animation
         ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right) or 
-        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right)) and (gun_collision == false)) {
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right)) and (obj_Rat_Body.gun_collision == false) and (weapon_to_pick_up != noone)) {
         
-        x = obj_Rat_Front_Arm.x;
-        y = obj_Rat_Front_Arm.y;
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Back_Arm.x;
+        weapon_equipped.y = obj_Rat_Back_Arm.y;
+    
+        sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
+        weapon_picked_up = true;
+        obj_Rat_Body.gun_collision = true;
+        equipped = true;
+        global.weapon_attach_right_arm = true;
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
+if ((equip_text_box == true) and (equipped == true) and (sprite_index = sprite_index_Gun_In_Use_Pick_Up) and (keyboard_check_pressed(ord('E')))) {
+    
+    if (//Walking Animation
+        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Left) or 
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left)) and (weapon_to_pick_up != noone)) {
+        
+        weapon_dropped = weapon_equipped;
+        
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Front_Arm.x;
+        weapon_equipped.y = obj_Rat_Front_Arm.y;
+        
+        sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
+        global.weapon_attach_left_arm = true;
+    }
+    
+    if (//Walking Animation
+        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Down_Right) or 
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right)) and (weapon_to_pick_up != noone)) {
+        
+        weapon_dropped = weapon_equipped;
+        
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Back_Arm.x;
+        weapon_equipped.y = obj_Rat_Back_Arm.y;
     
         sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
         global.weapon_attach_right_arm = true;
-        weapon_picked_up = true;
-        gun_collision = true;
-        other.gun_collision = false;
     }
     
+    if (//Walking Animation
+        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Left) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Left) or 
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Left)) and (weapon_to_pick_up != noone)) {
+        
+        weapon_dropped = weapon_equipped;
+        
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Front_Arm.x;
+        weapon_equipped.y = obj_Rat_Front_Arm.y;
+    
+        sprite_index = sprite_index_Left_Gun_In_Use_Equipped;
+        global.weapon_attach_left_arm = true;
+    }
+    
+    if (//Walking Animation
+        ((obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Right) or (obj_Rat_Body.sprite_index = spr_Body_Standard_Stun_Up_Right) or 
+        (obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Up_Right)) and (weapon_to_pick_up != noone)) {//(obj_Rat_Body.gun_collision == false)) {
+        
+        weapon_dropped = weapon_equipped;
+        
+        weapon_equipped = obj_Gun_In_Use;
+        
+        weapon_equipped.x = obj_Rat_Back_Arm.x;
+        weapon_equipped.y = obj_Rat_Back_Arm.y;
+    
+        sprite_index = sprite_index_Right_Gun_In_Use_Equipped;
+        global.weapon_attach_right_arm = true;
+    }
+    
+    weapon_picked_up = true;
+    //obj_Rat_Body.gun_collision = true;
     equipped = true;
-    other.equipped = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self();
-
-if (!place_meeting(x, y, obj_Rat_Body)) {
-
-    other.equip_text_box = false; 
-}
-
-
-if (place_meeting(x, y, obj_Rat_Body) and (other.weapon_picked_up == false) and (other.equipped = false)) {
-        
-    draw_set_font(font);
-    draw_set_color(font_color);    
-
-    scr_draw_messagebox(text, popup_width, popup_padding, self, bak_color, draw_below);
-    other.equip_text_box = true;
-}
-
-if (place_meeting(x, y, obj_Rat_Body) and (weapon_picked_up == false) and ((global.weapon_attach_left_arm = true) or (global.weapon_attach_right_arm = true))) {
-        
-    draw_set_font(font);
-    draw_set_color(font_color);    
-
-    scr_draw_messagebox(text, popup_width, popup_padding, self, bak_color, draw_below);
-    equip_text_box = true;
 }
 </string>
           </argument>

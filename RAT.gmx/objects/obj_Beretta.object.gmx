@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-//obj_Gun_In_Use = obj_Beretta;
+obj_Gun_In_Use = obj_Beretta;
 
 sprite_index_Right_Gun_In_Use_Equipped = spr_Handgun_Beretta_Right;
 
@@ -40,8 +40,6 @@ potato_gun_bullet_timer = true;
 bullet_speed = 50;
 
 bullet = obj_Handgun_Bullet;
-
-gun_type = 1;
 
 cool_down = 1;
 

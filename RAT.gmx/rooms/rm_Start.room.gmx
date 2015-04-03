@@ -91,6 +91,11 @@ for (i = 1; i &lt; grid_width_index; i += 1) {
         id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), level_floor);
         ds_grid_set(grid_map, i, j, id_value);
         
+        if ((i = 2) and (j = (grid_height_index - 2))) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Build_Chamber);
+        }
+        
         if ((i = (grid_width_index - 1)) and (j = (grid_height_index - 1))) {
         
             instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Teleporter);

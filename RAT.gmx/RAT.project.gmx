@@ -999,25 +999,6 @@
       <object>objects\obj_Screen_Shaker</object>
       <object>objects\obj_Damage</object>
       <object>objects\obj_Title_Screen</object>
-      <objects name="Buttons">
-        <object>objects\obj_Button_Parent</object>
-        <objects name="Green">
-          <object>objects\obj_Button_Cage</object>
-          <object>objects\obj_Button_Rat</object>
-          <object>objects\obj_Button_Lab</object>
-          <object>objects\obj_Button_Options</object>
-          <object>objects\obj_Button_Exit</object>
-          <object>objects\obj_Button_Home</object>
-        </objects>
-        <objects name="White">
-          <object>objects\obj_Button_Cage_White</object>
-          <object>objects\pbj_Button_Rat_White</object>
-          <object>objects\obj_Button_Lab_White</object>
-          <object>objects\obj_Button_Options_White</object>
-          <object>objects\obj_Button_Exit_White</object>
-          <object>objects\obj_Button_Home_White</object>
-        </objects>
-      </objects>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_Parent_Gun</object>
@@ -1100,11 +1081,14 @@
         </objects>
       </objects>
     </objects>
-    <object>objects\obj_Teleporter</object>
+    <objects name="Interactables">
+      <object>objects\obj_Teleporter</object>
+      <object>objects\obj_Build_Chamber</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Title_Screen</room>
     <room>rooms\rm_Start</room>
+    <room>rooms\rm_Title_Screen</room>
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Rat</room>
   </rooms>
