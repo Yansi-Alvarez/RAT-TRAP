@@ -989,6 +989,9 @@
       <object>objects\obj_Parent_Gun</object>
       <objects name="Shotguns">
         <object>objects\obj_Pump_Shotgun</object>
+        <objects name="Casings">
+          <object>objects\obj_Casing_Shotgun</object>
+        </objects>
       </objects>
       <objects name="Handguns">
         <object>objects\obj_Potato_Handgun</object>
@@ -1044,6 +1047,7 @@
       <object>objects\obj_Level_Maker</object>
       <object>objects\obj_Reference_Angle</object>
       <objects name="Walls">
+        <object>objects\obj_Parent_Wall</object>
         <objects name="Lab">
           <object>objects\obj_Wall_Lab_Left</object>
           <object>objects\obj_Wall_Lab_Right</object>
@@ -1055,7 +1059,6 @@
           <object>objects\obj_Wall_Lab_Corner_Left_Down</object>
           <object>objects\obj_Wall_Lab_Full</object>
         </objects>
-        <object>objects\obj_Parent_Wall</object>
       </objects>
       <objects name="Floors">
         <object>objects\obj_Parent_Floor</object>
@@ -1072,8 +1075,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Start</room>
     <room>rooms\rm_Title_Screen</room>
+    <room>rooms\rm_Start</room>
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>

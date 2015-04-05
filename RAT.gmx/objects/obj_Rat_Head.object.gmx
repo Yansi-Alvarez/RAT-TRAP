@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_visible[0] = 0;
+            <string>global.screen_shake = noone;
 
-view_visible[1] = 1;
+//view_visible[0] = 0;
+
+//view_visible[1] = 1;
 
 room_speed = 30;
 

@@ -58,6 +58,8 @@ ldx = lengthdir_x(15, point_direction(x,y,mouse_x,mouse_y));
 ldy = lengthdir_y(5, point_direction(x,y,mouse_x,mouse_y));
 
 sprite_index = spr_Handgun_Beretta_Pickup;
+
+screen_jiggle = true;
 </string>
           </argument>
         </arguments>

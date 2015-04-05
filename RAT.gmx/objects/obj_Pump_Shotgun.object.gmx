@@ -33,7 +33,37 @@ sprite_index_Right_Gun_In_Use = spr_Shotgun_Pump_Right;
 
 sprite_index_Left_Gun_In_Use = spr_Shotgun_Pump_Left;
 
+sprite_index_Gun_In_Use_Pick_Up = spr_Shotgun_Pump_Pickup;
+
 potato_gun_bullet_timer = true;
+
+bullet_speed = 40;
+
+bullet = obj_Pump_Shotgun_Bullet;
+
+gun_type = 3;
+
+shooting_sound = snd_Shotgun;
+
+cool_down = 40;
+
+correction = 160;
+
+correction_2 = 200;
+
+gun_flash = obj_Muzzle_Flash;
+
+casings = obj_Casing_Shotgun;
+
+//alarm_timer = 
+
+//ldx = lengthdir_x(35, point_direction(x,y,mouse_x,mouse_y));
+
+//ldy = lengthdir_y(25, point_direction(x,y,mouse_x,mouse_y));
+
+sprite_index = spr_Shotgun_Pump_Pickup;
+
+screen_jiggle = true;
 </string>
           </argument>
         </arguments>

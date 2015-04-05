@@ -58,6 +58,8 @@ ldy = 0;
 gun_flash = obj_Muzzle_Flash;
 
 sprite_index = spr_Handgun_Potato_Pickup;
+
+screen_jiggle = false;
 </string>
           </argument>
         </arguments>

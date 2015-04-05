@@ -501,6 +501,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
     obj_Rat_Head.collision_with_enemy = true;
     obj_Rat_Head.collision_damage = true;
     
+    global.screen_shake = 10;
     instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
@@ -621,6 +622,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
     obj_Rat_Head.collision_with_enemy = true;
     obj_Rat_Head.collision_damage = true;
     
+    global.screen_shake = 10;
     instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
@@ -741,6 +743,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
     obj_Rat_Head.collision_with_enemy = true;
     obj_Rat_Head.collision_damage = true;
     
+    global.screen_shake = 10;
     instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI
@@ -861,6 +864,7 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
     obj_Rat_Head.collision_with_enemy = true;
     obj_Rat_Head.collision_damage = true;
     
+    global.screen_shake = 10;
     instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
     
     //Enemy AI

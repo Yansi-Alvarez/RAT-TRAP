@@ -69,6 +69,8 @@ charging_sound = noone;
 
 index_size = noone;
 
+screen_jiggle = noone;
+
 //1 equals single fire (handgun, beretta, sniper)
 //2 equals burst fire (AR15)
 //3 equals automatic (P90)
@@ -121,6 +123,12 @@ instance_create(x + ldx, y + ldy, gun_flash);
 instance_create(x, y, casings);
 other.potato_gun_bullet_timer = false;
 alarm[0] = cool_down;
+
+if (screen_jiggle == true) {
+
+    global.screen_shake = 2;
+    instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
+}
 </string>
           </argument>
         </arguments>
@@ -149,7 +157,13 @@ other.object_bullet_2.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y
 instance_create(x + ldx, y + ldy, gun_flash);
 instance_create(x, y, casings);
 other.object_bullet_2.speed = bullet_speed;
-alarm[2] = alarm_timer;;
+alarm[2] = alarm_timer;
+
+if (screen_jiggle == true) {
+
+    global.screen_shake = 2;
+    instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
+}
 </string>
           </argument>
         </arguments>
@@ -607,6 +621,12 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm =
             object_bullet.speed = bullet_speed;
             potato_gun_bullet_timer = false;
             alarm[0] = cool_down;
+            
+            if (screen_jiggle == true) {
+            
+                global.screen_shake = 4;
+                instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
+            }
         }
     }
 }
@@ -627,10 +647,17 @@ if (gun_type == 2) {
             other.object_bullet.speed = bullet_speed;
             alarm[1] = alarm_timer;
             alarm[2] = alarm_timer;
+            
+            if (screen_jiggle == true) {
+            
+                global.screen_shake = 2;
+                instance_create(obj_Rat_Head.x, obj_Rat_Head.y, obj_Screen_Shaker);
+            }
         }
     }
 }
 
+//Shotgun
 if (gun_type == 3) {
 
 }

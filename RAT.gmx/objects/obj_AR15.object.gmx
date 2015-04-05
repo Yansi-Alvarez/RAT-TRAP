@@ -62,6 +62,8 @@ ldx = lengthdir_x(35, point_direction(x,y,mouse_x,mouse_y));
 ldy = lengthdir_y(25, point_direction(x,y,mouse_x,mouse_y));
 
 sprite_index = spr_Rifle_AR15_Pickup;
+
+screen_jiggle = true;
 </string>
           </argument>
         </arguments>
