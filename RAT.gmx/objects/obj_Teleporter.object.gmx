@@ -61,7 +61,7 @@ next_room = false;
             <kind>1</kind>
             <string>if ((next_room == true) and (keyboard_check(ord('T')))) {
 
-    room_goto(2);
+    room_goto(4);
 }
 </string>
           </argument>

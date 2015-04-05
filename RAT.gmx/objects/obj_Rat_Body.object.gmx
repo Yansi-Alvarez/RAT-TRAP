@@ -57,6 +57,10 @@ walk_down_left = false;
 walk_down_right = false;
 
 pick_up_weapon_action = false;
+
+weapon_dropped = noone;
+
+weapon_equipped = noone;
 </string>
           </argument>
         </arguments>
@@ -139,7 +143,7 @@ obj_Rat_Tail.vspeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
+            <string>if ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) /*and (walk_up_right == false) */and (obj_Rat_Head.collision_with_enemy == false) {
     
     sprite_index = spr_Body_Standard_Idle_Up_Right;
     depth = 1;
@@ -147,11 +151,11 @@ obj_Rat_Tail.vspeed = 0;
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
         
         sprite_index = spr_Body_Standard_Walking_Up_Right;
-        walk_up_right = true;
+        //walk_up_right = true;
     }
 }
 
-if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) and (walk_up_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
+if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) /*and (walk_up_left == false)*/ and (obj_Rat_Head.collision_with_enemy == false) {
 
     sprite_index = spr_Body_Standard_Idle_Up_Left;
     depth = 1;
@@ -159,11 +163,11 @@ if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) 
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
         
         obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Up_Left;
-        walk_up_left = true;
+        //walk_up_left = true;
     }
 }
 
-if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) and (walk_down_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
+if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) /*and (walk_down_left == false)*/ and (obj_Rat_Head.collision_with_enemy == false) {
 
     obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Left;
     obj_Rat_Body.depth = 1;
@@ -171,11 +175,11 @@ if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269))
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
         
         obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Left;
-        walk_down_left = true;
+        //walk_down_left = true;
     }
 }
 
-if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) and (walk_down_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
+if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) /*and (walk_down_right == false)*/ and (obj_Rat_Head.collision_with_enemy == false) {
     
     obj_Rat_Body.sprite_index = spr_Body_Standard_Idle_Down_Right;
     obj_Rat_Body.depth = 1;
@@ -183,7 +187,7 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
     if (keyboard_check(ord('D')) or keyboard_check(ord('A')) or keyboard_check(ord('W')) or keyboard_check(ord('S'))) {
     
         obj_Rat_Body.sprite_index = spr_Body_Standard_Walking_Down_Right;
-        walk_down_right = true;
+        //walk_down_right = true;
     }
 }
 
@@ -215,44 +219,49 @@ if keyboard_check_released(ord('D')) {
 
     image_speed = 0.3;
     hspeed = 0; 
-    
+    /*
     walk_up_left = false;
     walk_up_right = false;
     walk_down_left = false;
-    walk_down_right = false;
+    walk_down_right = false;*/
 }
 
 if keyboard_check_released(ord('A')) {
 
     image_speed = 0.3;
     hspeed = 0;  
-    
+    /*
     walk_up_left = false;
     walk_up_right = false;
     walk_down_left = false;
-    walk_down_right = false;
+    walk_down_right = false;*/
 }
 
 if keyboard_check_released(ord('W')) {
 
     image_speed = 0.3;
     vspeed = 0; 
-    
+    /*
     walk_up_left = false;
     walk_up_right = false;
     walk_down_left = false;
-    walk_down_right = false;
+    walk_down_right = false;*/
 }
 
 if keyboard_check_released(ord('S')) {
 
     image_speed = 0.3;
     vspeed = 0;  
-    
+    /*
     walk_up_left = false;
     walk_up_right = false;
     walk_down_left = false;
-    walk_down_right = false;
+    walk_down_right = false;*/
+}
+
+if (obj_Parent_Gun.equip_text_box = true) {
+
+    weapon_to_pick_up = instance_place(x, y, obj_Parent_Gun);
 }
 </string>
           </argument>
@@ -1074,39 +1083,6 @@ if (obj_Rat_Head.sprite_index = spr_Head_Standard_Stun_Up_Right) and
     obj_Rat_Tail.y = obj_Rat_Head.y + 16
     
     obj_Rat_Head.collision_with_enemy = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_self();
-
-/*
-draw_set_font(Game_Font);
-
-if (equip_text_box == true) {
-
-    draw_rectangle_colour(x + 10, y - 10, x + 155, y - 35, c_lime, c_lime, c_lime, c_lime, true);
-    draw_rectangle_colour(x + 10, y - 10, x + 155, y - 35, c_black, c_black, c_black, c_black, false);
-    draw_text_ext_colour(x + 22, y - 29, "Press E to equip", 5, 200, c_white, c_white, c_white, c_white, 1);
 }
 </string>
           </argument>

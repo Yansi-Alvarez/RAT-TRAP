@@ -75,7 +75,7 @@ global.enemy_activation = true;
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Sword)
 
-instance_create(obj_Rat_Head.x + 50,obj_Rat_Head.y,obj_Potato_Handgun)
+instance_create(obj_Rat_Head.x + 75,obj_Rat_Head.y,obj_Potato_Handgun)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
@@ -105,7 +105,7 @@ instance_create(obj_Rat_Head.x - 75, obj_Rat_Head.y, obj_Beretta)
 
 //instance_create(obj_Rat_Head.x - 50, obj_Rat_Head.y, obj_Pump_Shotgun)
 
-//instance_create(obj_Rat_Head.x + 75, obj_Rat_Head.y, obj_AR15)
+//instance_create(obj_Rat_Head.x, obj_Rat_Head.y + 75, obj_AR15)
 
 collision_with_enemy = false;
 
@@ -115,7 +115,7 @@ correction = noone;
 
 correction_2 = noone;
 
-global.weapon_type = noone;
+//global.weapon_type = noone;
 </string>
           </argument>
         </arguments>

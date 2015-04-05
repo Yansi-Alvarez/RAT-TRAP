@@ -154,21 +154,6 @@ sprite_index = spr_Handgun_Potato_Pickup;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
-/*if (global.weapon_attach_left_arm == false) and (global.weapon_attach_right_arm == false) {
-        
-    global.weapon_type = 4;
-}
-
-if ((global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false)) or
-    ((global.weapon_attach_left_arm == false) and (global.weapon_attach_right_arm == true)) and
-    (obj_Rat_Body.pick_up_weapon_action == true) {
-    
-    global.weapon_type = 4;
-    obj_Rat_Body.pick_up_weapon_action = false;
-    obj_Rat_Body.turn_off = false;
-}
-*/
 </string>
           </argument>
         </arguments>
