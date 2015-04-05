@@ -995,6 +995,7 @@
       </objects>
       <objects name="Handguns">
         <object>objects\obj_Potato_Handgun</object>
+        <object>objects\obj_Magnum</object>
         <object>objects\obj_Beretta</object>
         <objects name="Casings">
           <object>objects\obj_Casing_Handgun</object>
@@ -1002,12 +1003,13 @@
       </objects>
       <objects name="Rifles">
         <object>objects\obj_AR15</object>
+        <object>objects\obj_P90</object>
         <object>objects\obj_Laser_Rifle</object>
       </objects>
     </objects>
     <objects name="Projectiles">
-      <object>objects\obj_Potato_Bullet</object>
       <object>objects\obj_Parent_Bullet</object>
+      <object>objects\obj_Potato_Bullet</object>
       <object>objects\obj_Handgun_Bullet</object>
       <object>objects\obj_Pump_Shotgun_Bullet</object>
       <object>objects\obj_Laser_Bullet</object>

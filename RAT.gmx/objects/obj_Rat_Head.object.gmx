@@ -109,6 +109,8 @@ instance_create(obj_Rat_Head.x - 75, obj_Rat_Head.y, obj_Beretta)
 
 instance_create(obj_Rat_Head.x, obj_Rat_Head.y + 75, obj_AR15)
 
+instance_create(obj_Rat_Head.x, obj_Rat_Head.y - 75, obj_P90)
+
 collision_with_enemy = false;
 
 collision_damage = false;
