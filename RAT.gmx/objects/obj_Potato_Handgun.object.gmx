@@ -33,7 +33,9 @@ sprite_index_Right_Gun_In_Use_Equipped = spr_Handgun_Potato_Right;
 
 sprite_index_Left_Gun_In_Use_Equipped = spr_Handgun_Potato_Left;
 
-sprite_index_Gun_In_Use_Pick_Up = spr_Handgun_Potato_Pickup;
+sprite_index_Left_Gun_In_Use_Pick_Up = spr_Handgun_Potato_Pickup_Left;
+
+sprite_index_Right_Gun_In_Use_Pick_Up = spr_Handgun_Potato_Pickup_Right;
 
 potato_gun_bullet_timer = true;
 
@@ -57,9 +59,17 @@ ldy = 0;
 
 gun_flash = obj_Muzzle_Flash;
 
-sprite_index = spr_Handgun_Potato_Pickup;
+sprite_index = choose(spr_Handgun_Potato_Pickup_Right, spr_Handgun_Potato_Pickup_Left);
 
 screen_jiggle = false;
+
+text = "Press E to equip [Potato Handgun]";
+popup_width = string_width(text);
+popup_padding = 3;
+draw_below = false;
+font = Game_Font;
+font_color = c_lime; 
+bak_color = c_black;
 </string>
           </argument>
         </arguments>

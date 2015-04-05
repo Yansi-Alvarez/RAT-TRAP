@@ -33,7 +33,9 @@ sprite_index_Right_Gun_In_Use_Equipped = spr_Rifle_P90_Right;
 
 sprite_index_Left_Gun_In_Use_Equipped = spr_Rifle_P90_Left;
 
-sprite_index_Gun_In_Use_Pick_Up = spr_Rifle_P90_Pickup;
+sprite_index_Left_Gun_In_Use_Pick_Up = spr_Rifle_P90_Pickup_Left;
+
+sprite_index_Right_Gun_In_Use_Pick_Up = spr_Rifle_P90_Pickup_Right;
 
 potato_gun_bullet_timer = true;
 
@@ -65,7 +67,38 @@ ldy = lengthdir_y(5, point_direction(x,y,mouse_x,mouse_y));
 
 screen_jiggle = true;
 
-sprite_index = spr_Rifle_P90_Pickup;
+sprite_index = choose(spr_Rifle_P90_Pickup_Left, spr_Rifle_P90_Pickup_Right);
+
+text = "Press E to equip [P90]";
+popup_width = string_width(text);
+popup_padding = 3;
+draw_below = false;
+font = Game_Font;
+font_color = c_lime; 
+bak_color = c_black;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>

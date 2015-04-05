@@ -805,14 +805,16 @@
           <sprites name="Potatogun">
             <sprite>sprites\spr_Handgun_Potato_Right</sprite>
             <sprite>sprites\spr_Handgun_Potato_HUD</sprite>
-            <sprite>sprites\spr_Handgun_Potato_Pickup</sprite>
+            <sprite>sprites\spr_Handgun_Potato_Pickup_Right</sprite>
+            <sprite>sprites\spr_Handgun_Potato_Pickup_Left</sprite>
             <sprite>sprites\spr_Handgun_Potato_Left</sprite>
           </sprites>
           <sprites name="Beretta">
             <sprite>sprites\spr_Handgun_Beretta_Left</sprite>
             <sprite>sprites\spr_Handgun_Beretta_Right</sprite>
             <sprite>sprites\spr_Handgun_Beretta_HUD</sprite>
-            <sprite>sprites\spr_Handgun_Beretta_Pickup</sprite>
+            <sprite>sprites\spr_Handgun_Beretta_Pickup_Right</sprite>
+            <sprite>sprites\spr_Handgun_Beretta_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Handgun_Beretta_Fire_Left</sprite>
               <sprite>sprites\spr_Handgun_Beretta_Fire_Right</sprite>
@@ -822,7 +824,8 @@
             <sprite>sprites\spr_Handgun_Magnum_Left</sprite>
             <sprite>sprites\spr_Handgun_Magnum_Right</sprite>
             <sprite>sprites\spr_Handgun_Magnum_HUD</sprite>
-            <sprite>sprites\spr_Handgun_Magnum_Pickup</sprite>
+            <sprite>sprites\spr_Handgun_Magnum_Pickup_Right</sprite>
+            <sprite>sprites\spr_Handgun_Magnum_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Handgun_Magnum_Fire_Left</sprite>
               <sprite>sprites\spr_Handgun_Magnum_Fire_Right</sprite>
@@ -834,7 +837,8 @@
             <sprite>sprites\spr_Shotgun_Pump_Left</sprite>
             <sprite>sprites\spr_Shotgun_Pump_Right</sprite>
             <sprite>sprites\spr_Shotgun_Pump_HUD</sprite>
-            <sprite>sprites\spr_Shotgun_Pump_Pickup</sprite>
+            <sprite>sprites\spr_Shotgun_Pump_Pickup_Right</sprite>
+            <sprite>sprites\spr_Shotgun_Pump_Pickup_Left</sprite>
           </sprites>
         </sprites>
         <sprites name="Rifles">
@@ -842,7 +846,8 @@
             <sprite>sprites\spr_Rifle_AR15_Left</sprite>
             <sprite>sprites\spr_Rifle_AR15_Right</sprite>
             <sprite>sprites\spr_Rifle_AR15_HUD</sprite>
-            <sprite>sprites\spr_Rifle_AR15_Pickup</sprite>
+            <sprite>sprites\spr_Rifle_AR15_Pickup_Right</sprite>
+            <sprite>sprites\spr_Rifle_AR15_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_AR15_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_AR15_Fire_Right</sprite>
@@ -852,7 +857,8 @@
             <sprite>sprites\spr_Rifle_Laser_Left</sprite>
             <sprite>sprites\spr_Rifle_Laser_Right</sprite>
             <sprite>sprites\spr_Rifle_Laser_HUD</sprite>
-            <sprite>sprites\spr_Rifle_Laser_Pickup</sprite>
+            <sprite>sprites\spr_Rifle_Laser_Pickup_Right</sprite>
+            <sprite>sprites\spr_Rifle_Laser_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_Laser_Charging_Left</sprite>
               <sprite>sprites\spr_Rifle_Laser_Charging_Right</sprite>
@@ -862,7 +868,8 @@
             <sprite>sprites\spr_Rifle_Lapua_Left</sprite>
             <sprite>sprites\spr_Rifle_Lapua_Right</sprite>
             <sprite>sprites\spr_Rifle_Lapua_HUD</sprite>
-            <sprite>sprites\spr_Rifle_Lapua_Pickup</sprite>
+            <sprite>sprites\spr_Rifle_Lapua_Pickup_Right</sprite>
+            <sprite>sprites\spr_Rifle_Lapua_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_Lapua_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_Lapua_Fire_Right</sprite>
@@ -872,7 +879,8 @@
             <sprite>sprites\spr_Rifle_P90_Left</sprite>
             <sprite>sprites\spr_Rifle_P90_Right</sprite>
             <sprite>sprites\spr_Rifle_P90_HUD</sprite>
-            <sprite>sprites\spr_Rifle_P90_Pickup</sprite>
+            <sprite>sprites\spr_Rifle_P90_Pickup_Right</sprite>
+            <sprite>sprites\spr_Rifle_P90_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Rifle_P90_Fire_Left</sprite>
               <sprite>sprites\spr_Rifle_P90_Fire_Right</sprite>
@@ -884,7 +892,8 @@
             <sprite>sprites\spr_Heavy_Harpoon_Left</sprite>
             <sprite>sprites\spr_Heavy_Harpoon_Right</sprite>
             <sprite>sprites\spr_Heavy_Harpoon_HUD</sprite>
-            <sprite>sprites\spr_Heavy_Harpoon_Pickup</sprite>
+            <sprite>sprites\spr_Heavy_Harpoon_Pickup_Right</sprite>
+            <sprite>sprites\spr_Heavy_Harpoon_Pickup_Left</sprite>
             <sprites name="animations">
               <sprite>sprites\spr_Heavy_Harpoon_Fire_Left</sprite>
               <sprite>sprites\spr_Heavy_Harpoon_Fire_Right</sprite>
@@ -894,7 +903,8 @@
             <sprite>sprites\spr_Heavy_Grenade_Launcher_Left</sprite>
             <sprite>sprites\spr_Heavy_Grenade_Launcher_Right</sprite>
             <sprite>sprites\spr_Heavy_Grenade_Launcher_HUD</sprite>
-            <sprite>sprites\spr_Heavy_Grenade_Launcher_Pickup</sprite>
+            <sprite>sprites\spr_Heavy_Grenade_Launcher_Pickup_Right</sprite>
+            <sprite>sprites\spr_Heavy_Grenade_Launcher_Pickup_Left</sprite>
             <sprites name="Animations">
               <sprite>sprites\spr_Heavy_Grenade_Launcher_Fire_Left</sprite>
               <sprite>sprites\spr_Heavy_Grenade_Launcher_Fire_Right</sprite>
@@ -1077,8 +1087,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Title_Screen</room>
     <room>rooms\rm_Start</room>
+    <room>rooms\rm_Title_Screen</room>
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>

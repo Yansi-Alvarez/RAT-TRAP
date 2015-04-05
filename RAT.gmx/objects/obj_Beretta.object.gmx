@@ -33,7 +33,9 @@ sprite_index_Right_Gun_In_Use_Equipped = spr_Handgun_Beretta_Right;
 
 sprite_index_Left_Gun_In_Use_Equipped = spr_Handgun_Beretta_Left;
 
-sprite_index_Gun_In_Use_Pick_Up = spr_Handgun_Beretta_Pickup;
+sprite_index_Left_Gun_In_Use_Pick_Up = spr_Handgun_Beretta_Pickup_Left;
+
+sprite_index_Right_Gun_In_Use_Pick_Up = spr_Handgun_Beretta_Pickup_Right;
 
 potato_gun_bullet_timer = true;
 
@@ -57,9 +59,17 @@ ldx = lengthdir_x(15, point_direction(x,y,mouse_x,mouse_y));
 
 ldy = lengthdir_y(5, point_direction(x,y,mouse_x,mouse_y));
 
-sprite_index = spr_Handgun_Beretta_Pickup;
+sprite_index = choose(spr_Handgun_Beretta_Pickup_Right, spr_Handgun_Beretta_Pickup_Left);
 
 screen_jiggle = true;
+
+text = "Press E to equip [Beretta]";
+popup_width = string_width(text);
+popup_padding = 3;
+draw_below = false;
+font = Game_Font;
+font_color = c_lime; 
+bak_color = c_black;
 </string>
           </argument>
         </arguments>

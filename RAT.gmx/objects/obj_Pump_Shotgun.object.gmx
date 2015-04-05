@@ -61,7 +61,7 @@ casings = obj_Casing_Shotgun;
 
 //ldy = lengthdir_y(25, point_direction(x,y,mouse_x,mouse_y));
 
-sprite_index = spr_Shotgun_Pump_Pickup;
+sprite_index = choose(spr_Shotgun_Pump_Pickup_Right, spr_Shotgun_Pump_Pickup_Left);
 
 screen_jiggle = true;
 </string>

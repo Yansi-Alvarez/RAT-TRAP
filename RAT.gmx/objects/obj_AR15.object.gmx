@@ -33,7 +33,9 @@ sprite_index_Right_Gun_In_Use_Equipped = spr_Rifle_AR15_Right;
 
 sprite_index_Left_Gun_In_Use_Equipped = spr_Rifle_AR15_Left;
 
-sprite_index_Gun_In_Use_Pick_Up = spr_Rifle_AR15_Pickup;
+sprite_index_Left_Gun_In_Use_Pick_Up = spr_Rifle_AR15_Pickup_Left;
+
+sprite_index_Right_Gun_In_Use_Pick_Up = spr_Rifle_AR15_Pickup_Right;
 
 potato_gun_bullet_timer = true;
 
@@ -61,9 +63,17 @@ ldx = lengthdir_x(35, point_direction(x,y,mouse_x,mouse_y));
 
 ldy = lengthdir_y(25, point_direction(x,y,mouse_x,mouse_y));
 
-sprite_index = spr_Rifle_AR15_Pickup;
+sprite_index = choose(spr_Rifle_AR15_Pickup_Left, spr_Rifle_AR15_Pickup_Right);
 
 screen_jiggle = true;
+
+text = "Press E to equip [AR15]";
+popup_width = string_width(text);
+popup_padding = 3;
+draw_below = false;
+font = Game_Font;
+font_color = c_lime; 
+bak_color = c_black;
 </string>
           </argument>
         </arguments>

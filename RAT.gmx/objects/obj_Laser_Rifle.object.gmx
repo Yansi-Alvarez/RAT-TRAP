@@ -29,7 +29,9 @@
 
 sprite_index_Left_Gun_In_Use_Equipped = spr_Rifle_Laser_Left;
 
-sprite_index_Gun_In_Use_Pick_Up = spr_Rifle_Laser_Pickup;
+sprite_index_Left_Gun_In_Use_Pick_Up = spr_Rifle_Laser_Pickup_Left;
+
+sprite_index_Right_Gun_In_Use_Pick_Up = spr_Rifle_Laser_Pickup_Right;
 
 potato_gun_bullet_timer = true;
 
