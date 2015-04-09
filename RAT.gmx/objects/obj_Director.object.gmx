@@ -74,6 +74,15 @@ grid_height_index = ((room_height/global.level_maker_speed) - 1);
 grid_map = ds_grid_create(grid_width, grid_height);
 id_value = noone;
 
+//Assign every cell in the grid to noone
+for (i = 0; i &lt; grid_width; i++) {
+
+    for (j = 0; j &lt; grid_height; j++) {
+        
+        ds_grid_set(grid_map, i, j, noone);
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 instance_create(global.center_room_width, global.center_room_height, obj_Reference_Angle);

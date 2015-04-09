@@ -117,8 +117,6 @@ if (global.create_central_room == false) {
         for (j = room_start_spawn_y; j &lt;= room_end_spawn_y; j += global.level_maker_speed) {//Prevents player from being spawn in a wall
         
             obj_Director.id_value = instance_create(i, j, level_floor);
-            //ds_list_add(obj_Director.id_list, obj_Director.id_value);
-            //ds_grid_add(obj_Director.grid_map, (i / global.level_maker_speed), (j / global.level_maker_speed), obj_Director.id_value);
             ds_grid_set(obj_Director.grid_map, (i / global.level_maker_speed), (j / global.level_maker_speed), obj_Director.id_value);
         }
     }     
@@ -127,7 +125,7 @@ if (global.create_central_room == false) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-
+/*
 //Create a floor at every step it takes
 if (global.first_level_maker_creation == false) {
 
@@ -142,7 +140,7 @@ if (global.first_level_maker_creation == false) {
     
     global.first_level_maker_creation = true;
 }
-
+*/
 ////////////////////////////////////////////////////////////////////////////////
 
 while (floor_generation_time &gt; 0) {
@@ -196,31 +194,21 @@ while (floor_generation_time &gt; 0) {
 for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
     for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
-    
-    //grid_block = (ds_grid_get(obj_Director.grid_map, i, j));
+
     reference_angle = point_direction(obj_Reference_Angle.x, obj_Reference_Angle.y, (i * global.level_maker_speed), (j * global.level_maker_speed));
     
         if ((ds_grid_get(obj_Director.grid_map, i, j)) == 0) {
 
-            /*if //(((ds_grid_get(obj_Director.grid_map, i + 1, j)) == 0) and 
-                //((ds_grid_get(obj_Director.grid_map, i, j + 1)) == 0) and
-                //((ds_grid_get(obj_Director.grid_map, i - 1, j)) == 0) and 
-                //((ds_grid_get(obj_Director.grid_map, i, j - 1)) == 0)) or 
-                
-                (((ds_grid_get(obj_Director.grid_map, i + 1, j)).object_index == obj_Wall_Lab_Full) and 
-                ((ds_grid_get(obj_Director.grid_map, i, j + 1)).object_index == obj_Wall_Lab_Full) and
-                ((ds_grid_get(obj_Director.grid_map, i - 1, j)).object_index == obj_Wall_Lab_Full) and 
-                ((ds_grid_get(obj_Director.grid_map, i, j - 1)).object_index == obj_Wall_Lab_Full)) {   
-                
-                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
-                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
-            } */
-
-            if (reference_angle &gt;= 0) and (reference_angle &lt;= 44) {
+            if (((ds_grid_get(obj_Director.grid_map, i, j + 1)).object_index == noone)
+            and ((ds_grid_get(obj_Director.grid_map, i, j - 1)).object_index == obj_Wall_Lab_Full) 
+            and ((ds_grid_get(obj_Director.grid_map, i + 1, j)).object_index == level_floor)
+            and ((ds_grid_get(obj_Director.grid_map, i - 1, j)).object_index == obj_Wall_Lab_Full)) {
             
-                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
-                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
-            
+                if (reference_angle &gt;= 0) and (reference_angle &lt;= 44) {
+                    
+                    obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
+                    ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
+                }
             }
             
             if (reference_angle &gt;= 45) and (reference_angle &lt;= 134) {
