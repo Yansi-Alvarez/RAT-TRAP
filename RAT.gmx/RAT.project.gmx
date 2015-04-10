@@ -618,6 +618,29 @@
           </sprites>
         </sprites>
       </sprites>
+      <sprites name="Wasp Mama">
+        <sprites name="Animations">
+          <sprites name="Flying">
+            <sprite>sprites\spr_Wasp_Mama_Flying_Left</sprite>
+            <sprite>sprites\spr_Wasp_Mama_Flying_Fired_Left</sprite>
+            <sprite>sprites\spr_Wasp_mama_Flying_Fired_Right</sprite>
+            <sprite>sprites\spr_Wasp_Mama_Flying_Right</sprite>
+          </sprites>
+          <sprites name="Hitstun">
+            <sprite>sprites\spr_Wasp_Mama_Hitstun_Left</sprite>
+            <sprite>sprites\spr_Wasp_Mama_Hitstun_Right</sprite>
+            <sprite>sprites\spr_Wasp_Mama_Fired_Hitstun_Left</sprite>
+            <sprite>sprites\spr_Wasp_Mama_Fired_Hitstun_Right</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Pieces">
+          <sprite>sprites\example</sprite>
+          <sprite>sprites\spr_Wasp_Mama_Fired_Left</sprite>
+          <sprite>sprites\spr_Wasp_Mama_Fired_Right</sprite>
+          <sprite>sprites\spr_Wasp_Mama_Left</sprite>
+          <sprite>sprites\spr_Wasp_Mama_Right</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor_Alt</sprite>
@@ -732,6 +755,9 @@
           <sprite>sprites\spr_Dungball_Medium</sprite>
           <sprite>sprites\spr_Dungball_Large</sprite>
           <sprite>sprites\spr_Dungball_Mega</sprite>
+        </sprites>
+        <sprites name="Wasp Mama">
+          <sprite>sprites\spr_Wasp_Mama_Stinger</sprite>
         </sprites>
       </sprites>
       <sprites name="Death">
@@ -1087,10 +1113,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Start</room>
     <room>rooms\rm_Title_Screen</room>
-    <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
   </rooms>
   <constants number="2">

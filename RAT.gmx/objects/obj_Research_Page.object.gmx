@@ -110,25 +110,27 @@ if (exit_room == true) and (start_room == false) and (home_room == false) {
 
 draw_background_stretched(bkgd_Black, 0, 0, room_width, room_height);
 
-draw_rectangle_colour(3, 50, 853, 614, c_lime, c_lime, c_lime, c_lime, true);
+draw_line_colour(3, 50, 853, 614, c_lime, c_lime, c_lime, c_lime, true);
 
 //
 
 draw_set_font(fnt_Text_Font);
 
-draw_text_ext_transformed_colour(3, 5, title_screen_string, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
-draw_text_ext_transformed_colour(3, 18, "Copyright (c) 2015 Ratatosk Labs. All rights reserved.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+//draw_text_ext_transformed_colour(3, 5, title_screen_string, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
-draw_text_ext_transformed_colour(3, 30, "C:\Users\Tester&gt;", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+//draw_text_ext_transformed_colour(3, 18, "Copyright (c) 2015 Ratatosk Labs. All rights reserved.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
-draw_text_ext_transformed_colour(3, 635, "Manual code entry prompt.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+//draw_text_ext_transformed_colour(3, 30, "C:\Users\Tester&gt;", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
-draw_text_ext_transformed_colour(3, 656, "Enter a " + code_number + " letter code for generation. No digits or symbols.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+//draw_text_ext_transformed_colour(3, 635, "Manual code entry prompt.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
+//draw_text_ext_transformed_colour(3, 656, "Enter a " + code_number + " letter code for generation. No digits or symbols.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
 draw_rectangle_colour(3, 688, 850, 752, c_lime, c_lime, c_lime, c_lime, true);
 
-draw_text_ext_transformed_colour(9, 704, "&gt;", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+//draw_text_ext_transformed_colour(9, 704, "&gt;", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+
 
 //IMPORTANT BELOW
 
