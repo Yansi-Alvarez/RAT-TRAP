@@ -85,7 +85,7 @@ for (i = 0; i &lt; grid_width; i++) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-instance_create(global.center_room_width, global.center_room_height, obj_Reference_Angle);
+//instance_create(global.center_room_width, global.center_room_height, obj_Reference_Angle);
 instance_create(global.center_room_width, global.center_room_height, obj_Level_Maker);
 
 ////////////////////////////////////////////////////////////////////////////////

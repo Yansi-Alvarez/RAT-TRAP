@@ -68,7 +68,7 @@ inst_home = collision_rectangle(901, 176, 1008, 264, obj_Cursor, false, true);
 
 if (home_room == true) and (exit_room == false) and (start_room == false) {
 
-    //room_goto();
+    room_goto(0);
 }
 
 inst_start = collision_rectangle(901, 528, 1008, 616, obj_Cursor, false, true);
@@ -154,7 +154,7 @@ draw_text_ext_transformed_colour(935, 53, myhour, 3, 500, 1, 1, 0, c_lime, c_lim
 
 draw_text_ext_transformed_colour(956, 53, ":", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
-draw_text_ext_transformed_colour(961, 53, myminute, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+draw_text_ext_transformed_colour(960, 53, myminute, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
 //date box
 
@@ -177,8 +177,8 @@ draw_text_ext_transformed_colour(936, 136, myday, 3, 500, 1, 1, 0, c_lime, c_lim
 draw_text_ext_transformed_colour(954, 136, "/", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
 draw_text_ext_transformed_colour(965, 136, myyear, 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
-
-//Home Box
+/*
+//Terminal Box
 
 if (inst_home != noone) and (inst_start == noone) and (inst_exit == noone) {
     
@@ -190,8 +190,8 @@ if (inst_home != noone) and (mouse_check_button(mb_left)) {
     draw_rectangle_colour(901, 176, 1008, 264, c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
     start_room = true;
 }
-
-draw_text_ext_transformed_colour(935, 210, "Home", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
+*/
+draw_text_ext_transformed_colour(922, 210, "Terminal", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
 //Start Box
 

@@ -279,11 +279,8 @@
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Speech Bubble</extension>
-    <extension index="1">extensions\Draw Sprite Shadow</extension>
-    <extension index="2">extensions\Color Coding Files</extension>
-    <extension index="3">extensions\Loading Screen</extension>
-    <extension index="4">extensions\DeveloperConsole</extension>
-    <extension index="5">extensions\CRT Pixel Shader</extension>
+    <extension index="1">extensions\Color Coding Files</extension>
+    <extension index="2">extensions\DeveloperConsole</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Rat">
@@ -1087,9 +1084,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Level_Generation</room>
-    <room>rooms\rm_Start</room>
     <room>rooms\rm_Title_Screen</room>
+    <room>rooms\rm_Start</room>
+    <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
   </rooms>
