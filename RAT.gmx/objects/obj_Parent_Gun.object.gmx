@@ -633,7 +633,59 @@ if (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm =
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (gun_type == 1) {
+            <string>if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (obj_Rat_Head.walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
+
+    if (global.weapon_attach_left_arm == true) and (gun_collision == true) and (global.weapon_attach_right_arm == false) {
+        
+        obj_Rat_Body.depth = 2;
+    }
+    
+    if (gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+        
+        obj_Rat_Body.depth = 0;
+    }
+}
+
+if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) and (obj_Rat_Head.walk_up_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
+    
+    if (gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+        obj_Rat_Body.depth = 0;
+    }
+    
+    if (gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+        
+        obj_Rat_Body.depth = 2;
+    }
+}
+
+if ((global.direction_player &gt;= 180) and (global.direction_player &lt;= 269)) and (obj_Rat_Head.walk_down_left == false) and (obj_Rat_Head.collision_with_enemy == false) {
+    
+    if (gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+        obj_Rat_Body.depth = 0;
+    }
+    
+    if (gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+        
+        obj_Rat_Body.depth = 1;
+    }
+}
+
+if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359)) and (obj_Rat_Head.walk_down_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
+    
+    if (gun_collision == true) and (global.weapon_attach_left_arm == true) and (global.weapon_attach_right_arm == false) {
+        
+        obj_Rat_Body.depth = 1;
+    }
+    
+    if (gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
+        
+        obj_Rat_Body.depth = 0;
+    }
+}
+
+if (gun_type == 1) {
 //Potato Handgun, Beretta
     if (gun_collision == true) {
     
@@ -822,6 +874,7 @@ and ((global.weapon_attach_right_arm = false) and (global.weapon_attach_left_arm
         obj_Rat_Body.weapon_equipped.gun_collision = true;
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_left_arm = true;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
     
     if (//Walking Animation
@@ -840,6 +893,7 @@ and ((global.weapon_attach_right_arm = false) and (global.weapon_attach_left_arm
         obj_Rat_Body.weapon_equipped.gun_collision = true;
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_right_arm = true;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
     
     if (//Walking Animation
@@ -858,6 +912,7 @@ and ((global.weapon_attach_right_arm = false) and (global.weapon_attach_left_arm
         obj_Rat_Body.weapon_equipped.gun_collision = true;
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_left_arm = true;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
     
     if (//Walking Animation
@@ -876,6 +931,7 @@ and ((global.weapon_attach_right_arm = false) and (global.weapon_attach_left_arm
         obj_Rat_Body.weapon_equipped.gun_collision = true;
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_right_arm = true;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
 }
 
@@ -896,6 +952,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_dropped.equipped = false;
         obj_Rat_Body.weapon_dropped.x = obj_Gun_In_Use.x;
         obj_Rat_Body.weapon_dropped.y = obj_Gun_In_Use.y;
+        obj_Rat_Body.weapon_dropped.persistent = false;
         
         obj_Rat_Body.weapon_equipped = obj_Gun_In_Use;
         obj_Rat_Body.weapon_equipped.x = obj_Rat_Front_Arm.x;
@@ -906,6 +963,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_right_arm = false;
         global.weapon_attach_left_arm = true;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
     
     if (//Walking Animation
@@ -921,6 +979,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_dropped.equipped = false;
         obj_Rat_Body.weapon_dropped.x = obj_Gun_In_Use.x;
         obj_Rat_Body.weapon_dropped.y = obj_Gun_In_Use.y;
+        obj_Rat_Body.weapon_dropped.persistent = false;
         
         obj_Rat_Body.weapon_equipped = obj_Gun_In_Use;
         obj_Rat_Body.weapon_equipped.x = obj_Rat_Back_Arm.x;
@@ -931,6 +990,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_right_arm = true;
         global.weapon_attach_left_arm = false;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
     
     if (//Walking Animation
@@ -946,6 +1006,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_dropped.equipped = false;
         obj_Rat_Body.weapon_dropped.x = obj_Gun_In_Use.x;
         obj_Rat_Body.weapon_dropped.y = obj_Gun_In_Use.y;
+        obj_Rat_Body.weapon_dropped.persistent = false;
         
         obj_Rat_Body.weapon_equipped = obj_Gun_In_Use;
         obj_Rat_Body.weapon_equipped.x = obj_Rat_Front_Arm.x;
@@ -956,6 +1017,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_right_arm = false;
         global.weapon_attach_left_arm = true;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
     
     if (//Walking Animation
@@ -971,6 +1033,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_dropped.equipped = false;
         obj_Rat_Body.weapon_dropped.x = obj_Gun_In_Use.x;
         obj_Rat_Body.weapon_dropped.y = obj_Gun_In_Use.y;
+        obj_Rat_Body.weapon_dropped.persistent = false;
         
         obj_Rat_Body.weapon_equipped = obj_Gun_In_Use;
         obj_Rat_Body.weapon_equipped.x = obj_Rat_Back_Arm.x;
@@ -981,6 +1044,7 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         obj_Rat_Body.weapon_equipped.equipped = true;
         global.weapon_attach_right_arm = true;
         global.weapon_attach_left_arm = false;
+        obj_Rat_Body.weapon_equipped.persistent = true;
     }
 }
 </string>
