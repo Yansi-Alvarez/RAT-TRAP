@@ -72,7 +72,7 @@ half_width = view_wview[1]/2;
 half_height = view_hview[1]/2;
 
 ////////////////////////////////////////////////////////////////////////////////
-
+/*
 if (global.create_boundary == false) {
 
     for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
@@ -101,7 +101,7 @@ if (global.create_boundary == false) {
     
     global.create_boundary = true;
 }
-
+*/
 ////////////////////////////////////////////////////////////////////////////////
 /*
 if (global.create_central_room == false) {
@@ -147,19 +147,23 @@ if (global.first_level_maker_creation == false) {
 
 while (floor_generation_time &gt; 0) {
         
-        level_maker_chance = irandom(2)
-        
-        if (level_maker_chance == 0) or (level_maker_chance == 1) {
-        
             path_length = choose(2, 3, 4)
             
             if (direction == 0) or (direction == 180) {
                 
                 repeat (path_length) {
                     
-                    obj_Director.id_value = instance_create(x, y, level_floor);
-                    ds_grid_set(obj_Director.grid_map, (x / global.level_maker_speed), (y / global.level_maker_speed), obj_Director.id_value);
-                    x += hspeed 
+                    //obj_Director.id_value = instance_create(x, y, level_floor);
+                    //ds_grid_set(obj_Director.grid_map, (x / global.level_maker_speed), (y / global.level_maker_speed), obj_Director.id_value);
+                    instance_create(x, y, level_floor);
+                    ds_grid_set(obj_Director.grid_map, (x / global.level_maker_speed), (y / global.level_maker_speed), 1);
+                    x += hspeed;
+                    
+                    //Keeps the level generator from moving too close to the right side of the room
+                    x = min(x, room_width - (half_width - (global.level_maker_speed * 3))); //x, 2560 - 320
+                
+                    //Keeps the level generator from moving too close to the left side of the room
+                    x = max((half_width - (global.level_maker_speed * 4)), x); //320, x
                 }
             }
             
@@ -167,56 +171,158 @@ while (floor_generation_time &gt; 0) {
                 
                 repeat (path_length) {
                     
-                    obj_Director.id_value = instance_create(x, y, level_floor);
-                    ds_grid_set(obj_Director.grid_map, (x / global.level_maker_speed), (y / global.level_maker_speed), obj_Director.id_value);
-                    y += vspeed
+                    //obj_Director.id_value = instance_create(x, y, level_floor);
+                    //ds_grid_set(obj_Director.grid_map, (x / global.level_maker_speed), (y / global.level_maker_speed), obj_Director.id_value);
+                    instance_create(x, y, level_floor);
+                    ds_grid_set(obj_Director.grid_map, (x / global.level_maker_speed), (y / global.level_maker_speed), 1);
+                    y += vspeed;
+                    
+                    //Keeps the level generator from moving too close to the botoom of the room
+                    y = min(y, room_height - ((half_height + 16) - (global.level_maker_speed * 2))); //y, 1920 - 240
+                    
+                    //Keeps the level generator from moving too close to the top of the room
+                    y = max(((half_height + 16) - (global.level_maker_speed * 3)), y); //240, y
                 } 
             }
             
-                direction = choose(0, 90, 180, 270)
+                direction = choose(0, 90, 180, 270);
+                
+                floor_generation_time -= 1;
         }
-        
-    floor_generation_time -= 1;
-    
-    //Limiting level maker's movement
 
-    //Keeps the level generator from moving too close to the right side of the room
-    x = min(x, room_width - half_width); //x, 2560 - 320
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
-    //Keeps the level generator from moving too close to the left side of the room
-    x = max(half_width, x); //320, x
-
-    //Keeps the level generator from moving too close to the botoom of the room
-    y = min(y, room_height - (half_height + 16)); //y, 1920 - 240
-
-    //Keeps the level generator from moving too close to the top of the room
-    y = max((half_height + 16), y); //240, y
-}
-
-for (i = 0; i &lt; obj_Director.grid_width + 1; i += 1) {
-
-    for (j = 0; j &lt; obj_Director.grid_height + 1; j += 1) {
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
 
     //reference_angle = point_direction(obj_Reference_Angle.x, obj_Reference_Angle.y, (i * global.level_maker_speed), (j * global.level_maker_speed));
+/*
+ 
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Down is 10
+//Up is 11
+//Right is 12
+//Left is 13
+//Full is 14
+
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone) 
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 1)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Down); 
+            ds_grid_set(obj_Director.grid_map, i, j, 10);
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*
+
+        */
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone) 
+        and (ds_grid_get(obj_Director.grid_map, i + 1, j) == 1)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Right); 
+            ds_grid_set(obj_Director.grid_map, i, j, 12);
+        }
+        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone) 
+        and (ds_grid_get(obj_Director.grid_map, i - 1, j) == 1)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
+            ds_grid_set(obj_Director.grid_map, i, j, 13);
+        }
+        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+    }
+}
+
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+
+        if ((ds_grid_get(obj_Director.grid_map, i - 1, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 12)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Right); 
+            ds_grid_set(obj_Director.grid_map, i, j, 12);
+        }
+        
+        if ((ds_grid_get(obj_Director.grid_map, i - 1, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 13)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
+            ds_grid_set(obj_Director.grid_map, i, j, 13);
+        }
+    }
+}
+
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone) 
+        and (ds_grid_get(obj_Director.grid_map, i + 1, j) == 10)
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 12)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Right); 
+            ds_grid_set(obj_Director.grid_map, i, j, 12);
+        }
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone)
+        and (ds_grid_get(obj_Director.grid_map, i + 1, j) == 10) 
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 13)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Left); 
+            ds_grid_set(obj_Director.grid_map, i, j, 13);
+        }
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone) 
+        and (ds_grid_get(obj_Director.grid_map, i + 1, j) == 11)
+        and (ds_grid_get(obj_Director.grid_map, i, j - 1) == 12)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
+            ds_grid_set(obj_Director.grid_map, i, j, 14);
+        }
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone)
+        and (ds_grid_get(obj_Director.grid_map, i + 1, j) == 11) 
+        and (ds_grid_get(obj_Director.grid_map, i, j - 1) == 13)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
+            ds_grid_set(obj_Director.grid_map, i, j, 14);
+        }
+    }
+}
+
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone) 
+        and (ds_grid_get(obj_Director.grid_map, i, j - 1) == 1)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Up); 
+            ds_grid_set(obj_Director.grid_map, i, j, 11);
+        }
+    }
+}
+
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
     
-        if ((ds_grid_get(obj_Director.grid_map, i, j)) == noone) {
-            
-            //Generate blank walls for the outside
-            if (((ds_grid_get(obj_Director.grid_map, i, j + 1)) == noone) 
-            and (((ds_grid_get(obj_Director.grid_map, i + 1, j)) == noone) 
-            or ((ds_grid_get(obj_Director.grid_map, i + 1, j)).object_index == obj_Wall_Lab_Full))){
-            
-                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
-                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
-            }
-            
-            if ((((ds_grid_get(obj_Director.grid_map, i, j + 1)) == noone) 
-            or ((ds_grid_get(obj_Director.grid_map, i, j + 1)).object_index == obj_Wall_Lab_Full))
-            and (((ds_grid_get(obj_Director.grid_map, i + 1, j)) == noone))) {
-            
-                obj_Director.id_value = instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
-                ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);
-            }
+        //Generate blank walls for the outside
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == noone)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
+            ds_grid_set(obj_Director.grid_map, i, j, 14);
+        } 
+    }
+}
+
             /*
             //Generate walls to face the floor (down) **DONE**
             if (((ds_grid_get(obj_Director.grid_map, i, j)).object_index == level_floor)
@@ -306,10 +412,6 @@ for (i = 0; i &lt; obj_Director.grid_width + 1; i += 1) {
                 ds_grid_set(obj_Director.grid_map, i, j, obj_Director.id_value);    
             
             }*/
-        }
-    }
-}
-
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////

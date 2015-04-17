@@ -191,31 +191,31 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
     }
 }
 
-if keyboard_check(ord('D')) {
+if keyboard_check(ord('D')) and global.walking == true {
 
     image_speed = 0.3;
     hspeed = 5; 
 }
 
-if keyboard_check(ord('A')) {
+if keyboard_check(ord('A')) and global.walking == true {
 
     image_speed = 0.3;
     hspeed = -5;
 }
 
-if keyboard_check(ord('W')) {
+if keyboard_check(ord('W')) and global.walking == true {
 
     image_speed = 0.3;
     vspeed = -5; 
 }
 
-if keyboard_check(ord('S')) {
+if keyboard_check(ord('S')) and global.walking == true {
 
     image_speed = 0.3;
     vspeed = 5;
 }
 
-if keyboard_check_released(ord('D')) {
+if keyboard_check_released(ord('D')) or global.walking == false {
 
     image_speed = 0.3;
     hspeed = 0; 
@@ -226,7 +226,7 @@ if keyboard_check_released(ord('D')) {
     walk_down_right = false;
 }
 
-if keyboard_check_released(ord('A')) {
+if keyboard_check_released(ord('A')) or global.walking == false {
 
     image_speed = 0.3;
     hspeed = 0;  
@@ -237,7 +237,7 @@ if keyboard_check_released(ord('A')) {
     walk_down_right = false;
 }
 
-if keyboard_check_released(ord('W')) {
+if keyboard_check_released(ord('W')) or global.walking == false {
 
     image_speed = 0.3;
     vspeed = 0; 
@@ -248,7 +248,7 @@ if keyboard_check_released(ord('W')) {
     walk_down_right = false;
 }
 
-if keyboard_check_released(ord('S')) {
+if keyboard_check_released(ord('S')) or global.walking == false {
 
     image_speed = 0.3;
     vspeed = 0;  
@@ -257,11 +257,6 @@ if keyboard_check_released(ord('S')) {
     walk_up_right = false;
     walk_down_left = false;
     walk_down_right = false;
-}
-/*
-if (obj_Parent_Gun.equip_text_box = true) {
-
-    weapon_to_pick_up = instance_place(x, y, obj_Parent_Gun);
 }
 </string>
           </argument>
@@ -521,19 +516,23 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Left) or
     
     //Knockback for collision
 
-    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
-    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    if global.walking == true {
     
-    obj_Rat_Head.speed = knock_back_speed;    
-    obj_Rat_Body.speed = knock_back_speed;
-    obj_Rat_Front_Arm.speed = knock_back_speed;     
-    obj_Rat_Back_Arm.speed = knock_back_speed;
-    obj_Rat_Legs.speed = knock_back_speed;     
-    obj_Rat_Tail.speed = knock_back_speed;
+        obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+        obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        
+        obj_Rat_Head.speed = knock_back_speed;    
+        obj_Rat_Body.speed = knock_back_speed;
+        obj_Rat_Front_Arm.speed = knock_back_speed;     
+        obj_Rat_Back_Arm.speed = knock_back_speed;
+        obj_Rat_Legs.speed = knock_back_speed;     
+        obj_Rat_Tail.speed = knock_back_speed;
+    
+    }
     
     alarm[1] = 5;
     
@@ -642,19 +641,22 @@ if  ((sprite_index = spr_Body_Standard_Idle_Down_Right) or
     
     //Knockback for collision
 
-    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
-    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    if global.walking == true {
     
-    obj_Rat_Head.speed = knock_back_speed;    
-    obj_Rat_Body.speed = knock_back_speed;
-    obj_Rat_Front_Arm.speed = knock_back_speed;     
-    obj_Rat_Back_Arm.speed = knock_back_speed;
-    obj_Rat_Legs.speed = knock_back_speed;     
-    obj_Rat_Tail.speed = knock_back_speed;
+        obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+        obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        
+        obj_Rat_Head.speed = knock_back_speed;    
+        obj_Rat_Body.speed = knock_back_speed;
+        obj_Rat_Front_Arm.speed = knock_back_speed;     
+        obj_Rat_Back_Arm.speed = knock_back_speed;
+        obj_Rat_Legs.speed = knock_back_speed;     
+        obj_Rat_Tail.speed = knock_back_speed;
+    }
     
     alarm[1] = 5;
     
@@ -763,19 +765,22 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Left) or
     
     //Knockback for collision
 
-    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
-    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    if global.walking == true {
     
-    obj_Rat_Head.speed = knock_back_speed;    
-    obj_Rat_Body.speed = knock_back_speed;
-    obj_Rat_Front_Arm.speed = knock_back_speed;     
-    obj_Rat_Back_Arm.speed = knock_back_speed;
-    obj_Rat_Legs.speed = knock_back_speed;     
-    obj_Rat_Tail.speed = knock_back_speed;
+        obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+        obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        
+        obj_Rat_Head.speed = knock_back_speed;    
+        obj_Rat_Body.speed = knock_back_speed;
+        obj_Rat_Front_Arm.speed = knock_back_speed;     
+        obj_Rat_Back_Arm.speed = knock_back_speed;
+        obj_Rat_Legs.speed = knock_back_speed;     
+        obj_Rat_Tail.speed = knock_back_speed;
+    }
     
     alarm[1] = 5;
     
@@ -884,19 +889,22 @@ if  ((sprite_index = spr_Body_Standard_Idle_Up_Right) or
     
     //Knockback for collision
 
-    obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
-    obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
-    obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
-    obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    if global.walking == true {
     
-    obj_Rat_Head.speed = knock_back_speed;    
-    obj_Rat_Body.speed = knock_back_speed;
-    obj_Rat_Front_Arm.speed = knock_back_speed;     
-    obj_Rat_Back_Arm.speed = knock_back_speed;
-    obj_Rat_Legs.speed = knock_back_speed;     
-    obj_Rat_Tail.speed = knock_back_speed;
+        obj_Rat_Head.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)    
+        obj_Rat_Body.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Front_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Back_Arm.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        obj_Rat_Legs.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)     
+        obj_Rat_Tail.direction = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+        
+        obj_Rat_Head.speed = knock_back_speed;    
+        obj_Rat_Body.speed = knock_back_speed;
+        obj_Rat_Front_Arm.speed = knock_back_speed;     
+        obj_Rat_Back_Arm.speed = knock_back_speed;
+        obj_Rat_Legs.speed = knock_back_speed;     
+        obj_Rat_Tail.speed = knock_back_speed;
+    }
     
     alarm[1] = 5;
     

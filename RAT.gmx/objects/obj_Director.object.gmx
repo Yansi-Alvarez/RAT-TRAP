@@ -65,11 +65,11 @@ global.first_level_maker_creation = false;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-grid_width = (room_width/global.level_maker_speed); 
-grid_height = (room_height/global.level_maker_speed);
+grid_width = (room_width/global.level_maker_speed) + 1; 
+grid_height = (room_height/global.level_maker_speed) + 1;
 
-grid_width_index = ((room_width/global.level_maker_speed) - 1); 
-grid_height_index = ((room_height/global.level_maker_speed) - 1);
+grid_width_index = ((room_width/global.level_maker_speed)); 
+grid_height_index = ((room_height/global.level_maker_speed));
 
 grid_map = ds_grid_create(grid_width, grid_height);
 id_value = noone;
