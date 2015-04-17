@@ -30,6 +30,8 @@
 loading_screen_finished = false;
 
 adding_x = 0;
+
+correction = 288;
 </string>
           </argument>
         </arguments>
@@ -111,21 +113,21 @@ if (loading_screen_finished == true) {
 //draw_rectangle_colour(3, 50, 853, 614, c_lime, c_lime, c_lime, c_lime, true);
 
 //Bar drawing
-draw_sprite(spr_Loading_Screen_Bar, 0, (room_width/2), (room_height/2));
+draw_sprite(spr_Loading_Screen_Bar, 0, (room_width/2), (room_height/2) + correction);
 
 //Rat drawing
-draw_sprite(spr_Loading_Screen_Rat, 0, (((room_width/2) - 296)) + adding_x, ((room_height/2) - 21));
+draw_sprite(spr_Loading_Screen_Rat, 0, (((room_width/2) - 296)) + adding_x, ((room_height/2) - 21) + correction);
 
 if (adding_x &lt; 524) {
 
     //Cheese drawing (inactive)
-    draw_sprite(spr_Loading_Screen_Cheese_Inactive, 0, ((room_width/2) + 269), ((room_height/2) - 25));
+    draw_sprite(spr_Loading_Screen_Cheese_Inactive, 0, ((room_width/2) + 269), ((room_height/2) - 25) + correction);
 }
 
 if (adding_x &gt;= 524) {
 
     //Cheese drawing (active)
-    draw_sprite(spr_Loading_Screen_Cheese_Active, 0, ((room_width/2) + 264), ((room_height/2) - 33));
+    draw_sprite(spr_Loading_Screen_Cheese_Active, 0, ((room_width/2) + 264), ((room_height/2) - 33) + correction);
     loading_screen_finished = true;
 }
 </string>

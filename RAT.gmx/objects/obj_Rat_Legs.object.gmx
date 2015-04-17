@@ -59,7 +59,17 @@ walk_down_right = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
+            <string>if (place_meeting(x, y, obj_Parent_Wall)) {
+
+    global.walking = false;
+}
+
+if (!place_meeting(x, y, obj_Parent_Wall)) {
+
+    global.walking = true;
+}
+
+if  ((global.direction_player &gt;= 0) and (global.direction_player &lt;= 89)) and (walk_up_right == false) and (obj_Rat_Head.collision_with_enemy == false) {
 
     obj_Rat_Legs.sprite_index = spr_Legs_Standard_Idle_Up_Right;
     obj_Rat_Legs.depth = 2;
@@ -107,31 +117,31 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
     }
 }
 
-if keyboard_check(ord('D')) {
+if keyboard_check(ord('D')) and global.walking == true {
 
     image_speed = 0.3;
     hspeed = 5; 
 }
 
-if keyboard_check(ord('A')) {
+if keyboard_check(ord('A')) and global.walking == true {
 
     image_speed = 0.3;
     hspeed = -5;
 }
 
-if keyboard_check(ord('W')) {
+if keyboard_check(ord('W')) and global.walking == true {
 
     image_speed = 0.3;
     vspeed = -5; 
 }
 
-if keyboard_check(ord('S')) {
+if keyboard_check(ord('S')) and global.walking == true {
 
     image_speed = 0.3;
     vspeed = 5;
 }
 
-if keyboard_check_released(ord('D')) {
+if keyboard_check_released(ord('D')) or global.walking == false {
 
     image_speed = 0.3;
     hspeed = 0; 
@@ -142,7 +152,7 @@ if keyboard_check_released(ord('D')) {
     walk_down_right = false;
 }
 
-if keyboard_check_released(ord('A')) {
+if keyboard_check_released(ord('A')) or global.walking == false {
 
     image_speed = 0.3;
     hspeed = 0;  
@@ -153,7 +163,7 @@ if keyboard_check_released(ord('A')) {
     walk_down_right = false;
 }
 
-if keyboard_check_released(ord('W')) {
+if keyboard_check_released(ord('W')) or global.walking == false {
 
     image_speed = 0.3;
     vspeed = 0; 
@@ -164,7 +174,7 @@ if keyboard_check_released(ord('W')) {
     walk_down_right = false;
 }
 
-if keyboard_check_released(ord('S')) {
+if keyboard_check_released(ord('S')) or global.walking == false {
 
     image_speed = 0.3;
     vspeed = 0;  
@@ -174,30 +184,6 @@ if keyboard_check_released(ord('S')) {
     walk_down_left = false;
     walk_down_right = false;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Parent_Wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>hspeed = 0;
-vspeed = 0;
 </string>
           </argument>
         </arguments>

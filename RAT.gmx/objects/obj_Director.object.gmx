@@ -65,11 +65,11 @@ global.first_level_maker_creation = false;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-grid_width = (room_width/global.level_maker_speed); 
-grid_height = (room_height/global.level_maker_speed);
+grid_width = (room_width/global.level_maker_speed) + 1; 
+grid_height = (room_height/global.level_maker_speed) + 1;
 
-grid_width_index = ((room_width/global.level_maker_speed) - 1); 
-grid_height_index = ((room_height/global.level_maker_speed) - 1);
+grid_width_index = ((room_width/global.level_maker_speed)); 
+grid_height_index = ((room_height/global.level_maker_speed));
 
 grid_map = ds_grid_create(grid_width, grid_height);
 id_value = noone;
@@ -85,7 +85,7 @@ for (i = 0; i &lt; grid_width; i++) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-instance_create(global.center_room_width, global.center_room_height, obj_Reference_Angle);
+//instance_create(global.center_room_width, global.center_room_height, obj_Reference_Angle);
 instance_create(global.center_room_width, global.center_room_height, obj_Level_Maker);
 
 ////////////////////////////////////////////////////////////////////////////////

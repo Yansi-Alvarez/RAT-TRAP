@@ -279,11 +279,8 @@
   </datafiles>
   <NewExtensions>
     <extension index="0">extensions\Speech Bubble</extension>
-    <extension index="1">extensions\Draw Sprite Shadow</extension>
-    <extension index="2">extensions\Color Coding Files</extension>
-    <extension index="3">extensions\Loading Screen</extension>
-    <extension index="4">extensions\DeveloperConsole</extension>
-    <extension index="5">extensions\CRT Pixel Shader</extension>
+    <extension index="1">extensions\Color Coding Files</extension>
+    <extension index="2">extensions\DeveloperConsole</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Rat">
@@ -329,155 +326,227 @@
     <sprites name="Rat">
       <sprites name="Animations">
         <sprites name="Idle">
-          <sprites name="Down">
-            <sprites name="Left">
-              <sprite>sprites\spr_Back_Arm_Standard_Idle_Down_Left</sprite>
-              <sprite>sprites\spr_Body_Standard_Idle_Down_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Idle_Down_Left</sprite>
-              <sprite>sprites\spr_Head_Standard_Idle_Down_Left</sprite>
-              <sprite>sprites\spr_Legs_Standard_Idle_Down_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Idle_Down_Left</sprite>
+          <sprites name="Normal">
+            <sprites name="Down">
+              <sprites name="Left">
+                <sprite>sprites\spr_Back_Arm_Standard_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Standard_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Standard_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Legs_Standard_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Idle_Down_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Back_Arm_Standard_Idle_Down_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Idle_Down_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Idle_Down_Right</sprite>
+                <sprite>sprites\spr_Head_Standard_Idle_Down_Right</sprite>
+                <sprite>sprites\spr_Legs_Standard_Idle_Down_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Idle_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Back_Arm_Standard_Idle_Down_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Idle_Down_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Idle_Down_Right</sprite>
-              <sprite>sprites\spr_Head_Standard_Idle_Down_Right</sprite>
-              <sprite>sprites\spr_Legs_Standard_Idle_Down_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Idle_Down_Right</sprite>
+            <sprites name="Up">
+              <sprites name="Right">
+                <sprite>sprites\spr_Head_Standard_Idle_Up_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Idle_Up_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Idle_Up_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Idle_Up_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Idle_Up_Right</sprite>
+                <sprite>sprites\spr_Legs_Standard_Idle_Up_Right</sprite>
+              </sprites>
+              <sprites name="Left">
+                <sprite>sprites\spr_Head_Standard_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Body_Standard_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Legs_Standard_Idle_Up_Left</sprite>
+              </sprites>
             </sprites>
           </sprites>
-          <sprites name="Up">
-            <sprites name="Right">
-              <sprite>sprites\spr_Head_Standard_Idle_Up_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Idle_Up_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Idle_Up_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Idle_Up_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Idle_Up_Right</sprite>
-              <sprite>sprites\spr_Legs_Standard_Idle_Up_Right</sprite>
+          <sprites name="Armor">
+            <sprites name="Head">
+              <sprites name="Third Eye">
+                <sprite>sprites\spr_Head_Third_Eye_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Third_Eye_Idle_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Left">
-              <sprite>sprites\spr_Head_Standard_Idle_Up_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Idle_Up_Left</sprite>
-              <sprite>sprites\spr_Body_Standard_Idle_Up_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Idle_Up_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Idle_Up_Left</sprite>
-              <sprite>sprites\spr_Legs_Standard_Idle_Up_Left</sprite>
+            <sprites name="Body">
+              <sprites name="Scales">
+                <sprite>sprites\spr_Body_Scales_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Idle_Down_Right</sprite>
+                <sprite>sprites\spr_Body_Scales_Idle_Up_Right</sprite>
+                <sprite>sprites\spr_Body_Scales_Idle_Up_Left</sprite>
+              </sprites>
             </sprites>
           </sprites>
         </sprites>
         <sprites name="Walking">
-          <sprites name="Down">
-            <sprites name="Left">
-              <sprite>sprites\spr_Legs_Standard_Walking_Down_Left</sprite>
-              <sprite>sprites\spr_Head_Standard_Walking_Down_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Walking_Down_Left</sprite>
-              <sprite>sprites\spr_Body_Standard_Walking_Down_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Walking_Down_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Walking_Down_Left</sprite>
+          <sprites name="Normal">
+            <sprites name="Down">
+              <sprites name="Left">
+                <sprite>sprites\spr_Legs_Standard_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Standard_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Standard_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Walking_Down_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Legs_Standard_Walking_Down_Right</sprite>
+                <sprite>sprites\spr_Head_Standard_Walking_Down_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Walking_Down_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Walking_Down_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Walking_Down_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Walking_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Legs_Standard_Walking_Down_Right</sprite>
-              <sprite>sprites\spr_Head_Standard_Walking_Down_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Walking_Down_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Walking_Down_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Walking_Down_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Walking_Down_Right</sprite>
+            <sprites name="Up">
+              <sprites name="Left">
+                <sprite>sprites\spr_Head_Standard_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Body_Standard_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Legs_Standard_Walking_Up_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Head_Standard_Walking_Up_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Walking_Up_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Walking_Up_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Walking_Up_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Walking_Up_Right</sprite>
+                <sprite>sprites\spr_Legs_Standard_Walking_Up_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
-          <sprites name="Up">
-            <sprites name="Left">
-              <sprite>sprites\spr_Head_Standard_Walking_Up_Left</sprite>
-              <sprite>sprites\spr_Body_Standard_Walking_Up_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Walking_Up_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Walking_Up_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Walking_Up_Left</sprite>
-              <sprite>sprites\spr_Legs_Standard_Walking_Up_Left</sprite>
+          <sprites name="Armor">
+            <sprites name="Head">
+              <sprites name="Third Eye">
+                <sprite>sprites\spr_Head_Third_Eye_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Third_Eye_Walking_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Head_Standard_Walking_Up_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Walking_Up_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Walking_Up_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Walking_Up_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Walking_Up_Right</sprite>
-              <sprite>sprites\spr_Legs_Standard_Walking_Up_Right</sprite>
+            <sprites name="Body">
+              <sprites name="Scales">
+                <sprite>sprites\spr_Body_Scales_Walking_Up_Right</sprite>
+                <sprite>sprites\spr_Body_Scales_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Walking_Down_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
         </sprites>
         <sprites name="Hit Stun">
-          <sprites name="Down">
-            <sprite>sprites\spr_REFERENCE_Hit</sprite>
-            <sprites name="Left">
-              <sprite>sprites\spr_Legs_Standard_Stun_Down_Left</sprite>
-              <sprite>sprites\spr_Body_Standard_Stun_Down_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Stun_Down_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Stun_Down_Left</sprite>
-              <sprite>sprites\spr_Head_Standard_Stun_Down_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Stun_Down_Left</sprite>
+          <sprites name="Normal">
+            <sprites name="Down">
+              <sprite>sprites\spr_REFERENCE_Hit</sprite>
+              <sprites name="Left">
+                <sprite>sprites\spr_Legs_Standard_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Standard_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Standard_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Stun_Down_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Head_Standard_Stun_Down_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Stun_Down_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Stun_Down_Right</sprite>
+                <sprite>sprites\spr_Legs_Standard_Stun_Down_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Stun_Down_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Stun_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Head_Standard_Stun_Down_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Stun_Down_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Stun_Down_Right</sprite>
-              <sprite>sprites\spr_Legs_Standard_Stun_Down_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Stun_Down_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Stun_Down_Right</sprite>
+            <sprites name="Up">
+              <sprites name="Left">
+                <sprite>sprites\spr_Body_Standard_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Head_Standard_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Legs_Standard_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Stun_Up_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Tail_Standard_Stun_Up_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Stun_Up_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Stun_Up_Right</sprite>
+                <sprite>sprites\spr_Head_Standard_Stun_Up_Right</sprite>
+                <sprite>sprites\spr_Legs_Standard_Stun_Up_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Stun_Up_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
-          <sprites name="Up">
-            <sprites name="Left">
-              <sprite>sprites\spr_Body_Standard_Stun_Up_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Stun_Up_Left</sprite>
-              <sprite>sprites\spr_Head_Standard_Stun_Up_Left</sprite>
-              <sprite>sprites\spr_Legs_Standard_Stun_Up_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Stun_Up_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Stun_Up_Left</sprite>
+          <sprites name="Armor">
+            <sprites name="Head">
+              <sprites name="Third Eye">
+                <sprite>sprites\spr_Head_Third_Eye_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Third_Eye_Stun_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Tail_Standard_Stun_Up_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Stun_Up_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Stun_Up_Right</sprite>
-              <sprite>sprites\spr_Head_Standard_Stun_Up_Right</sprite>
-              <sprite>sprites\spr_Legs_Standard_Stun_Up_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Stun_Up_Right</sprite>
+            <sprites name="Body">
+              <sprites name="Scales">
+                <sprite>sprites\spr_Body_Scales_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Stun_Down_Right</sprite>
+                <sprite>sprites\spr_Body_Scales_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Stun_Up_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
         </sprites>
         <sprites name="Death">
-          <sprites name="Down">
-            <sprites name="Left">
-              <sprite>sprites\spr_Legs_Standard_Death_Down_Left</sprite>
-              <sprite>sprites\spr_Body_Standard_Death_Down_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Death_Down_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Death_Down_Left</sprite>
-              <sprite>sprites\spr_Head_Standard_Death_Down_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Death_Down_Left</sprite>
+          <sprites name="Normal">
+            <sprites name="Down">
+              <sprites name="Left">
+                <sprite>sprites\spr_Legs_Standard_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Standard_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Standard_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Death_Down_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Legs_Standard_Death_Down_Right</sprite>
+                <sprite>sprites\spr_Body_Standard_Death_Down_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Death_Down_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Death_Down_Right</sprite>
+                <sprite>sprites\spr_Head_Standard_Death_Down_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Death_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Legs_Standard_Death_Down_Right</sprite>
-              <sprite>sprites\spr_Body_Standard_Death_Down_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Death_Down_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Death_Down_Right</sprite>
-              <sprite>sprites\spr_Head_Standard_Death_Down_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Death_Down_Right</sprite>
+            <sprites name="Up">
+              <sprites name="Left">
+                <sprite>sprites\spr_Body_Standard_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Head_Standard_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Legs_Standard_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Tail_Standard_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Death_Up_Left</sprite>
+              </sprites>
+              <sprites name="Right">
+                <sprite>sprites\spr_Body_Standard_Death_Up_Right</sprite>
+                <sprite>sprites\spr_Back_Arm_Standard_Death_Up_Right</sprite>
+                <sprite>sprites\spr_Head_Standard_Death_Up_Right</sprite>
+                <sprite>sprites\spr_Legs_Standard_Death_Up_Right</sprite>
+                <sprite>sprites\spr_Tail_Standard_Death_Up_Right</sprite>
+                <sprite>sprites\spr_Front_Arm_Standard_Death_Up_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
-          <sprites name="Up">
-            <sprites name="Left">
-              <sprite>sprites\spr_Body_Standard_Death_Up_Left</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Death_Up_Left</sprite>
-              <sprite>sprites\spr_Head_Standard_Death_Up_Left</sprite>
-              <sprite>sprites\spr_Legs_Standard_Death_Up_Left</sprite>
-              <sprite>sprites\spr_Tail_Standard_Death_Up_Left</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Death_Up_Left</sprite>
+          <sprites name="Armor">
+            <sprites name="Head">
+              <sprites name="Third Eye">
+                <sprite>sprites\spr_Head_Third_Eye_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Head_Third_Eye_Death_Down_Right</sprite>
+              </sprites>
             </sprites>
-            <sprites name="Right">
-              <sprite>sprites\spr_Body_Standard_Death_Up_Right</sprite>
-              <sprite>sprites\spr_Back_Arm_Standard_Death_Up_Right</sprite>
-              <sprite>sprites\spr_Head_Standard_Death_Up_Right</sprite>
-              <sprite>sprites\spr_Legs_Standard_Death_Up_Right</sprite>
-              <sprite>sprites\spr_Tail_Standard_Death_Up_Right</sprite>
-              <sprite>sprites\spr_Front_Arm_Standard_Death_Up_Right</sprite>
+            <sprites name="Body">
+              <sprites name="Scales">
+                <sprite>sprites\spr_Body_Scales_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Death_Up_Right</sprite>
+                <sprite>sprites\spr_Body_Scales_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Body_Scales_Death_Down_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
         </sprites>
@@ -618,29 +687,6 @@
           </sprites>
         </sprites>
       </sprites>
-      <sprites name="Wasp Mama">
-        <sprites name="Animations">
-          <sprites name="Flying">
-            <sprite>sprites\spr_Wasp_Mama_Flying_Left</sprite>
-            <sprite>sprites\spr_Wasp_Mama_Flying_Fired_Left</sprite>
-            <sprite>sprites\spr_Wasp_mama_Flying_Fired_Right</sprite>
-            <sprite>sprites\spr_Wasp_Mama_Flying_Right</sprite>
-          </sprites>
-          <sprites name="Hitstun">
-            <sprite>sprites\spr_Wasp_Mama_Hitstun_Left</sprite>
-            <sprite>sprites\spr_Wasp_Mama_Hitstun_Right</sprite>
-            <sprite>sprites\spr_Wasp_Mama_Fired_Hitstun_Left</sprite>
-            <sprite>sprites\spr_Wasp_Mama_Fired_Hitstun_Right</sprite>
-          </sprites>
-        </sprites>
-        <sprites name="Pieces">
-          <sprite>sprites\example</sprite>
-          <sprite>sprites\spr_Wasp_Mama_Fired_Left</sprite>
-          <sprite>sprites\spr_Wasp_Mama_Fired_Right</sprite>
-          <sprite>sprites\spr_Wasp_Mama_Left</sprite>
-          <sprite>sprites\spr_Wasp_Mama_Right</sprite>
-        </sprites>
-      </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor_Alt</sprite>
@@ -755,9 +801,6 @@
           <sprite>sprites\spr_Dungball_Medium</sprite>
           <sprite>sprites\spr_Dungball_Large</sprite>
           <sprite>sprites\spr_Dungball_Mega</sprite>
-        </sprites>
-        <sprites name="Wasp Mama">
-          <sprite>sprites\spr_Wasp_Mama_Stinger</sprite>
         </sprites>
       </sprites>
       <sprites name="Death">
@@ -1113,10 +1156,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Research_Page</room>
-    <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Start</room>
     <room>rooms\rm_Title_Screen</room>
+    <room>rooms\rm_Level_Generation</room>
+    <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
   </rooms>
   <constants number="2">
