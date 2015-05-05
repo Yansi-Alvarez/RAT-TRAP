@@ -198,6 +198,8 @@ draw_text_ext_transformed_colour(922, 210, "Terminal", 3, 500, 1, 1, 0, c_lime, 
 if (inst_start != noone) and (inst_exit == noone) and (inst_home == noone) {
     
     draw_rectangle_colour(901, 528, 1008, 616, c_white, c_white, c_white, c_white, false);
+    
+    //audio_play_sound(snd_Pickup, 0, 1);
 }
 
 if (inst_start != noone) and (mouse_check_button(mb_left)) {
@@ -213,6 +215,8 @@ draw_text_ext_transformed_colour(935, 562, "Start", 3, 500, 1, 1, 0, c_lime, c_l
 if (inst_exit != noone) and (inst_start == noone) and (inst_home == noone) {
     
     draw_rectangle_colour(901, 616, 1008, 704, c_white, c_white, c_white, c_white, false);
+    
+    //audio_play_sound(snd_Pickup, 0, 1);
 }
 
 if (inst_exit != noone) and (mouse_check_button(mb_left)) {

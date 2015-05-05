@@ -110,7 +110,7 @@ if (exit_room == true) and (start_room == false) and (home_room == false) {
 
 draw_background_stretched(bkgd_Black, 0, 0, room_width, room_height);
 
-draw_line_colour(3, 50, 853, 614, c_lime, c_lime, c_lime, c_lime, true);
+//draw_line_colour(3, 50, 853, 614, c_lime, c_lime, c_lime, c_lime, true);
 
 //
 

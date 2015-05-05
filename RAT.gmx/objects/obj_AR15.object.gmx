@@ -67,6 +67,12 @@ sprite_index = choose(spr_Rifle_AR15_Pickup_Left, spr_Rifle_AR15_Pickup_Right);
 
 screen_jiggle = true;
 
+ammo = 6;
+
+ammo_capacity = 6;
+
+ammo_reserve = 180;
+
 text = "Press E to equip [AR15]";
 popup_width = string_width(text);
 popup_padding = 3;

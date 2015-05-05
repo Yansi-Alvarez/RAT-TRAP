@@ -59,6 +59,12 @@ ldy = 0;
 
 gun_flash = obj_Muzzle_Flash;
 
+ammo = 10;
+
+ammo_capacity = 10;
+
+ammo_reserve = 300;
+
 sprite_index = choose(spr_Handgun_Potato_Pickup_Right, spr_Handgun_Potato_Pickup_Left);
 
 screen_jiggle = false;

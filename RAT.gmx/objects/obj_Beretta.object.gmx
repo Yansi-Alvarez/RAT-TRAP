@@ -63,6 +63,12 @@ sprite_index = choose(spr_Handgun_Beretta_Pickup_Right, spr_Handgun_Beretta_Pick
 
 screen_jiggle = true;
 
+ammo = 5;
+
+ammo_capacity = 5;
+
+ammo_reserve= 150;
+
 text = "Press E to equip [Beretta]";
 popup_width = string_width(text);
 popup_padding = 3;
