@@ -756,6 +756,10 @@
           <sprite>sprites\spr_Concrete</sprite>
           <sprite>sprites\spr_Concrete_Alt_2</sprite>
           <sprite>sprites\spr_Concrete_Alt</sprite>
+          <sprites name="Traps">
+            <sprite>sprites\spr_Concrete_Trap</sprite>
+            <sprite>sprites\spr_Concrete_Trap_Active</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Home">
@@ -1003,6 +1007,10 @@
         </sprites>
         <sprites name="Build Chamber">
           <sprite>sprites\spr_intr_Build_Chamber</sprite>
+        </sprites>
+        <sprites name="Terminal">
+          <sprite>sprites\test_terminal</sprite>
+          <sprite>sprites\spr_Intr_Terminal</sprite>
         </sprites>
       </sprites>
       <sprites name="Chests">
