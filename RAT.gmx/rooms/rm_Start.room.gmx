@@ -100,6 +100,26 @@ for (i = 1; i &lt; grid_width_index; i += 1) {
         
             instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Teleporter);
         }
+        
+        if (i = 6) and (j = 4) {
+            
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Potato_Handgun);
+        }
+        
+        if (i = 10) and (j = 4) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Beretta);
+        }
+        
+        if (i = 6) and (j = 7) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_AR15);
+        }
+        
+        if (i = 10) and (j = 7) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_P90);
+        }
     }
 }
 
