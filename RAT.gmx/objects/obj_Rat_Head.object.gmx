@@ -33,8 +33,6 @@ global.walking = true;
 
 //view_visible[1] = 1;
 
-room_speed = 30;
-
 head = false;
 
 cursor = false;
@@ -743,6 +741,15 @@ if (Player_Health &lt;= 1) {
 
     draw_sprite(spr_Low_Health, floor(img_index), (view_xview[0] + 100),(view_yview[0] + 100));
     
+}
+
+//Game Over
+
+if (death == true) {
+
+    //draw_sprite
+    
+    instance_deactivate_all(true)
 }
 </string>
           </argument>

@@ -107,9 +107,40 @@ reloaded_ammo = noone;
 
 aud = noone;
 
-float = 10;
+floating_number = 0;
 
-no_float = 0;
+flip_float = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (flip_float == false) {
+
+    floating_number += 1;
+}
+
+if (flip_float == true) {
+
+    floating_number -= 1;
+}
 </string>
           </argument>
         </arguments>
@@ -700,20 +731,32 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
         obj_Rat_Body.depth = 0;
     }
 }
-/*
+
 if ((sprite_index == sprite_index_Left_Gun_In_Use_Pick_Up) or (sprite_index == sprite_index_Right_Gun_In_Use_Pick_Up)) {
 
-    for (i = 0; i &lt;= 20; i += 1) {
+    if (flip_float == false) {
     
-        x += i;
+        y = y + floating_number;
+        alarm[4] = 1;
+        
+        if (floating_number == 3) {
+
+            flip_float = true;
+        }
     }
     
-    for (i = 20; i &gt;= 0; i -= 1) {
-    
-        x += i;
+    if (flip_float == true) {
+        
+        y = y - floating_number;
+        alarm[4] = 1;
+        
+        if (floating_number == 0) {
+
+            flip_float = false;
+        }
     }
 }
-*/
+
 if (gun_type == 1) {
 //Potato Handgun, Beretta
     if (gun_collision == true) and (ammo &gt;= 1) {
@@ -1001,6 +1044,8 @@ and ((global.weapon_attach_right_arm = false) and (global.weapon_attach_left_arm
         global.weapon_attach_right_arm = true;
         obj_Rat_Body.weapon_equipped.persistent = true;
     }
+    
+    floating = false;
 }
 
 ////////////////////////////////////////////////////////////////////Weilding guns////////////////////////////////////////////////////////////////////
@@ -1114,6 +1159,8 @@ and ((global.weapon_attach_right_arm = true) or (global.weapon_attach_left_arm =
         global.weapon_attach_left_arm = false;
         obj_Rat_Body.weapon_equipped.persistent = true;
     }
+    
+    floating = false;
 }
 </string>
           </argument>
@@ -1164,6 +1211,12 @@ if ((global.weapon_attach_left_arm == true) or (global.weapon_attach_right_arm =
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_text_colour((view_xview[0] + 150),(view_yview[0] + 10), string(obj_Rat_Body.weapon_equipped.ammo_reserve), c_lime, c_lime, c_lime, c_lime, 1);
+}
+
+if ((sprite_index == sprite_index_Left_Gun_In_Use_Pick_Up) or (sprite_index == sprite_index_Right_Gun_In_Use_Pick_Up)) {
+
+    depth = y * -1;
+    draw_sprite_ext(sprite_index, image_index, x, y + sprite_height, image_xscale, image_yscale, image_angle, c_black, 0.25);
 }
 </string>
           </argument>

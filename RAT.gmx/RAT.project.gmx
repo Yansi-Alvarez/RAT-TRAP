@@ -1197,18 +1197,26 @@
     <objects name="Interactables">
       <object>objects\obj_Teleporter</object>
       <object>objects\obj_Build_Chamber</object>
-      <object>objects\obj_Pickup_Cheese</object>
-      <object>objects\obj_Intr_Machine_Off</object>
-      <object>objects\obj_Inter_Machine_On</object>
-      <object>objects\obj_Inter_Passkey</object>
-      <object>objects\obj_Inter_Treasure_Normal</object>
-      <object>objects\obj_Inter_Treasure_Locked</object>
-      <object>objects\obj_Inter_Treasure_Open</object>
+      <objects name="Treasure">
+        <object>objects\obj_Parent_Treasure</object>
+        <object>objects\obj_Inter_Treasure_Normal</object>
+      </objects>
+      <objects name="Machine">
+        <object>objects\obj_Inter_Machine_On</object>
+        <object>objects\obj_Inter_Passkey</object>
+        <object>objects\obj_Intr_Machine_Off</object>
+      </objects>
+      <objects name="Health">
+        <object>objects\obj_Pickup_Cheese</object>
+      </objects>
+      <objects name="Ammo">
+        <object>objects\obj_Parent_Ammo</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Start</room>
     <room>rooms\rm_Title_Screen</room>
+    <room>rooms\rm_Start</room>
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
