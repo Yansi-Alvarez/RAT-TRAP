@@ -66,6 +66,60 @@ collision_with_player = false;
 enemy_right = false;
 
 enemy_left = false;
+
+hurt_flash = false;
+
+alpha_value = 0;
+
+loop = false;
+
+looping = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alpha_value = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alpha_value = 0;
 </string>
           </argument>
         </arguments>
@@ -88,84 +142,104 @@ enemy_left = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (global.enemy_activation == true) {
+            <string>if (alpha_value == 1) and (loop = false) and (looping &lt;= 6) {
 
-    direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+    alarm[0] = 1;
+    loop = true;
+    looping += 1;
+}
+
+if (alpha_value == 0) and (loop == true) and (looping &lt;= 6) {
+
+    alarm[1] = 1;
+    loop = false;
+    looping += 1;
+}
+
+if (looping &gt; 6) {
+
+    alarm[0] = 1;
+    hurt_flash = false;
+    loop = false;
+    looping = 0;
+}
+
+direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
+
+if (distance_to_object(obj_Rat_Body) &lt;= 150) {
+         
+    //move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
+    mp_potential_step_object(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed, obj_Parent_Wall);
     
-    if (distance_to_object(obj_Rat_Body) &lt;= 150) {
-             
-        move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
+    if (obj_Parent_Enemy.collision_with_player = true) {
         
-        if (obj_Parent_Enemy.collision_with_player = true) {
-            
-            enemy_speed = 0;
-        }
-        
-        //Angle between enemy and player, if between 0 and 89 degrees, looks to the up-right
-    
-        if  ((direction_enemy &gt;= 0) and (direction_enemy &lt;= 89)) {
-        
-            enemy_right = true;
-            enemy_left = false;
-            
-            sprite_index = sprite_index_Walking_Right_Enemy;
-        }
-        
-        //Angle between enemy and player, if between 90 and 179 degrees, looks to the up-left
-        
-        if ((direction_enemy &gt;= 90) and (direction_enemy &lt;= 179)) {
-            
-            enemy_right = false;
-            enemy_left = true;
-            
-            sprite_index = sprite_index_Walking_Left_Enemy;
-        }
-        
-        //Angle between enemy and player, if between 180 and 269 degrees, looks to the down-left
-        
-        if ((direction_enemy &gt;= 180) and (direction_enemy &lt;= 269)) {
-            
-            enemy_right = false;
-            enemy_left = true;
-            
-            sprite_index = sprite_index_Walking_Left_Enemy;
-        }
-        
-        //Angle between enemy and player, if between 270 and 359 degrees, looks to the down-right
-        
-        if ((direction_enemy &gt;= 270) and (direction_enemy &lt;= 359)) {
-            
-            enemy_right = true;
-            enemy_left = false;
-            
-            sprite_index = sprite_index_Walking_Right_Enemy;
-        }
+        enemy_speed = 0;
     }
     
-    if (death_animation == true) {
+    //Angle between enemy and player, if between 0 and 89 degrees, looks to the up-right
+
+    if  ((direction_enemy &gt;= 0) and (direction_enemy &lt;= 89)) {
     
-        instance_create(x, y, obj_Death);
-        death_animation = false;
+        enemy_right = true;
+        enemy_left = false;
+        
+        sprite_index = sprite_index_Walking_Right_Enemy;
     }
     
-    if (enemy_death == true) {
+    //Angle between enemy and player, if between 90 and 179 degrees, looks to the up-left
+    
+    if ((direction_enemy &gt;= 90) and (direction_enemy &lt;= 179)) {
         
-        //Creation of experience
-        repeat(25) {
+        enemy_right = false;
+        enemy_left = true;
         
-            //randomize();
-            instance_create(x, y, obj_Death_Particle_0);
-            instance_create(x, y, obj_Death_Particle_1);
-            
-        }
-        
-        //with (global.obj_enemy) {
-        with (other) {
-            audio_play_sound(snd_Bug, 1 ,0);
-            instance_destroy();
-        }
+        sprite_index = sprite_index_Walking_Left_Enemy;
     }
-//}
+    
+    //Angle between enemy and player, if between 180 and 269 degrees, looks to the down-left
+    
+    if ((direction_enemy &gt;= 180) and (direction_enemy &lt;= 269)) {
+        
+        enemy_right = false;
+        enemy_left = true;
+        
+        sprite_index = sprite_index_Walking_Left_Enemy;
+    }
+    
+    //Angle between enemy and player, if between 270 and 359 degrees, looks to the down-right
+    
+    if ((direction_enemy &gt;= 270) and (direction_enemy &lt;= 359)) {
+        
+        enemy_right = true;
+        enemy_left = false;
+        
+        sprite_index = sprite_index_Walking_Right_Enemy;
+    }
+}
+
+if (death_animation == true) {
+
+    instance_create(x, y, obj_Death);
+    death_animation = false;
+}
+
+if (enemy_death == true) {
+    
+    //Creation of experience
+    repeat(25) {
+    
+        //randomize();
+        instance_create(x, y, obj_Death_Particle_0);
+        instance_create(x, y, obj_Death_Particle_1);
+        
+    }
+    
+    //with (global.obj_enemy) {
+    with (other) {
+        audio_play_sound(snd_Bug, 1 ,0);
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -193,7 +267,8 @@ enemy_left = false;
     ((sprite_index = sprite_index_Stun_Right_Enemy) and (enemy_health &gt; 0)) {
     
     enemy_health -= obj_Parent_Bullet.bullet_damage;    
-    sprite_index = sprite_index_Stun_Right_Enemy;
+    //sprite_index = sprite_index_Stun_Right_Enemy;
+    hurt_flash = true;
     instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
     
     i = instance_create(x, y - damage_generation_corrector, obj_Damage);
@@ -210,7 +285,8 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
     ((sprite_index = sprite_index_Stun_Left_Enemy) and (enemy_health &gt; 0)) {
     
     enemy_health -= obj_Parent_Bullet.bullet_damage;
-    sprite_index = sprite_index_Stun_Left_Enemy;
+    //sprite_index = sprite_index_Stun_Left_Enemy;
+    hurt_flash = true;
     instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
     
     i = instance_create(x, y - damage_generation_corrector, obj_Damage);
@@ -276,6 +352,35 @@ if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or 
 if (sprite_index = sprite_index_Death_Right_Enemy) or (sprite_index = sprite_index_Death_Left_Enemy) {
     
     enemy_death = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if (hurt_flash == true) and (loop == false) {
+    
+    alpha_value = 1;
+    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_red, alpha_value);
 }
 </string>
           </argument>
