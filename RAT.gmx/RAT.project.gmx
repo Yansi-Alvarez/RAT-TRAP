@@ -687,6 +687,18 @@
           </sprites>
         </sprites>
       </sprites>
+      <sprites name="Lightning bug">
+        <sprites name="Standard">
+          <sprite>sprites\spr_Lbug_Down</sprite>
+          <sprite>sprites\spr_Lbug_Up</sprite>
+        </sprites>
+        <sprite>sprites\Test_Down</sprite>
+        <sprite>sprites\Test_Up</sprite>
+      </sprites>
+      <sprites name="Sightlines">
+        <sprite>sprites\spr_Sightline_Circle</sprite>
+        <sprite>sprites\spr_Sightline_Square</sprite>
+      </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor_Alt</sprite>
@@ -705,6 +717,7 @@
           <sprite>sprites\spr_Ammo_Icon_Shotgun</sprite>
         </sprites>
       </sprites>
+      <sprite>sprites\spr_Gameover</sprite>
     </sprites>
     <sprites name="Stages">
       <sprite>sprites\Stage_Test_Tile</sprite>
@@ -786,7 +799,6 @@
       </sprites>
     </sprites>
     <sprites name="Particles">
-      <sprite>sprites\spr_Particle_Hit</sprite>
       <sprite>sprites\spr_Particle_Shock</sprite>
       <sprite>sprites\spr_Particle_Explosion</sprite>
       <sprite>sprites\spr_Particle_Charge_Bar</sprite>
@@ -847,9 +859,11 @@
           <sprite>sprites\spr_Particle_Slash_Right</sprite>
           <sprite>sprites\spr_Particle_Slash_Left</sprite>
         </sprites>
+        <sprite>sprites\spr_Particle_Hit</sprite>
+        <sprite>sprites\spr_Particle_Explosion_Test</sprite>
       </sprites>
-      <sprite>sprites\spr_Particle_Explosion_Test</sprite>
       <sprite>sprites\spr_Particle_Smoke</sprite>
+      <sprite>sprites\spr_Particle_Alert</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
