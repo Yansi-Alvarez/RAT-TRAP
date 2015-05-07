@@ -45,7 +45,11 @@ correction = 160;
 
 correction_2 = 200;
 
-ammo = noone;
+ammo = 20;
+
+ammo_capacity = 20;
+
+ammo_reserve = 600;
 
 gun_type = 5;
 

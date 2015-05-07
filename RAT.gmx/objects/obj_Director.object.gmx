@@ -111,7 +111,7 @@ instance_create(global.center_room_width, global.center_room_height, obj_Level_M
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_deactivate_region(view_xview[view_current] - 128, view_yview[view_current] - 128, view_wview[view_current] + 128, view_hview[view_current] + 128, false, true);
+            <string>//instance_deactivate_region(view_xview[view_current] - 128, view_yview[view_current] - 128, view_wview[view_current] + 128, view_hview[view_current] + 128, false, true);
 </string>
           </argument>
         </arguments>

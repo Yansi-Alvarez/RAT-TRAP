@@ -62,6 +62,10 @@ death_sound = noone;
 death_animation = false;
 
 collision_with_player = false;
+
+enemy_right = false;
+
+enemy_left = false;
 </string>
           </argument>
         </arguments>
@@ -84,7 +88,7 @@ collision_with_player = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.enemy_activation == true) {
+            <string>//if (global.enemy_activation == true) {
 
     direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
     
@@ -138,29 +142,9 @@ collision_with_player = false;
         }
     }
     
-    //Death for Enemy
-    
-    if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Right_Enemy) or (sprite_index = sprite_index_Stun_Right_Enemy) or (sprite_index = sprite_index_Walking_Right_Enemy)) {
-       
-         sprite_index = sprite_index_Death_Right_Enemy;
-         enemy_speed = 0;
-         image_speed = 0.3;
-         death_animation = true;
-         
-    }
-    
-    if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
-       
-         sprite_index = sprite_index_Death_Left_Enemy;
-         enemy_speed = 0;
-         image_speed = 0.3;
-         death_animation = true;
-         
-    }
-    
     if (death_animation == true) {
     
-        instance_create(other.x,other.y,obj_Death);
+        instance_create(x, y, obj_Death);
         death_animation = false;
     }
     
@@ -170,8 +154,8 @@ collision_with_player = false;
         repeat(25) {
         
             //randomize();
-            instance_create(other.x, other.y, obj_Death_Particle_0);
-            instance_create(other.x, other.y, obj_Death_Particle_1);
+            instance_create(x, y, obj_Death_Particle_0);
+            instance_create(x, y, obj_Death_Particle_1);
             
         }
         
@@ -181,7 +165,7 @@ collision_with_player = false;
             instance_destroy();
         }
     }
-}
+//}
 </string>
           </argument>
         </arguments>
@@ -208,7 +192,7 @@ collision_with_player = false;
     (sprite_index = sprite_index_Idle_Right_Enemy) or 
     ((sprite_index = sprite_index_Stun_Right_Enemy) and (enemy_health &gt; 0)) {
     
-    enemy_health = enemy_health - obj_Parent_Bullet.bullet_damage;    
+    enemy_health -= obj_Parent_Bullet.bullet_damage;    
     sprite_index = sprite_index_Stun_Right_Enemy;
     instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
     
@@ -217,7 +201,7 @@ collision_with_player = false;
     
     with (other) {
     
-        instance_destroy()
+        instance_destroy();
     }
 }
 
@@ -225,7 +209,7 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
     (sprite_index = sprite_index_Idle_Left_Enemy) or 
     ((sprite_index = sprite_index_Stun_Left_Enemy) and (enemy_health &gt; 0)) {
     
-    enemy_health = enemy_health - obj_Parent_Bullet.bullet_damage;
+    enemy_health -= obj_Parent_Bullet.bullet_damage;
     sprite_index = sprite_index_Stun_Left_Enemy;
     instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
     
@@ -234,7 +218,7 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
     
     with (other) {
     
-        instance_destroy()
+        instance_destroy();
     }
 }
 </string>
@@ -267,6 +251,26 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
 if (sprite_index = sprite_index_Stun_Left_Enemy) and enemy_health &gt; 0{
 
     sprite_index = sprite_index_Idle_Left_Enemy;
+}
+
+//Death for Enemy
+
+if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Right_Enemy) or (sprite_index = sprite_index_Stun_Right_Enemy) or (sprite_index = sprite_index_Walking_Right_Enemy)) {
+   
+     sprite_index = sprite_index_Death_Right_Enemy;
+     enemy_speed = 0;
+     image_speed = 0.3;
+     death_animation = true;
+     
+}
+
+if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
+   
+     sprite_index = sprite_index_Death_Left_Enemy;
+     enemy_speed = 0;
+     image_speed = 0.3;
+     death_animation = true;
+     
 }
 
 if (sprite_index = sprite_index_Death_Right_Enemy) or (sprite_index = sprite_index_Death_Left_Enemy) {

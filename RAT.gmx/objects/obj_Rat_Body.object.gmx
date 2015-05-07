@@ -191,25 +191,25 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
     }
 }
 
-if keyboard_check(ord('D')) and global.walking == true {
+if keyboard_check(ord('D')) {
 
     image_speed = 0.3;
     hspeed = 5; 
 }
 
-if keyboard_check(ord('A')) and global.walking == true {
+if keyboard_check(ord('A')) {
 
     image_speed = 0.3;
     hspeed = -5;
 }
 
-if keyboard_check(ord('W')) and global.walking == true {
+if keyboard_check(ord('W')) {
 
     image_speed = 0.3;
     vspeed = -5; 
 }
 
-if keyboard_check(ord('S')) and global.walking == true {
+if keyboard_check(ord('S')) {
 
     image_speed = 0.3;
     vspeed = 5;

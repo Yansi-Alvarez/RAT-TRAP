@@ -43,6 +43,12 @@ correction_2 = noone;
 
 ammo = noone;
 
+ammo_reserve = noone;
+
+ammo_capacity = noone;
+
+ammo_reserve = noone;
+
 gun_type = noone;
 
 bullet = noone;
@@ -96,6 +102,14 @@ weapon_picked_up = false;
 equipped = false;
 
 equip_text_box = false;
+
+reloaded_ammo = noone;
+
+aud = noone;
+
+float = 10;
+
+no_float = 0;
 </string>
           </argument>
         </arguments>
@@ -149,6 +163,7 @@ instance_create(x + ldx, y + ldy, gun_flash);
 instance_create(x, y, casings);
 other.potato_gun_bullet_timer = false;
 alarm[0] = cool_down;
+ammo -= 1;
 
 if (screen_jiggle == true) {
 
@@ -184,6 +199,7 @@ instance_create(x + ldx, y + ldy, gun_flash);
 instance_create(x, y, casings);
 other.object_bullet_2.speed = bullet_speed;
 alarm[2] = alarm_timer;
+ammo -= 1;
 
 if (screen_jiggle == true) {
 
@@ -684,10 +700,23 @@ if ((global.direction_player &gt;= 270) and (global.direction_player &lt;= 359))
         obj_Rat_Body.depth = 0;
     }
 }
+/*
+if ((sprite_index == sprite_index_Left_Gun_In_Use_Pick_Up) or (sprite_index == sprite_index_Right_Gun_In_Use_Pick_Up)) {
 
+    for (i = 0; i &lt;= 20; i += 1) {
+    
+        x += i;
+    }
+    
+    for (i = 20; i &gt;= 0; i -= 1) {
+    
+        x += i;
+    }
+}
+*/
 if (gun_type == 1) {
 //Potato Handgun, Beretta
-    if (gun_collision == true) {
+    if (gun_collision == true) and (ammo &gt;= 1) {
     
         if (mouse_check_button_pressed(mb_left) and (potato_gun_bullet_timer == true)) and ((global.weapon_attach_right_arm == true) or 
         (global.weapon_attach_left_arm == true)) {
@@ -699,6 +728,7 @@ if (gun_type == 1) {
             object_bullet.speed = bullet_speed;
             potato_gun_bullet_timer = false;
             alarm[0] = cool_down;
+            ammo -= 1;
             
             if (screen_jiggle == true) {
             
@@ -712,7 +742,7 @@ if (gun_type == 1) {
 //AR15
 if (gun_type == 2) {
 
-    if (gun_collision == true) {
+    if (gun_collision == true) and (ammo &gt;= 1) {
     
         if mouse_check_button_pressed(mb_left) and (other.potato_gun_bullet_timer == true) and ((global.weapon_attach_right_arm == true) or 
         (global.weapon_attach_left_arm == true)) {
@@ -725,6 +755,7 @@ if (gun_type == 2) {
             other.object_bullet.speed = bullet_speed;
             alarm[1] = alarm_timer;
             alarm[2] = alarm_timer;
+            ammo -= 1;
             
             if (screen_jiggle == true) {
             
@@ -736,12 +767,12 @@ if (gun_type == 2) {
 }
 
 //Shotgun
-if (gun_type == 3) {
+if (gun_type == 3) and (ammo &gt;= 1) {
 
 }
 
 //Laser rifle
-if (gun_type == 4) {
+if (gun_type == 4) and (ammo &gt;= 1) {
 
     if (gun_collision == true) {
     
@@ -761,6 +792,7 @@ if (gun_type == 4) {
                 //scr_find_distance_to_object(x, y, point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y), object, point_distance(obj_Parent_Gun.x, obj_Parent_Gun.y, mouse_x, mouse_y));
                 other.potato_gun_bullet_timer = false;
                 alarm[0] = cool_down;
+                ammo -= 1;
             }
             
             if ((mouse_check_button_released(mb_left)) and (other.image_index &lt; index_size)) {
@@ -772,7 +804,7 @@ if (gun_type == 4) {
 }
 
 //P90
-if (gun_type = 5) {
+if (gun_type = 5) and (ammo &gt;= 1) {
 
     if (gun_collision == true) {
     
@@ -784,6 +816,7 @@ if (gun_type = 5) {
             object_bullet.direction = point_direction(obj_Rat_Head.x, obj_Rat_Head.y, mouse_x, mouse_y);
             instance_create(x + ldx, y + ldy, gun_flash);
             object_bullet.speed = bullet_speed;
+            ammo -= 1;
             
             if (mouse_check_button_released(mb_left)) {
             
@@ -801,6 +834,41 @@ if (gun_type = 5) {
         }
     }
 }
+
+if (ammo &gt;= 1) {
+    
+    aud = false;
+}
+
+if (ammo == 0) {
+    
+    aud = true;
+}
+
+if (ammo &lt;= 0) and (mouse_check_button_pressed(mb_left) and (aud == true)) {
+    
+    audio_play_sound(snd_No_Ammo, 1, 0);
+}
+
+if (keyboard_check_pressed(ord('R'))) and (ammo &lt; ammo_capacity) and (ammo_reserve &gt;= 1) {
+    
+    audio_play_sound(snd_Pickup, 1, 0);
+
+    if (ammo_reserve &gt; ammo) {
+        
+        reloaded_ammo = ammo_capacity - ammo;
+        ammo_reserve = ammo_reserve - reloaded_ammo;
+    }
+    
+    if (ammo_reserve &lt; ammo_capacity) and (ammo_reserve &lt; ammo) {
+    
+        reloaded_ammo = ammo_reserve;
+        ammo_reserve = 0;
+    }
+    
+    ammo = reloaded_ammo + ammo;
+}
+
 
 if (weapon_picked_up == true) {
 
@@ -1085,6 +1153,17 @@ if (place_meeting(x, y, obj_Rat_Body) and (obj_Gun_In_Use.weapon_picked_up == fa
     
     scr_draw_messagebox(text, popup_width, popup_padding, self, bak_color, draw_below);
     equip_text_box = true;
+}
+
+
+if ((global.weapon_attach_left_arm == true) or (global.weapon_attach_right_arm = true)) {
+
+    draw_text_colour((view_xview[0] + 100),(view_yview[0] + 10), string(obj_Rat_Body.weapon_equipped.ammo), c_lime, c_lime, c_lime, c_lime, 1);
+    
+    draw_set_font(Game_Font);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_text_colour((view_xview[0] + 150),(view_yview[0] + 10), string(obj_Rat_Body.weapon_equipped.ammo_reserve), c_lime, c_lime, c_lime, c_lime, 1);
 }
 </string>
           </argument>

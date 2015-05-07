@@ -29,7 +29,7 @@
 
 //global.obj_enemy = obj_Bullbug;
 
-enemy_health = 12;
+enemy_health = 2;
 
 damage_generation_corrector = 0;
 
