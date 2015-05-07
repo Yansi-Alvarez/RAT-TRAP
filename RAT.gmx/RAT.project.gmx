@@ -692,12 +692,33 @@
           <sprite>sprites\spr_Lbug_Down</sprite>
           <sprite>sprites\spr_Lbug_Up</sprite>
         </sprites>
+        <sprites name="Death">
+          <sprite>sprites\spr_Lbug_Death_Down</sprite>
+          <sprite>sprites\spr_Lbug_Death_Up</sprite>
+        </sprites>
         <sprite>sprites\Test_Down</sprite>
         <sprite>sprites\Test_Up</sprite>
       </sprites>
       <sprites name="Sightlines">
         <sprite>sprites\spr_Sightline_Circle</sprite>
         <sprite>sprites\spr_Sightline_Square</sprite>
+      </sprites>
+      <sprites name="Scorpion">
+        <sprite>sprites\TEST_DOWN_LEFT</sprite>
+        <sprite>sprites\TEST_UP_LEFT</sprite>
+        <sprite>sprites\up_neutral</sprite>
+        <sprites name="Walking">
+          <sprite>sprites\spr_Scorpion_Walking_Down_Left</sprite>
+          <sprite>sprites\spr_Scorpion_Walking_Down_Right</sprite>
+          <sprite>sprites\spr_Scorpion_Walking_Up_Left</sprite>
+          <sprite>sprites\spr_Scorpion_Walking_Up_Right</sprite>
+        </sprites>
+        <sprites name="Death">
+          <sprite>sprites\spr_Scorpion_Death_Down_Left</sprite>
+          <sprite>sprites\spr_Scorpion_Death_Down_Right</sprite>
+          <sprite>sprites\spr_Scorpion_Death_Up_Left</sprite>
+          <sprite>sprites\spr_Scorpion_Death_Up_Right</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="GUI">
@@ -853,6 +874,7 @@
             <sprite>sprites\spr_Casing_Shotgun</sprite>
           </sprites>
           <sprite>sprites\spr_Particle_Muzzle_Flash</sprite>
+          <sprite>sprites\spr_Particle_Bullet_Death</sprite>
         </sprites>
         <sprites name="Melee">
           <sprite>sprites\spr_Particle_Slash_Left_Test</sprite>
