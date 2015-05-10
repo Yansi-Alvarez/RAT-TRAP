@@ -79,7 +79,7 @@ instance_create(mouse_x, mouse_y, obj_Cursor)
 
 //instance_create(obj_Rat_Head.x + 100,obj_Rat_Head.y,obj_Potato_Handgun)
 
-//instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
+instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 200, obj_Bullbug)
 /*
 instance_create(obj_Rat_Head.x + 150, obj_Rat_Head.y + 220, obj_Bullbug)
 
@@ -747,9 +747,9 @@ if (Player_Health &lt;= 1) {
 
 if (death == true) {
 
-    //draw_sprite
+    draw_sprite(spr_Gameover, 0, (window_get_width()/2), (window_get_height()/2))
     
-    instance_deactivate_all(true)
+    //instance_deactivate_all(true)
 }
 </string>
           </argument>
