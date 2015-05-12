@@ -720,6 +720,11 @@
           <sprite>sprites\spr_Scorpion_Death_Up_Right</sprite>
         </sprites>
       </sprites>
+      <sprites name="Antivirus">
+        <sprite>sprites\Test</sprite>
+        <sprite>sprites\spr_Antivirus_Down_Right</sprite>
+        <sprite>sprites\spr_Antivirus_Down_Left</sprite>
+      </sprites>
     </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Cursor_Alt</sprite>
