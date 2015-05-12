@@ -1186,6 +1186,7 @@
       <object>objects\obj_Death_Particle_1</object>
       <object>objects\obj_Particle_Hit</object>
       <object>objects\obj_Creation</object>
+      <object>objects\obj_Bullet_Death</object>
     </objects>
     <objects name="Melee">
       <objects name="One Handed Melee">
@@ -1254,11 +1255,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Title_Screen</room>
-    <room>rooms\rm_Start</room>
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
     <room>rooms\rm_Level_Up</room>
+    <room>rooms\rm_Start</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42094.8957887616</constant>

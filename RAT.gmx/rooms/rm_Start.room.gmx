@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>//The center of the room through its width, has to be divisible by 64
+  <code>/*//The center of the room through its width, has to be divisible by 64
 global.center_room_width = room_width/2
 
 //The center of the room through its height, has to be divisible by 64
@@ -95,7 +95,7 @@ for (i = 1; i &lt; grid_width_index; i += 1) {
         
             instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Build_Chamber);
         }
-        */
+        *//*
         if ((i = (grid_width_index - 1)) and (j = (grid_height_index - 1))) {
         
             instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Teleporter);

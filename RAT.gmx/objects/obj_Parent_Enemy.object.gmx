@@ -98,7 +98,7 @@ loot_spawn = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x, y, spr_creation);
+            <string>instance_create(x, y, obj_Creation);
 </string>
           </argument>
         </arguments>
@@ -311,6 +311,7 @@ if (enemy_death == true) {
     
     if (loot_spawn &lt;= 10) {
         
+        instance_create(x, y, obj_Inter_Treasure_Normal);
         alarm[3] = 1;
     }
 }

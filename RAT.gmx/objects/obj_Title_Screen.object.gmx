@@ -43,7 +43,7 @@ yscale_text = 1//(room_height/480);
 
 separation = 5;
 
-text_length_max = 500;
+text_length_max = 1000;
 
 text_color = c_lime;
 
@@ -73,7 +73,9 @@ clock_string = noone;
 
 //Booleans for room states
 
-home_room = false;
+terminal_room = false;
+
+cage_room = false;
 
 start_room = false;
 
@@ -116,23 +118,20 @@ date_string = MyMonth + ' / ' + MyDay + ' / ' + MyYear;
 obj_Cursor.x = mouse_x;
 obj_Cursor.y = mouse_y;
 
-inst_home = collision_rectangle(901, 176, 1008, 264, obj_Cursor, false, true);
+inst_terminal = collision_rectangle((room_width - (room_width/6)), draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 2), (room_width - (room_width/32)), (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 2), obj_Cursor, false, true);
 
-if (home_room == true) and (exit_room == false) and (start_room == false) {
-
-    room_goto(0);
-}
+inst_cage = collision_rectangle((room_width - (room_width/6)), draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 3), (room_width - (room_width/32)), (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 3), obj_Cursor, false, true);
 
 inst_start = collision_rectangle((room_width - (room_width/6)), draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 6), (room_width - (room_width/32)), (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 6), obj_Cursor, false, true);
 
-if (start_room == true) and (exit_room == false) and (home_room == false) {
+if (start_room == true) and (exit_room == false) and (terminal_room == false) and (cage_room == false) {
 
-    room_goto(1);
+    room_goto(2);
 }
 
 inst_exit = collision_rectangle((room_width - (room_width/6)), draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 7), (room_width - (room_width/32)), (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 7), obj_Cursor, false, true);
 
-if (exit_room == true) and (start_room == false) and (home_room == false) {
+if (exit_room == true) and (terminal_room == false) and (cage_room == false) and (start_room == false) {
 
     game_end();
 }
@@ -163,13 +162,13 @@ if (exit_room == true) and (start_room == false) and (home_room == false) {
 //draw_rectangle_colour(3, 50, 853, 614, c_lime, c_lime, c_lime, c_lime, true);
 
 draw_set_font(fnt_Text_Font);
-/*
+
 draw_text_ext_transformed_colour(draw_text_x, draw_text_y1, title_screen_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
 
 draw_text_ext_transformed_colour(draw_text_x, draw_text_y2, copyright_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
 
 draw_text_ext_transformed_colour(draw_text_x, draw_text_y3, tester_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
-*//*
+/*
 draw_text_ext_transformed_colour(3, 635, "Manual code entry prompt.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
 draw_text_ext_transformed_colour(3, 656, "Enter a " + code_number + " letter code for generation. No digits or symbols.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
@@ -189,30 +188,63 @@ for (i = 1; i &lt; 9; i += 1) {
     //Time Box
     if (i == 1) {
         
-        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - text_corrector, (((round(((room_width/12)) + draw_text_y2))/2) * i) - text_corrector, "Time", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
-        draw_text_ext_transformed_colour((((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector * 1.2)), (((round(((room_width/12)) + draw_text_y2))/2) * i) + text_corrector, clock_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * i) - text_corrector, "Time", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour((((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 15)), (((round(((room_width/12)) + draw_text_y2))/2) * i) + text_corrector, clock_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
     }
     
     //Date Box
     if (i == 2) {
         
-        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - text_corrector, (((round(((room_width/12)) + draw_text_y2))/2) * i) + text_corrector, "Date", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
-        draw_text_ext_transformed_colour(((((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - text_corrector) - 35), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 3), date_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * i) + text_corrector, "Date", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour(((((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector * 2)) - 30), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 3), date_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
     }
     
     //Terminal Box
     if (i == 3) {
     
-        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * i)  + (text_corrector * 4), "Terminal", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 30), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 4), "Terminal", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        
+        //Terminal Box Interaction
+        if (inst_terminal != noone) {//and (inst_cage == noone) and (inst_start == noone) and (inst_exit == noone) {
+            
+            draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
+            
+            if (mouse_check_button(mb_left)) {
+        
+                draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
+                terminal_room = true;
+                cage_room = false;
+            
+            }
+        }
+    }
+    
+    //Cage Box
+    if (i == 4) {
+    
+        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 5.5), "Cage", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        
+        //Cage Box Interaction
+        if (inst_cage != noone) {//and (inst_start == noone) and (inst_exit == noone) and (inst_terminal == noone) {
+            
+            draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
+            
+            if (mouse_check_button(mb_left)) {
+        
+                draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_dkgray, c_dkgray, c_dkgray, c_dkgray, false);
+                cage_room = true;
+                terminal_room = false;
+            }
+        }
     }
     
     //Start Box
     if (i == 7) {
     
-        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - text_corrector, (((round(((room_width/12)) + draw_text_y2))/2) * (i + 3)) + (text_corrector - 10), "Start", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * (i + 3)), "Start", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //Start Box Interaction
-        if (inst_start != noone) and (inst_exit == noone) and (inst_home == noone) {
+        if (inst_start != noone) {//and (inst_exit == noone) and (inst_terminal == noone) and (inst_cage == noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
         }
@@ -227,10 +259,10 @@ for (i = 1; i &lt; 9; i += 1) {
     //End Box
     if (i == 8) {
     
-        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - text_corrector, (((round(((room_width/12)) + draw_text_y2))/2) * (i + 3)) + (text_corrector + 30), "Exit", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+        draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * (i + 3)) + (text_corrector + 20), "Exit", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //End Box Interaction
-        if (inst_exit != noone) and (inst_start == noone) and (inst_home == noone) {
+        if (inst_exit != noone) {//and (inst_start == noone) and (inst_home == noone) and (inst_cage == noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
         }
@@ -242,6 +274,11 @@ for (i = 1; i &lt; 9; i += 1) {
         }
     
     }
+}
+
+if (cage_room == true) and (terminal_room == false) {
+
+    draw_background(bkgd_Cage, 20, 100);
 }
 
 /*
