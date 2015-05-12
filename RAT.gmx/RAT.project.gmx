@@ -918,6 +918,7 @@
       </sprites>
       <sprite>sprites\spr_Particle_Smoke</sprite>
       <sprite>sprites\spr_Particle_Alert</sprite>
+      <sprite>sprites\spr_Particle_Spawn</sprite>
     </sprites>
     <sprites name="Weapons">
       <sprites name="Melee">
@@ -1063,8 +1064,16 @@
     <sprites name="Interactables">
       <sprites name="Pickups">
         <sprite>sprites\spr_Pickup_Cheese</sprite>
-        <sprite>sprites\spr_Pickup_Ammo_Small</sprite>
-        <sprite>sprites\spr_Pickup_Ammo_Large</sprite>
+        <sprites name="Ammos">
+          <sprites name="Small">
+            <sprite>sprites\spr_Pickup_Ammo_Normal_Small</sprite>
+            <sprite>sprites\spr_Pickup_Ammo_Shotgun_Small</sprite>
+          </sprites>
+          <sprites name="Large">
+            <sprite>sprites\spr_Pickup_Ammo_Normal_Large</sprite>
+            <sprite>sprites\spr_Pickup_Ammo_Shotgun_Large</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Machines">
         <sprite>sprites\spr_Intr_Machine_Off</sprite>
@@ -1089,6 +1098,9 @@
       <sprites name="Misc">
         <sprites name="Punching Bag">
           <sprite>sprites\spr_intr_Punchingbag</sprite>
+        </sprites>
+        <sprites name="Dead Rat">
+          <sprite>sprites\spr_Dead_Rat</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -1115,6 +1127,7 @@
     </backgrounds>
     <backgrounds name="tests">
       <background>background\bkgd_Cage_test</background>
+      <background>background\bkgd_Upgrade_Test</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
