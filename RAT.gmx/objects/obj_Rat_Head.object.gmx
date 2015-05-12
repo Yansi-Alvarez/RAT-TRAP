@@ -747,9 +747,9 @@ if (Player_Health &lt;= 1) {
 
 if (death == true) {
 
-    //draw_sprite
+    draw_sprite(spr_Gameover, 0, (window_get_width()/2), (window_get_height()/2))
     
-    instance_deactivate_all(true)
+    //instance_deactivate_all(true)
 }
 </string>
           </argument>

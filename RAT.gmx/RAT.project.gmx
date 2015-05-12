@@ -1112,6 +1112,7 @@
       <object>objects\obj_Title_Screen</object>
       <object>objects\obj_Research_Page</object>
       <object>objects\obj_Loading_Screen</object>
+      <object>objects\obj_Level_Up</object>
     </objects>
     <objects name="Weapons">
       <object>objects\obj_Parent_Gun</object>
@@ -1143,8 +1144,8 @@
       <object>objects\obj_Laser_Bullet</object>
     </objects>
     <objects name="Enemies">
-      <object>objects\obj_Bullbug</object>
       <object>objects\obj_Parent_Enemy</object>
+      <object>objects\obj_Bullbug</object>
     </objects>
     <objects name="Particles">
       <object>objects\obj_Muzzle_Flash</object>
@@ -1225,6 +1226,7 @@
     <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
+    <room>rooms\rm_Level_Up</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42094.8957887616</constant>

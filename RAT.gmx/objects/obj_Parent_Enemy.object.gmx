@@ -79,6 +79,29 @@ looping = 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>enemy_speed = 7;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -166,7 +189,25 @@ if (looping &gt; 6) {
 
 direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
 
-if (distance_to_object(obj_Rat_Body) &lt;= 150) {
+if (obj_Rat_Head.collision_with_enemy == true) {
+    
+    //Enemy AI
+    if (obj_Parent_Enemy.enemy_right == true) {
+        
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Right_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
+        alarm[2] = 20;
+    }
+    
+    if (obj_Parent_Enemy.enemy_left == true) {
+        
+        obj_Parent_Enemy.sprite_index = obj_Parent_Enemy.sprite_index_Idle_Left_Enemy
+        obj_Parent_Enemy.enemy_speed = 0;
+        alarm[2] = 20;
+    }
+}
+
+if (distance_to_object(obj_Rat_Body) &lt;= 150) and (obj_Rat_Head.collision_with_enemy == false) {
          
     //move_towards_point(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed)
     mp_potential_step_object(obj_Rat_Body.x, obj_Rat_Body.y, enemy_speed, obj_Parent_Wall);
