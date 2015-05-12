@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>1010</width>
-  <height>664</height>
-  <data>images\bkgd_Cage.png</data>
+  <width>505</width>
+  <height>332</height>
+  <data>images\bkgd_Cage_test.png</data>
 </background>

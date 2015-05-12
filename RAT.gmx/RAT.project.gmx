@@ -697,7 +697,6 @@
           <sprite>sprites\spr_Lbug_Death_Up</sprite>
         </sprites>
         <sprite>sprites\Test_Down</sprite>
-        <sprite>sprites\Test_Up</sprite>
       </sprites>
       <sprites name="Sightlines">
         <sprite>sprites\spr_Sightline_Circle</sprite>
@@ -719,6 +718,19 @@
           <sprite>sprites\spr_Scorpion_Death_Up_Left</sprite>
           <sprite>sprites\spr_Scorpion_Death_Up_Right</sprite>
         </sprites>
+        <sprites name="Tail Parts">
+          <sprite>sprites\spr_Tail_Tip</sprite>
+          <sprite>sprites\spr_Tail_Link</sprite>
+          <sprite>sprites\example_scorpion</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Antivirus">
+        <sprite>sprites\Test</sprite>
+        <sprite>sprites\spr_Antivirus_Down_Right</sprite>
+        <sprite>sprites\spr_Antivirus_Down_Left</sprite>
+        <sprite>sprites\test_up0</sprite>
+        <sprite>sprites\spr_Antivirus_Up_Right</sprite>
+        <sprite>sprites\spr_Antivirus_Up_Left</sprite>
       </sprites>
     </sprites>
     <sprites name="GUI">
@@ -769,6 +781,10 @@
           <sprite>sprites\spr_Wall_Server_Corner_Left_Up</sprite>
           <sprite>sprites\spr_Wall_Full_Alt</sprite>
         </sprites>
+        <sprites name="Woods">
+          <sprite>sprites\spr_Woods</sprite>
+          <sprite>sprites\spr_Woods_Alt</sprite>
+        </sprites>
       </sprites>
       <sprites name="Floors">
         <sprites name="Tile">
@@ -795,6 +811,11 @@
             <sprite>sprites\spr_Concrete_Trap_Active</sprite>
           </sprites>
         </sprites>
+        <sprites name="Grass">
+          <sprite>sprites\spr_Grass</sprite>
+          <sprite>sprites\spr_Grass_Alt</sprite>
+          <sprite>sprites\spr_Grass_Alt_2</sprite>
+        </sprites>
       </sprites>
       <sprites name="Home">
         <sprites name="Cage">
@@ -808,6 +829,13 @@
             <sprite>sprites\spr_Stinky_Pinky_Idle</sprite>
             <sprite>sprites\spr_Stinky_Pinky_Talk</sprite>
           </sprites>
+          <sprite>sprites\spr_Cardboard_Tube</sprite>
+          <sprite>sprites\spr_Stash</sprite>
+          <sprite>sprites\spr_Wheel</sprite>
+          <sprite>sprites\spr_Water_Tube</sprite>
+          <sprite>sprites\spr_Food_Bowl</sprite>
+          <sprite>sprites\spr_Cage_Door</sprite>
+          <sprite>sprites\spr_Cage_Door_Open</sprite>
         </sprites>
       </sprites>
       <sprites name="Props">
@@ -839,9 +867,13 @@
           <sprite>sprites\spr_Dungball_Large</sprite>
           <sprite>sprites\spr_Dungball_Mega</sprite>
         </sprites>
+        <sprites name="Antivirus">
+          <sprite>sprites\spr_Antivirus_Bullet</sprite>
+        </sprites>
       </sprites>
       <sprites name="Death">
         <sprite>sprites\spr_Death</sprite>
+        <sprite>sprites\spr_Creation</sprite>
         <sprite>sprites\spr_Death_Particle_0</sprite>
         <sprite>sprites\spr_Death_Particle_1</sprite>
       </sprites>
@@ -1080,6 +1112,9 @@
     </backgrounds>
     <backgrounds name="Background Tiles">
       <background>background\bkgd_Black</background>
+    </backgrounds>
+    <backgrounds name="tests">
+      <background>background\bkgd_Cage_test</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
