@@ -320,6 +320,10 @@
     <sounds name="Misc.">
       <sound>sound\snd_Radio</sound>
       <sound>sound\snd_Bounce</sound>
+      <sound>sound\snd_Jump</sound>
+    </sounds>
+    <sounds name="Menu">
+      <sound>sound\snd__Button</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -837,6 +841,10 @@
           <sprite>sprites\spr_Cage_Door</sprite>
           <sprite>sprites\spr_Cage_Door_Open</sprite>
         </sprites>
+        <sprites name="Terminal">
+          <sprite>sprites\spr_Controls</sprite>
+          <sprite>sprites\test_controls</sprite>
+        </sprites>
       </sprites>
       <sprites name="Props">
         <sprite>sprites\spr_Props_Example</sprite>
@@ -869,6 +877,9 @@
         </sprites>
         <sprites name="Antivirus">
           <sprite>sprites\spr_Antivirus_Bullet</sprite>
+        </sprites>
+        <sprites name="Lightning Bug">
+          <sprite>sprites\spr_Particle_Lbug</sprite>
         </sprites>
       </sprites>
       <sprites name="Death">
@@ -933,6 +944,11 @@
             <sprite>sprites\spr_Sword_Stick</sprite>
             <sprite>sprites\spr_Sword_Stick_HUD</sprite>
             <sprite>sprites\spr_Sword_Stick_Pickup</sprite>
+          </sprites>
+          <sprites name="Boomerang">
+            <sprite>sprites\spr_Boomerang</sprite>
+            <sprite>sprites\spr_Boomerang_HUD</sprite>
+            <sprite>sprites\spr_Boomerang_Pickup</sprite>
           </sprites>
         </sprites>
         <sprites name="Two-Handed">
@@ -1073,6 +1089,12 @@
             <sprite>sprites\spr_Pickup_Ammo_Normal_Large</sprite>
             <sprite>sprites\spr_Pickup_Ammo_Shotgun_Large</sprite>
           </sprites>
+        </sprites>
+        <sprites name="Injections">
+          <sprite>sprites\spr_Pickup_Injection</sprite>
+          <sprite>sprites\spr_Pickup_Injection_Held_Right</sprite>
+          <sprite>sprites\spr_Injection_Break</sprite>
+          <sprite>sprites\spr_Pickup_Injection_Held_Left</sprite>
         </sprites>
       </sprites>
       <sprites name="Machines">
