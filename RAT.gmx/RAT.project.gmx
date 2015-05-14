@@ -837,6 +837,10 @@
           <sprite>sprites\spr_Cage_Door</sprite>
           <sprite>sprites\spr_Cage_Door_Open</sprite>
         </sprites>
+        <sprites name="Terminal">
+          <sprite>sprites\spr_Controls</sprite>
+          <sprite>sprites\test_controls</sprite>
+        </sprites>
       </sprites>
       <sprites name="Props">
         <sprite>sprites\spr_Props_Example</sprite>
