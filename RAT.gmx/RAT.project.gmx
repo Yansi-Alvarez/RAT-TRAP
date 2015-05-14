@@ -1153,7 +1153,6 @@
       <object>objects\obj_Screen_Shaker</object>
       <object>objects\obj_Damage</object>
       <object>objects\obj_Title_Screen</object>
-      <object>objects\obj_Research_Page</object>
       <object>objects\obj_Loading_Screen</object>
       <object>objects\obj_Level_Up</object>
       <object>objects\obj_HUD_Display</object>
@@ -1222,7 +1221,6 @@
       </objects>
       <object>objects\obj_Director</object>
       <object>objects\obj_Level_Maker</object>
-      <object>objects\obj_Reference_Angle</object>
       <objects name="Walls">
         <object>objects\obj_Parent_Wall</object>
         <objects name="Lab">
@@ -1268,11 +1266,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Title_Screen</room>
-    <room>rooms\rm_Level_Generation</room>
-    <room>rooms\rm_Research_Page</room>
     <room>rooms\rm_Loading_Screen</room>
-    <room>rooms\rm_Level_Up</room>
-    <room>rooms\rm_Start</room>
+    <room>rooms\rm_Level_Generation</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42094.8957887616</constant>
