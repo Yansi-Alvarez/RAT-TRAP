@@ -37,9 +37,11 @@ copyright_string = "Copyright (c) 2015 Ratatosk Labs. All rights reserved.";
 
 tester_string = "C:\Users\Tester&gt;";
 
-xscale_text = 1//(room_width/640);
+description = "Debug the level and keep working!";
 
-yscale_text = 1//(room_height/480);
+xscale_text = 1
+
+yscale_text = 1
 
 separation = 5;
 
@@ -122,6 +124,8 @@ date_string = MyMonth + ' / ' + MyDay + ' / ' + MyYear;
 obj_Cursor.x = mouse_x;
 obj_Cursor.y = mouse_y;
 
+//inst_start inst_terminal inst_cage inst_lab inst_exit
+
 inst_terminal = collision_rectangle((room_width - (room_width/6)), draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 2), (room_width - (room_width/32)), (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 2), obj_Cursor, false, true);
 
 inst_cage = collision_rectangle((room_width - (room_width/6)), draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 3), (room_width - (room_width/32)), (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * 3), obj_Cursor, false, true);
@@ -178,6 +182,15 @@ if (commence == true) or (cage_room == true) or (terminal_room == true) {
     draw_text_ext_transformed_colour(draw_text_x, draw_text_y3, tester_string, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
 }
 
+if (cage_room == false) and (lab_room == false) {
+
+    draw_sprite(spr_Controls, 0, 525, 450);
+    draw_text_ext_transformed_colour(300, 275, "Movement", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+    draw_text_ext_transformed_colour(450, 350, "Left Click to Fire", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+    draw_text_ext_transformed_colour(500, 575, "Equip Weapon", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+    draw_text_ext_transformed_colour(400, 800, description, separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
+}
+
 /*
 draw_text_ext_transformed_colour(3, 635, "Manual code entry prompt.", 3, 500, 1, 1, 0, c_lime, c_lime, c_lime, c_lime, 1);
 
@@ -215,7 +228,7 @@ for (i = 1; i &lt; 9; i += 1) {
         draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 30), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 4), "Terminal", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //Terminal Box Interaction
-        if (inst_terminal != noone) {//and (inst_cage == noone) and (inst_start == noone) and (inst_exit == noone) {
+        if (inst_terminal != noone) and (inst_start == noone) and (inst_cage == noone) and (inst_lab == noone) and (inst_exit == noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
             
@@ -236,7 +249,7 @@ for (i = 1; i &lt; 9; i += 1) {
         draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 5.5), "Cage", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //Cage Box Interaction
-        if (inst_cage != noone) {//and (inst_start == noone) and (inst_exit == noone) and (inst_terminal == noone) {
+        if (inst_cage != noone) and (inst_start == noone) and (inst_terminal == noone) and (inst_lab == noone) and (inst_exit = noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
             
@@ -256,7 +269,7 @@ for (i = 1; i &lt; 9; i += 1) {
         draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 5), (((round(((room_width/12)) + draw_text_y2))/2) * i) + (text_corrector * 7.5), "Lab", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //Cage Box Interaction
-        if (inst_lab != noone) {
+        if (inst_lab != noone) and (inst_start == noone) and (inst_cage == noone) and (inst_terminal == noone) and (inst_exit == noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
             
@@ -296,7 +309,7 @@ for (i = 1; i &lt; 9; i += 1) {
         draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * (i + 3)), "Start", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //Start Box Interaction
-        if (inst_start != noone) {//and (inst_exit == noone) and (inst_terminal == noone) and (inst_cage == noone) {
+        if (inst_start != noone) and (inst_terminal == noone) and (inst_cage == noone) and (inst_lab == noone) and (inst_exit == noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i- 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
         }
@@ -318,7 +331,7 @@ for (i = 1; i &lt; 9; i += 1) {
         draw_text_ext_transformed_colour(((round(room_width - (room_width/32)) + round(room_width - (room_width/6)))/2) - (text_corrector + 10), (((round(((room_width/12)) + draw_text_y2))/2) * (i + 3)) + (text_corrector + 20), "Exit", separation, text_length_max, xscale_text, yscale_text, 0, text_color, text_color, text_color, text_color, alpha_value);
         
         //End Box Interaction
-        if (inst_exit != noone) {//and (inst_start == noone) and (inst_home == noone) and (inst_cage == noone) {
+        if (inst_exit != noone) and (inst_start == noone) and (inst_cage == noone) and (inst_lab == noone) and (inst_terminal == noone) {
             
             draw_rectangle_colour((room_width - (room_width/6)) - 1, draw_text_y2 + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), (room_width - (room_width/32)) - 1, (round(room_width/12) + draw_text_y2) + (((round(room_width/12) + draw_text_y2) - (draw_text_y2)) * (i - 1)), c_white, c_white, c_white, c_white, false);
         }

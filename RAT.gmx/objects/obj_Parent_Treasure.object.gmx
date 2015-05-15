@@ -39,6 +39,8 @@ folder_value = noone;
 
 create_object = false;
 
+destroy_object = false;
+
 drop = noone;
 </string>
           </argument>
@@ -66,9 +68,19 @@ drop = noone;
 
 if (create_object == true) {
 
-    drop = choose(obj_Pickup_Cheese);
+    drop = choose(obj_Pickup_Cheese, obj_P90, obj_AR15, obj_Beretta);
     instance_create(x, y, drop);
     create_object = false;
+    
+    destroy_object = true;
+}
+
+if (destroy_object == true) {
+
+    with(other) {
+
+        instance_destroy();
+    }
 }
 </string>
           </argument>
@@ -92,7 +104,9 @@ if (create_object == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (place_meeting(x, y, obj_Rat_Body) and (folder_value == 1)) {
+            <string>draw_self();
+
+if (place_meeting(x, y, obj_Rat_Body) and (folder_value == 1)) {
 
     draw_set_font(font);
     draw_set_color(font_color);    
