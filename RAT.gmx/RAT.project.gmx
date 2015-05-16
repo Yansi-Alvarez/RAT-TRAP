@@ -1283,13 +1283,15 @@
       </objects>
       <objects name="Ammo">
         <object>objects\obj_Parent_Ammo</object>
+        <object>objects\obj_Pickup_Ammo_Normal</object>
+        <object>objects\obj_Pickup_Ammo_Shotgun</object>
       </objects>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Level_Generation</room>
     <room>rooms\rm_Title_Screen</room>
     <room>rooms\rm_Loading_Screen</room>
-    <room>rooms\rm_Level_Generation</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">42094.8957887616</constant>
