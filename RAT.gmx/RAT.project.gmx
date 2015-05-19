@@ -685,9 +685,20 @@
         </sprites>
       </sprites>
       <sprites name="Bosses">
-        <sprites name="The Nine Guards">
-          <sprites name="Swine Guard">
-            <sprite>sprites\spr_Swine_Guard_Left</sprite>
+        <sprites name="The Nine">
+          <sprites name="Spigtre">
+            <sprite>sprites\spr_Spigtre_Left_TEST</sprite>
+            <sprites name="Parts">
+              <sprite>sprites\spr_Spigtre_Heart</sprite>
+              <sprite>sprites\spr_Spigtre_Right_Paw</sprite>
+              <sprite>sprites\spr_Spigtre_Left_Paw</sprite>
+              <sprite>sprites\spr_Spigtre_Right_Hoof</sprite>
+              <sprite>sprites\spr_Spigtre_Left_Hoof</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Down_Left</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Down_Right</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Up_Left</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Up_Right</sprite>
+            </sprites>
           </sprites>
         </sprites>
       </sprites>
@@ -789,6 +800,7 @@
           <sprite>sprites\spr_Woods</sprite>
           <sprite>sprites\spr_Woods_Alt</sprite>
         </sprites>
+        <sprite>sprites\spr_Wall_Shadow</sprite>
       </sprites>
       <sprites name="Floors">
         <sprites name="Tile">
@@ -880,6 +892,13 @@
         </sprites>
         <sprites name="Lightning Bug">
           <sprite>sprites\spr_Particle_Lbug</sprite>
+        </sprites>
+        <sprites name="Bosses">
+          <sprites name="The Nine">
+            <sprites name="Spigtre">
+              <sprite>sprites\spr_Spigtre_Bullet</sprite>
+            </sprites>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Death">
