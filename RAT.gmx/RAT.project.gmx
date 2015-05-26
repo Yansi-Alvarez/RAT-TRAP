@@ -1156,6 +1156,7 @@
   <scripts name="scripts">
     <script>scripts\scr_find_distance_to_object.gml</script>
     <script>scripts\scr_draw_messagebox.gml</script>
+    <script>scripts\scr_reconstruct_path.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
