@@ -83,7 +83,7 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         }
     }
 }
-/*
+
 for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
     for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
@@ -98,7 +98,8 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         if ((ds_grid_get(obj_Director.grid_map, i, j) == 0) 
         and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 1)) {
         
-            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Down); 
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Down);
+            instance_create((i * global.level_maker_speed), ((j + 1) * global.level_maker_speed), obj_Wall_Shadow);
             ds_grid_set(obj_Director.grid_map, i, j, 10);
         }
         
@@ -192,7 +193,7 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         } 
     }
 }
-*/
+
             
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
@@ -236,41 +237,6 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
             }
         }
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (instance_number(obj_Level_Maker) == 1) { //If this is the last level maker
-    
-    //instance_create(x, y, obj_Server);
-    //scr_level_walls(level_floor, level_maker_speed, level_wall);
-    //scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
-    //generation = false;
-    //scr_level_walls(level_floor, level_maker_speed, obj_Wall_Lab_Down);
-}
-/*
-if (instance_number(obj_Level_Maker) == 0) {
-
-    global.generation = false;
 }
 </string>
           </argument>

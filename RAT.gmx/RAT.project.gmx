@@ -1276,6 +1276,7 @@
           <object>objects\obj_Wall_Lab_Corner_Left_Down</object>
           <object>objects\obj_Wall_Lab_Full</object>
         </objects>
+        <object>objects\obj_Wall_Shadow</object>
       </objects>
       <objects name="Floors">
         <object>objects\obj_Parent_Floor</object>
