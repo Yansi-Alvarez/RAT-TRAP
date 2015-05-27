@@ -774,13 +774,17 @@
           <sprite>sprites\spr_Wall_Lab_Right</sprite>
           <sprite>sprites\spr_Wall_Lab_Left</sprite>
           <sprite>sprites\spr_Wall_Lab_Up</sprite>
-          <sprite>sprites\spr_Wall_Lab_Down</sprite>
           <sprite>sprites\spr_Wall_Lab_Corner_Right_Up</sprite>
           <sprite>sprites\spr_Wall_Lab_Corner_Left_Down</sprite>
           <sprite>sprites\spr_Wall_Lab_Corner_Left_Up</sprite>
           <sprite>sprites\spr_Wall_Lab_Corner_Right_Down</sprite>
           <sprite>sprites\spr_Wall_Lab_Full</sprite>
           <sprite>sprites\spr_Wall_Lab</sprite>
+          <sprite>sprites\spr_Wall_Lab_Down</sprite>
+          <sprites name="Add ons">
+            <sprite>sprites\spr_Wall_Lab_Addon_Pipe</sprite>
+            <sprite>sprites\spr_Wall_Lab_Addon_Pipe_2</sprite>
+          </sprites>
         </sprites>
         <sprite>sprites\spr_Wall_Lab_Test</sprite>
         <sprites name="Server">
