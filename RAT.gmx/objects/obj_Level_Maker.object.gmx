@@ -43,12 +43,6 @@ wall_generation_time = 1800;
 //Probability of carving a room
 room_chance = 0;
 
-//Rooms width while generating (not actual level but rooms within level)
-//generated_room_width = noone;//choose(2, 3, 4, 5);
-
-//Rooms height while generating (not actual level but rooms within level)
-//generated_room_height = noone;//choose(2, 3, 4, 5);
-
 //Floor for the level
 level_floor = obj_Concrete_Floor;
 //level_floor = choose(obj_Concrete_Floor, obj_Concrete_Floor_Alt, obj_Concrete_Floor_Alt_2);
@@ -83,7 +77,7 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         }
     }
 }
-
+/*
 for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
     for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
@@ -193,9 +187,38 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         } 
     }
 }
-
+*/
             
 ////////////////////////////////////////////////////////////////
+/*
+//Prop Generation
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+    
+        randomize();
+        prop_spawn_chance = irandom(2000); 
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i, (j + 1)) == 1)
+        and (ds_grid_get(obj_Director.grid_map, (i + 1), j) == 1)
+        and (ds_grid_get(obj_Director.grid_map, (i - 1), j) == 0)) and (prop_spawn_chance &lt;= 100){
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Shelves);
+            obj_Shelves.sprite_index = spr_Prop_Shelves_Right;
+        }
+        
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i, (j + 1)) == 1)
+        and (ds_grid_get(obj_Director.grid_map, (i - 1), j) == 1)
+        and (ds_grid_get(obj_Director.grid_map, (i + 1), j) == 0)) and (prop_spawn_chance &lt;= 100){
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Shelves);
+            obj_Shelves.sprite_index = spr_Prop_Shelves_Left;
+        }
+    }
+}
+*/
 ////////////////////////////////////////////////////////////////
 /*
 //Enemy Generation

@@ -127,14 +127,14 @@ for (i = 0; i &lt; grid_width_index; i++) {
     }
 }
 
-//Hallway generation
+//Hallway to right generation
 for (i = 0; i &lt; grid_width_index; i++) {
 
     for (j = 0; j &lt; grid_height_index; j++) {
         
         var build_pathway = true;
         var dead_end = false;
-    
+        
         if (ds_grid_get(grid_map, i, j) == 1) 
         and (ds_grid_get(grid_map, i + 1, j) == 0) 
         and (ds_grid_get(grid_map, (i + 1), (j + 1)) == 0) 
@@ -152,10 +152,9 @@ for (i = 0; i &lt; grid_width_index; i++) {
             }
         }
         
-        
         if (ds_grid_get(grid_map, i, j) == 1) 
         and (ds_grid_get(grid_map, i + 1, j) == 0) 
-        and ((ds_grid_get(grid_map, (i + 1), (j + 1)) != 0) or (ds_grid_get(grid_map, (i + 1), (j - 1)) != 0) 
+        and ((ds_grid_get(grid_map, (i + 1), (j + 1)) != 0) or (ds_grid_get(grid_map, (i + 1), (j - 1)) != 0)
         or (ds_grid_get(grid_map, (i - 1), (j + 1)) != 0) or (ds_grid_get(grid_map, (i - 1), (j - 1)) != 0))
         and ((ds_grid_get(grid_map, (i - 1), (j - 1)) == 0) or (ds_grid_get(grid_map, (i - 1), (j + 1)) == 0))
         and ((i + 1) &lt; (grid_width_index - 1)) 
@@ -172,31 +171,51 @@ for (i = 0; i &lt; grid_width_index; i++) {
     }
 }
 /*
+//Hallway down generation
 for (i = 0; i &lt; grid_width_index; i++) {
 
     for (j = 0; j &lt; grid_height_index; j++) {
         
         var build_pathway = true;
+        var dead_end = false;
     
         if (ds_grid_get(grid_map, i, j) == 1) 
         and (ds_grid_get(grid_map, i, (j + 1)) == 0) 
         and (ds_grid_get(grid_map, (i + 1), (j + 1)) == 0) 
-        and (ds_grid_get(grid_map, (i + 1), (j - 1)) == 0) 
-        and ((i + 1) &lt; grid_width_index)
-        and ((j + 1) &lt; grid_height_index)
-        and (build_pathway == true) {
+        and (ds_grid_get(grid_map, (i - 1), (j + 1)) == 0)
+        and ((i + 1) &lt; (grid_width_index - 1)) 
+        and ((j + 1) &lt; (grid_height_index - 1)) 
+        and (build_pathway == true) { 
         
-            ds_grid_add(grid_map, i, (j + 1), 1);
+            ds_grid_add(grid_map, i, (j + 1), 1); 
             
-            if (ds_grid_get(grid_map, i, j) == 2) {
+            if (ds_grid_get(grid_map, i, j) == 2) { 
                 
                 build_pathway = false;
-                ds_grid_set(grid_map, i, j, 1);
+                ds_grid_set(grid_map, i, j, 1); 
             }
         }
+        
+        
+        if (ds_grid_get(grid_map, i, j) == 1) 
+        and (ds_grid_get(grid_map, i, (j + 1)) == 0) 
+        and ((ds_grid_get(grid_map, (i - 1), j) != 0) or (ds_grid_get(grid_map, (i + 1), j) != 0)
+        or (ds_grid_get(grid_map, i, (j + 1)) != 0) or (ds_grid_get(grid_map, i, (j - 1)) != 0))
+        and ((ds_grid_get(grid_map, (i - 1), (j - 1)) == 0) or (ds_grid_get(grid_map, (i - 1), (j + 1)) == 0))
+        and ((i + 1) &lt; (grid_width_index - 1)) 
+        and ((j + 1) &lt; (grid_height_index - 1)) {
+        
+            dead_end = true;
+        }
+        
+        if (dead_end == true) {
+            
+            ds_grid_set(grid_map, i, (j + 1), 1);
+            dead_end = false;
+        }
     }
-}*/
-
+}
+*/
 //Deleting dead ends
 for (i = (grid_width_index); (i &gt;= 0); i--) {
 
@@ -209,14 +228,14 @@ for (i = (grid_width_index); (i &gt;= 0); i--) {
         
             ds_grid_set(grid_map, i, j, 0);
         }
-        /*
+        
         if ((ds_grid_get(grid_map, i, j)) == 1) 
-        and ((ds_grid_get(grid_map, (i + 1), j) == 0) or (ds_grid_get(grid_map, (i - 1), j) == 0))
-        and ((ds_grid_get(grid_map, i, (j + 1)) == 0) or (ds_grid_get(grid_map, i, (j - 1)) == 0))
-        and ((ds_grid_get(grid_map, i, (j - 1))) == 0) {
+        and ((ds_grid_get(grid_map, i, (j + 1))) == 0)
+        and ((ds_grid_get(grid_map, (i + 1), j)) == 0)
+        and ((ds_grid_get(grid_map, (i - 1), j)) == 0) {
         
             ds_grid_set(grid_map, i, j, 0);
-        }*/
+        }
     }
 }
 
