@@ -72,81 +72,154 @@ global.first_level_maker_creation = false;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-grid_width = (room_width/global.level_maker_speed) + 1; 
-grid_height = (room_height/global.level_maker_speed) + 1;
+grid_width = (room_width/global.level_maker_speed) + 1; //(2560/64) + 1 = 41
+grid_height = (room_height/global.level_maker_speed) + 1; //(1920/64) 1 = 31
 
-grid_width_index = ((room_width/global.level_maker_speed)); 
-grid_height_index = ((room_height/global.level_maker_speed));
+grid_width_index = ((room_width/global.level_maker_speed));  //(2560/64) = 40
+grid_height_index = ((room_height/global.level_maker_speed)); //(1920/64) = 30
 
-grid_map = ds_grid_create(grid_width, grid_height);
+grid_map = ds_grid_create(grid_width, grid_height) //40 by 30
 id_value = noone;
 
 //Assign every cell in the grid to noone
-for (i = 0; i &lt; grid_width; i += 1) {
+for (i = 0; i &lt; grid_width; i++) {
 
-    for (j = 0; j &lt; grid_height; j += 1) {
+    for (j = 0; j &lt; grid_height; j++) {
         
         //Assigning all the cells a value of zero
         ds_grid_set(grid_map, i, j, 0);
     }
 }
 
-for (i = 0; i &lt; grid_width; i += 1) {
+//Room generation
+for (i = 0; i &lt; grid_width_index; i++) {
 
-    for (j = 0; j &lt; grid_height; j += 1) {
+    for (j = 0; j &lt; grid_height_index; j++) {
         
-        if ((i &gt; 0) and (i &lt; grid_width_index - 5)) 
-        and ((j &gt; 0) and (j &lt; grid_height_index - 5)) {
+        if ((i &gt; 0) and (i &lt; grid_width_index)) 
+        and ((j &gt; 0) and (j &lt; grid_height_index)) {
             
             randomize();
-            room_size = choose(3, 4, 5, 6);
+            room_size = choose(2, 3, 4, 5, 6);
             room_generation_chance = irandom(50);
-            
-            for (l = 0; l &lt;= room_size; l++) {
                 
-                if (room_generation_chance &lt;= 10) {
-            
-                    if (((i + room_size) &lt; grid_width_index) and ((j + room_size) &lt; grid_height_index))
-                    and (ds_grid_get(grid_map, (i - 1), (j - 1)) == 0)
-                    and (ds_grid_get(grid_map, i + l, (j - 1)) == 0)
-                    and (ds_grid_get(grid_map, (i - 1), j + l) == 0)
-                    and (ds_grid_get(grid_map, (i + room_size), j + l) == 0)
-                    and (ds_grid_get(grid_map, i + (l - 1), (j + room_size)) == 0) {
-
-                        //Tile set/floor will have a value of 1
-                        
-                        if (i &lt; (grid_width_index - room_size)) and (j &lt; grid_height_index - room_size) {
+            if (room_generation_chance &lt;= 10) {
+                
+                var buildable = true;
+                
+                for (m = (i - 1); m &lt;= (i + room_size); m++) {
+                    
+                    for (n = (j - 1); n &lt;= (j + room_size); n++) {
+                    
+                        if (ds_grid_get(grid_map, m, n) != 0) {
                             
-                            for (m = 0; m &lt; room_size; m++) {
-                                
-                                for (n = 0; n &lt; room_size; n++) {
-                            
-                                    ds_grid_set(grid_map, (i + m), (j + n), 1);
-                                }
-                            }
+                            buildable = false;
                         }
                     }
+                }
+                
+                if (buildable) and ((i + room_size) &lt; grid_width_index) and ((j + room_size) &lt; grid_height_index){
+                    
+                    ds_grid_set_region(grid_map, i, j, (i + (room_size - 1)), (j + (room_size - 1)), 1);
                 }
             }
         }
     }
 }
-/*
-for (i = 0; i &lt; grid_width; i += 1) {
 
-    for (j = 0; j &lt; grid_height; j += 1) {
+//Hallway generation
+for (i = 0; i &lt; grid_width_index; i++) {
+
+    for (j = 0; j &lt; grid_height_index; j++) {
+        
+        var build_pathway = true;
+        var dead_end = false;
     
-        if ((ds_grid_get(grid_map, i - 1, j) == 0) and (ds_grid_get(grid_map, i + 1, j) == 0)) 
-        or ((ds_grid_get(grid_map, i, j - 1) == 0) and (ds_grid_get(grid_map, i, j + 1) == 0)) 
-        or ((ds_grid_get(grid_map, i, j - 1) == 0) and (ds_grid_get(grid_map, i, j + 1) == 0) and ((ds_grid_get(grid_map, i - 1, j) == 0) or (ds_grid_get(grid_map, i + 1, j) == 0))) 
-        or ((ds_grid_get(grid_map, i - 1, j) == 0) and (ds_grid_get(grid_map, i + 1, j) == 0) and ((ds_grid_get(grid_map, i, j - 1) == 0) or (ds_grid_get(grid_map, i, j + 1) == 0)))
-        or ((ds_grid_get(grid_map, i - 1, j) == 0) and (ds_grid_get(grid_map, i + 1, j) == 0) and (ds_grid_get(grid_map, i, j - 1) == 0) and (ds_grid_get(grid_map, i, j + 1) == 0)) {
+        if (ds_grid_get(grid_map, i, j) == 1) 
+        and (ds_grid_get(grid_map, i + 1, j) == 0) 
+        and (ds_grid_get(grid_map, (i + 1), (j + 1)) == 0) 
+        and (ds_grid_get(grid_map, (i + 1), (j - 1)) == 0)
+        and ((i + 1) &lt; (grid_width_index - 1)) 
+        and ((j + 1) &lt; (grid_height_index - 1)) 
+        and (build_pathway == true) { 
+        
+            ds_grid_add(grid_map, (i + 1), j, 1); 
             
-            ds_grid_set(grid_map, i, j, 0);
+            if (ds_grid_get(grid_map, i, j) == 2) { 
+                
+                build_pathway = false;
+                ds_grid_set(grid_map, i, j, 1); 
+            }
+        }
+        
+        
+        if (ds_grid_get(grid_map, i, j) == 1) 
+        and (ds_grid_get(grid_map, i + 1, j) == 0) 
+        and ((ds_grid_get(grid_map, (i + 1), (j + 1)) != 0) or (ds_grid_get(grid_map, (i + 1), (j - 1)) != 0) 
+        or (ds_grid_get(grid_map, (i - 1), (j + 1)) != 0) or (ds_grid_get(grid_map, (i - 1), (j - 1)) != 0))
+        and ((ds_grid_get(grid_map, (i - 1), (j - 1)) == 0) or (ds_grid_get(grid_map, (i - 1), (j + 1)) == 0))
+        and ((i + 1) &lt; (grid_width_index - 1)) 
+        and ((j + 1) &lt; (grid_height_index - 1)) {
+        
+            dead_end = true;
+        }
+        
+        if (dead_end == true) {
+            
+            ds_grid_set(grid_map, (i + 1), j, 1);
+            dead_end = false;
         }
     }
 }
-*/
+/*
+for (i = 0; i &lt; grid_width_index; i++) {
+
+    for (j = 0; j &lt; grid_height_index; j++) {
+        
+        var build_pathway = true;
+    
+        if (ds_grid_get(grid_map, i, j) == 1) 
+        and (ds_grid_get(grid_map, i, (j + 1)) == 0) 
+        and (ds_grid_get(grid_map, (i + 1), (j + 1)) == 0) 
+        and (ds_grid_get(grid_map, (i + 1), (j - 1)) == 0) 
+        and ((i + 1) &lt; grid_width_index)
+        and ((j + 1) &lt; grid_height_index)
+        and (build_pathway == true) {
+        
+            ds_grid_add(grid_map, i, (j + 1), 1);
+            
+            if (ds_grid_get(grid_map, i, j) == 2) {
+                
+                build_pathway = false;
+                ds_grid_set(grid_map, i, j, 1);
+            }
+        }
+    }
+}*/
+
+//Deleting dead ends
+for (i = (grid_width_index); (i &gt;= 0); i--) {
+
+    for (j = (grid_height_index); (j &gt;= 0); j--) {
+    
+        if ((ds_grid_get(grid_map, i, j)) == 1) 
+        and ((ds_grid_get(grid_map, (i + 1), j)) == 0)
+        and ((ds_grid_get(grid_map, i, (j + 1))) == 0)
+        and ((ds_grid_get(grid_map, i, (j - 1))) == 0) {
+        
+            ds_grid_set(grid_map, i, j, 0);
+        }
+        /*
+        if ((ds_grid_get(grid_map, i, j)) == 1) 
+        and ((ds_grid_get(grid_map, (i + 1), j) == 0) or (ds_grid_get(grid_map, (i - 1), j) == 0))
+        and ((ds_grid_get(grid_map, i, (j + 1)) == 0) or (ds_grid_get(grid_map, i, (j - 1)) == 0))
+        and ((ds_grid_get(grid_map, i, (j - 1))) == 0) {
+        
+            ds_grid_set(grid_map, i, j, 0);
+        }*/
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 instance_create(global.center_room_width, global.center_room_height, obj_Level_Maker);

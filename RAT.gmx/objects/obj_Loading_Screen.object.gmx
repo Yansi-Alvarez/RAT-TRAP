@@ -54,7 +54,7 @@ correction = 288;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>adding_x += 3;
+            <string>adding_x += 6;
 </string>
           </argument>
         </arguments>

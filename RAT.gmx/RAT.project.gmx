@@ -1179,6 +1179,7 @@
   <scripts name="scripts">
     <script>scripts\scr_find_distance_to_object.gml</script>
     <script>scripts\scr_draw_messagebox.gml</script>
+    <script>scripts\scr_reconstruct_path.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Game_Font</font>
@@ -1279,6 +1280,7 @@
           <object>objects\obj_Wall_Lab_Corner_Left_Down</object>
           <object>objects\obj_Wall_Lab_Full</object>
         </objects>
+        <object>objects\obj_Wall_Shadow</object>
       </objects>
       <objects name="Floors">
         <object>objects\obj_Parent_Floor</object>
