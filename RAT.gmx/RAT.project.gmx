@@ -383,6 +383,16 @@
                 <sprite>sprites\spr_Body_Scales_Idle_Up_Left</sprite>
               </sprites>
             </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Up_Right</sprite>
+              </sprites>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Walking">
@@ -437,6 +447,16 @@
                 <sprite>sprites\spr_Body_Scales_Walking_Up_Left</sprite>
                 <sprite>sprites\spr_Body_Scales_Walking_Down_Left</sprite>
                 <sprite>sprites\spr_Body_Scales_Walking_Down_Right</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Up_Right</sprite>
               </sprites>
             </sprites>
           </sprites>
@@ -496,6 +516,16 @@
                 <sprite>sprites\spr_Body_Scales_Stun_Up_Right</sprite>
               </sprites>
             </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Up_Right</sprite>
+              </sprites>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Death">
@@ -550,6 +580,16 @@
                 <sprite>sprites\spr_Body_Scales_Death_Up_Right</sprite>
                 <sprite>sprites\spr_Body_Scales_Death_Down_Left</sprite>
                 <sprite>sprites\spr_Body_Scales_Death_Down_Right</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Up_Right</sprite>
               </sprites>
             </sprites>
           </sprites>
@@ -698,6 +738,19 @@
               <sprite>sprites\spr_Spigtre_Head_Down_Right</sprite>
               <sprite>sprites\spr_Spigtre_Head_Up_Left</sprite>
               <sprite>sprites\spr_Spigtre_Head_Up_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Beaglebub">
+            <sprite>sprites\spr_Beaglebub_TEST</sprite>
+            <sprites name="Animations">
+              <sprites name="Walk">
+                <sprite>sprites\spr_Beaglebub_Walk_Down_Left</sprite>
+                <sprite>sprites\spr_Beaglebub_Walk_Down_Right</sprite>
+              </sprites>
+              <sprites name="Idle">
+                <sprite>sprites\spr_Beaglebub_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Beaglebub_Idle_Down_Right</sprite>
+              </sprites>
             </sprites>
           </sprites>
         </sprites>
