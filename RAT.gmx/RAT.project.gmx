@@ -917,7 +917,8 @@
       </sprites>
       <sprites name="Props">
         <sprite>sprites\spr_Props_Example</sprite>
-        <sprite>sprites\spr_Prop_Shelves</sprite>
+        <sprite>sprites\spr_Prop_Shelves_Right</sprite>
+        <sprite>sprites\spr_Prop_Shelves_Left</sprite>
         <sprite>sprites\spr_Prop_Bread</sprite>
         <sprite>sprites\spr_Prop_Server</sprite>
         <sprite>sprites\spr_Prop_Pipe</sprite>
