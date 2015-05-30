@@ -684,24 +684,6 @@
           </sprites>
         </sprites>
       </sprites>
-      <sprites name="Bosses">
-        <sprites name="The Nine">
-          <sprites name="Spigtre">
-            <sprite>sprites\spr_Spigtre_Left_TEST</sprite>
-            <sprites name="Parts">
-              <sprite>sprites\spr_Spigtre_Heart</sprite>
-              <sprite>sprites\spr_Spigtre_Right_Paw</sprite>
-              <sprite>sprites\spr_Spigtre_Left_Paw</sprite>
-              <sprite>sprites\spr_Spigtre_Right_Hoof</sprite>
-              <sprite>sprites\spr_Spigtre_Left_Hoof</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Down_Left</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Down_Right</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Up_Left</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Up_Right</sprite>
-            </sprites>
-          </sprites>
-        </sprites>
-      </sprites>
       <sprites name="Lightning bug">
         <sprites name="Standard">
           <sprite>sprites\spr_Lbug_Down</sprite>
@@ -746,6 +728,24 @@
         <sprite>sprites\test_up0</sprite>
         <sprite>sprites\spr_Antivirus_Up_Right</sprite>
         <sprite>sprites\spr_Antivirus_Up_Left</sprite>
+      </sprites>
+      <sprites name="Bosses">
+        <sprites name="The Nine">
+          <sprites name="Spigtre">
+            <sprite>sprites\spr_Spigtre_Left_TEST</sprite>
+            <sprites name="Parts">
+              <sprite>sprites\spr_Spigtre_Heart</sprite>
+              <sprite>sprites\spr_Spigtre_Right_Paw</sprite>
+              <sprite>sprites\spr_Spigtre_Left_Paw</sprite>
+              <sprite>sprites\spr_Spigtre_Right_Hoof</sprite>
+              <sprite>sprites\spr_Spigtre_Left_Hoof</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Down_Left</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Down_Right</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Up_Left</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Up_Right</sprite>
+            </sprites>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="GUI">
@@ -1228,14 +1228,18 @@
     </objects>
     <objects name="Projectiles">
       <object>objects\obj_Parent_Bullet</object>
+      <object>objects\obj_Parent_Enemy_Bullet</object>
       <object>objects\obj_Potato_Bullet</object>
       <object>objects\obj_Handgun_Bullet</object>
       <object>objects\obj_Pump_Shotgun_Bullet</object>
       <object>objects\obj_Laser_Bullet</object>
+      <object>objects\obj_Lightning_Bullet</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_Parent_Enemy</object>
       <object>objects\obj_Bullbug</object>
+      <object>objects\obj_Lightning_Bug</object>
+      <object>objects\obj_Scorpion</object>
     </objects>
     <objects name="Particles">
       <object>objects\obj_Muzzle_Flash</object>

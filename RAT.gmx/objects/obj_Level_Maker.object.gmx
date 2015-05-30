@@ -50,20 +50,8 @@ level_floor = obj_Concrete_Floor;
 //Wall for the level
 level_wall = obj_Wall_Lab_Down;
 
-//Preventing the spawn of another level maker, will be used later
-spawn_level_maker = 1;
-
-//Preventing the spawn of another level maker, will be used later
-spawn_level_maker_chance = 1;
-
-//Size of spawn room
-spawn_room_size = 1;
-
-//Half of the width to prevent the level maker from going to the edges of the level
-half_width = view_wview[1]/2;
-
-//Half of the height to prevent the level maker from going to the edges of the level
-half_height = view_hview[1]/2;
+//Spawning
+spawn = true;
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -174,6 +162,21 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         }
     }
 }
+*/
+
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+    
+        if ((ds_grid_get(obj_Director.grid_map, i, j) == 0) 
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 1)) {
+        
+            instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Down);
+            instance_create((i * global.level_maker_speed), ((j + 1) * global.level_maker_speed), obj_Wall_Shadow);
+            ds_grid_set(obj_Director.grid_map, i, j, 2);
+        }
+    }
+}
 
 for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
@@ -183,12 +186,11 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         if ((ds_grid_get(obj_Director.grid_map, i, j) == 0)) {
         
             instance_create((i * global.level_maker_speed), (j * global.level_maker_speed), obj_Wall_Lab_Full); 
-            ds_grid_set(obj_Director.grid_map, i, j, 14);
+            ds_grid_set(obj_Director.grid_map, i, j, 2);
         } 
     }
 }
-*/
-            
+    
 ////////////////////////////////////////////////////////////////
 /*
 //Prop Generation
@@ -240,23 +242,39 @@ for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
         }
     }
 }
+*/
 
-//instance_create((room_width/2), (room_height/2), obj_Rat_Head);
-
-/*
 //Player Generation
 for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
 
     for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
-    
-        for (m = 0; m &lt;= 2; m += 1) {
-        
-            for (l = 0; l &lt;= 2; l += 1) {
             
-                if ((ds_grid_get(obj_Director.grid_map, i + m, j + l)) == 1){
-                
-                    instance_create(i * global.level_maker_speed, j * global.level_maker_speed, obj_Rat_Head);
-                }
+        if (ds_grid_get(obj_Director.grid_map, i, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i + 1, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i - 1, j) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i, j + 1) == 1) 
+        and (ds_grid_get(obj_Director.grid_map, i, j - 1) == 1) 
+        and (spawn == true) {
+        
+            instance_create(i * global.level_maker_speed, j * global.level_maker_speed, obj_Rat_Head);
+            spawn = false;
+        }
+    }
+}
+
+//Enemy Generation
+for (i = 0; i &lt; obj_Director.grid_width; i += 1) {
+
+    for (j = 0; j &lt; obj_Director.grid_height; j += 1) {
+        
+        //randomize();
+        enemy_spawn_chance = irandom(1000); 
+        
+        if (ds_grid_get(obj_Director.grid_map, i, j) == 1) {
+            
+            if (enemy_spawn_chance &lt;= 50) {
+        
+                instance_create((i * global.level_maker_speed) + 32, (j * global.level_maker_speed) + 32, obj_Lightning_Bug);
             }
         }
     }
