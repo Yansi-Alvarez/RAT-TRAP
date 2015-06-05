@@ -858,6 +858,15 @@
           <sprite>sprites\spr_Woods_Alt</sprite>
         </sprites>
         <sprite>sprites\spr_Wall_Shadow</sprite>
+        <sprites name="Cliffs">
+          <sprite>sprites\spr_Wall_Cliff_Down</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Corner_Left</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Corner_Right</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Right</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Left</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Up</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Full</sprite>
+        </sprites>
       </sprites>
       <sprites name="Floors">
         <sprites name="Tile">
@@ -1027,12 +1036,32 @@
             <sprite>sprites\spr_Boomerang_HUD</sprite>
             <sprite>sprites\spr_Boomerang_Pickup</sprite>
           </sprites>
+          <sprites name="Masamune">
+            <sprite>sprites\spr_Masamune_Left</sprite>
+            <sprite>sprites\spr_Masamune_Pickup</sprite>
+            <sprite>sprites\spr_Masamune_Right</sprite>
+            <sprite>sprites\spr_Masamune_HUD</sprite>
+          </sprites>
+          <sprites name="Muramasa">
+            <sprite>sprites\spr_Muramasa_Left</sprite>
+            <sprite>sprites\spr_Muramasa_Right</sprite>
+            <sprite>sprites\spr_Muramasa_Pickup</sprite>
+            <sprite>sprites\spr_Muramasa_HUD</sprite>
+          </sprites>
+          <sprites name="Mjolnir">
+            <sprite>sprites\spr_Mjolnir_Left</sprite>
+            <sprite>sprites\spr_Mjolnir_Pickup</sprite>
+            <sprite>sprites\spr_Mjolnir_Right</sprite>
+            <sprite>sprites\spr_Mjolnir_HUD</sprite>
+          </sprites>
         </sprites>
         <sprites name="Two-Handed">
-          <sprite>sprites\spr_Morningstar_Left</sprite>
-          <sprite>sprites\spr_Morningstar_Right</sprite>
-          <sprite>sprites\sprite336</sprite>
-          <sprite>sprites\spr_Morningstar_Pickup</sprite>
+          <sprites name="Morningstar">
+            <sprite>sprites\spr_Morningstar_Left</sprite>
+            <sprite>sprites\spr_Morningstar_Right</sprite>
+            <sprite>sprites\sprite336</sprite>
+            <sprite>sprites\spr_Morningstar_Pickup</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Ranged">
@@ -1146,6 +1175,7 @@
             </sprites>
           </sprites>
         </sprites>
+        <sprites name="Misc"/>
       </sprites>
       <sprites name="Attachables">
         <sprites name="Flashlight">
