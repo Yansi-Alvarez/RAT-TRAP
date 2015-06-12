@@ -514,6 +514,12 @@ if (death_flash == true) and (loop == false) {
     alpha_value = 1;
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_green, alpha_value);
 }
+
+//if ((sprite_index == sprite_index_Left_Gun_In_Use_Pick_Up) or (sprite_index == sprite_index_Right_Gun_In_Use_Pick_Up)) {
+
+    depth = y * -1;
+    draw_sprite_ext(sprite_index, image_index, x, y + sprite_height, image_xscale, image_yscale, image_angle, c_black, 0.25);
+//}
 </string>
           </argument>
         </arguments>

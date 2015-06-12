@@ -1295,6 +1295,10 @@
           <object>objects\obj_Concrete_Floor_Alt_2</object>
         </objects>
       </objects>
+      <objects name="Traps">
+        <object>objects\obj_Parent_Trap</object>
+        <object>objects\obj_Spike_Trap</object>
+      </objects>
     </objects>
     <objects name="Interactables">
       <object>objects\obj_Teleporter</object>
