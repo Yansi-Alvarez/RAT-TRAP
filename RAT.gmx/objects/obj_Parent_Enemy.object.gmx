@@ -29,8 +29,6 @@
 
 i = '';
 
-experience = noone;
-
 damage_generation_corrector = noone;
 
 enemy_health = noone;
@@ -71,8 +69,6 @@ enemy_left = false;
 
 hurt_flash = false;
 
-death_flash = false;
-
 alpha_value = 0;
 
 loop = false;
@@ -80,39 +76,6 @@ loop = false;
 looping = 1;
 
 loot_spawn = noone;
-
-shooting_sound = noone;
-
-bullet = noone;
-
-bullet_speed = noone;
-
-cooldown = noone;
-
-shoot = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>shoot = false;
 </string>
           </argument>
         </arguments>
@@ -241,7 +204,7 @@ if (alpha_value == 0) and (loop == true) and (looping &lt;= 6) {
     looping += 1;
 }
 
-if (looping &gt;= 6) and (hurt_flash == true) {
+if (looping &gt; 6) {
 
     alarm[0] = 1;
     hurt_flash = false;
@@ -249,32 +212,8 @@ if (looping &gt;= 6) and (hurt_flash == true) {
     looping = 0;
 }
 
-if (looping &gt;= 6) and (death_flash == true) {
+direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Body.x, obj_Rat_Body.y)
 
-    alarm[0] = 1;
-    death_flash = false;
-    death_animation = true;
-    loop = false;
-    looping = 0;
-}
-
-direction_enemy = point_direction(obj_Parent_Enemy.x, obj_Parent_Enemy.y, obj_Rat_Legs.x, obj_Rat_Legs.y)
-
-motion_set(random(360), enemy_speed);
-
-/*
-if (distance_to_object(obj_Rat_Body) &lt;= 250) and (shoot == false){
-
-    object_bullet = instance_create(x, y, bullet);
-    audio_play_sound(shooting_sound, 1, 0);
-    object_bullet.direction = point_direction(x, y, obj_Rat_Body.x, obj_Rat_Body.y);
-    object_bullet.speed = bullet_speed;
-    shoot = true;
-    alarm[4] = cooldown;
-}
-*/
-/*
-//Old Bullbug code
 if (obj_Rat_Head.collision_with_enemy == true) {
     
     //Enemy AI
@@ -343,36 +282,28 @@ if (distance_to_object(obj_Rat_Body) &lt;= 150) and (obj_Rat_Head.collision_with
         sprite_index = sprite_index_Walking_Right_Enemy;
     }
 }
-*/
-
-if (place_meeting(x + (enemy_speed * 2), y, obj_Parent_Wall)
-or place_meeting(x + (enemy_speed * 2), y, obj_Parent_Wall) 
-or place_meeting(x + (enemy_speed * 2), y + (enemy_speed * 2), obj_Parent_Wall)) {
-
-    speed = -enemy_speed;
-}
 
 if (death_animation == true) {
 
     instance_create(x, y, obj_Death);
-    enemy_death = true;
     death_animation = false;
 }
 
 if (enemy_death == true) {
     
     //Creation of experience
-    repeat(experience) {
+    repeat(25) {
     
+        //randomize();
         instance_create(x, y, obj_Death_Particle_0);
         instance_create(x, y, obj_Death_Particle_1);
+        
     }
     
-    audio_play_sound(snd_Bug, 1 ,0);
-    
+    //with (global.obj_enemy) {
     with (other) {
-       
-       instance_destroy(); 
+        audio_play_sound(snd_Bug, 1 ,0);
+        instance_destroy();
     }
     
     randomize();
@@ -406,45 +337,7 @@ if (enemy_death == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((hurt_flash == false) and (enemy_health &gt; 0)) {
-    
-    enemy_health -= obj_Parent_Bullet.bullet_damage;    
-    instance_create(obj_Parent_Bullet.x, obj_Parent_Bullet.y, obj_Particle_Hit);
-    
-    i = instance_create(x, y - damage_generation_corrector, obj_Damage);
-    i.str = string(contact_damage);
-    hurt_flash = true;
-    
-    with (other) {
-    
-        instance_destroy();
-    }
-}
-
-//Death for Enemy
-
-if (death_flash == false) and (enemy_health &lt;= 0) {
-   
-     enemy_speed = 0;
-     death_flash = true;
-     
-}
-/*
-if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
-   
-     sprite_index = sprite_index_Death_Left_Enemy;
-     enemy_speed = 0;
-     image_speed = 0.3;
-     death_animation = true;
-     
-}
-
-if (sprite_index = sprite_index_Death_Right_Enemy) or (sprite_index = sprite_index_Death_Left_Enemy) {
-    
-    enemy_death = true;
-}
-*/
-/*if (sprite_index = sprite_index_Walking_Right_Enemy) or
+            <string>if (sprite_index = sprite_index_Walking_Right_Enemy) or
     (sprite_index = sprite_index_Idle_Right_Enemy) or 
     ((sprite_index = sprite_index_Stun_Right_Enemy) and (enemy_health &gt; 0)) {
     
@@ -478,7 +371,63 @@ if  (sprite_index = sprite_index_Walking_Left_Enemy) or
     
         instance_destroy();
     }
-}*/
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (sprite_index = sprite_index_Stun_Right_Enemy) and enemy_health &gt; 0{
+    
+    sprite_index = sprite_index_Idle_Right_Enemy;
+}
+
+if (sprite_index = sprite_index_Stun_Left_Enemy) and enemy_health &gt; 0{
+
+    sprite_index = sprite_index_Idle_Left_Enemy;
+}
+
+//Death for Enemy
+
+if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Right_Enemy) or (sprite_index = sprite_index_Stun_Right_Enemy) or (sprite_index = sprite_index_Walking_Right_Enemy)) {
+   
+     sprite_index = sprite_index_Death_Right_Enemy;
+     enemy_speed = 0;
+     image_speed = 0.3;
+     death_animation = true;
+     
+}
+
+if (enemy_health &lt;= 0) and ((sprite_index = sprite_index_Idle_Left_Enemy) or (sprite_index = sprite_index_Stun_Left_Enemy) or (sprite_index = sprite_index_Walking_Left_Enemy)) {
+   
+     sprite_index = sprite_index_Death_Left_Enemy;
+     enemy_speed = 0;
+     image_speed = 0.3;
+     death_animation = true;
+     
+}
+
+if (sprite_index = sprite_index_Death_Right_Enemy) or (sprite_index = sprite_index_Death_Left_Enemy) {
+    
+    enemy_death = true;
+}
 </string>
           </argument>
         </arguments>
@@ -508,18 +457,6 @@ if (hurt_flash == true) and (loop == false) {
     alpha_value = 1;
     draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_red, alpha_value);
 }
-
-if (death_flash == true) and (loop == false) {
-    
-    alpha_value = 1;
-    draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_green, alpha_value);
-}
-
-//if ((sprite_index == sprite_index_Left_Gun_In_Use_Pick_Up) or (sprite_index == sprite_index_Right_Gun_In_Use_Pick_Up)) {
-
-    depth = y * -1;
-    draw_sprite_ext(sprite_index, image_index, x, y + sprite_height, image_xscale, image_yscale, image_angle, c_black, 0.25);
-//}
 </string>
           </argument>
         </arguments>
