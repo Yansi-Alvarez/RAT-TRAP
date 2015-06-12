@@ -1,0 +1,38 @@
+diff a/RAT.gmx/RAT.project.gmx b/RAT.gmx/RAT.project.gmx	(rejected hunks)
+@@ -1036,12 +1036,32 @@
+             <sprite>sprites\spr_Boomerang_HUD</sprite>
+             <sprite>sprites\spr_Boomerang_Pickup</sprite>
+           </sprites>
++          <sprites name="Masamune">
++            <sprite>sprites\spr_Masamune_Left</sprite>
++            <sprite>sprites\spr_Masamune_Pickup</sprite>
++            <sprite>sprites\spr_Masamune_Right</sprite>
++            <sprite>sprites\spr_Masamune_HUD</sprite>
++          </sprites>
++          <sprites name="Muramasa">
++            <sprite>sprites\spr_Muramasa_Left</sprite>
++            <sprite>sprites\spr_Muramasa_Right</sprite>
++            <sprite>sprites\spr_Muramasa_Pickup</sprite>
++            <sprite>sprites\spr_Muramasa_HUD</sprite>
++          </sprites>
++          <sprites name="Mjolnir">
++            <sprite>sprites\spr_Mjolnir_Left</sprite>
++            <sprite>sprites\spr_Mjolnir_Pickup</sprite>
++            <sprite>sprites\spr_Mjolnir_Right</sprite>
++            <sprite>sprites\spr_Mjolnir_HUD</sprite>
++          </sprites>
+         </sprites>
+         <sprites name="Two-Handed">
+-          <sprite>sprites\spr_Morningstar_Left</sprite>
+-          <sprite>sprites\spr_Morningstar_Right</sprite>
+-          <sprite>sprites\sprite336</sprite>
+-          <sprite>sprites\spr_Morningstar_Pickup</sprite>
++          <sprites name="Morningstar">
++            <sprite>sprites\spr_Morningstar_Left</sprite>
++            <sprite>sprites\spr_Morningstar_Right</sprite>
++            <sprite>sprites\sprite336</sprite>
++            <sprite>sprites\spr_Morningstar_Pickup</sprite>
++          </sprites>
+         </sprites>
+       </sprites>
+       <sprites name="Ranged">
