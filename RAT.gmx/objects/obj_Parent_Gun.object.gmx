@@ -702,8 +702,7 @@ if ((global.direction_player &gt;= 90) and (global.direction_player &lt;= 179)) 
     
     if (gun_collision == true) and (global.weapon_attach_right_arm == true) and (global.weapon_attach_left_arm == false) {
         
-        //obj_Rat_Body.depth = 2;
-        obj_Rat_Body.depth = 0;
+        obj_Rat_Body.depth = 2;
     }
 }
 

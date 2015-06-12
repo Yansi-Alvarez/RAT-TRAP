@@ -383,6 +383,16 @@
                 <sprite>sprites\spr_Body_Scales_Idle_Up_Left</sprite>
               </sprites>
             </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Idle_Up_Right</sprite>
+              </sprites>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Walking">
@@ -437,6 +447,16 @@
                 <sprite>sprites\spr_Body_Scales_Walking_Up_Left</sprite>
                 <sprite>sprites\spr_Body_Scales_Walking_Down_Left</sprite>
                 <sprite>sprites\spr_Body_Scales_Walking_Down_Right</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Walking_Up_Right</sprite>
               </sprites>
             </sprites>
           </sprites>
@@ -496,6 +516,16 @@
                 <sprite>sprites\spr_Body_Scales_Stun_Up_Right</sprite>
               </sprites>
             </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Stun_Up_Right</sprite>
+              </sprites>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Death">
@@ -550,6 +580,16 @@
                 <sprite>sprites\spr_Body_Scales_Death_Up_Right</sprite>
                 <sprite>sprites\spr_Body_Scales_Death_Down_Left</sprite>
                 <sprite>sprites\spr_Body_Scales_Death_Down_Right</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Arms">
+              <sprites name="Down">
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Down_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Down_Right</sprite>
+              </sprites>
+              <sprites name="Up">
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Up_Left</sprite>
+                <sprite>sprites\spr_Front_Arm_Neon_Death_Up_Right</sprite>
               </sprites>
             </sprites>
           </sprites>
@@ -684,6 +724,37 @@
           </sprites>
         </sprites>
       </sprites>
+      <sprites name="Bosses">
+        <sprites name="The Nine">
+          <sprites name="Spigtre">
+            <sprite>sprites\spr_Spigtre_Left_TEST</sprite>
+            <sprites name="Parts">
+              <sprite>sprites\spr_Spigtre_Heart</sprite>
+              <sprite>sprites\spr_Spigtre_Right_Paw</sprite>
+              <sprite>sprites\spr_Spigtre_Left_Paw</sprite>
+              <sprite>sprites\spr_Spigtre_Right_Hoof</sprite>
+              <sprite>sprites\spr_Spigtre_Left_Hoof</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Down_Left</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Down_Right</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Up_Left</sprite>
+              <sprite>sprites\spr_Spigtre_Head_Up_Right</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Beaglebub">
+            <sprite>sprites\spr_Beaglebub_TEST</sprite>
+            <sprites name="Animations">
+              <sprites name="Walk">
+                <sprite>sprites\spr_Beaglebub_Walk_Down_Left</sprite>
+                <sprite>sprites\spr_Beaglebub_Walk_Down_Right</sprite>
+              </sprites>
+              <sprites name="Idle">
+                <sprite>sprites\spr_Beaglebub_Idle_Down_Left</sprite>
+                <sprite>sprites\spr_Beaglebub_Idle_Down_Right</sprite>
+              </sprites>
+            </sprites>
+          </sprites>
+        </sprites>
+      </sprites>
       <sprites name="Lightning bug">
         <sprites name="Standard">
           <sprite>sprites\spr_Lbug_Down</sprite>
@@ -728,24 +799,6 @@
         <sprite>sprites\test_up0</sprite>
         <sprite>sprites\spr_Antivirus_Up_Right</sprite>
         <sprite>sprites\spr_Antivirus_Up_Left</sprite>
-      </sprites>
-      <sprites name="Bosses">
-        <sprites name="The Nine">
-          <sprites name="Spigtre">
-            <sprite>sprites\spr_Spigtre_Left_TEST</sprite>
-            <sprites name="Parts">
-              <sprite>sprites\spr_Spigtre_Heart</sprite>
-              <sprite>sprites\spr_Spigtre_Right_Paw</sprite>
-              <sprite>sprites\spr_Spigtre_Left_Paw</sprite>
-              <sprite>sprites\spr_Spigtre_Right_Hoof</sprite>
-              <sprite>sprites\spr_Spigtre_Left_Hoof</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Down_Left</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Down_Right</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Up_Left</sprite>
-              <sprite>sprites\spr_Spigtre_Head_Up_Right</sprite>
-            </sprites>
-          </sprites>
-        </sprites>
       </sprites>
     </sprites>
     <sprites name="GUI">
@@ -805,6 +858,15 @@
           <sprite>sprites\spr_Woods_Alt</sprite>
         </sprites>
         <sprite>sprites\spr_Wall_Shadow</sprite>
+        <sprites name="Cliffs">
+          <sprite>sprites\spr_Wall_Cliff_Down</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Corner_Left</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Corner_Right</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Right</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Left</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Up</sprite>
+          <sprite>sprites\spr_Wall_Cliff_Full</sprite>
+        </sprites>
       </sprites>
       <sprites name="Floors">
         <sprites name="Tile">
@@ -974,12 +1036,32 @@
             <sprite>sprites\spr_Boomerang_HUD</sprite>
             <sprite>sprites\spr_Boomerang_Pickup</sprite>
           </sprites>
+          <sprites name="Masamune">
+            <sprite>sprites\spr_Masamune_Left</sprite>
+            <sprite>sprites\spr_Masamune_Pickup</sprite>
+            <sprite>sprites\spr_Masamune_Right</sprite>
+            <sprite>sprites\spr_Masamune_HUD</sprite>
+          </sprites>
+          <sprites name="Muramasa">
+            <sprite>sprites\spr_Muramasa_Left</sprite>
+            <sprite>sprites\spr_Muramasa_Right</sprite>
+            <sprite>sprites\spr_Muramasa_Pickup</sprite>
+            <sprite>sprites\spr_Muramasa_HUD</sprite>
+          </sprites>
+          <sprites name="Mjolnir">
+            <sprite>sprites\spr_Mjolnir_Left</sprite>
+            <sprite>sprites\spr_Mjolnir_Pickup</sprite>
+            <sprite>sprites\spr_Mjolnir_Right</sprite>
+            <sprite>sprites\spr_Mjolnir_HUD</sprite>
+          </sprites>
         </sprites>
         <sprites name="Two-Handed">
-          <sprite>sprites\spr_Morningstar_Left</sprite>
-          <sprite>sprites\spr_Morningstar_Right</sprite>
-          <sprite>sprites\sprite336</sprite>
-          <sprite>sprites\spr_Morningstar_Pickup</sprite>
+          <sprites name="Morningstar">
+            <sprite>sprites\spr_Morningstar_Left</sprite>
+            <sprite>sprites\spr_Morningstar_Right</sprite>
+            <sprite>sprites\sprite336</sprite>
+            <sprite>sprites\spr_Morningstar_Pickup</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Ranged">
@@ -1228,18 +1310,14 @@
     </objects>
     <objects name="Projectiles">
       <object>objects\obj_Parent_Bullet</object>
-      <object>objects\obj_Parent_Enemy_Bullet</object>
       <object>objects\obj_Potato_Bullet</object>
       <object>objects\obj_Handgun_Bullet</object>
       <object>objects\obj_Pump_Shotgun_Bullet</object>
       <object>objects\obj_Laser_Bullet</object>
-      <object>objects\obj_Lightning_Bullet</object>
     </objects>
     <objects name="Enemies">
       <object>objects\obj_Parent_Enemy</object>
       <object>objects\obj_Bullbug</object>
-      <object>objects\obj_Lightning_Bug</object>
-      <object>objects\obj_Scorpion</object>
     </objects>
     <objects name="Particles">
       <object>objects\obj_Muzzle_Flash</object>
@@ -1294,10 +1372,6 @@
           <object>objects\obj_Concrete_Floor_Alt</object>
           <object>objects\obj_Concrete_Floor_Alt_2</object>
         </objects>
-      </objects>
-      <objects name="Traps">
-        <object>objects\obj_Parent_Trap</object>
-        <object>objects\obj_Spike_Trap</object>
       </objects>
     </objects>
     <objects name="Interactables">
